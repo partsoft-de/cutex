@@ -1,0 +1,13 @@
+<RCC>
+    <qresource prefix="/">
+        <file>icons/16x16/disk.png</file>
+        <file>icons/16x16/folder.png</file>
+        <file>icons/16x16/page_white.png</file>
+        <file>icons/16x16/contacts.png</file>
+        <file>icons/32x32/contacts.ico</file>
+        <file>icons/16x16/user_add.png</file>
+        <file>icons/16x16/user_delete.png</file>
+        <file>icons/16x16/user_edit.png</file>
+        <file>icons/16x16/email.png</file>
+    </qresource>
+</RCC>

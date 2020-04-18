@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>QxHelpWindow</class>
+ <widget class="QWidget" name="QxHelpWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>500</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Hilfe</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="cutex.qrc">
+    <normaloff>:/icons/16x16/help.png</normaloff>:/icons/16x16/help.png</iconset>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <property name="leftMargin">
+    <number>6</number>
+   </property>
+   <property name="topMargin">
+    <number>6</number>
+   </property>
+   <property name="rightMargin">
+    <number>6</number>
+   </property>
+   <property name="bottomMargin">
+    <number>6</number>
+   </property>
+   <item>
+    <widget class="QToolBar" name="ToolBar">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="floatable">
+      <bool>true</bool>
+     </property>
+     <addaction name="HomeAction"/>
+     <addaction name="BackwardAction"/>
+     <addaction name="ForwardAction"/>
+     <addaction name="separator"/>
+     <addaction name="ExitAction"/>
+    </widget>
+   </item>
+   <item>
+    <widget class="QSplitter" name="splitter">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <widget class="QTabWidget" name="NavigationTab">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+        <horstretch>1</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>180</width>
+        <height>0</height>
+       </size>
+      </property>
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <widget class="QWidget" name="ContentPage">
+       <attribute name="title">
+        <string>Inhalt</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="ContentLayout">
+        <property name="spacing">
+         <number>2</number>
+        </property>
+        <property name="leftMargin">
+         <number>6</number>
+        </property>
+        <property name="topMargin">
+         <number>6</number>
+        </property>
+        <property name="rightMargin">
+         <number>6</number>
+        </property>
+        <property name="bottomMargin">
+         <number>6</number>
+        </property>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="IndexPage">
+       <attribute name="title">
+        <string>Index</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="IndexLayout">
+        <property name="spacing">
+         <number>2</number>
+        </property>
+        <property name="leftMargin">
+         <number>6</number>
+        </property>
+        <property name="topMargin">
+         <number>6</number>
+        </property>
+        <property name="rightMargin">
+         <number>6</number>
+        </property>
+        <property name="bottomMargin">
+         <number>6</number>
+        </property>
+        <item>
+         <widget class="QLineEdit" name="IndexEdit"/>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+     <widget class="QxHelpBrowser" name="HelpBrowser">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+        <horstretch>2</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+     </widget>
+    </widget>
+   </item>
+  </layout>
+  <action name="ExitAction">
+   <property name="icon">
+    <iconset resource="cutex.qrc">
+     <normaloff>:/icons/16x16/door_out.png</normaloff>:/icons/16x16/door_out.png</iconset>
+   </property>
+   <property name="text">
+    <string>Beenden</string>
+   </property>
+   <property name="toolTip">
+    <string>Beenden</string>
+   </property>
+   <property name="shortcut">
+    <string notr="true">Ctrl+Q</string>
+   </property>
+  </action>
+  <action name="BackwardAction">
+   <property name="icon">
+    <iconset resource="cutex.qrc">
+     <normaloff>:/icons/16x16/resultset_previous.png</normaloff>:/icons/16x16/resultset_previous.png</iconset>
+   </property>
+   <property name="text">
+    <string>Zurück</string>
+   </property>
+   <property name="toolTip">
+    <string>Zurück</string>
+   </property>
+  </action>
+  <action name="ForwardAction">
+   <property name="icon">
+    <iconset resource="cutex.qrc">
+     <normaloff>:/icons/16x16/resultset_next.png</normaloff>:/icons/16x16/resultset_next.png</iconset>
+   </property>
+   <property name="text">
+    <string>Weiter</string>
+   </property>
+   <property name="toolTip">
+    <string>Weiter</string>
+   </property>
+  </action>
+  <action name="HomeAction">
+   <property name="icon">
+    <iconset resource="cutex.qrc">
+     <normaloff>:/icons/16x16/application_home.png</normaloff>:/icons/16x16/application_home.png</iconset>
+   </property>
+   <property name="text">
+    <string>Startseite</string>
+   </property>
+   <property name="toolTip">
+    <string>Startseite</string>
+   </property>
+  </action>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>QxHelpBrowser</class>
+   <extends>QTextBrowser</extends>
+   <header>qxhelpbrowser.h</header>
+  </customwidget>
+ </customwidgets>
+ <tabstops>
+  <tabstop>NavigationTab</tabstop>
+  <tabstop>IndexEdit</tabstop>
+  <tabstop>HelpBrowser</tabstop>
+ </tabstops>
+ <resources>
+  <include location="cutex.qrc"/>
+ </resources>
+ <connections/>
+</ui>

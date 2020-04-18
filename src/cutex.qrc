@@ -1,0 +1,11 @@
+<RCC>
+    <qresource prefix="/">
+        <file>icons/16x16/application_home.png</file>
+        <file>icons/16x16/door_out.png</file>
+        <file>icons/16x16/help.png</file>
+        <file>icons/16x16/resultset_next.png</file>
+        <file>icons/16x16/resultset_previous.png</file>
+        <file>icons/16x16/folder.png</file>
+        <file>icons/16x16/page_white.png</file>
+    </qresource>
+</RCC>

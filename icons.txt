@@ -1,0 +1,9 @@
+Hinweise zu Icons
+
+Die Bibliothek verwendet Icons von Drittanbietern, die unter der Creative Commons Attribution License veröffentlicht wurden:
+
+famfamfam Silk Icons (http://www.famfamfam.com/lab/icons/silk/)
+Diese Icons werden für Elemente der Benutzeroberfläche verwendet, z.B. die Schaltflächen der Werkzeugleiste.
+
+FatCow Farm-Fresh Web Icons (http://www.fatcow.com/free-icons)
+Icons aus diesem Set werden als Programmsymbole für die Beispielprojekte (Ordner "samples") verwendet.
