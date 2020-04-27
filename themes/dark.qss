@@ -1,0 +1,78 @@
+.QWidget {
+    background-color: #404244;
+}
+
+QMainWindow {
+    background-color: #404244;
+}
+
+QMdiSubWindow {
+    background-color: #404244;
+}
+
+QDialog {
+    background-color: #404244;
+}
+
+QMenuBar {
+    background-color: #404244;
+}
+
+QMenuBar::item {
+    color: #bfc1c2;
+}
+
+QMenuBar::item:selected {
+    background: #bfc1c2;
+    color: #404244;
+}
+
+QMenu {
+    background-color: #404244;
+}
+
+QMenu::item {
+    color: #bfc1c2;
+}
+
+QMenu::item:selected {
+    background: #bfc1c2;
+    color: #404244;
+}
+
+QLabel {
+    color: #bfc1c2;
+}
+
+QCheckBox {
+    color: #bfc1c2;
+}
+
+QGroupBox {
+    color: #bfc1c2;
+}
+
+QTabBar::tab {
+    background-color: #404244;
+    color: #bfc1c2;
+}
+
+QTabBar::tab::selected {
+    background-color: #bfc1c2;
+    color: #404244;
+}
+
+QListView {
+    background-color: #bfc1c2;
+    color: #404244;
+}
+
+QTreeView {
+    background-color: #bfc1c2;
+    color: #404244;
+}
+
+QTextEdit, QPlainTextEdit {
+    background-color: #bfc1c2;
+    color: #404244;
+}

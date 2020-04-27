@@ -1,0 +1,38 @@
+.QWidget {
+    background-color: #f6f6f6;
+}
+
+QMainWindow {
+    background-color: #f6f6f6;
+}
+
+QMdiSubWindow {
+    background-color: #f6f6f6;
+}
+
+QDialog {
+    background-color: #f6f6f6;
+}
+
+QMenuBar {
+    background-color: #2b8cb7;
+}
+
+QMenuBar::item {
+    color: #eff7fa;
+}
+
+QMenuBar::item:selected {
+    background: #f6f6f6;
+    color: #2b8cb7;
+}
+
+QTabBar::tab {
+    background-color: #2b8cb7;
+    color: #eff7fa;
+}
+
+QTabBar::tab::selected {
+    background-color: #f6f6f6;
+    color: #2b8cb7;
+}

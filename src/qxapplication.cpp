@@ -28,6 +28,7 @@ QxApplication *qxApp;
 }
 
 QString QxApplication::m_translationsPath = QString();
+QString QxApplication::m_themesPath = QString();
 
 /*!
   Erzeugt ein neues Applikations-Objekt (siehe Qt-Hilfe zu QApplication). Lädt zusätzlich die landesspezifischen
@@ -127,6 +128,69 @@ bool QxApplication::setTranslationsPath(const QString &path)
         m_translationsPath = path;
 
     return success;
+}
+
+/*!
+  Setzt das Stylesheet der Anwendung auf den Inhalt der Datei <i>theme</i>.
+*/
+void QxApplication::changeTheme(const QString &theme)
+{
+    QDir dir;
+    QString sheet;
+
+    if (!theme.isEmpty()) {
+        if (m_themesPath.isEmpty()) {
+            dir = QDir(QString("%1/themes/").arg(applicationDirPath()));
+        } else {
+            dir = QDir(m_themesPath);
+        }
+
+        QFile file(dir.absoluteFilePath(theme));
+
+        if (file.open(QIODevice::ReadOnly))
+            sheet = file.readAll();
+    }
+
+    setStyleSheet(sheet);
+}
+
+/*!
+  Setzt den Pfad für die Themendateien auf den Wert <i>path</i>.
+*/
+bool QxApplication::setThemesPath(const QString &path)
+{
+    bool success = QDir(path).exists();
+
+    if (success)
+        m_themesPath = path;
+
+    return success;
+}
+
+/*!
+  Gibt eine Liste aller Themendateien zurück.
+*/
+QStringList QxApplication::themes()
+{
+    QStringList files;
+    QDir dir;
+
+    if (m_themesPath.isEmpty()) {
+        dir = QDir(QString("%1/themes/").arg(applicationDirPath()));
+    } else {
+        dir = QDir(m_themesPath);
+    }
+
+    QDirIterator it(dir.absolutePath(), QDir::Files);
+    while (it.hasNext()) {
+        QString fileName = it.next();
+        QFileInfo info(fileName);
+
+        if (info.completeSuffix().toLower() == "qss")
+            files.append(info.fileName());
+    }
+
+    return files;
 }
 
 bool QxApplication::loadTranslation(QTranslator *translator, const QString &fileName)

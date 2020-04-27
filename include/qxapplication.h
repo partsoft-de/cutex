@@ -43,11 +43,15 @@ public:
     bool addTranslator(const QString &name, const QString &locale = QString());
     void changeLanguage(const QString &locale);
     static bool setTranslationsPath(const QString &path);
+    void changeTheme(const QString &theme);
+    static bool setThemesPath(const QString &path);
+    static QStringList themes();
 
 private:
     Qt::Key m_fieldButtonHotkey;
     QMap<QString, QTranslator*> m_translators;
     static QString m_translationsPath;
+    static QString m_themesPath;
 
 private:
     bool loadTranslation(QTranslator *translator, const QString &fileName);
