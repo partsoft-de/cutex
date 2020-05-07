@@ -29,7 +29,7 @@ const QString QxUiField::STYLE_INVALID = "background-color: orange; selection-ba
 
 bool QxUiField::isUiField(QWidget *widget)
 {
-    QString className = CLASSNAME(widget);
+    QString className = QxUiField::className(widget);
 
     if (className == "QLineEdit")
         return true;
@@ -66,7 +66,7 @@ bool QxUiField::isUiField(QWidget *widget)
 
 bool QxUiField::initialize(QWidget *uiField, QObject *uiController)
 {
-    QString className = CLASSNAME(uiField);
+    QString className = QxUiField::className(uiField);
 
     if (className == "QLineEdit" || className == "QxIntEdit" || className == "QxDoubleEdit") {
         QLineEdit *lineEdit = qobject_cast<QLineEdit*>(uiField);
@@ -194,7 +194,7 @@ void QxUiField::setModified(QWidget *uiField, bool modified)
 
 bool QxUiField::isReadOnly(QWidget *uiField)
 {
-    QString className = CLASSNAME(uiField);
+    QString className = QxUiField::className(uiField);
 
     if (className == "QLineEdit" || className == "QxIntEdit" || className == "QxDoubleEdit") {
         QLineEdit *lineEdit = qobject_cast<QLineEdit*>(uiField);
@@ -246,7 +246,7 @@ bool QxUiField::isReadOnly(QWidget *uiField)
 
 QVariant QxUiField::value(QWidget *uiField, QVariant::Type type)
 {
-    QString className = CLASSNAME(uiField);
+    QString className = QxUiField::className(uiField);
 
     if (className == "QLineEdit") {
         QLineEdit *lineEdit = qobject_cast<QLineEdit*>(uiField);
@@ -329,7 +329,7 @@ QVariant QxUiField::value(QWidget *uiField, QVariant::Type type)
 
 bool QxUiField::setValue(QWidget *uiField, const QVariant &value)
 {
-    QString className = CLASSNAME(uiField);
+    QString className = QxUiField::className(uiField);
 
     if (className == "QLineEdit") {
         QLineEdit *lineEdit = qobject_cast<QLineEdit*>(uiField);
@@ -450,7 +450,7 @@ void QxUiField::reset(QWidget *uiField)
 
 void QxUiField::selectAll(QWidget *uiField)
 {
-    QString className = CLASSNAME(uiField);
+    QString className = QxUiField::className(uiField);
 
     if (className == "QLineEdit" || className == "QxIntEdit" || className == "QxDoubleEdit") {
         QLineEdit *lineEdit = qobject_cast<QLineEdit*>(uiField);
@@ -499,7 +499,7 @@ void QxUiField::selectAll(QWidget *uiField)
 
 void QxUiField::setErrorText(QWidget *uiField, const QString &errorText)
 {
-    QString className = CLASSNAME(uiField);
+    QString className = QxUiField::className(uiField);
 
     uiField->setProperty("errorText", errorText);
 
@@ -524,7 +524,7 @@ QString QxUiField::errorText(QWidget *uiField)
 
 QCompleter* QxUiField::completer(QWidget *uiField)
 {
-    QString className = CLASSNAME(uiField);
+    QString className = QxUiField::className(uiField);
 
     if (className == "QLineEdit")
         return qobject_cast<QLineEdit*>(uiField)->completer();
@@ -543,6 +543,20 @@ QString QxUiField::sqlMapping(QWidget *uiField)
 void QxUiField::setSqlMapping(QWidget *uiField, const QString &sqlField)
 {
     uiField->setProperty("sqlMapping", sqlField);
+}
+
+QString QxUiField::className(QWidget *uiField)
+{
+    QString name;
+
+    int index = uiField->metaObject()->indexOfClassInfo("QxUiField");
+    if (index == -1) {
+        name = CLASSNAME(uiField);
+    } else {
+        name = uiField->metaObject()->classInfo(index).value();
+    }
+
+    return name;
 }
 
 QxUiField::QxUiField()

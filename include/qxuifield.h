@@ -24,6 +24,8 @@
 
 namespace cutex {
 
+#define QX_REGISTER_UIFIELD(classname) Q_CLASSINFO("QxUiField", classname)
+
 /*!
   \brief Die Klasse %QxUiField ist eine Wrapper-Klasse für diverse Eingabe-Steuerelemente.
 
@@ -62,6 +64,7 @@ private:
     static QCompleter* completer(QWidget *uiField);
     static QString sqlMapping(QWidget *uiField);
     static void setSqlMapping(QWidget *uiField, const QString &sqlField);
+    static QString className(QWidget *uiField);
 };
 
 } // namespace
