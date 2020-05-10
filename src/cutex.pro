@@ -16,6 +16,7 @@ QT += \
 #QT += webkitwidgets
 
 CONFIG += \
+    c++11 \
     staticlib \
 
 INCLUDEPATH += \
@@ -23,7 +24,9 @@ INCLUDEPATH += \
 
 HEADERS += \
     ../include/qxdoubleedit.h \
+    ../include/qxexception.h \
     ../include/qxintedit.h \
+    ../include/qxsingleton.h \
     ../include/qxwizard.h \
     ../include/qxwaitcursor.h \
     ../include/qxuifield.h \
@@ -69,7 +72,9 @@ HEADERS += \
 
 SOURCES += \
     qxdoubleedit.cpp \
+    qxexception.cpp \
     qxintedit.cpp \
+    qxsingleton.cpp \
     qxwizard.cpp \
     qxuifield.cpp \
     qxrandom.cpp \
