@@ -20,6 +20,11 @@
 #include "qxapplication.h"
 #include "qxmainwindow.h"
 #include "qxresource.h"
+#include "qxwaitcursor.h"
+#include "qxfixpoint.h"
+#include "qxcrypt.h"
+#include "qxrandom.h"
+#include "qxtreeitemmodel.h"
 
 using namespace cutex;
 
@@ -52,6 +57,7 @@ QxApplication::QxApplication(int &argc, char **argv) : QApplication(argc, argv)
     addTranslator("cutex_", QLocale::system().name());
 
     initResource();
+    registerStatics();
 }
 
 /*!
@@ -191,6 +197,21 @@ QStringList QxApplication::themes()
     }
 
     return files;
+}
+
+void QxApplication::registerStatics() const
+{
+    QxFixPoint fixpoint;
+    QxCrypt crypt;
+    QxRandom random;
+    QxTreeItemModel treeModel;
+    QxWaitCursor wait;    
+
+    Q_UNUSED(fixpoint);
+    Q_UNUSED(crypt);
+    Q_UNUSED(random);
+    Q_UNUSED(treeModel);
+    Q_UNUSED(wait);
 }
 
 bool QxApplication::loadTranslation(QTranslator *translator, const QString &fileName)

@@ -54,6 +54,7 @@ private:
     static QString m_themesPath;
 
 private:
+    void registerStatics() const;
     bool loadTranslation(QTranslator *translator, const QString &fileName);
 };
 
