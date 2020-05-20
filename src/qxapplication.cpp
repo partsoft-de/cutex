@@ -25,6 +25,7 @@
 #include "qxcrypt.h"
 #include "qxrandom.h"
 #include "qxtreeitemmodel.h"
+#include "qxmessage.h"
 
 using namespace cutex;
 
@@ -205,12 +206,14 @@ void QxApplication::registerStatics() const
     QxCrypt crypt;
     QxRandom random;
     QxTreeItemModel treeModel;
+    QxMessage message;
     QxWaitCursor wait;    
 
     Q_UNUSED(fixpoint);
     Q_UNUSED(crypt);
     Q_UNUSED(random);
     Q_UNUSED(treeModel);
+    Q_UNUSED(message);
     Q_UNUSED(wait);
 }
 
