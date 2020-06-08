@@ -1,6 +1,6 @@
 /***********************************************************************************************************************
 **
-** Copyright (C) 2016-2019 Partsoft UG (haftungsbeschränkt)
+** Copyright (C) 2016-2020 Partsoft UG (haftungsbeschränkt)
 ** Contact: https://www.partsoft.de/index.php/kontakt
 **
 ** This file is part of cutex
@@ -17,30 +17,33 @@
 **
 ***********************************************************************************************************************/
 
-#ifndef QXINTEDITPLUGIN_H
-#define QXINTEDITPLUGIN_H
+#ifndef QXSWIPEWIDGETCONTAINEREXTENSION_H
+#define QXSWIPEWIDGETCONTAINEREXTENSION_H
 
 #include "plugins.h"
+#include "qxswipewidget.h"
 
 namespace cutex {
 
-class QxIntEditPlugin : public QObject, public QDesignerCustomWidgetInterface
+class QxSwipeWidgetContainerExtension: public QObject, public QDesignerContainerExtension
 {
     Q_OBJECT
-    Q_INTERFACES(QDesignerCustomWidgetInterface)
+    Q_INTERFACES(QDesignerContainerExtension)
 
 public:
-    QxIntEditPlugin(QObject *parent = 0);
-    QString name() const;
-    QString includeFile() const;
-    QString group() const;
-    QIcon icon() const;
-    QString toolTip() const;
-    QString whatsThis() const;
-    bool isContainer() const;
-    QWidget* createWidget(QWidget *parent);
+    QxSwipeWidgetContainerExtension(QxSwipeWidget *widget, QObject *parent);
+    void addWidget(QWidget *widget);
+    int count() const;
+    int currentIndex() const;
+    void insertWidget(int index, QWidget *widget);
+    void remove(int index);
+    void setCurrentIndex(int index);
+    QWidget *widget(int index) const;
+
+private:
+    QxSwipeWidget *m_widget;
 };
 
 } // namespace
 
-#endif // QXINTEDITPLUGIN_H
+#endif // QXSWIPEWIDGETCONTAINEREXTENSION_H

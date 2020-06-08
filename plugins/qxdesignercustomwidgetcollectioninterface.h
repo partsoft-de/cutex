@@ -20,8 +20,7 @@
 #ifndef QXDESIGNERCUSTOMWIDGETCOLLECTIONINTERFACE_H
 #define QXDESIGNERCUSTOMWIDGETCOLLECTIONINTERFACE_H
 
-#include "cutex.h"
-#include <QtUiPlugin/QDesignerCustomWidgetInterface>
+#include "plugins.h"
 
 namespace cutex {
 

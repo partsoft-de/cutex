@@ -1,6 +1,6 @@
 /***********************************************************************************************************************
 **
-** Copyright (C) 2016-2019 Partsoft UG (haftungsbeschränkt)
+** Copyright (C) 2016-2020 Partsoft UG (haftungsbeschränkt)
 ** Contact: https://www.partsoft.de/index.php/kontakt
 **
 ** This file is part of cutex
@@ -17,20 +17,20 @@
 **
 ***********************************************************************************************************************/
 
-#ifndef QXINTEDITPLUGIN_H
-#define QXINTEDITPLUGIN_H
+#ifndef QXSWIPEWIDGETPLUGIN_H
+#define QXSWIPEWIDGETPLUGIN_H
 
 #include "plugins.h"
 
 namespace cutex {
 
-class QxIntEditPlugin : public QObject, public QDesignerCustomWidgetInterface
+class QxSwipeWidgetPlugin : public QObject, public QDesignerCustomWidgetInterface
 {
     Q_OBJECT
     Q_INTERFACES(QDesignerCustomWidgetInterface)
 
 public:
-    QxIntEditPlugin(QObject *parent = 0);
+    QxSwipeWidgetPlugin(QObject *parent = nullptr);
     QString name() const;
     QString includeFile() const;
     QString group() const;
@@ -39,8 +39,14 @@ public:
     QString whatsThis() const;
     bool isContainer() const;
     QWidget* createWidget(QWidget *parent);
+    bool isInitialized() const;
+    void initialize(QDesignerFormEditorInterface *formEditor);
+    QString domXml() const;
+
+private:
+    bool m_initialized;
 };
 
 } // namespace
 
-#endif // QXINTEDITPLUGIN_H
+#endif // QXSWIPEWIDGETPLUGIN_H

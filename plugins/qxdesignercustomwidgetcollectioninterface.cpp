@@ -18,6 +18,7 @@
 ***********************************************************************************************************************/
 
 #include "qxdesignercustomwidgetcollectioninterface.h"
+#include "qxresource.h"
 #include "qxdateeditplugin.h"
 #include "qxdoubleeditplugin.h"
 #include "qxhelpbrowserplugin.h"
@@ -25,11 +26,14 @@
 #include "qxplaintexteditplugin.h"
 #include "qxsqltableviewplugin.h"
 #include "qxtexteditplugin.h"
+#include "qxswipewidgetplugin.h"
 
 using namespace cutex;
 
 QxDesignerCustomWidgetCollectionInterface::QxDesignerCustomWidgetCollectionInterface(QObject *parent) : QObject(parent)
 {
+    initResource();
+
     m_widgets.append(new QxDateEditPlugin(this));
     m_widgets.append(new QxDoubleEditPlugin(this));
     m_widgets.append(new QxHelpBrowserPlugin(this));
@@ -37,6 +41,7 @@ QxDesignerCustomWidgetCollectionInterface::QxDesignerCustomWidgetCollectionInter
     m_widgets.append(new QxPlainTextEditPlugin(this));
     m_widgets.append(new QxSqlTableViewPlugin(this));
     m_widgets.append(new QxTextEditPlugin(this));
+    m_widgets.append(new QxSwipeWidgetPlugin(this));
 }
 
 QList<QDesignerCustomWidgetInterface*> QxDesignerCustomWidgetCollectionInterface::customWidgets() const

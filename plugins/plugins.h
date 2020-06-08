@@ -17,30 +17,14 @@
 **
 ***********************************************************************************************************************/
 
-#ifndef QXINTEDITPLUGIN_H
-#define QXINTEDITPLUGIN_H
+#ifndef PLUGINS_H
+#define PLUGINS_H
 
-#include "plugins.h"
+#include <QtUiPlugin/QDesignerCustomWidgetInterface>
+#include <QtDesigner/QDesignerContainerExtension>
+#include <QtDesigner/QExtensionFactory>
+#include <QtDesigner/QExtensionManager>
+#include <QtDesigner/QDesignerFormEditorInterface>
+#include "cutex.h"
 
-namespace cutex {
-
-class QxIntEditPlugin : public QObject, public QDesignerCustomWidgetInterface
-{
-    Q_OBJECT
-    Q_INTERFACES(QDesignerCustomWidgetInterface)
-
-public:
-    QxIntEditPlugin(QObject *parent = 0);
-    QString name() const;
-    QString includeFile() const;
-    QString group() const;
-    QIcon icon() const;
-    QString toolTip() const;
-    QString whatsThis() const;
-    bool isContainer() const;
-    QWidget* createWidget(QWidget *parent);
-};
-
-} // namespace
-
-#endif // QXINTEDITPLUGIN_H
+#endif // PLUGINS_H

@@ -17,30 +17,9 @@
 **
 ***********************************************************************************************************************/
 
-#ifndef QXINTEDITPLUGIN_H
-#define QXINTEDITPLUGIN_H
+#ifndef QXRESOURCE_H
+#define QXRESOURCE_H
 
-#include "plugins.h"
+void initResource() { Q_INIT_RESOURCE(plugins); }
 
-namespace cutex {
-
-class QxIntEditPlugin : public QObject, public QDesignerCustomWidgetInterface
-{
-    Q_OBJECT
-    Q_INTERFACES(QDesignerCustomWidgetInterface)
-
-public:
-    QxIntEditPlugin(QObject *parent = 0);
-    QString name() const;
-    QString includeFile() const;
-    QString group() const;
-    QIcon icon() const;
-    QString toolTip() const;
-    QString whatsThis() const;
-    bool isContainer() const;
-    QWidget* createWidget(QWidget *parent);
-};
-
-} // namespace
-
-#endif // QXINTEDITPLUGIN_H
+#endif // QXRESOURCE_H

@@ -20,8 +20,7 @@
 #ifndef QXHELPBROWSERPLUGIN_H
 #define QXHELPBROWSERPLUGIN_H
 
-#include "cutex.h"
-#include <QtUiPlugin/QDesignerCustomWidgetInterface>
+#include "plugins.h"
 
 namespace cutex {
 

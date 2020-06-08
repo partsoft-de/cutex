@@ -20,8 +20,7 @@
 #ifndef QXDOUBLEEDITPLUGIN_H
 #define QXDOUBLEEDITPLUGIN_H
 
-#include "cutex.h"
-#include <QtUiPlugin/QDesignerCustomWidgetInterface>
+#include "plugins.h"
 
 namespace cutex {
 

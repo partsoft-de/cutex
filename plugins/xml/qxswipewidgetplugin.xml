@@ -1,0 +1,13 @@
+<ui language="c++">
+    <widget class="cutex::QxSwipeWidget" name="cutex::qxswipewidget">
+        <widget class="QWidget" name="page" />
+        <widget class="QWidget" name="page" />
+    </widget>
+    <customwidgets>
+        <customwidget>
+            <class>cutex::QxSwipeWidget</class>
+            <extends>QWidget</extends>
+            <addpagemethod>addWidget</addpagemethod>
+        </customwidget>
+    </customwidgets>
+</ui>

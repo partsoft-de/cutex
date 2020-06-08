@@ -20,8 +20,7 @@
 #ifndef QXDATEEDITPLUGIN_H
 #define QXDATEEDITPLUGIN_H
 
-#include "cutex.h"
-#include <QtUiPlugin/QDesignerCustomWidgetInterface>
+#include "plugins.h"
 
 namespace cutex {
 

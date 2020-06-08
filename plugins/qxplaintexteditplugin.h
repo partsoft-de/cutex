@@ -20,8 +20,7 @@
 #ifndef QXPLAINTEXTEDITPLUGIN_H
 #define QXPLAINTEXTEDITPLUGIN_H
 
-#include "cutex.h"
-#include <QtUiPlugin/QDesignerCustomWidgetInterface>
+#include "plugins.h"
 
 namespace cutex {
 

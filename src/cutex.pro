@@ -27,6 +27,7 @@ HEADERS += \
     ../include/qxexception.h \
     ../include/qxintedit.h \
     ../include/qxsingleton.h \
+    ../include/qxswipewidget.h \
     ../include/qxwizard.h \
     ../include/qxwaitcursor.h \
     ../include/qxuifield.h \
@@ -75,6 +76,7 @@ SOURCES += \
     qxexception.cpp \
     qxintedit.cpp \
     qxsingleton.cpp \
+    qxswipewidget.cpp \
     qxwizard.cpp \
     qxuifield.cpp \
     qxrandom.cpp \

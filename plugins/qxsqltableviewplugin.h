@@ -20,8 +20,7 @@
 #ifndef QXSQLTABLEVIEWPLUGIN_H
 #define QXSQLTABLEVIEWPLUGIN_H
 
-#include "cutex.h"
-#include <QtUiPlugin/QDesignerCustomWidgetInterface>
+#include "plugins.h"
 
 namespace cutex {
 

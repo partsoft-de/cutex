@@ -1,6 +1,6 @@
 /***********************************************************************************************************************
 **
-** Copyright (C) 2016-2019 Partsoft UG (haftungsbeschränkt)
+** Copyright (C) 2016-2020 Partsoft UG (haftungsbeschränkt)
 ** Contact: https://www.partsoft.de/index.php/kontakt
 **
 ** This file is part of cutex
@@ -17,30 +17,21 @@
 **
 ***********************************************************************************************************************/
 
-#ifndef QXINTEDITPLUGIN_H
-#define QXINTEDITPLUGIN_H
+#include "qxswipewidgetextensionfactory.h"
+#include "qxswipewidgetcontainerextension.h"
 
-#include "plugins.h"
+using namespace cutex;
 
-namespace cutex {
-
-class QxIntEditPlugin : public QObject, public QDesignerCustomWidgetInterface
+QxSwipeWidgetExtensionFactory::QxSwipeWidgetExtensionFactory(QExtensionManager * parent) : QExtensionFactory(parent)
 {
-    Q_OBJECT
-    Q_INTERFACES(QDesignerCustomWidgetInterface)
+}
 
-public:
-    QxIntEditPlugin(QObject *parent = 0);
-    QString name() const;
-    QString includeFile() const;
-    QString group() const;
-    QIcon icon() const;
-    QString toolTip() const;
-    QString whatsThis() const;
-    bool isContainer() const;
-    QWidget* createWidget(QWidget *parent);
-};
+QObject* QxSwipeWidgetExtensionFactory::createExtension(QObject *object, const QString &iid, QObject *parent) const
+{
+    QxSwipeWidget *widget = qobject_cast<QxSwipeWidget*>(object);
 
-} // namespace
+    if (widget && (iid == Q_TYPEID(QDesignerContainerExtension)))
+        return new QxSwipeWidgetContainerExtension(widget, parent);
 
-#endif // QXINTEDITPLUGIN_H
+    return nullptr;
+}

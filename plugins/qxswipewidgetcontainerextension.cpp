@@ -17,9 +17,47 @@
 **
 ***********************************************************************************************************************/
 
-#ifndef QXRESOURCE_H
-#define QXRESOURCE_H
+#include "qxswipewidgetcontainerextension.h"
 
-void initResource() { Q_INIT_RESOURCE(cutex); }
+using namespace cutex;
 
-#endif // QXRESOURCE_H
+QxSwipeWidgetContainerExtension::QxSwipeWidgetContainerExtension(QxSwipeWidget *widget, QObject *parent)
+    : QObject(parent)
+{
+    m_widget = widget;
+}
+
+void QxSwipeWidgetContainerExtension::addWidget(QWidget *widget)
+{
+    m_widget->addWidget(widget);
+}
+
+int QxSwipeWidgetContainerExtension::count() const
+{
+    return m_widget->count();
+}
+
+int QxSwipeWidgetContainerExtension::currentIndex() const
+{
+    return m_widget->currentIndex();
+}
+
+void QxSwipeWidgetContainerExtension::insertWidget(int index, QWidget *widget)
+{
+    m_widget->insertWidget(index, widget);
+}
+
+void QxSwipeWidgetContainerExtension::remove(int index)
+{
+    m_widget->removeWidget(index);
+}
+
+void QxSwipeWidgetContainerExtension::setCurrentIndex(int index)
+{
+    m_widget->setCurrentIndex(index);
+}
+
+QWidget* QxSwipeWidgetContainerExtension::widget(int index) const
+{
+    return m_widget->widget(index);
+}
