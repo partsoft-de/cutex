@@ -34,11 +34,14 @@ class QxSwipeWidget : public QWidget
     Q_OBJECT
     //! @cond Q_PROPERTY
     Q_PROPERTY(int currentIndex READ currentIndex WRITE setCurrentIndex)
+    Q_PROPERTY(bool animated READ isAnimated WRITE setAnimated)
     //! @endcond
 
 public:
     QxSwipeWidget(QWidget *parent = nullptr);
     virtual QSize sizeHint() const;
+    bool isAnimated() const;
+    void setAnimated(bool animated);
     void addWidget(QWidget *widget);
     int count() const;
     int currentIndex() const;
@@ -51,14 +54,26 @@ public:
 public slots:
     void setCurrentIndex(int index);
     void setCurrentWidget(QWidget *widget);
+    void swipeTo(int index);
+    void swipeTo(QWidget *widget);
+    void swipeLeft();
+    void swipeRight();
 
 protected:
     virtual bool event(QEvent *event);
     virtual void touchEvent(QTouchEvent *event);
 
 private:
+    bool m_animated;
     QStackedWidget *m_stackedWidget;
     QList<QTouchEvent::TouchPoint> m_touchPoints;
+    QWidget *m_currentWidget;
+    QWidget *m_nextWidget;
+    QPoint m_currentPoint;
+    QParallelAnimationGroup *m_animation;
+
+private slots:
+    void animationFinished();
 
 signals:
     void currentChanged(int index);

@@ -26,9 +26,14 @@ using namespace cutex;
 */
 QxSwipeWidget::QxSwipeWidget(QWidget *parent) : QWidget(parent)
 {
+    m_animated = true;
+    m_stackedWidget = new QStackedWidget();
+    m_currentWidget = nullptr;
+    m_nextWidget = nullptr;
+    m_animation = nullptr;
+
     setAttribute(Qt::WA_AcceptTouchEvents, true);
 
-    m_stackedWidget = new QStackedWidget();
     connect(m_stackedWidget, SIGNAL(currentChanged(int)), this, SIGNAL(currentChanged(int)));
     connect(m_stackedWidget, SIGNAL(widgetRemoved(int)), this, SIGNAL(widgetRemoved(int)));
 
@@ -42,6 +47,16 @@ QxSwipeWidget::QxSwipeWidget(QWidget *parent) : QWidget(parent)
 QSize QxSwipeWidget::sizeHint() const
 {
     return QSize(120, 80);
+}
+
+bool QxSwipeWidget::isAnimated() const
+{
+    return m_animated;
+}
+
+void QxSwipeWidget::setAnimated(bool animated)
+{
+    m_animated = animated;
 }
 
 /*!
@@ -124,6 +139,88 @@ void QxSwipeWidget::setCurrentWidget(QWidget *widget)
     m_stackedWidget->setCurrentWidget(widget);
 }
 
+/*!
+  "Wischt" zu dem Widget mit dem Index <i>index</i>.
+*/
+void QxSwipeWidget::swipeTo(int index)
+{
+    swipeTo(widget(index));
+}
+
+/*!
+  "Wischt" zu dem Widget <i>widget</i>.
+*/
+void QxSwipeWidget::swipeTo(QWidget *widget)
+{
+    if (!widget)
+        return;
+
+    if (m_animation) {
+        m_animation->stop();
+        animationFinished();
+        QApplication::processEvents();
+    }
+
+    const int current = currentIndex();
+    const int next = indexOf(widget);
+
+    if (!m_animated || widget == currentWidget())
+    {
+        setCurrentWidget(widget);
+    } else {
+        m_currentWidget = currentWidget();
+        m_nextWidget = widget;
+
+        const int width = m_stackedWidget->frameRect().width();
+        const int height = m_stackedWidget->frameRect().height();
+        const int offset = (next > current) ? width : -width;
+
+        m_currentPoint = m_currentWidget->pos();
+        m_nextWidget->setGeometry(0, 0, width, height);
+
+        QPoint nextPoint = m_nextWidget->pos();
+        m_nextWidget->move(nextPoint.x() + offset, nextPoint.y());
+        m_nextWidget->show();
+        m_nextWidget->raise();
+
+        m_animation = new QParallelAnimationGroup(this);
+        QPropertyAnimation *animation;
+
+        animation = new QPropertyAnimation(m_currentWidget, "pos", m_animation);
+        animation->setDuration(300);
+        animation->setStartValue(m_currentPoint);
+        animation->setEndValue(QPoint(m_currentPoint.x() - offset, m_currentPoint.y()));
+        animation->setEasingCurve(QEasingCurve::OutQuad);
+        m_animation->addAnimation(animation);
+
+        animation = new QPropertyAnimation(m_nextWidget, "pos", m_animation);
+        animation->setDuration(300);
+        animation->setStartValue(QPoint(nextPoint.x() + offset, nextPoint.y()));
+        animation->setEndValue(nextPoint);
+        animation->setEasingCurve(QEasingCurve::OutQuad);
+        m_animation->addAnimation(animation);
+
+        connect(m_animation, SIGNAL(finished()), this, SLOT(animationFinished()));
+        m_animation->start();
+    }
+}
+
+/*!
+  "Wischt" zu dem vom aktuellen linken Widget.
+*/
+void QxSwipeWidget::swipeLeft()
+{
+    swipeTo(currentIndex() - 1);
+}
+
+/*!
+  "Wischt" zu dem vom aktuellen rechten Widget.
+*/
+void QxSwipeWidget::swipeRight()
+{
+    swipeTo(currentIndex() + 1);
+}
+
 bool QxSwipeWidget::event(QEvent *event)
 {
     switch (event->type()) {
@@ -149,11 +246,13 @@ void QxSwipeWidget::touchEvent(QTouchEvent *event)
     case QEvent::TouchEnd:
         {
             QList<QTouchEvent::TouchPoint> touchPoints = event->touchPoints();
+            const qreal minDistance = 150.0;
+
             if (m_touchPoints.size() == 1 && touchPoints.size() == 1) {
-                if (touchPoints[0].pos().x() < m_touchPoints[0].pos().x()) {
-                    setCurrentIndex(currentIndex() + 1);
-                } else {
-                    setCurrentIndex(currentIndex() - 1);
+                if (touchPoints[0].pos().x() + minDistance < m_touchPoints[0].pos().x()) {
+                    swipeRight();
+                } else if (touchPoints[0].pos().x() > m_touchPoints[0].pos().x() + minDistance) {
+                    swipeLeft();
                 }
             }
         }
@@ -161,6 +260,17 @@ void QxSwipeWidget::touchEvent(QTouchEvent *event)
     default:
         break;
     }
+}
+
+void QxSwipeWidget::animationFinished()
+{
+    setCurrentWidget(m_nextWidget);
+    m_currentWidget->hide();
+    m_currentWidget->move(m_currentPoint);
+    m_currentWidget->update();
+
+    delete m_animation;
+    m_animation = nullptr;
 }
 
 /*!
