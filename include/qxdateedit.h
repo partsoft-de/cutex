@@ -77,7 +77,7 @@ private slots:
     void setDateEnabled(bool enabled);
 
 signals:
-    void dateChanged(const QDate &);
+    void dateChanged(const QDate &date);
     void editingFinished();
 };
 

@@ -17,39 +17,49 @@
 **
 ***********************************************************************************************************************/
 
-#ifndef QXSWIPEWIDGETPLUGIN_H
-#define QXSWIPEWIDGETPLUGIN_H
+#ifndef QXSWIPEBAR_H
+#define QXSWIPEBAR_H
 
-#include "plugins.h"
+#include "cutex.h"
+#include "qxswipebutton.h"
 
 namespace cutex {
 
-class QxSwipeWidgetPlugin : public QObject, public QDesignerCustomWidgetInterface
+/*!
+  \brief Die Klasse %QxSwipeBar stellt eine Navigationsleiste mit Gesten zum "wischen" zur Verfügung.
+
+  %QxSwipeBar stellt eine Navigationsleiste mit Schaltflächen und Gesten zum "wischen" zur Verfügung (in der aktuellen
+  Version sind die Gesten noch nicht implementiert).
+
+  \sa QxSwipeWidget
+*/
+class QxSwipeBar : public QWidget
 {
     Q_OBJECT
-    Q_INTERFACES(QDesignerCustomWidgetInterface)
 
 public:
-    QxSwipeWidgetPlugin(QObject *parent = nullptr);
-    QString name() const;
-    QString includeFile() const;
-    QString group() const;
-    QIcon icon() const;
-    QString toolTip() const;
-    QString whatsThis() const;
-    bool isContainer() const;
-    QWidget* createWidget(QWidget *parent);
-    bool isInitialized() const;
-    void initialize(QDesignerFormEditorInterface *formEditor);
-    QString domXml() const;
+    QxSwipeBar(QWidget *parent = nullptr);    
+    int count() const;
+    int addButton(const QString &text);
+    int insertButton(int index, const QString &text);
+    void removeButton(int index);
+    QString buttonText(int index) const;
+    void setButtonText(int index, const QString &text);
+
+public slots:
+    void setCurrentIndex(int index);
 
 private:
-    bool m_initialized;
+    QHBoxLayout *m_layout;
+    QList<QxSwipeButton*> m_buttons;
 
 private slots:
-    void currentIndexChanged(int index);
+    void processButton();
+
+signals:
+    void currentChanged(int index);
 };
 
 } // namespace
 
-#endif // QXSWIPEWIDGETPLUGIN_H
+#endif // QXSWIPEBAR_H

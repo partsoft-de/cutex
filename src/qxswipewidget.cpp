@@ -27,17 +27,22 @@ using namespace cutex;
 QxSwipeWidget::QxSwipeWidget(QWidget *parent) : QWidget(parent)
 {
     m_animated = true;
+    m_swipeBar = new QxSwipeBar();
     m_stackedWidget = new QStackedWidget();
     m_currentWidget = nullptr;
     m_nextWidget = nullptr;
     m_animation = nullptr;
 
     setAttribute(Qt::WA_AcceptTouchEvents, true);
+    setShowNavigation(true);
 
+    connect(m_swipeBar, SIGNAL(currentChanged(int)), this, SLOT(swipeTo(int)));
     connect(m_stackedWidget, SIGNAL(currentChanged(int)), this, SIGNAL(currentChanged(int)));
     connect(m_stackedWidget, SIGNAL(widgetRemoved(int)), this, SIGNAL(widgetRemoved(int)));
 
     QVBoxLayout *layout = new QVBoxLayout(this);
+    layout->setContentsMargins(0, 0, 0, 0);
+    layout->addWidget(m_swipeBar);
     layout->addWidget(m_stackedWidget);
 }
 
@@ -49,11 +54,41 @@ QSize QxSwipeWidget::sizeHint() const
     return QSize(120, 80);
 }
 
+/*!
+  Gibt true zurück, wenn die Navigationsleiste angezeigt wird.
+
+  \sa setShowNavigation(bool show)
+*/
+bool QxSwipeWidget::showNavigation() const
+{
+    return m_swipeBar->isVisible();
+}
+
+/*!
+  Blendet die Navigationsleiste ein, bzw. aus.
+
+  \sa showNavigation() const
+*/
+void QxSwipeWidget::setShowNavigation(bool show)
+{
+    m_swipeBar->setVisible(show);
+}
+
+/*!
+  Gibt true zurück, wenn Animationen für das Widget aktiviert sind.
+
+  \sa setAnimated(bool animated)
+*/
 bool QxSwipeWidget::isAnimated() const
 {
     return m_animated;
 }
 
+/*!
+  Schaltet die Animationen für das Widget in Abhängigkeit von dem Wert <i>animated</i> ein, bzw. aus.
+
+  \sa isAnimated() const
+*/
 void QxSwipeWidget::setAnimated(bool animated)
 {
     m_animated = animated;
@@ -61,9 +96,17 @@ void QxSwipeWidget::setAnimated(bool animated)
 
 /*!
   Fügt das Wigdet <i>widget</i> dem Container hinzu.
+
+  \sa insertWidget(int index, QWidget *widget, const QString &title)
 */
-void QxSwipeWidget::addWidget(QWidget *widget)
+void QxSwipeWidget::addWidget(QWidget *widget, const QString &title)
 {
+    if (title.isEmpty()) {
+        m_swipeBar->addButton(tr("Seite"));
+    } else {
+        m_swipeBar->addButton(title);
+    }
+
     m_stackedWidget->addWidget(widget);
 }
 
@@ -77,6 +120,8 @@ int QxSwipeWidget::count() const
 
 /*!
   Gibt den Index des aktuellen Widgets zurück.
+
+  \sa setCurrentIndex(int index)
 */
 int QxSwipeWidget::currentIndex() const
 {
@@ -85,6 +130,8 @@ int QxSwipeWidget::currentIndex() const
 
 /*!
   Gibt einen Zeiger auf das aktuelle Widget zurück.
+
+  \sa setCurrentWidget(QWidget *widget)
 */
 QWidget* QxSwipeWidget::currentWidget() const
 {
@@ -102,8 +149,14 @@ int QxSwipeWidget::indexOf(QWidget *widget) const
 /*!
   Fügt das Widget <i>widget</i> an der Position <i>index</i> ein.
 */
-void QxSwipeWidget::insertWidget(int index, QWidget *widget)
+void QxSwipeWidget::insertWidget(int index, QWidget *widget, const QString &title)
 {
+    if (title.isEmpty()) {
+        m_swipeBar->insertButton(index, tr("Seite"));
+    } else {
+        m_swipeBar->insertButton(index, title);
+    }
+
     m_stackedWidget->insertWidget(index, widget);
 }
 
@@ -112,6 +165,7 @@ void QxSwipeWidget::insertWidget(int index, QWidget *widget)
 */
 void QxSwipeWidget::removeWidget(int index)
 {
+    m_swipeBar->removeButton(index);
     m_stackedWidget->removeWidget(m_stackedWidget->widget(index));
 }
 
@@ -125,18 +179,43 @@ QWidget* QxSwipeWidget::widget(int index) const
 
 /*!
   Zeigt das Widget mit dem Index <i>index</i> an.
+
+  \sa currentIndex() const
 */
 void QxSwipeWidget::setCurrentIndex(int index)
 {
+    m_swipeBar->setCurrentIndex(index);
     m_stackedWidget->setCurrentIndex(index);
 }
 
 /*!
   Zeigt das Widget <i>widget</i> an.
+
+  \sa currentWidget() const
 */
 void QxSwipeWidget::setCurrentWidget(QWidget *widget)
 {
-    m_stackedWidget->setCurrentWidget(widget);
+    setCurrentIndex(indexOf(widget));
+}
+
+/*!
+  Gibt den Titel des aktuellen Widgets zurück.
+
+  \sa setCurrentWidgetTitle(const QString &title)
+*/
+QString QxSwipeWidget::currentWidgetTitle() const
+{
+    return m_swipeBar->buttonText(currentIndex());
+}
+
+/*!
+  Setzt den Titel des aktuellen Widgets auf den Wert <i>title</i>.
+
+  \sa currentWidgetTitle() const
+*/
+void QxSwipeWidget::setCurrentWidgetTitle(const QString &title)
+{
+    m_swipeBar->setButtonText(currentIndex(), title);
 }
 
 /*!

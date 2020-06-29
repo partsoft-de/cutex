@@ -65,7 +65,11 @@ bool QxSwipeWidgetPlugin::isContainer() const
 
 QWidget* QxSwipeWidgetPlugin::createWidget(QWidget *parent)
 {
-    return new QxSwipeWidget(parent);
+    QxSwipeWidget *widget = new QxSwipeWidget(parent);
+
+    connect(widget, SIGNAL(currentChanged(int)), this, SLOT(currentIndexChanged(int)));
+
+    return widget;
 }
 
 bool QxSwipeWidgetPlugin::isInitialized() const
@@ -94,4 +98,16 @@ QString QxSwipeWidgetPlugin::domXml() const
         result = file.readAll();
 
     return result;
+}
+
+void QxSwipeWidgetPlugin::currentIndexChanged(int index)
+{
+    Q_UNUSED(index);
+
+    QxSwipeWidget *widget = qobject_cast<QxSwipeWidget*>(sender());
+    if (widget) {
+        QDesignerFormWindowInterface *form = QDesignerFormWindowInterface::findFormWindow(widget);
+        if (form)
+            form->emitSelectionChanged();
+    }
 }

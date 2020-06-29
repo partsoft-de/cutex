@@ -21,39 +21,49 @@
 #define QXSWIPEWIDGET_H
 
 #include "cutex.h"
+#include "qxswipebar.h"
 
 namespace cutex {
 
 /*!
   \brief Die Klasse %QxSwipeWidget erweitert die Qt-Klasse QStackedWidget mit Gesten zum "wischen".
 
-  %QxSwipeWidget erweitert die Qt-Klasse QStackedWidget mit Gesten zum "wischen".
+  %QxSwipeWidget erweitert die Qt-Klasse QStackedWidget mit Gesten zum "wischen". Zudem verfügt es über eine integrierte
+  Navigationsleiste und unterstützt Navigationen.
+
+  \sa QxSwipeBar
 */
 class QxSwipeWidget : public QWidget
 {
     Q_OBJECT
     //! @cond Q_PROPERTY
+    Q_PROPERTY(bool showNavigation READ showNavigation WRITE setShowNavigation)
     Q_PROPERTY(int currentIndex READ currentIndex WRITE setCurrentIndex)
+    Q_PROPERTY(QString currentWidgetTitle READ currentWidgetTitle WRITE setCurrentWidgetTitle)
     Q_PROPERTY(bool animated READ isAnimated WRITE setAnimated)
     //! @endcond
 
 public:
     QxSwipeWidget(QWidget *parent = nullptr);
     virtual QSize sizeHint() const;
+    bool showNavigation() const;
+    void setShowNavigation(bool show);
     bool isAnimated() const;
     void setAnimated(bool animated);
-    void addWidget(QWidget *widget);
+    void addWidget(QWidget *widget, const QString &title = QString());
     int count() const;
     int currentIndex() const;
     QWidget* currentWidget() const;
     int indexOf(QWidget *widget) const;
-    void insertWidget(int index, QWidget *widget);
+    void insertWidget(int index, QWidget *widget, const QString &title = QString());
     void removeWidget(int index);
     QWidget* widget(int index) const;
 
 public slots:
     void setCurrentIndex(int index);
     void setCurrentWidget(QWidget *widget);
+    QString currentWidgetTitle() const;
+    void setCurrentWidgetTitle(const QString &title);
     void swipeTo(int index);
     void swipeTo(QWidget *widget);
     void swipeLeft();
@@ -66,6 +76,7 @@ protected:
 private:
     bool m_animated;
     QStackedWidget *m_stackedWidget;
+    QxSwipeBar *m_swipeBar;
     QList<QTouchEvent::TouchPoint> m_touchPoints;
     QWidget *m_currentWidget;
     QWidget *m_nextWidget;
@@ -78,7 +89,6 @@ private slots:
 signals:
     void currentChanged(int index);
     void widgetRemoved(int index);
-
 };
 
 } // namespace

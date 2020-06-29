@@ -221,3 +221,15 @@ void QxDateEdit::setDateEnabled(bool enabled)
     m_dateField->setEnabled(enabled);
     m_dateEnableBox->setChecked(enabled);
 }
+
+/*!
+  \fn QxDateEdit::dateChanged(const QDate &date)
+
+  Das Signal wird ausgelöst wenn das Datum auf den Wert <i>date</i> geändert wurde.
+*/
+
+/*!
+  \fn QxDateEdit::editingFinished()
+
+  Das Signal wird ausgelöst wenn der Benutzer das Bearbeiten des Datums beendet hat.
+*/

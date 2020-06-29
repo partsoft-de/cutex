@@ -1,6 +1,6 @@
 /***********************************************************************************************************************
 **
-** Copyright (C) 2016-2019 Partsoft UG (haftungsbeschränkt)
+** Copyright (C) 2016-2020 Partsoft UG (haftungsbeschränkt)
 ** Contact: https://www.partsoft.de/index.php/kontakt
 **
 ** This file is part of cutex
@@ -17,15 +17,32 @@
 **
 ***********************************************************************************************************************/
 
-#ifndef PLUGINS_H
-#define PLUGINS_H
+#include "qxswipebutton.h"
 
-#include <QtUiPlugin/QDesignerCustomWidgetInterface>
-#include <QtDesigner/QDesignerContainerExtension>
-#include <QtDesigner/QExtensionFactory>
-#include <QtDesigner/QExtensionManager>
-#include <QtDesigner/QDesignerFormEditorInterface>
-#include <QtDesigner/QDesignerFormWindowInterface>
-#include "cutex.h"
+using namespace cutex;
 
-#endif // PLUGINS_H
+/*!
+  Erzeugt ein neues Widget mit dem Elternobjekt <i>parent</i>.
+*/
+QxSwipeButton::QxSwipeButton(QWidget *parent) : QLabel(parent)
+{
+    setAttribute(Qt::WA_AcceptTouchEvents, true);
+    setCursor(QCursor(Qt::PointingHandCursor));
+}
+
+void QxSwipeButton::mousePressEvent(QMouseEvent *event)
+{
+    Q_UNUSED(event);
+
+    emit clicked();
+}
+
+bool QxSwipeButton::event(QEvent *event)
+{
+    if (event->type() == QEvent::TouchBegin) {
+        emit clicked();
+        return true;
+    }
+
+    return QWidget::event(event);
+}

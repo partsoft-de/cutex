@@ -1,6 +1,6 @@
 /***********************************************************************************************************************
 **
-** Copyright (C) 2016-2019 Partsoft UG (haftungsbeschränkt)
+** Copyright (C) 2016-2020 Partsoft UG (haftungsbeschränkt)
 ** Contact: https://www.partsoft.de/index.php/kontakt
 **
 ** This file is part of cutex
@@ -17,15 +17,35 @@
 **
 ***********************************************************************************************************************/
 
-#ifndef PLUGINS_H
-#define PLUGINS_H
+#ifndef QXSWIPEBUTTON_H
+#define QXSWIPEBUTTON_H
 
-#include <QtUiPlugin/QDesignerCustomWidgetInterface>
-#include <QtDesigner/QDesignerContainerExtension>
-#include <QtDesigner/QExtensionFactory>
-#include <QtDesigner/QExtensionManager>
-#include <QtDesigner/QDesignerFormEditorInterface>
-#include <QtDesigner/QDesignerFormWindowInterface>
 #include "cutex.h"
 
-#endif // PLUGINS_H
+namespace cutex {
+
+/*!
+  \brief Ein %QxSwipeButton repräsentiert eine Schaltfläche für die Navigationsleiste QxSwipeBar.
+
+  Ein Objekt der Klasse %QxSwipeButton stellt eine einzelne Schaltfläche für die Navigationsleiste QxSwipeBar bereit.
+
+  \sa QxSwipeBar
+*/
+class QxSwipeButton : public QLabel
+{
+    Q_OBJECT
+
+public:
+    QxSwipeButton(QWidget *parent = nullptr);
+
+protected:
+    virtual void mousePressEvent(QMouseEvent *event);
+    virtual bool event(QEvent *event);
+
+signals:
+    void clicked();
+};
+
+} // namespace
+
+#endif // QXSWIPEBUTTON_H
