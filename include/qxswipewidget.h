@@ -84,10 +84,12 @@ private:
     QParallelAnimationGroup *m_animation;
 
 private slots:
+    void widgetTitleChanged();
     void animationFinished();
 
 signals:
     void currentChanged(int index);
+    void currentTitleChanged(const QString &title);
     void widgetRemoved(int index);
 };
 

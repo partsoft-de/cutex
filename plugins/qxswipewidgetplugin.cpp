@@ -68,6 +68,7 @@ QWidget* QxSwipeWidgetPlugin::createWidget(QWidget *parent)
     QxSwipeWidget *widget = new QxSwipeWidget(parent);
 
     connect(widget, SIGNAL(currentChanged(int)), this, SLOT(currentIndexChanged(int)));
+    connect(widget, SIGNAL(currentTitleChanged(QString)), this, SLOT(currentTitleChanged(QString)));
 
     return widget;
 }
@@ -109,5 +110,27 @@ void QxSwipeWidgetPlugin::currentIndexChanged(int index)
         QDesignerFormWindowInterface *form = QDesignerFormWindowInterface::findFormWindow(widget);
         if (form)
             form->emitSelectionChanged();
+    }
+}
+
+void QxSwipeWidgetPlugin::currentTitleChanged(const QString &title)
+{
+    Q_UNUSED(title);
+
+    QxSwipeWidget *widget = qobject_cast<QxSwipeWidget*>(sender());
+    if (widget) {
+        QWidget *current = widget->currentWidget();
+        QDesignerFormWindowInterface *form = QDesignerFormWindowInterface::findFormWindow(
+            current);
+
+        if (form) {
+            QDesignerFormEditorInterface *editor = form->core();
+            QExtensionManager *manager = editor->extensionManager();
+            QDesignerPropertySheetExtension *sheet =
+                qt_extension<QDesignerPropertySheetExtension*>(manager, current);
+            int index = sheet->indexOf(QLatin1String("windowTitle"));
+
+            sheet->setChanged(index, true);
+        }
     }
 }

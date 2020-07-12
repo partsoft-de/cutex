@@ -48,6 +48,7 @@ private:
 
 private slots:
     void currentIndexChanged(int index);
+    void currentTitleChanged(const QString &title);
 };
 
 } // namespace

@@ -101,13 +101,7 @@ void QxSwipeWidget::setAnimated(bool animated)
 */
 void QxSwipeWidget::addWidget(QWidget *widget, const QString &title)
 {
-    if (title.isEmpty()) {
-        m_swipeBar->addButton(tr("Seite"));
-    } else {
-        m_swipeBar->addButton(title);
-    }
-
-    m_stackedWidget->addWidget(widget);
+    insertWidget(m_stackedWidget->count(), widget, title);
 }
 
 /*!
@@ -152,12 +146,16 @@ int QxSwipeWidget::indexOf(QWidget *widget) const
 void QxSwipeWidget::insertWidget(int index, QWidget *widget, const QString &title)
 {
     if (title.isEmpty()) {
-        m_swipeBar->insertButton(index, tr("Seite"));
+        if (widget->windowTitle().isEmpty())
+            widget->setWindowTitle(tr("Seite %1").arg(count() + 1));
     } else {
-        m_swipeBar->insertButton(index, title);
+        widget->setWindowTitle(title);
     }
 
-    m_stackedWidget->insertWidget(index, widget);
+    index = m_stackedWidget->insertWidget(index, widget);
+    m_swipeBar->insertButton(index, widget->windowTitle());
+
+    connect(widget, SIGNAL(windowTitleChanged(QString)), SLOT(widgetTitleChanged()));
 }
 
 /*!
@@ -215,7 +213,14 @@ QString QxSwipeWidget::currentWidgetTitle() const
 */
 void QxSwipeWidget::setCurrentWidgetTitle(const QString &title)
 {
-    m_swipeBar->setButtonText(currentIndex(), title);
+    QWidget *widget = currentWidget();
+
+    if (widget) {
+        widget->setWindowTitle(title);
+        m_swipeBar->setButtonText(indexOf(widget), widget->windowTitle());
+
+        emit currentTitleChanged(title);
+    }
 }
 
 /*!
@@ -341,6 +346,13 @@ void QxSwipeWidget::touchEvent(QTouchEvent *event)
     }
 }
 
+void QxSwipeWidget::widgetTitleChanged()
+{
+    QWidget *widget = qobject_cast<QWidget*>(sender());
+
+    m_swipeBar->setButtonText(indexOf(widget), widget->windowTitle());
+}
+
 void QxSwipeWidget::animationFinished()
 {
     setCurrentWidget(m_nextWidget);
@@ -356,6 +368,12 @@ void QxSwipeWidget::animationFinished()
   \fn QxSwipeWidget::currentChanged(int index)
 
   Das Signal wird ausgelöst wenn das Widget mit dem Index <i>index</i> angezeigt wird.
+*/
+
+/*!
+  \fn QxSwipeWidget::currentTitleChanged(const QString &title)
+
+  Der Titel des aktuellen Widgets wurde auf den Wert <i>title</i> gesetzt.
 */
 
 /*!

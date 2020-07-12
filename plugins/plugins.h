@@ -26,6 +26,8 @@
 #include <QtDesigner/QExtensionManager>
 #include <QtDesigner/QDesignerFormEditorInterface>
 #include <QtDesigner/QDesignerFormWindowInterface>
+#include <QtDesigner/QDesignerPropertyEditorInterface>
+#include <QtDesigner/QDesignerPropertySheetExtension>
 #include "cutex.h"
 
 #endif // PLUGINS_H
