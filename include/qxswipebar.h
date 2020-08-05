@@ -33,7 +33,7 @@ namespace cutex {
 
   \sa QxSwipeWidget
 */
-class QxSwipeBar : public QWidget
+class QxSwipeBar : public QScrollArea
 {
     Q_OBJECT
 

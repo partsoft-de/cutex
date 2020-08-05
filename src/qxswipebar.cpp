@@ -24,11 +24,20 @@ using namespace cutex;
 /*!
   Erzeugt ein neues Widget mit dem Elternobjekt <i>parent</i>.
 */
-QxSwipeBar::QxSwipeBar(QWidget *parent) : QWidget(parent)
+QxSwipeBar::QxSwipeBar(QWidget *parent) : QScrollArea(parent)
 {
-    m_layout = new QHBoxLayout(this);
-    m_layout->setContentsMargins(0, 0, 0, 0);
+    QWidget *widget = new QWidget(this);
+
+    m_layout = new QHBoxLayout(widget);
+    m_layout->setContentsMargins(QMargins());
     m_layout->addSpacerItem(new QSpacerItem(0, 0, QSizePolicy::Expanding, QSizePolicy::Fixed));
+
+    setWidget(widget);
+    setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Maximum);
+    setFrameShape(QFrame::NoFrame);
+    setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+    setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+    setWidgetResizable(true);
 }
 
 /*!
@@ -113,8 +122,11 @@ void QxSwipeBar::setCurrentIndex(int index)
     for (int n = 0; n < count(); ++n) {
         QxSwipeButton *button = m_buttons.at(n);
         QFont font = button->font();
+
         font.setUnderline(n == index);
         button->setFont(font);
+        if (n == index)
+            ensureWidgetVisible(button);
     }
 }
 

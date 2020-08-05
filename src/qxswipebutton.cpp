@@ -26,6 +26,7 @@ using namespace cutex;
 */
 QxSwipeButton::QxSwipeButton(QWidget *parent) : QLabel(parent)
 {
+    setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Maximum);
     setAttribute(Qt::WA_AcceptTouchEvents, true);
     setCursor(QCursor(Qt::PointingHandCursor));
 }

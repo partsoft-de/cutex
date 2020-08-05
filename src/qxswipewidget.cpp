@@ -27,8 +27,8 @@ using namespace cutex;
 QxSwipeWidget::QxSwipeWidget(QWidget *parent) : QWidget(parent)
 {
     m_animated = true;
-    m_swipeBar = new QxSwipeBar();
-    m_stackedWidget = new QStackedWidget();
+    m_swipeBar = new QxSwipeBar(this);
+    m_stackedWidget = new QStackedWidget(this);
     m_currentWidget = nullptr;
     m_nextWidget = nullptr;
     m_animation = nullptr;
@@ -154,6 +154,7 @@ void QxSwipeWidget::insertWidget(int index, QWidget *widget, const QString &titl
 
     index = m_stackedWidget->insertWidget(index, widget);
     m_swipeBar->insertButton(index, widget->windowTitle());
+    setCurrentIndex(index);
 
     connect(widget, SIGNAL(windowTitleChanged(QString)), SLOT(widgetTitleChanged()));
 }
@@ -165,6 +166,7 @@ void QxSwipeWidget::removeWidget(int index)
 {
     m_swipeBar->removeButton(index);
     m_stackedWidget->removeWidget(m_stackedWidget->widget(index));
+    setCurrentIndex(m_stackedWidget->currentIndex());
 }
 
 /*!
