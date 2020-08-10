@@ -58,6 +58,7 @@ public:
     void insertWidget(int index, QWidget *widget, const QString &title = QString());
     void removeWidget(int index);
     QWidget* widget(int index) const;
+    void setSwipeEnabled(QWidget *widget, bool enabled);
 
 public slots:
     void setCurrentIndex(int index);
@@ -71,15 +72,15 @@ public slots:
 
 protected:
     virtual bool event(QEvent *event);
-    virtual void touchEvent(QTouchEvent *event);
+    virtual bool touchEvent(QTouchEvent *event);
 
 private:
     bool m_animated;
     QStackedWidget *m_stackedWidget;
     QxSwipeBar *m_swipeBar;
-    QList<QTouchEvent::TouchPoint> m_touchPoints;
     QWidget *m_currentWidget;
     QWidget *m_nextWidget;
+    QList<QWidget*> m_ignoredWidgets;
     QPoint m_currentPoint;
     QParallelAnimationGroup *m_animation;
 

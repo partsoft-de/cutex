@@ -28,8 +28,7 @@ namespace cutex {
 /*!
   \brief Die Klasse %QxSwipeBar stellt eine Navigationsleiste mit Gesten zum "wischen" zur Verfügung.
 
-  %QxSwipeBar stellt eine Navigationsleiste mit Schaltflächen und Gesten zum "wischen" zur Verfügung (in der aktuellen
-  Version sind die Gesten noch nicht implementiert).
+  %QxSwipeBar stellt eine Navigationsleiste mit Schaltflächen und Gesten zum "wischen" zur Verfügung.
 
   \sa QxSwipeWidget
 */

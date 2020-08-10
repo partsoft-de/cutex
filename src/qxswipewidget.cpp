@@ -178,6 +178,20 @@ QWidget* QxSwipeWidget::widget(int index) const
 }
 
 /*!
+  Aktiviert die Swipe-Funktionalität für das Widget <i>widget</i>. Mit Widgets bei denen die Swipe-Funktionalität
+  aktiviert ist, kann nicht weiter interagiert werden.
+*/
+void QxSwipeWidget::setSwipeEnabled(QWidget *widget, bool enabled)
+{
+    if (enabled) {
+        m_ignoredWidgets.removeOne(widget);
+    } else {
+        if (!m_ignoredWidgets.contains(widget))
+            m_ignoredWidgets.append(widget);
+    }
+}
+
+/*!
   Zeigt das Widget mit dem Index <i>index</i> an.
 
   \sa currentIndex() const
@@ -314,8 +328,8 @@ bool QxSwipeWidget::event(QEvent *event)
     case QEvent::TouchUpdate:
     case QEvent::TouchEnd:
     case QEvent::TouchCancel:
-        touchEvent(static_cast<QTouchEvent*>(event));
-        return true;
+        if (touchEvent(static_cast<QTouchEvent*>(event)))
+            return true;
     default:
         break;
     }
@@ -323,21 +337,57 @@ bool QxSwipeWidget::event(QEvent *event)
     return QWidget::event(event);
 }
 
-void QxSwipeWidget::touchEvent(QTouchEvent *event)
+bool QxSwipeWidget::touchEvent(QTouchEvent *event)
 {
     switch (event->type()) {
     case QEvent::TouchBegin:
-        m_touchPoints = event->touchPoints();
+        {
+            QList<QTouchEvent::TouchPoint> touchPoints = event->touchPoints();
+            QVariant swipeEnabled;
+
+            if (touchPoints.size() == 1) {
+                QPointF pos = touchPoints.at(0).pos();
+                QWidget *widget = childAt(pos.x(), pos.y());
+
+                if (widget == m_swipeBar) {
+                    return false;
+                } else {
+                    if (currentWidget()) {
+                        widget = currentWidget()->childAt(pos.x(), pos.y());
+                        if (widget) {
+                            if (m_ignoredWidgets.contains(widget))
+                                return false;
+
+                            swipeEnabled = widget->property("swipeEnabled");
+                            if (swipeEnabled.isValid() && swipeEnabled.toBool() == false)
+                                return false;
+
+                            while (widget != currentWidget()) {
+                                widget = widget->parentWidget();
+                                if (m_ignoredWidgets.contains(widget))
+                                    return false;
+
+                                swipeEnabled = widget->property("swipeEnabled");
+                                if (swipeEnabled.isValid() && swipeEnabled.toBool() == false)
+                                    return false;
+                            }
+                        }
+                    }
+                }
+            }
+        }
         break;
     case QEvent::TouchEnd:
         {
-            QList<QTouchEvent::TouchPoint> touchPoints = event->touchPoints();
-            const qreal minDistance = 150.0;
+            QList<QTouchEvent::TouchPoint> touchPoints = event->touchPoints();            
+            if (touchPoints.size() == 1) {
+                QPointF pos = touchPoints.at(0).pos();
+                QPointF startPos = touchPoints.at(0).startPos();
+                qreal minDistance = 150.0;
 
-            if (m_touchPoints.size() == 1 && touchPoints.size() == 1) {
-                if (touchPoints[0].pos().x() + minDistance < m_touchPoints[0].pos().x()) {
+                if (pos.x() + minDistance < startPos.x()) {
                     swipeRight();
-                } else if (touchPoints[0].pos().x() > m_touchPoints[0].pos().x() + minDistance) {
+                } else if (pos.x() > startPos.x() + minDistance) {
                     swipeLeft();
                 }
             }
@@ -346,6 +396,8 @@ void QxSwipeWidget::touchEvent(QTouchEvent *event)
     default:
         break;
     }
+
+    return true;
 }
 
 void QxSwipeWidget::widgetTitleChanged()

@@ -27,11 +27,11 @@ using namespace cutex;
 QxSwipeBar::QxSwipeBar(QWidget *parent) : QScrollArea(parent)
 {
     QWidget *widget = new QWidget(this);
-
     m_layout = new QHBoxLayout(widget);
     m_layout->setContentsMargins(QMargins());
     m_layout->addSpacerItem(new QSpacerItem(0, 0, QSizePolicy::Expanding, QSizePolicy::Fixed));
 
+    QScroller::grabGesture(this);
     setWidget(widget);
     setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Maximum);
     setFrameShape(QFrame::NoFrame);
