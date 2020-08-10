@@ -13,6 +13,7 @@ QT += \
     uiplugin
 
 CONFIG += \
+    c++11 \
     shared \
     plugin
 
