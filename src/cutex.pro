@@ -1,5 +1,5 @@
 TEMPLATE = lib
-TARGET = cutex
+TARGET = cutex_$${QT_ARCH}
 DESTDIR = ../lib
 
 mkpath(../lib)
@@ -18,6 +18,8 @@ QT += \
 CONFIG += \
     c++11 \
     staticlib \
+
+android: ANDROID_ABIS = armeabi-v7a arm64-v8a
 
 INCLUDEPATH += \
     ../include
@@ -132,3 +134,4 @@ RESOURCES += \
 
 TRANSLATIONS += \
     cutex_en.ts
+

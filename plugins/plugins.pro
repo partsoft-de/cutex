@@ -21,7 +21,7 @@ INCLUDEPATH += \
     ../include
 
 LIBS += \
-    ../lib/libcutex.a
+    ../lib/libcutex_$${QT_ARCH}.a
 
 HEADERS += \
     plugins.h \
