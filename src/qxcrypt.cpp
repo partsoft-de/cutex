@@ -34,7 +34,7 @@ QByteArray QxCrypt::encrypt(const QByteArray &text, const QByteArray &key)
     QByteArray result;
     int pos = 0;
 
-    foreach (char ch, text) {
+    for (char ch : text) {
         ch = (ch + key.at(pos)) % 256;
         result += ch;
         if (++pos >= key.size())
@@ -56,7 +56,7 @@ QByteArray QxCrypt::decrypt(const QByteArray &text, const QByteArray &key)
     QByteArray result;
     int pos = 0;
 
-    foreach (char ch, text) {
+    for (char ch : text) {
         ch = (ch + 256 - key.at(pos)) % 256;
         result += ch;
         if (++pos >= key.size())

@@ -90,7 +90,7 @@ QxTreeItemModel* QxTreeItem::model() const
 void QxTreeItem::setModel(QxTreeItemModel *model)
 {
     m_model = model;
-    foreach (QxTreeItem *childItem, children())
+    for (QxTreeItem *childItem : children())
         childItem->setModel(model);
 }
 
@@ -229,7 +229,7 @@ void QxTreeItem::read(QDataStream &in)
 void QxTreeItem::write(QDataStream &out)
 {
     out << m_text << quint32(rowCount());
-    foreach (QxTreeItem *childItem, children())
+    for (QxTreeItem *childItem : children())
         childItem->write(out);
 }
 
@@ -247,5 +247,9 @@ void QxTreeItem::emitDataChanged()
 
 void QxTreeItem::swapChildren(int row1, int row2)
 {
+#if QT_VERSION >= QT_VERSION_CHECK(5,13,0)
+    m_childItems.swapItemsAt(row1, row2);
+#else
     m_childItems.swap(row1, row2);
+#endif
 }

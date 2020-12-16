@@ -87,7 +87,7 @@ void QxDialog::validate(QWidget *uiField)
     }
 
     QObjectList children = uiField->children();
-    foreach (QObject *child, children) {
+    for (QObject *child : children) {
         uiField = qobject_cast<QWidget*>(child);
         if (uiField)
             validate(uiField);
@@ -481,7 +481,7 @@ void QxDialog::initialize(const QObject *object)
 {
     QObjectList children = object->children();
 
-    foreach (QObject *child, children) {
+    for (QObject *child : children) {
         QWidget *widget = qobject_cast<QWidget*>(child);
         if (widget == 0) {
             initialize(child);
@@ -535,7 +535,7 @@ void QxDialog::relockUiFields(QWidget *uiField)
     }
 
     QObjectList children = uiField->children();
-    foreach (QObject *child, children) {
+    for (QObject *child : children) {
         uiField = qobject_cast<QWidget*>(child);
         if (uiField)
             relockUiFields(uiField);
@@ -550,7 +550,7 @@ void QxDialog::resetUiFields(QWidget *uiField)
     }
 
     QObjectList children = uiField->children();
-    foreach (QObject *child, children) {
+    for (QObject *child : children) {
         uiField = qobject_cast<QWidget*>(child);
         if (uiField)
             resetUiFields(uiField);
@@ -581,7 +581,7 @@ void QxDialog::uiFieldValues(QSqlRecord *record, QWidget *uiField)
     }
 
     QObjectList children = uiField->children();
-    foreach (QObject *child, children) {
+    for (QObject *child : children) {
         uiField = qobject_cast<QWidget*>(child);
         if (uiField)
             uiFieldValues(record, uiField);
@@ -598,7 +598,7 @@ void QxDialog::setUiFieldValues(QSqlRecord *record, QWidget *uiField)
     }
 
     QObjectList children = uiField->children();
-    foreach (QObject *child, children) {
+    for (QObject *child : children) {
         uiField = qobject_cast<QWidget*>(child);
         if (uiField)
             setUiFieldValues(record, uiField);
@@ -609,7 +609,7 @@ QPushButton* QxDialog::defaultButton()
 {
      QList<QPushButton*> buttons = findChildren<QPushButton*>();
 
-     foreach (QPushButton *button, buttons) {
+     for (QPushButton *button : buttons) {
          if (button->isDefault())
              return button;
      }

@@ -54,7 +54,7 @@ QStringList QxRecentFiles::files()
 {
     QStringList files;
 
-    foreach (QString fileName, m_files) {
+    for (QString fileName : m_files) {
         if (QFile::exists(fileName))
             files.append(fileName);
     }
@@ -71,7 +71,7 @@ void QxRecentFiles::setFiles(const QStringList &files)
 {
     m_files.clear();
 
-    foreach (QString fileName, files) {
+    for (QString fileName : files) {
         QFileInfo info(fileName);
         if (info.exists()) {
             fileName = info.absoluteFilePath();
@@ -136,12 +136,12 @@ void QxRecentFiles::setMenu(QMenu *menu)
 void QxRecentFiles::updateMenu()
 {
     QList<QAction*> actions = m_menu->actions();
-    foreach (QAction *action, actions) {
+    for (QAction *action : actions) {
         m_menu->removeAction(action);
         delete action;
     }
 
-    foreach (QString fileName, m_files) {
+    for (QString fileName : m_files) {
         if (QFile::exists(fileName)) {
             QAction *action = m_menu->addAction(fileName);
             connect(action, SIGNAL(triggered()), qxMainWin, SLOT(processAction()));

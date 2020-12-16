@@ -203,12 +203,10 @@ void QxMainWindow::closeAllSubWindows()
 */
 void QxMainWindow::updateWindowMenu()
 {
-    QAction *action = 0;
-
     if (!m_windowMenu)
         return;
 
-    foreach (action, m_windowMenu->actions()) {
+    for (QAction *action : m_windowMenu->actions()) {
         if (action->property("cutex").toBool()) {
             m_windowMenu->removeAction(action);
             delete action;
@@ -216,6 +214,7 @@ void QxMainWindow::updateWindowMenu()
     }
 
     QList<QMdiSubWindow*> windows = m_mdiArea->subWindowList();
+    QAction *action = nullptr;
 
     if (m_mdiArea->viewMode() == QMdiArea::SubWindowView) {
         action = m_windowMenu->addAction(tr("Überlappend"));
@@ -239,7 +238,7 @@ void QxMainWindow::updateWindowMenu()
         action->setProperty("cutex", true);
     }
 
-    foreach (QMdiSubWindow *window, windows) {
+    for (QMdiSubWindow *window : windows) {
         QString title = window->windowTitle();
         action = m_windowMenu->addAction(title.remove("[*]"));
         action->setProperty("cutex", true);
@@ -368,13 +367,13 @@ void QxMainWindow::setCurrentFile(QString fileName)
 void QxMainWindow::initActions(const QObject *object)
 {
     QObjectList children = object->children();
-    foreach (QObject *child, children) {
+    for (QObject *child : children) {
 
         initActions(child);
 
         if (CLASSNAME(child) == "QMenu") {
             QList<QAction*> actions = qobject_cast<QMenu*>(child)->actions();
-            foreach (QAction *action, actions)
+            for (QAction *action : actions)
                 connect(action, SIGNAL(triggered()), this, SLOT(processAction()));
             QMenu *menu = qobject_cast<QMenu*>(child);
             connect(menu, SIGNAL(aboutToShow()), this, SLOT(updateMenu()));
@@ -382,7 +381,7 @@ void QxMainWindow::initActions(const QObject *object)
 
         if (CLASSNAME(child) == "QToolBar") {
             QList<QAction*> actions = qobject_cast<QToolBar*>(child)->actions();
-            foreach (QAction *action, actions) {
+            for (QAction *action : actions) {
                 disconnect(action, SIGNAL(triggered()), this, SLOT(processAction()));
                 connect(action, SIGNAL(triggered()), this, SLOT(processAction()));
             }

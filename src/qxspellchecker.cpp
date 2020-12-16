@@ -113,8 +113,12 @@ void QxSpellChecker::run()
             text = m_plainEditor->document()->toPlainText();
         }
 
+#if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
+        allWords = text.split(QRegExp("\\W+"), Qt::SkipEmptyParts);
+#else
         allWords = text.split(QRegExp("\\W+"), QString::SkipEmptyParts);
-        foreach (word, allWords) {
+#endif
+        for (QString word : allWords) {
             word = word.toLower();
             if (!invalidWords.contains(word)) {
                 bool isNumber;
@@ -152,14 +156,14 @@ void QxSpellChecker::run()
 
 void QxSpellChecker::wake()
 {
-    if ((m_interval.isNull() || m_interval.elapsed() > m_delay) && !m_finished) {
-        m_interval = QTime::currentTime();
+    if ((!m_interval.isValid() || m_interval.elapsed() > m_delay) && !m_finished) {
+        m_interval.start();
         run();
     }
 }
 
 void QxSpellChecker::restart()
 {
-    m_interval = QTime::currentTime();
+    m_interval.start();
     m_finished = false;
 }

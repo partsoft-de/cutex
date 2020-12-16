@@ -51,7 +51,7 @@ private:
     QTextEdit *m_editor;
     QPlainTextEdit *m_plainEditor;
     bool m_finished;
-    QTime m_interval;
+    QElapsedTimer m_interval;
 
 private slots:
     void wake();

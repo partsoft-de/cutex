@@ -198,7 +198,7 @@ void QxDashboard::update()
     if (m_recentFilesEnabled && m_recentFiles) {
         html += "<p>" + m_recentFilesText + "</p>";
         if (m_recentFiles) {
-            foreach (QString file, m_recentFiles->files())
+            for (QString file : m_recentFiles->files())
                 html += "<p><a href=\"file:///" + file + "\">" + file + "</a></p>";
         }
     }

@@ -47,7 +47,7 @@ QxApplication::QxApplication(int &argc, char **argv) : QApplication(argc, argv)
 
     // Bei Verwendung von QGtkStyle werden cutex-spezifische Stylesheets nicht korrekt dargestellt
     if (CLASSNAME(style()) == "QGtkStyle") {
-#if QT_VERSION >= 0x050000
+#if QT_VERSION >= QT_VERSION_CHECK(5,0,0)
         setStyle(QStyleFactory::create("Fusion"));
 #else
         setStyle(new QCleanlooksStyle());
@@ -116,7 +116,7 @@ bool QxApplication::addTranslator(const QString &name, const QString &locale)
 */
 void QxApplication::changeLanguage(const QString &locale)
 {
-    foreach (QString fileName, m_translators.keys()) {
+    for (QString fileName : m_translators.keys()) {
         QTranslator *translator = m_translators.value(fileName);
         removeTranslator(translator);
         loadTranslation(translator, fileName + locale);

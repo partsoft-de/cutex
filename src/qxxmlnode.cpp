@@ -40,7 +40,7 @@ QxXmlNode::QxXmlNode(const QxXmlNode &other)
     m_value = other.m_value;
     m_attributes = other.m_attributes;
 
-    foreach (const QxXmlNode *child, other.children())
+    for (const QxXmlNode *child : other.children())
         insertChild(new QxXmlNode(*child));
 }
 
@@ -65,7 +65,7 @@ QxXmlNode& QxXmlNode::operator=(const QxXmlNode &other)
         m_value = other.m_value;
         m_attributes = other.m_attributes;
 
-        foreach (const QxXmlNode *child, other.children())
+        for (const QxXmlNode *child : other.children())
             insertChild(new QxXmlNode(*child));
     }
 
@@ -217,13 +217,13 @@ QList<QxXmlNode*> QxXmlNode::children() const
 */
 QxXmlNode* QxXmlNode::findChild(const QString &name, Qt::FindChildOptions options)
 {
-    foreach (QxXmlNode *child, m_children) {
+    for (QxXmlNode *child : m_children) {
         if (child->name() == name)
             return child;
     }
 
     if (options == Qt::FindChildrenRecursively) {
-        foreach (QxXmlNode *child, m_children) {
+        for (QxXmlNode *child : m_children) {
             QxXmlNode *node = child->findChild(name, options);
             if (node)
                 return node;
@@ -238,7 +238,7 @@ void QxXmlNode::load(QXmlStreamReader *reader)
     m_name = reader->name().toString();
     m_prefix = reader->prefix().toString();
 
-    foreach (const QXmlStreamAttribute &attribute, reader->attributes())
+    for (const QXmlStreamAttribute &attribute : reader->attributes())
         setAttribute(attribute.name().toString(), attribute.value().toString());
 
     reader->readNext();
@@ -265,13 +265,13 @@ void QxXmlNode::save(QXmlStreamWriter *writer) const
         writer->writeStartElement(QString("%1:%2").arg(m_prefix).arg(m_name));
     }
 
-    foreach (const QString &key, m_attributes.keys())
+    for (const QString &key : m_attributes.keys())
         writer->writeAttribute(key, m_attributes.value(key));
 
     if (!m_value.isEmpty())
         writer->writeCharacters(m_value);
 
-    foreach (QxXmlNode *child, m_children)
+    for (QxXmlNode *child : m_children)
         child->save(writer);
 
     writer->writeEndElement();

@@ -32,7 +32,7 @@ QxMessageDialog::QxMessageDialog(const QString &title, const QStringList &messag
     m_ui->setupUi(this);
 
     setWindowTitle(title);
-    foreach (QString text, messages)
+    for (QString text : messages)
         m_ui->MessageField->append(text);
 }
 

@@ -59,8 +59,9 @@ QStringList QxTextDocument::anchors() const
     while (block.isValid()) {
         for (QTextBlock::iterator it = block.begin(); !it.atEnd(); ++it) {
             QTextCharFormat format = it.fragment().charFormat();
-            if (!format.anchorName().isEmpty())
-                list.append(format.anchorName());
+            QStringList names = format.anchorNames();
+            if (names.count())
+                list.append(names.first());
         }
         block = block.next();
     }

@@ -77,7 +77,7 @@ void QxForm::validate(QWidget *uiField)
     }
 
     QObjectList children = uiField->children();
-    foreach (QObject *child, children) {
+    for (QObject *child : children) {
         uiField = qobject_cast<QWidget*>(child);
         if (uiField)
             validate(uiField);
@@ -428,7 +428,7 @@ void QxForm::initialize(const QObject *object)
 {
     QObjectList children = object->children();
 
-    foreach (QObject *child, children) {
+    for (QObject *child : children) {
         QWidget *widget = qobject_cast<QWidget*>(child);
         if (widget == 0) {
             initialize(child);
@@ -482,7 +482,7 @@ void QxForm::relockUiFields(QWidget *uiField)
     }
 
     QObjectList children = uiField->children();
-    foreach (QObject *child, children) {
+    for (QObject *child : children) {
         uiField = qobject_cast<QWidget*>(child);
         if (uiField)
             relockUiFields(uiField);
@@ -497,7 +497,7 @@ void QxForm::resetUiFields(QWidget *uiField)
     }
 
     QObjectList children = uiField->children();
-    foreach (QObject *child, children) {
+    for (QObject *child : children) {
         uiField = qobject_cast<QWidget*>(child);
         if (uiField)
             resetUiFields(uiField);
@@ -528,7 +528,7 @@ void QxForm::uiFieldValues(QSqlRecord *record, QWidget *uiField)
     }
 
     QObjectList children = uiField->children();
-    foreach (QObject *child, children) {
+    for (QObject *child : children) {
         uiField = qobject_cast<QWidget*>(child);
         if (uiField)
             uiFieldValues(record, uiField);
@@ -545,7 +545,7 @@ void QxForm::setUiFieldValues(QSqlRecord *record, QWidget *uiField)
     }
 
     QObjectList children = uiField->children();
-    foreach (QObject *child, children) {
+    for (QObject *child : children) {
         uiField = qobject_cast<QWidget*>(child);
         if (uiField)
             setUiFieldValues(record, uiField);

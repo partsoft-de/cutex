@@ -187,7 +187,7 @@ void QxPlainTextEdit::setTabSpaces(int spaces)
 bool QxPlainTextEdit::findOrReplace(const QxFindOptions &options)
 {
     bool success = true;
-    QTextDocument::FindFlags flags = 0;
+    QTextDocument::FindFlags flags;
     Qt::CaseSensitivity caseSensitivity = Qt::CaseInsensitive;
     QTextCursor cursor;
 
@@ -294,7 +294,11 @@ int QxPlainTextEdit::lineNumberAreaWidth() const
             ++digits;
         }
 
+#if QT_VERSION >= QT_VERSION_CHECK(5,11,0)
+        space = 3 + fontMetrics().horizontalAdvance(QLatin1Char('9')) * digits;
+#else
         space = 3 + fontMetrics().width(QLatin1Char('9')) * digits;
+#endif
     }
 
     return space;

@@ -55,7 +55,7 @@ QMap<QString, QString> QxSqlDatabase::drivers()
     QStringList list = QSqlDatabase::drivers();
     QMap<QString, QString> map;
 
-    foreach (QString driver, list)
+    for (QString driver : list)
         map.insert(driver, driver);
 
     if (map.contains("QSQLITE"))

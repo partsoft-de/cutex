@@ -293,7 +293,11 @@ QString QxTextEdit::anchor() const
 {
     QTextCursor cursor = textCursor();
     QTextCharFormat format = cursor.charFormat();
-    QString anchor = format.anchorName();
+    QStringList names = format.anchorNames();
+    QString anchor;
+
+    if (!names.isEmpty())
+        anchor = names.first();
 
     return anchor;
 }
@@ -583,7 +587,7 @@ void QxTextEdit::setTabSpaces(int spaces)
 bool QxTextEdit::findOrReplace(const QxFindOptions &options)
 {
     bool success = true;
-    QTextDocument::FindFlags flags = 0;
+    QTextDocument::FindFlags flags;
     Qt::CaseSensitivity caseSensitivity = Qt::CaseInsensitive;
     QTextCursor cursor;
 

@@ -78,7 +78,7 @@ void QxWizard::validate(QWidget *uiField)
     }
 
     QObjectList children = uiField->children();
-    foreach (QObject *child, children) {
+    for (QObject *child : children) {
         uiField = qobject_cast<QWidget*>(child);
         if (uiField)
             validate(uiField);
@@ -109,7 +109,7 @@ bool QxWizard::validateCurrentPage()
     validate(focusWidget());
 #endif
 
-    foreach (QWidget *field, m_invalidUiFields) {
+    for (QWidget *field : m_invalidUiFields) {
         if (page->isAncestorOf(field)) {
             QMessageBox::information(this, tr("Fehler"),
                 tr("Es sind fehlerhafte Eingaben vorhanden, bitte prüfen Sie die farblich markierten Felder!"),
@@ -547,7 +547,7 @@ void QxWizard::initialize(const QObject *object)
 {
     QObjectList children = object->children();
 
-    foreach (QObject *child, children) {
+    for (QObject *child : children) {
         QWidget *widget = qobject_cast<QWidget*>(child);
         if (widget == 0) {
             initialize(child);
@@ -602,7 +602,7 @@ void QxWizard::relockUiFields(QWidget *uiField)
     }
 
     QObjectList children = uiField->children();
-    foreach (QObject *child, children) {
+    for (QObject *child : children) {
         uiField = qobject_cast<QWidget*>(child);
         if (uiField)
             relockUiFields(uiField);
@@ -617,7 +617,7 @@ void QxWizard::resetUiFields(QWidget *uiField)
     }
 
     QObjectList children = uiField->children();
-    foreach (QObject *child, children) {
+    for (QObject *child : children) {
         uiField = qobject_cast<QWidget*>(child);
         if (uiField)
             resetUiFields(uiField);
@@ -648,7 +648,7 @@ void QxWizard::uiFieldValues(QSqlRecord *record, QWidget *uiField)
     }
 
     QObjectList children = uiField->children();
-    foreach (QObject *child, children) {
+    for (QObject *child : children) {
         uiField = qobject_cast<QWidget*>(child);
         if (uiField)
             uiFieldValues(record, uiField);
@@ -665,7 +665,7 @@ void QxWizard::setUiFieldValues(QSqlRecord *record, QWidget *uiField)
     }
 
     QObjectList children = uiField->children();
-    foreach (QObject *child, children) {
+    for (QObject *child : children) {
         uiField = qobject_cast<QWidget*>(child);
         if (uiField)
             setUiFieldValues(record, uiField);
@@ -676,9 +676,9 @@ QList<QWidget*> QxWizard::invalidUiFields()
 {
     QList<QWidget*> fields;
 
-    foreach (int id, pageIds()) {
+    for (int id : pageIds()) {
         QWizardPage *wizardPage = page(id);
-        foreach (QWidget *field, fields) {
+        for (QWidget *field : fields) {
             if (field->isAncestorOf(wizardPage) && !isPageDisabled(wizardPage))
                 fields.append(field);
         }

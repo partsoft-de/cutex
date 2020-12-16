@@ -129,7 +129,7 @@ QString QxXmlDocument::content() const
     writer.setAutoFormatting(true);
     writer.writeStartDocument();
 
-    foreach (const QString &prefix, m_namespaces.keys())
+    for (const QString &prefix : m_namespaces.keys())
         writer.writeNamespace(m_namespaces.value(prefix), prefix);
 
     m_root->save(&writer);
@@ -152,7 +152,7 @@ bool QxXmlDocument::setContent(const QString &content)
     if (success) {
         clear();
 
-        foreach (const QXmlStreamNamespaceDeclaration &declaration, reader.namespaceDeclarations()) {
+        for (const QXmlStreamNamespaceDeclaration &declaration : reader.namespaceDeclarations()) {
             QString uri = declaration.namespaceUri().toString();
             QString prefix = declaration.prefix().toString();
             m_namespaces.insert(prefix, uri);
@@ -181,7 +181,7 @@ bool QxXmlDocument::load(const QString &path)
         if (success) {
             clear();
 
-            foreach (const QXmlStreamNamespaceDeclaration &declaration, reader.namespaceDeclarations()) {
+            for (const QXmlStreamNamespaceDeclaration &declaration : reader.namespaceDeclarations()) {
                 QString uri = declaration.namespaceUri().toString();
                 QString prefix = declaration.prefix().toString();
                 m_namespaces.insert(prefix, uri);
@@ -209,7 +209,7 @@ bool QxXmlDocument::save(const QString &path) const
         writer.setAutoFormatting(true);
         writer.writeStartDocument();
 
-        foreach (const QString &prefix, m_namespaces.keys())
+        for (const QString &prefix : m_namespaces.keys())
             writer.writeNamespace(m_namespaces.value(prefix), prefix);
 
         m_root->save(&writer);

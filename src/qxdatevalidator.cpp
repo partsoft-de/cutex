@@ -54,7 +54,11 @@ void QxDateValidator::fixup(QString &input) const
     QString month;
     QString day;
 
-    foreach (QString part, m_format.split(m_separator, QString::SkipEmptyParts)) {
+#if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
+    for (QString part : m_format.split(m_separator, Qt::SkipEmptyParts)) {
+#else
+    for (QString part : m_format.split(m_separator, QString::SkipEmptyParts)) {
+#endif
         int pos = m_format.indexOf(part[0]);
 
         switch (part[0].toLatin1()) {
@@ -104,7 +108,11 @@ QValidator::State QxDateValidator::validate(QString &input, int &pos) const
     QString month;
     QString day;
 
-    foreach (QString part, m_format.split(m_separator, QString::SkipEmptyParts)) {
+#if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
+    for (QString part : m_format.split(m_separator, Qt::SkipEmptyParts)) {
+#else
+    for (QString part : m_format.split(m_separator, QString::SkipEmptyParts)) {
+#endif
         int pos = m_format.indexOf(part[0]);
 
         switch (part[0].toLatin1()) {
@@ -140,7 +148,7 @@ QValidator::State QxDateValidator::validate(QString &input, int &pos) const
 
 void QxDateValidator::determineSeparator()
 {
-    foreach (QChar ch, m_format) {
+    for (QChar ch : m_format) {
         switch (ch.toLatin1()) {
         case 'y':
         case 'M':
@@ -164,7 +172,11 @@ void QxDateValidator::prepare(QString &input) const
     QString month;
     QString day;
 
-    foreach (QString part, m_format.split(m_separator, QString::SkipEmptyParts)) {
+#if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
+    for (QString part : m_format.split(m_separator, Qt::SkipEmptyParts)) {
+#else
+    for (QString part : m_format.split(m_separator, QString::SkipEmptyParts)) {
+#endif
         int pos = m_format.indexOf(part[0]);
 
         switch (part[0].toLatin1()) {
