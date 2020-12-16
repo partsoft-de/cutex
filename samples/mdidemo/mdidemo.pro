@@ -6,11 +6,13 @@ QT += \
     sql \
     help
 
+CONFIG += c++11
+
 INCLUDEPATH += \
     ../../include
 
 LIBS += \
-    ../../lib/libcutex.a
+    ../../lib/libcutex_$${QT_ARCH}.a
 
 SOURCES += \
     main.cpp \

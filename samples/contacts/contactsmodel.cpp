@@ -157,7 +157,7 @@ QDataStream& operator <<(QDataStream &out, const ContactsModel &model)
 {
     out << qint32(model.m_contacts.count());
 
-    foreach (Contact *contact, model.m_contacts)
+    for (Contact *contact : model.m_contacts)
         out << contact;
 
     return out;
