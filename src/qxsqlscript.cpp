@@ -26,7 +26,11 @@ using namespace cutex;
 */
 QxSqlScript::QxSqlScript(QObject *parent) : QObject(parent)
 {
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+    m_encoding = QStringConverter::Utf8;
+#else
     m_codec = "UTF-8";
+#endif
     m_error = QxSqlScript::NoError;
 }
 
@@ -36,7 +40,11 @@ QxSqlScript::QxSqlScript(QObject *parent) : QObject(parent)
 QxSqlScript::QxSqlScript(const QString &fileName, QObject *parent) : QObject(parent)
 {
     m_fileName = fileName;
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+    m_encoding = QStringConverter::Utf8;
+#else
     m_codec = "UTF-8";
+#endif
     m_error = QxSqlScript::NoError;
 }
 
@@ -70,7 +78,11 @@ bool QxSqlScript::exec(const QString &fileName, QSqlDatabase database)
             break;
         }
 
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+        in.setEncoding(m_encoding);
+#else
         in.setCodec(m_codec.toLatin1());
+#endif
         while (!in.atEnd()) {
             statement.append(in.readLine());
             if (statement.endsWith(';')) {
@@ -102,6 +114,28 @@ bool QxSqlScript::exec(QSqlDatabase database)
     return exec(m_fileName, database);
 }
 
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+/*!
+  Gibt die Zeichenkodierung zurück.
+
+  \sa setEncoding(QStringConverter::Encoding encoding)
+*/
+QStringConverter::Encoding QxSqlScript::encoding() const
+{
+    return m_encoding;
+}
+
+/*!
+  Setzt die Zeichenkodierung auf den Wert <i>encoding</i>.
+
+  \sa encoding() const
+*/
+void QxSqlScript::setEncoding(QStringConverter::Encoding encoding)
+{
+    m_encoding = encoding;
+}
+
+#else
 /*!
   Gibt die Zeichenkodierung zurück.
 
@@ -121,6 +155,7 @@ void QxSqlScript::setCodec(const QString &codec)
 {
     m_codec = codec;
 }
+#endif
 
 /*!
   Gibt den Dateinamen des Skripts zurück.

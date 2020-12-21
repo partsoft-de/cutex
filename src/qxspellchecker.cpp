@@ -114,9 +114,9 @@ void QxSpellChecker::run()
         }
 
 #if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
-        allWords = text.split(QRegExp("\\W+"), Qt::SkipEmptyParts);
+        allWords = text.split(QRegularExpression("\\W+"), Qt::SkipEmptyParts);
 #else
-        allWords = text.split(QRegExp("\\W+"), QString::SkipEmptyParts);
+        allWords = text.split(QRegularExpression("\\W+"), QString::SkipEmptyParts);
 #endif
         for (QString word : allWords) {
             word = word.toLower();

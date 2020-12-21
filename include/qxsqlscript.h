@@ -43,8 +43,13 @@ public:
     QxSqlScript(const QString &fileName, QObject *parent = 0);
     bool exec(const QString &fileName, QSqlDatabase database = QSqlDatabase());
     bool exec(QSqlDatabase database = QSqlDatabase());
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+    QStringConverter::Encoding encoding() const;
+    void setEncoding(QStringConverter::Encoding encoding);
+#else
     QString codec() const;
     void setCodec(const QString &codec);
+#endif
     QString fileName() const;
     QString lastStatement() const;
     QxSqlScript::Error lastError() const;
@@ -52,7 +57,11 @@ public:
 
 private:
     QString m_fileName;
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+    QStringConverter::Encoding m_encoding;
+#else
     QString m_codec;
+#endif
     QString m_statement;
     QxSqlScript::Error m_error;
     QSqlQuery m_query;

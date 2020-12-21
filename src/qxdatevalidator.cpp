@@ -166,7 +166,7 @@ void QxDateValidator::prepare(QString &input) const
     if (input.isEmpty())
         return;
 
-    input = input.replace(QRegExp(QString("[^0-9%1]").arg(m_separator)), "");
+    input = input.replace(QRegularExpression(QString("[^0-9%1]").arg(m_separator)), "");
 
     QString year;
     QString month;
