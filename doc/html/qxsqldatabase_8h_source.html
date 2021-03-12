@@ -1,0 +1,241 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.20"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>cutex: C:/Users/sasch/Documents/Projekte/libs/cutex/include/qxsqldatabase.h Quellcode</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="logo.png"/></td>
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">cutex
+   &#160;<span id="projectnumber">1.5.03</span>
+   </div>
+   <div id="projectbrief">cute Qt extensions</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Erzeugt von Doxygen 1.8.20 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Suchen');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Suchen');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('qxsqldatabase_8h_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">qxsqldatabase.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/***********************************************************************************************************************</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">**</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">** Copyright (C) 2016-2021 Partsoft UG (haftungsbeschränkt)</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">** Contact: https://www.partsoft.de/index.php/kontakt</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">**</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">** This file is part of cutex</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">**</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">** cutex is free software: you can redistribute it and/or modify it under the terms of the GNU Lesser General Public</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">** License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">** version.</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">**</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">** cutex is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">** of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more details.</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">**</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">** You should have received a copy of the GNU Lesser General Public License along with cutex. If not, see</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">** http://www.gnu.org/licenses.</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">**</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment">***********************************************************************************************************************/</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#ifndef QXSQLDATABASE_H</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#define QXSQLDATABASE_H</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &quot;cutex.h&quot;</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">namespace </span>cutex {</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="classcutex_1_1_qx_sql_database.html">   34</a></span>&#160;<span class="keyword">class </span><a class="code" href="classcutex_1_1_qx_sql_database.html">QxSqlDatabase</a> : <span class="keyword">public</span> QObject</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;{</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    Q_OBJECT</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <a class="code" href="classcutex_1_1_qx_sql_database.html#a52e8ea95d3a73c9b34ddbe7bea6642fa">QxSqlDatabase</a>(QObject *parent = 0);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <a class="code" href="classcutex_1_1_qx_sql_database.html#a52e8ea95d3a73c9b34ddbe7bea6642fa">QxSqlDatabase</a>(<span class="keyword">const</span> <a class="code" href="classcutex_1_1_qx_sql_database.html">QxSqlDatabase</a> &amp;other, QObject *parent = 0);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keyword">virtual</span> ~<a class="code" href="classcutex_1_1_qx_sql_database.html">QxSqlDatabase</a>();    </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keyword">static</span> QMap&lt;QString, QString&gt; <a class="code" href="classcutex_1_1_qx_sql_database.html#a7d1bc615ac09e4aee3a7d00c4a36e1dc">drivers</a>();</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code" href="classcutex_1_1_qx_sql_database.html#a44be8ffd4e2fb8a7938e0b4376027854">isDriverAvailable</a>(<span class="keyword">const</span> QString &amp;name);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="classcutex_1_1_qx_sql_database.html#ac8827e5bdbba360a6b3bf297aaeb8104">registerSqlDriver</a>(<span class="keyword">const</span> QString &amp;name, QSqlDriverCreatorBase *creator);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keyword">static</span> QStringList <a class="code" href="classcutex_1_1_qx_sql_database.html#a3e164f1cf0944badb7cdef7185ae4465">connectionNames</a>();</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code" href="classcutex_1_1_qx_sql_database.html#aff767efdd25e35e20cca3532357fdd02">contains</a>(<span class="keyword">const</span> QString &amp;<a class="code" href="classcutex_1_1_qx_sql_database.html#ada2221212eeff08b8d476a237380c5d7">connectionName</a> = QLatin1String(QSqlDatabase::defaultConnection));</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classcutex_1_1_qx_sql_database.html#a6ce94af66627a4b4873b217dc5516a11">addDatabase</a>(<span class="keyword">const</span> QString &amp;type,</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keyword">const</span> QString &amp;<a class="code" href="classcutex_1_1_qx_sql_database.html#ada2221212eeff08b8d476a237380c5d7">connectionName</a> = QLatin1String(QSqlDatabase::defaultConnection));    </div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classcutex_1_1_qx_sql_database.html#a6ce94af66627a4b4873b217dc5516a11">addDatabase</a>(QSqlDriver *<a class="code" href="classcutex_1_1_qx_sql_database.html#a46415ad102838b53cf46d9ad96eeb7b5">driver</a>,</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <span class="keyword">const</span> QString &amp;<a class="code" href="classcutex_1_1_qx_sql_database.html#ada2221212eeff08b8d476a237380c5d7">connectionName</a> = QLatin1String(QSqlDatabase::defaultConnection));</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classcutex_1_1_qx_sql_database.html#a0efe680ac4ec5648b0eb4e04b730178a">removeDatabase</a>();</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    QSqlDriver* <a class="code" href="classcutex_1_1_qx_sql_database.html#a46415ad102838b53cf46d9ad96eeb7b5">driver</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    QString <a class="code" href="classcutex_1_1_qx_sql_database.html#aedbaa0bf4686d944640b82b5e285e21e">driverName</a>() <span class="keyword">const</span>;    </div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    QString <a class="code" href="classcutex_1_1_qx_sql_database.html#ada2221212eeff08b8d476a237380c5d7">connectionName</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    QString <a class="code" href="classcutex_1_1_qx_sql_database.html#a70e5cd455871ed5bff2e7e401eafac96">hostName</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classcutex_1_1_qx_sql_database.html#aadf0f3ccadb7eb4d474265d4f7d3dd22">setHostName</a>(<span class="keyword">const</span> QString &amp;host);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classcutex_1_1_qx_sql_database.html#a5b0e7e3c160231a8428c50cdf9c778d8">port</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classcutex_1_1_qx_sql_database.html#aa38651b201b7f4537064b5139c2a969c">setPort</a>(<span class="keywordtype">int</span> <a class="code" href="classcutex_1_1_qx_sql_database.html#a5b0e7e3c160231a8428c50cdf9c778d8">port</a>);</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    QString <a class="code" href="classcutex_1_1_qx_sql_database.html#ae6b3890d48cace67cfce3a8273b96425">databaseName</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classcutex_1_1_qx_sql_database.html#acb91fe83ee38ad8494114f40ae385fd1">setDatabaseName</a>(<span class="keyword">const</span> QString &amp;name);</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    QString <a class="code" href="classcutex_1_1_qx_sql_database.html#af55d6b38ca544520859b26d1c23f827e">userName</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classcutex_1_1_qx_sql_database.html#af02eacdf2e815827bfa08c0fd1b3c267">setUserName</a>(<span class="keyword">const</span> QString &amp;name);</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    QString <a class="code" href="classcutex_1_1_qx_sql_database.html#a5d61de3ec10e513a40bba06ae026c713">password</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classcutex_1_1_qx_sql_database.html#ae751e6bb40b60b294c0967c6bc639fc3">setPassword</a>(<span class="keyword">const</span> QString &amp;<a class="code" href="classcutex_1_1_qx_sql_database.html#a5d61de3ec10e513a40bba06ae026c713">password</a>);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    QString <a class="code" href="classcutex_1_1_qx_sql_database.html#a23a4b2253679a82d20c5126f61645f97">connectOptions</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classcutex_1_1_qx_sql_database.html#ade2b2ff330e9bb7e81408eb17917fc38">setConnectOptions</a>(<span class="keyword">const</span> QString &amp;options = QString());</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    QSql::NumericalPrecisionPolicy <a class="code" href="classcutex_1_1_qx_sql_database.html#a7e951953f0635176831a0709c2d6447a">numericalPrecisionPolicy</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classcutex_1_1_qx_sql_database.html#a5de6b7c0fc0db5eb79edda20005acd0f">setNumericalPrecisionPolicy</a>(QSql::NumericalPrecisionPolicy precisionPolicy);</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="classcutex_1_1_qx_sql_database.html#ae3ee9783dd8d7ab77454abd5fb5fbc8d">open</a>();</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="classcutex_1_1_qx_sql_database.html#ae3ee9783dd8d7ab77454abd5fb5fbc8d">open</a>(<span class="keyword">const</span> QString &amp;user, <span class="keyword">const</span> QString &amp;<a class="code" href="classcutex_1_1_qx_sql_database.html#a5d61de3ec10e513a40bba06ae026c713">password</a>);</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classcutex_1_1_qx_sql_database.html#afa6f6d766c1a891ff6e418500948d3f9">close</a>();</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classcutex_1_1_qx_sql_database.html#a6e6ef48cedf8ae4635d6b3181891dfd9">isValid</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classcutex_1_1_qx_sql_database.html#a48b52973bcf32bee213147a8f9c9189c">isOpen</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classcutex_1_1_qx_sql_database.html#a1895e1d88dfb2f453141db6c48c0d703">isOpenError</a>() <span class="keyword">const</span>;    </div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    QSqlError <a class="code" href="classcutex_1_1_qx_sql_database.html#a22f83c945e46f1358567fc88f0f78c85">lastError</a>() <span class="keyword">const</span>;        </div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    QStringList <a class="code" href="classcutex_1_1_qx_sql_database.html#a4ff5b689a6a9683ef0cbe9ee1f8c38a1">tables</a>(QSql::TableType type = QSql::Tables) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    QSqlIndex <a class="code" href="classcutex_1_1_qx_sql_database.html#ae4f6bd0e561b17ea664e13ac2d10e999">primaryIndex</a>(<span class="keyword">const</span> QString &amp;tablename) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    QSqlRecord <a class="code" href="classcutex_1_1_qx_sql_database.html#a2930b12078ab4d7d7c647d187dd0efa9">record</a>(<span class="keyword">const</span> QString &amp;tablename) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    QSqlQuery <a class="code" href="classcutex_1_1_qx_sql_database.html#adda75c5c3e9b08118ba8dea41ae50b01">exec</a>(<span class="keyword">const</span> QString &amp;query = QString()) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classcutex_1_1_qx_sql_database.html#ae32443f97322c7f1b53a28333943c221">interleavedTransactions</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classcutex_1_1_qx_sql_database.html#a246c1054c4531c2f04ad67d91be808cc">setInterleavedTransactions</a>(<span class="keywordtype">bool</span> enabled);</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classcutex_1_1_qx_sql_database.html#acb06ace361cfd6c958df1dc0973b4229">transaction</a>();</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classcutex_1_1_qx_sql_database.html#a9dd59dae88dbc0590ff6cc03bec77355">commit</a>();</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classcutex_1_1_qx_sql_database.html#a8432ec585eaaf06dd76d59db30f893a4">hasTransactions</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classcutex_1_1_qx_sql_database.html#a6fac046134ef2656f43245d17eec037c">rollback</a>();</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classcutex_1_1_qx_sql_database.html#aeb38aee6679c49766b3776e84af620dc">recordExist</a>(<span class="keyword">const</span> QString &amp;table, <span class="keyword">const</span> QString &amp;field, <span class="keyword">const</span> QVariant &amp;value);</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classcutex_1_1_qx_sql_database.html#a6788bedabb62234aa10770c98199bddd">loadSettings</a>(QSettings &amp;settings, <span class="keyword">const</span> QString &amp;group = QString(<span class="stringliteral">&quot;Database&quot;</span>));</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classcutex_1_1_qx_sql_database.html#afd9e2b2dc3cfd84d12976635ddf1b460">saveSettings</a>(QSettings &amp;settings, <span class="keywordtype">bool</span> savePassword = <span class="keyword">false</span>, <span class="keyword">const</span> QString &amp;group = QString(<span class="stringliteral">&quot;Database&quot;</span>));</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    QSqlDatabase m_database;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="keywordtype">int</span> m_transactionCounter;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keywordtype">bool</span> m_interleavedTransactions;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;signals:</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="keywordtype">void</span> opened();</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="keywordtype">void</span> closed();</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;};</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;} <span class="comment">// namespace</span></div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160; </div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="preprocessor">#endif // QXSQLDATABASE_H</span></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<div class="ttc" id="aclasscutex_1_1_qx_sql_database_html_aa38651b201b7f4537064b5139c2a969c"><div class="ttname"><a href="classcutex_1_1_qx_sql_database.html#aa38651b201b7f4537064b5139c2a969c">cutex::QxSqlDatabase::setPort</a></div><div class="ttdeci">void setPort(int port)</div><div class="ttdef"><b>Definition:</b> qxsqldatabase.cpp:201</div></div>
+<div class="ttc" id="aclasscutex_1_1_qx_sql_database_html_a5de6b7c0fc0db5eb79edda20005acd0f"><div class="ttname"><a href="classcutex_1_1_qx_sql_database.html#a5de6b7c0fc0db5eb79edda20005acd0f">cutex::QxSqlDatabase::setNumericalPrecisionPolicy</a></div><div class="ttdeci">void setNumericalPrecisionPolicy(QSql::NumericalPrecisionPolicy precisionPolicy)</div><div class="ttdef"><b>Definition:</b> qxsqldatabase.cpp:301</div></div>
+<div class="ttc" id="aclasscutex_1_1_qx_sql_database_html_a0efe680ac4ec5648b0eb4e04b730178a"><div class="ttname"><a href="classcutex_1_1_qx_sql_database.html#a0efe680ac4ec5648b0eb4e04b730178a">cutex::QxSqlDatabase::removeDatabase</a></div><div class="ttdeci">void removeDatabase()</div><div class="ttdef"><b>Definition:</b> qxsqldatabase.cpp:136</div></div>
+<div class="ttc" id="aclasscutex_1_1_qx_sql_database_html_ac8827e5bdbba360a6b3bf297aaeb8104"><div class="ttname"><a href="classcutex_1_1_qx_sql_database.html#ac8827e5bdbba360a6b3bf297aaeb8104">cutex::QxSqlDatabase::registerSqlDriver</a></div><div class="ttdeci">static void registerSqlDriver(const QString &amp;name, QSqlDriverCreatorBase *creator)</div><div class="ttdef"><b>Definition:</b> qxsqldatabase.cpp:90</div></div>
+<div class="ttc" id="aclasscutex_1_1_qx_sql_database_html_ae6b3890d48cace67cfce3a8273b96425"><div class="ttname"><a href="classcutex_1_1_qx_sql_database.html#ae6b3890d48cace67cfce3a8273b96425">cutex::QxSqlDatabase::databaseName</a></div><div class="ttdeci">QString databaseName() const</div><div class="ttdef"><b>Definition:</b> qxsqldatabase.cpp:211</div></div>
+<div class="ttc" id="aclasscutex_1_1_qx_sql_database_html_ade2b2ff330e9bb7e81408eb17917fc38"><div class="ttname"><a href="classcutex_1_1_qx_sql_database.html#ade2b2ff330e9bb7e81408eb17917fc38">cutex::QxSqlDatabase::setConnectOptions</a></div><div class="ttdeci">void setConnectOptions(const QString &amp;options=QString())</div><div class="ttdef"><b>Definition:</b> qxsqldatabase.cpp:281</div></div>
+<div class="ttc" id="aclasscutex_1_1_qx_sql_database_html_a4ff5b689a6a9683ef0cbe9ee1f8c38a1"><div class="ttname"><a href="classcutex_1_1_qx_sql_database.html#a4ff5b689a6a9683ef0cbe9ee1f8c38a1">cutex::QxSqlDatabase::tables</a></div><div class="ttdeci">QStringList tables(QSql::TableType type=QSql::Tables) const</div><div class="ttdef"><b>Definition:</b> qxsqldatabase.cpp:378</div></div>
+<div class="ttc" id="aclasscutex_1_1_qx_sql_database_html_a8432ec585eaaf06dd76d59db30f893a4"><div class="ttname"><a href="classcutex_1_1_qx_sql_database.html#a8432ec585eaaf06dd76d59db30f893a4">cutex::QxSqlDatabase::hasTransactions</a></div><div class="ttdeci">bool hasTransactions() const</div><div class="ttdef"><b>Definition:</b> qxsqldatabase.cpp:516</div></div>
+<div class="ttc" id="aclasscutex_1_1_qx_sql_database_html_af55d6b38ca544520859b26d1c23f827e"><div class="ttname"><a href="classcutex_1_1_qx_sql_database.html#af55d6b38ca544520859b26d1c23f827e">cutex::QxSqlDatabase::userName</a></div><div class="ttdeci">QString userName() const</div><div class="ttdef"><b>Definition:</b> qxsqldatabase.cpp:231</div></div>
+<div class="ttc" id="aclasscutex_1_1_qx_sql_database_html_a6fac046134ef2656f43245d17eec037c"><div class="ttname"><a href="classcutex_1_1_qx_sql_database.html#a6fac046134ef2656f43245d17eec037c">cutex::QxSqlDatabase::rollback</a></div><div class="ttdeci">bool rollback()</div><div class="ttdef"><b>Definition:</b> qxsqldatabase.cpp:495</div></div>
+<div class="ttc" id="aclasscutex_1_1_qx_sql_database_html_aadf0f3ccadb7eb4d474265d4f7d3dd22"><div class="ttname"><a href="classcutex_1_1_qx_sql_database.html#aadf0f3ccadb7eb4d474265d4f7d3dd22">cutex::QxSqlDatabase::setHostName</a></div><div class="ttdeci">void setHostName(const QString &amp;host)</div><div class="ttdef"><b>Definition:</b> qxsqldatabase.cpp:181</div></div>
+<div class="ttc" id="aclasscutex_1_1_qx_sql_database_html_acb91fe83ee38ad8494114f40ae385fd1"><div class="ttname"><a href="classcutex_1_1_qx_sql_database.html#acb91fe83ee38ad8494114f40ae385fd1">cutex::QxSqlDatabase::setDatabaseName</a></div><div class="ttdeci">void setDatabaseName(const QString &amp;name)</div><div class="ttdef"><b>Definition:</b> qxsqldatabase.cpp:221</div></div>
+<div class="ttc" id="aclasscutex_1_1_qx_sql_database_html_aeb38aee6679c49766b3776e84af620dc"><div class="ttname"><a href="classcutex_1_1_qx_sql_database.html#aeb38aee6679c49766b3776e84af620dc">cutex::QxSqlDatabase::recordExist</a></div><div class="ttdeci">bool recordExist(const QString &amp;table, const QString &amp;field, const QVariant &amp;value)</div><div class="ttdef"><b>Definition:</b> qxsqldatabase.cpp:524</div></div>
+<div class="ttc" id="aclasscutex_1_1_qx_sql_database_html_af02eacdf2e815827bfa08c0fd1b3c267"><div class="ttname"><a href="classcutex_1_1_qx_sql_database.html#af02eacdf2e815827bfa08c0fd1b3c267">cutex::QxSqlDatabase::setUserName</a></div><div class="ttdeci">void setUserName(const QString &amp;name)</div><div class="ttdef"><b>Definition:</b> qxsqldatabase.cpp:241</div></div>
+<div class="ttc" id="aclasscutex_1_1_qx_sql_database_html_a7e951953f0635176831a0709c2d6447a"><div class="ttname"><a href="classcutex_1_1_qx_sql_database.html#a7e951953f0635176831a0709c2d6447a">cutex::QxSqlDatabase::numericalPrecisionPolicy</a></div><div class="ttdeci">QSql::NumericalPrecisionPolicy numericalPrecisionPolicy() const</div><div class="ttdef"><b>Definition:</b> qxsqldatabase.cpp:291</div></div>
+<div class="ttc" id="aclasscutex_1_1_qx_sql_database_html"><div class="ttname"><a href="classcutex_1_1_qx_sql_database.html">cutex::QxSqlDatabase</a></div><div class="ttdoc">Die Klasse QxSqlDatabase ersetzt die Qt-Klasse QSqlDatabase.</div><div class="ttdef"><b>Definition:</b> qxsqldatabase.h:35</div></div>
+<div class="ttc" id="aclasscutex_1_1_qx_sql_database_html_a9dd59dae88dbc0590ff6cc03bec77355"><div class="ttname"><a href="classcutex_1_1_qx_sql_database.html#a9dd59dae88dbc0590ff6cc03bec77355">cutex::QxSqlDatabase::commit</a></div><div class="ttdeci">bool commit()</div><div class="ttdef"><b>Definition:</b> qxsqldatabase.cpp:470</div></div>
+<div class="ttc" id="aclasscutex_1_1_qx_sql_database_html_afa6f6d766c1a891ff6e418500948d3f9"><div class="ttname"><a href="classcutex_1_1_qx_sql_database.html#afa6f6d766c1a891ff6e418500948d3f9">cutex::QxSqlDatabase::close</a></div><div class="ttdeci">void close()</div><div class="ttdef"><b>Definition:</b> qxsqldatabase.cpp:343</div></div>
+<div class="ttc" id="aclasscutex_1_1_qx_sql_database_html_ada2221212eeff08b8d476a237380c5d7"><div class="ttname"><a href="classcutex_1_1_qx_sql_database.html#ada2221212eeff08b8d476a237380c5d7">cutex::QxSqlDatabase::connectionName</a></div><div class="ttdeci">QString connectionName() const</div><div class="ttdef"><b>Definition:</b> qxsqldatabase.cpp:161</div></div>
+<div class="ttc" id="aclasscutex_1_1_qx_sql_database_html_a6e6ef48cedf8ae4635d6b3181891dfd9"><div class="ttname"><a href="classcutex_1_1_qx_sql_database.html#a6e6ef48cedf8ae4635d6b3181891dfd9">cutex::QxSqlDatabase::isValid</a></div><div class="ttdeci">bool isValid() const</div><div class="ttdef"><b>Definition:</b> qxsqldatabase.cpp:354</div></div>
+<div class="ttc" id="aclasscutex_1_1_qx_sql_database_html_a46415ad102838b53cf46d9ad96eeb7b5"><div class="ttname"><a href="classcutex_1_1_qx_sql_database.html#a46415ad102838b53cf46d9ad96eeb7b5">cutex::QxSqlDatabase::driver</a></div><div class="ttdeci">QSqlDriver * driver() const</div><div class="ttdef"><b>Definition:</b> qxsqldatabase.cpp:145</div></div>
+<div class="ttc" id="aclasscutex_1_1_qx_sql_database_html_ae4f6bd0e561b17ea664e13ac2d10e999"><div class="ttname"><a href="classcutex_1_1_qx_sql_database.html#ae4f6bd0e561b17ea664e13ac2d10e999">cutex::QxSqlDatabase::primaryIndex</a></div><div class="ttdeci">QSqlIndex primaryIndex(const QString &amp;tablename) const</div><div class="ttdef"><b>Definition:</b> qxsqldatabase.cpp:386</div></div>
+<div class="ttc" id="aclasscutex_1_1_qx_sql_database_html_a7d1bc615ac09e4aee3a7d00c4a36e1dc"><div class="ttname"><a href="classcutex_1_1_qx_sql_database.html#a7d1bc615ac09e4aee3a7d00c4a36e1dc">cutex::QxSqlDatabase::drivers</a></div><div class="ttdeci">static QMap&lt; QString, QString &gt; drivers()</div><div class="ttdef"><b>Definition:</b> qxsqldatabase.cpp:53</div></div>
+<div class="ttc" id="aclasscutex_1_1_qx_sql_database_html_a52e8ea95d3a73c9b34ddbe7bea6642fa"><div class="ttname"><a href="classcutex_1_1_qx_sql_database.html#a52e8ea95d3a73c9b34ddbe7bea6642fa">cutex::QxSqlDatabase::QxSqlDatabase</a></div><div class="ttdeci">QxSqlDatabase(QObject *parent=0)</div><div class="ttdef"><b>Definition:</b> qxsqldatabase.cpp:28</div></div>
+<div class="ttc" id="aclasscutex_1_1_qx_sql_database_html_a23a4b2253679a82d20c5126f61645f97"><div class="ttname"><a href="classcutex_1_1_qx_sql_database.html#a23a4b2253679a82d20c5126f61645f97">cutex::QxSqlDatabase::connectOptions</a></div><div class="ttdeci">QString connectOptions() const</div><div class="ttdef"><b>Definition:</b> qxsqldatabase.cpp:271</div></div>
+<div class="ttc" id="aclasscutex_1_1_qx_sql_database_html_aedbaa0bf4686d944640b82b5e285e21e"><div class="ttname"><a href="classcutex_1_1_qx_sql_database.html#aedbaa0bf4686d944640b82b5e285e21e">cutex::QxSqlDatabase::driverName</a></div><div class="ttdeci">QString driverName() const</div><div class="ttdef"><b>Definition:</b> qxsqldatabase.cpp:153</div></div>
+<div class="ttc" id="aclasscutex_1_1_qx_sql_database_html_acb06ace361cfd6c958df1dc0973b4229"><div class="ttname"><a href="classcutex_1_1_qx_sql_database.html#acb06ace361cfd6c958df1dc0973b4229">cutex::QxSqlDatabase::transaction</a></div><div class="ttdeci">bool transaction()</div><div class="ttdef"><b>Definition:</b> qxsqldatabase.cpp:445</div></div>
+<div class="ttc" id="aclasscutex_1_1_qx_sql_database_html_a246c1054c4531c2f04ad67d91be808cc"><div class="ttname"><a href="classcutex_1_1_qx_sql_database.html#a246c1054c4531c2f04ad67d91be808cc">cutex::QxSqlDatabase::setInterleavedTransactions</a></div><div class="ttdeci">void setInterleavedTransactions(bool enabled)</div><div class="ttdef"><b>Definition:</b> qxsqldatabase.cpp:432</div></div>
+<div class="ttc" id="aclasscutex_1_1_qx_sql_database_html_adda75c5c3e9b08118ba8dea41ae50b01"><div class="ttname"><a href="classcutex_1_1_qx_sql_database.html#adda75c5c3e9b08118ba8dea41ae50b01">cutex::QxSqlDatabase::exec</a></div><div class="ttdeci">QSqlQuery exec(const QString &amp;query=QString()) const</div><div class="ttdef"><b>Definition:</b> qxsqldatabase.cpp:410</div></div>
+<div class="ttc" id="aclasscutex_1_1_qx_sql_database_html_a1895e1d88dfb2f453141db6c48c0d703"><div class="ttname"><a href="classcutex_1_1_qx_sql_database.html#a1895e1d88dfb2f453141db6c48c0d703">cutex::QxSqlDatabase::isOpenError</a></div><div class="ttdeci">bool isOpenError() const</div><div class="ttdef"><b>Definition:</b> qxsqldatabase.cpp:370</div></div>
+<div class="ttc" id="aclasscutex_1_1_qx_sql_database_html_a44be8ffd4e2fb8a7938e0b4376027854"><div class="ttname"><a href="classcutex_1_1_qx_sql_database.html#a44be8ffd4e2fb8a7938e0b4376027854">cutex::QxSqlDatabase::isDriverAvailable</a></div><div class="ttdeci">static bool isDriverAvailable(const QString &amp;name)</div><div class="ttdef"><b>Definition:</b> qxsqldatabase.cpp:82</div></div>
+<div class="ttc" id="aclasscutex_1_1_qx_sql_database_html_aff767efdd25e35e20cca3532357fdd02"><div class="ttname"><a href="classcutex_1_1_qx_sql_database.html#aff767efdd25e35e20cca3532357fdd02">cutex::QxSqlDatabase::contains</a></div><div class="ttdeci">static bool contains(const QString &amp;connectionName=QLatin1String(QSqlDatabase::defaultConnection))</div><div class="ttdef"><b>Definition:</b> qxsqldatabase.cpp:106</div></div>
+<div class="ttc" id="aclasscutex_1_1_qx_sql_database_html_a6788bedabb62234aa10770c98199bddd"><div class="ttname"><a href="classcutex_1_1_qx_sql_database.html#a6788bedabb62234aa10770c98199bddd">cutex::QxSqlDatabase::loadSettings</a></div><div class="ttdeci">bool loadSettings(QSettings &amp;settings, const QString &amp;group=QString(&quot;Database&quot;))</div><div class="ttdef"><b>Definition:</b> qxsqldatabase.cpp:544</div></div>
+<div class="ttc" id="aclasscutex_1_1_qx_sql_database_html_a5d61de3ec10e513a40bba06ae026c713"><div class="ttname"><a href="classcutex_1_1_qx_sql_database.html#a5d61de3ec10e513a40bba06ae026c713">cutex::QxSqlDatabase::password</a></div><div class="ttdeci">QString password() const</div><div class="ttdef"><b>Definition:</b> qxsqldatabase.cpp:251</div></div>
+<div class="ttc" id="aclasscutex_1_1_qx_sql_database_html_a5b0e7e3c160231a8428c50cdf9c778d8"><div class="ttname"><a href="classcutex_1_1_qx_sql_database.html#a5b0e7e3c160231a8428c50cdf9c778d8">cutex::QxSqlDatabase::port</a></div><div class="ttdeci">int port() const</div><div class="ttdef"><b>Definition:</b> qxsqldatabase.cpp:191</div></div>
+<div class="ttc" id="aclasscutex_1_1_qx_sql_database_html_a22f83c945e46f1358567fc88f0f78c85"><div class="ttname"><a href="classcutex_1_1_qx_sql_database.html#a22f83c945e46f1358567fc88f0f78c85">cutex::QxSqlDatabase::lastError</a></div><div class="ttdeci">QSqlError lastError() const</div><div class="ttdef"><b>Definition:</b> qxsqldatabase.cpp:402</div></div>
+<div class="ttc" id="aclasscutex_1_1_qx_sql_database_html_a2930b12078ab4d7d7c647d187dd0efa9"><div class="ttname"><a href="classcutex_1_1_qx_sql_database.html#a2930b12078ab4d7d7c647d187dd0efa9">cutex::QxSqlDatabase::record</a></div><div class="ttdeci">QSqlRecord record(const QString &amp;tablename) const</div><div class="ttdef"><b>Definition:</b> qxsqldatabase.cpp:394</div></div>
+<div class="ttc" id="aclasscutex_1_1_qx_sql_database_html_afd9e2b2dc3cfd84d12976635ddf1b460"><div class="ttname"><a href="classcutex_1_1_qx_sql_database.html#afd9e2b2dc3cfd84d12976635ddf1b460">cutex::QxSqlDatabase::saveSettings</a></div><div class="ttdeci">void saveSettings(QSettings &amp;settings, bool savePassword=false, const QString &amp;group=QString(&quot;Database&quot;))</div><div class="ttdef"><b>Definition:</b> qxsqldatabase.cpp:568</div></div>
+<div class="ttc" id="aclasscutex_1_1_qx_sql_database_html_ae751e6bb40b60b294c0967c6bc639fc3"><div class="ttname"><a href="classcutex_1_1_qx_sql_database.html#ae751e6bb40b60b294c0967c6bc639fc3">cutex::QxSqlDatabase::setPassword</a></div><div class="ttdeci">void setPassword(const QString &amp;password)</div><div class="ttdef"><b>Definition:</b> qxsqldatabase.cpp:261</div></div>
+<div class="ttc" id="aclasscutex_1_1_qx_sql_database_html_ae32443f97322c7f1b53a28333943c221"><div class="ttname"><a href="classcutex_1_1_qx_sql_database.html#ae32443f97322c7f1b53a28333943c221">cutex::QxSqlDatabase::interleavedTransactions</a></div><div class="ttdeci">bool interleavedTransactions() const</div><div class="ttdef"><b>Definition:</b> qxsqldatabase.cpp:420</div></div>
+<div class="ttc" id="aclasscutex_1_1_qx_sql_database_html_a48b52973bcf32bee213147a8f9c9189c"><div class="ttname"><a href="classcutex_1_1_qx_sql_database.html#a48b52973bcf32bee213147a8f9c9189c">cutex::QxSqlDatabase::isOpen</a></div><div class="ttdeci">bool isOpen() const</div><div class="ttdef"><b>Definition:</b> qxsqldatabase.cpp:362</div></div>
+<div class="ttc" id="aclasscutex_1_1_qx_sql_database_html_a70e5cd455871ed5bff2e7e401eafac96"><div class="ttname"><a href="classcutex_1_1_qx_sql_database.html#a70e5cd455871ed5bff2e7e401eafac96">cutex::QxSqlDatabase::hostName</a></div><div class="ttdeci">QString hostName() const</div><div class="ttdef"><b>Definition:</b> qxsqldatabase.cpp:171</div></div>
+<div class="ttc" id="aclasscutex_1_1_qx_sql_database_html_a6ce94af66627a4b4873b217dc5516a11"><div class="ttname"><a href="classcutex_1_1_qx_sql_database.html#a6ce94af66627a4b4873b217dc5516a11">cutex::QxSqlDatabase::addDatabase</a></div><div class="ttdeci">void addDatabase(const QString &amp;type, const QString &amp;connectionName=QLatin1String(QSqlDatabase::defaultConnection))</div><div class="ttdef"><b>Definition:</b> qxsqldatabase.cpp:116</div></div>
+<div class="ttc" id="aclasscutex_1_1_qx_sql_database_html_ae3ee9783dd8d7ab77454abd5fb5fbc8d"><div class="ttname"><a href="classcutex_1_1_qx_sql_database.html#ae3ee9783dd8d7ab77454abd5fb5fbc8d">cutex::QxSqlDatabase::open</a></div><div class="ttdeci">virtual bool open()</div><div class="ttdef"><b>Definition:</b> qxsqldatabase.cpp:311</div></div>
+<div class="ttc" id="aclasscutex_1_1_qx_sql_database_html_a3e164f1cf0944badb7cdef7185ae4465"><div class="ttname"><a href="classcutex_1_1_qx_sql_database.html#a3e164f1cf0944badb7cdef7185ae4465">cutex::QxSqlDatabase::connectionNames</a></div><div class="ttdeci">static QStringList connectionNames()</div><div class="ttdef"><b>Definition:</b> qxsqldatabase.cpp:98</div></div>
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><b>qxsqldatabase.h</b></li>
+    <li class="footer">Erzeugt von <a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20 </li>
+  </ul>
+</div>
+</body>
+</html>

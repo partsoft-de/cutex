@@ -1,0 +1,186 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.20"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>cutex: C:/Users/sasch/Documents/Projekte/libs/cutex/include/qxsqlscript.h Quellcode</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="logo.png"/></td>
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">cutex
+   &#160;<span id="projectnumber">1.5.03</span>
+   </div>
+   <div id="projectbrief">cute Qt extensions</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Erzeugt von Doxygen 1.8.20 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Suchen');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Suchen');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('qxsqlscript_8h_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">qxsqlscript.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/***********************************************************************************************************************</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">**</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">** Copyright (C) 2016-2021 Partsoft UG (haftungsbeschränkt)</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">** Contact: https://www.partsoft.de/index.php/kontakt</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">**</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">** This file is part of cutex</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">**</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">** cutex is free software: you can redistribute it and/or modify it under the terms of the GNU Lesser General Public</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">** License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">** version.</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">**</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">** cutex is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">** of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more details.</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">**</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">** You should have received a copy of the GNU Lesser General Public License along with cutex. If not, see</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">** http://www.gnu.org/licenses.</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">**</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment">***********************************************************************************************************************/</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#ifndef SQLSCRIPT_H</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#define SQLSCRIPT_H</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &quot;cutex.h&quot;</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">namespace </span>cutex {</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="classcutex_1_1_qx_sql_script.html">   32</a></span>&#160;<span class="keyword">class </span><a class="code" href="classcutex_1_1_qx_sql_script.html">QxSqlScript</a> : <span class="keyword">public</span> QObject</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;{</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    Q_OBJECT</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="classcutex_1_1_qx_sql_script.html#ad2d75c88fb121aa47ff5775650efe431">   37</a></span>&#160;    <span class="keyword">enum</span> <a class="code" href="classcutex_1_1_qx_sql_script.html#ad2d75c88fb121aa47ff5775650efe431">Error</a> {</div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="classcutex_1_1_qx_sql_script.html#ad2d75c88fb121aa47ff5775650efe431a9e45ed160366a144e989cd730504a9fb">   38</a></span>&#160;        <a class="code" href="classcutex_1_1_qx_sql_script.html#ad2d75c88fb121aa47ff5775650efe431a9e45ed160366a144e989cd730504a9fb">NoError</a> = 0, <a class="code" href="classcutex_1_1_qx_sql_script.html#ad2d75c88fb121aa47ff5775650efe431aaba8df48c342e1571f59938133955b27">FileOpenError</a>, <a class="code" href="classcutex_1_1_qx_sql_script.html#ad2d75c88fb121aa47ff5775650efe431a3cec498216920f30818cff2041f25256">ConnectionError</a>, <a class="code" href="classcutex_1_1_qx_sql_script.html#ad2d75c88fb121aa47ff5775650efe431a002083fcb539bae02ee49beabfe960cf">StatementError</a></div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="classcutex_1_1_qx_sql_script.html#ad2d75c88fb121aa47ff5775650efe431a002083fcb539bae02ee49beabfe960cf">   39</a></span>&#160;    };</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <a class="code" href="classcutex_1_1_qx_sql_script.html#a7a42db24a2fb8510d4d9e35f290bb116">QxSqlScript</a>(QObject *parent = 0);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <a class="code" href="classcutex_1_1_qx_sql_script.html#a7a42db24a2fb8510d4d9e35f290bb116">QxSqlScript</a>(<span class="keyword">const</span> QString &amp;<a class="code" href="classcutex_1_1_qx_sql_script.html#a8c4c857e0671dba645db03358addb9e2">fileName</a>, QObject *parent = 0);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classcutex_1_1_qx_sql_script.html#ab85e41dd5df72f3b59c72a9700dbfcf7">exec</a>(<span class="keyword">const</span> QString &amp;<a class="code" href="classcutex_1_1_qx_sql_script.html#a8c4c857e0671dba645db03358addb9e2">fileName</a>, QSqlDatabase database = QSqlDatabase());</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classcutex_1_1_qx_sql_script.html#ab85e41dd5df72f3b59c72a9700dbfcf7">exec</a>(QSqlDatabase database = QSqlDatabase());</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">#if QT_VERSION &gt;= QT_VERSION_CHECK(6,0,0)</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    QStringConverter::Encoding <a class="code" href="classcutex_1_1_qx_sql_script.html#a191ee1ee6feabb05341270209dc5a31e">encoding</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classcutex_1_1_qx_sql_script.html#aa07ee0d27cc9dab0976ff40648e896df">setEncoding</a>(QStringConverter::Encoding <a class="code" href="classcutex_1_1_qx_sql_script.html#a191ee1ee6feabb05341270209dc5a31e">encoding</a>);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    QString codec() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordtype">void</span> setCodec(<span class="keyword">const</span> QString &amp;codec);</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    QString <a class="code" href="classcutex_1_1_qx_sql_script.html#a8c4c857e0671dba645db03358addb9e2">fileName</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    QString <a class="code" href="classcutex_1_1_qx_sql_script.html#a31bd91b47b16ddddba2cd82befc8a9ca">lastStatement</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <a class="code" href="classcutex_1_1_qx_sql_script.html#ad2d75c88fb121aa47ff5775650efe431">QxSqlScript::Error</a> <a class="code" href="classcutex_1_1_qx_sql_script.html#a04e73f1085e77b46d4e2583f7bc8716b">lastError</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    QSqlQuery <a class="code" href="classcutex_1_1_qx_sql_script.html#ad0dbae40e9917412dfe3d6aba31f795c">query</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    QString m_fileName;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="preprocessor">#if QT_VERSION &gt;= QT_VERSION_CHECK(6,0,0)</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    QStringConverter::Encoding m_encoding;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    QString m_codec;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    QString m_statement;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <a class="code" href="classcutex_1_1_qx_sql_script.html#ad2d75c88fb121aa47ff5775650efe431">QxSqlScript::Error</a> m_error;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    QSqlQuery m_query;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;signals:</div>
+<div class="line"><a name="l00070"></a><span class="lineno"><a class="line" href="classcutex_1_1_qx_sql_script.html#a5c131bebfdca5061dfeb5de1aee61345">   70</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classcutex_1_1_qx_sql_script.html#a5c131bebfdca5061dfeb5de1aee61345">processed</a>(<span class="keyword">const</span> QString &amp;statement);</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;};</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;} <span class="comment">// namespace</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="preprocessor">#endif // SQLSCRIPT_H</span></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<div class="ttc" id="aclasscutex_1_1_qx_sql_script_html_a191ee1ee6feabb05341270209dc5a31e"><div class="ttname"><a href="classcutex_1_1_qx_sql_script.html#a191ee1ee6feabb05341270209dc5a31e">cutex::QxSqlScript::encoding</a></div><div class="ttdeci">QStringConverter::Encoding encoding() const</div><div class="ttdef"><b>Definition:</b> qxsqlscript.cpp:123</div></div>
+<div class="ttc" id="aclasscutex_1_1_qx_sql_script_html_ad2d75c88fb121aa47ff5775650efe431"><div class="ttname"><a href="classcutex_1_1_qx_sql_script.html#ad2d75c88fb121aa47ff5775650efe431">cutex::QxSqlScript::Error</a></div><div class="ttdeci">Error</div><div class="ttdef"><b>Definition:</b> qxsqlscript.h:37</div></div>
+<div class="ttc" id="aclasscutex_1_1_qx_sql_script_html_a8c4c857e0671dba645db03358addb9e2"><div class="ttname"><a href="classcutex_1_1_qx_sql_script.html#a8c4c857e0671dba645db03358addb9e2">cutex::QxSqlScript::fileName</a></div><div class="ttdeci">QString fileName() const</div><div class="ttdef"><b>Definition:</b> qxsqlscript.cpp:163</div></div>
+<div class="ttc" id="aclasscutex_1_1_qx_sql_script_html_a31bd91b47b16ddddba2cd82befc8a9ca"><div class="ttname"><a href="classcutex_1_1_qx_sql_script.html#a31bd91b47b16ddddba2cd82befc8a9ca">cutex::QxSqlScript::lastStatement</a></div><div class="ttdeci">QString lastStatement() const</div><div class="ttdef"><b>Definition:</b> qxsqlscript.cpp:171</div></div>
+<div class="ttc" id="aclasscutex_1_1_qx_sql_script_html_a04e73f1085e77b46d4e2583f7bc8716b"><div class="ttname"><a href="classcutex_1_1_qx_sql_script.html#a04e73f1085e77b46d4e2583f7bc8716b">cutex::QxSqlScript::lastError</a></div><div class="ttdeci">QxSqlScript::Error lastError() const</div><div class="ttdef"><b>Definition:</b> qxsqlscript.cpp:179</div></div>
+<div class="ttc" id="aclasscutex_1_1_qx_sql_script_html_a5c131bebfdca5061dfeb5de1aee61345"><div class="ttname"><a href="classcutex_1_1_qx_sql_script.html#a5c131bebfdca5061dfeb5de1aee61345">cutex::QxSqlScript::processed</a></div><div class="ttdeci">void processed(const QString &amp;statement)</div></div>
+<div class="ttc" id="aclasscutex_1_1_qx_sql_script_html_ad2d75c88fb121aa47ff5775650efe431aaba8df48c342e1571f59938133955b27"><div class="ttname"><a href="classcutex_1_1_qx_sql_script.html#ad2d75c88fb121aa47ff5775650efe431aaba8df48c342e1571f59938133955b27">cutex::QxSqlScript::FileOpenError</a></div><div class="ttdeci">@ FileOpenError</div><div class="ttdef"><b>Definition:</b> qxsqlscript.h:38</div></div>
+<div class="ttc" id="aclasscutex_1_1_qx_sql_script_html_ad2d75c88fb121aa47ff5775650efe431a9e45ed160366a144e989cd730504a9fb"><div class="ttname"><a href="classcutex_1_1_qx_sql_script.html#ad2d75c88fb121aa47ff5775650efe431a9e45ed160366a144e989cd730504a9fb">cutex::QxSqlScript::NoError</a></div><div class="ttdeci">@ NoError</div><div class="ttdef"><b>Definition:</b> qxsqlscript.h:38</div></div>
+<div class="ttc" id="aclasscutex_1_1_qx_sql_script_html_ab85e41dd5df72f3b59c72a9700dbfcf7"><div class="ttname"><a href="classcutex_1_1_qx_sql_script.html#ab85e41dd5df72f3b59c72a9700dbfcf7">cutex::QxSqlScript::exec</a></div><div class="ttdeci">bool exec(const QString &amp;fileName, QSqlDatabase database=QSqlDatabase())</div><div class="ttdef"><b>Definition:</b> qxsqlscript.cpp:56</div></div>
+<div class="ttc" id="aclasscutex_1_1_qx_sql_script_html_ad2d75c88fb121aa47ff5775650efe431a3cec498216920f30818cff2041f25256"><div class="ttname"><a href="classcutex_1_1_qx_sql_script.html#ad2d75c88fb121aa47ff5775650efe431a3cec498216920f30818cff2041f25256">cutex::QxSqlScript::ConnectionError</a></div><div class="ttdeci">@ ConnectionError</div><div class="ttdef"><b>Definition:</b> qxsqlscript.h:38</div></div>
+<div class="ttc" id="aclasscutex_1_1_qx_sql_script_html_aa07ee0d27cc9dab0976ff40648e896df"><div class="ttname"><a href="classcutex_1_1_qx_sql_script.html#aa07ee0d27cc9dab0976ff40648e896df">cutex::QxSqlScript::setEncoding</a></div><div class="ttdeci">void setEncoding(QStringConverter::Encoding encoding)</div><div class="ttdef"><b>Definition:</b> qxsqlscript.cpp:133</div></div>
+<div class="ttc" id="aclasscutex_1_1_qx_sql_script_html_ad2d75c88fb121aa47ff5775650efe431a002083fcb539bae02ee49beabfe960cf"><div class="ttname"><a href="classcutex_1_1_qx_sql_script.html#ad2d75c88fb121aa47ff5775650efe431a002083fcb539bae02ee49beabfe960cf">cutex::QxSqlScript::StatementError</a></div><div class="ttdeci">@ StatementError</div><div class="ttdef"><b>Definition:</b> qxsqlscript.h:38</div></div>
+<div class="ttc" id="aclasscutex_1_1_qx_sql_script_html_a7a42db24a2fb8510d4d9e35f290bb116"><div class="ttname"><a href="classcutex_1_1_qx_sql_script.html#a7a42db24a2fb8510d4d9e35f290bb116">cutex::QxSqlScript::QxSqlScript</a></div><div class="ttdeci">QxSqlScript(QObject *parent=0)</div><div class="ttdef"><b>Definition:</b> qxsqlscript.cpp:27</div></div>
+<div class="ttc" id="aclasscutex_1_1_qx_sql_script_html_ad0dbae40e9917412dfe3d6aba31f795c"><div class="ttname"><a href="classcutex_1_1_qx_sql_script.html#ad0dbae40e9917412dfe3d6aba31f795c">cutex::QxSqlScript::query</a></div><div class="ttdeci">QSqlQuery query() const</div><div class="ttdef"><b>Definition:</b> qxsqlscript.cpp:187</div></div>
+<div class="ttc" id="aclasscutex_1_1_qx_sql_script_html"><div class="ttname"><a href="classcutex_1_1_qx_sql_script.html">cutex::QxSqlScript</a></div><div class="ttdoc">Mit Hilfe der Klasse QxSqlScript kann eine Datei mit SQL-Anweisungen ausgeführt werden.</div><div class="ttdef"><b>Definition:</b> qxsqlscript.h:33</div></div>
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><b>qxsqlscript.h</b></li>
+    <li class="footer">Erzeugt von <a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20 </li>
+  </ul>
+</div>
+</body>
+</html>
