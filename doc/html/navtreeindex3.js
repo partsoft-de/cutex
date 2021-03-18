@@ -1,5 +1,12 @@
 var NAVTREEINDEX3 =
 {
+"classcutex_1_1_qx_wait_cursor.html#afa3af848907895d291009861eeb10a72":[0,0,0,40,1],
+"classcutex_1_1_qx_wizard.html":[0,0,0,41],
+"classcutex_1_1_qx_wizard.html#a010e23ac7506881ebf96e5731822973c":[0,0,0,41,47],
+"classcutex_1_1_qx_wizard.html#a03e2f69f40781f8861b7560c06075366":[0,0,0,41,25],
+"classcutex_1_1_qx_wizard.html#a070049043014ae40e43eae9e90e98dc3":[0,0,0,41,27],
+"classcutex_1_1_qx_wizard.html#a0a0e2fdb86469a9e187e9e98b52e4ca1":[0,0,0,41,7],
+"classcutex_1_1_qx_wizard.html#a10c6c2dc2b02b4e0692b1749b4b067b1":[0,0,0,41,39],
 "classcutex_1_1_qx_wizard.html#a126e2199ae965781625f7ab0d9246300":[0,0,0,41,38],
 "classcutex_1_1_qx_wizard.html#a176694a3b01207505a67b53eabcfb4ca":[0,0,0,41,32],
 "classcutex_1_1_qx_wizard.html#a1858d622a579645253cf0b6e230d41db":[0,0,0,41,9],
@@ -105,8 +112,8 @@ var NAVTREEINDEX3 =
 "functions_enum.html":[0,3,2],
 "functions_eval.html":[0,3,3],
 "functions_f.html":[0,3,0,5],
-"functions_func.html":[0,3,1],
 "functions_func.html":[0,3,1,0],
+"functions_func.html":[0,3,1],
 "functions_func_b.html":[0,3,1,1],
 "functions_func_c.html":[0,3,1,2],
 "functions_func_d.html":[0,3,1,3],
@@ -196,6 +203,5 @@ var NAVTREEINDEX3 =
 "qxwaitcursor_8h_source.html":[1,0,0,42],
 "qxwizard_8h_source.html":[1,0,0,43],
 "qxxmldocument_8h_source.html":[1,0,0,44],
-"qxxmlnode_8h_source.html":[1,0,0,45],
-"":[0,0,0]
+"qxxmlnode_8h_source.html":[1,0,0,45]
 };

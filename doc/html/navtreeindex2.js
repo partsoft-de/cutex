@@ -1,5 +1,12 @@
 var NAVTREEINDEX2 =
 {
+"classcutex_1_1_qx_sql_script.html#acfbd6ed767227ace8dc2a10408e1a82a":[0,0,0,28,13],
+"classcutex_1_1_qx_sql_script.html#ad0dbae40e9917412dfe3d6aba31f795c":[0,0,0,28,10],
+"classcutex_1_1_qx_sql_script.html#ad2d75c88fb121aa47ff5775650efe431":[0,0,0,28,0],
+"classcutex_1_1_qx_sql_script.html#ad2d75c88fb121aa47ff5775650efe431a002083fcb539bae02ee49beabfe960cf":[0,0,0,28,0,3],
+"classcutex_1_1_qx_sql_script.html#ad2d75c88fb121aa47ff5775650efe431a3cec498216920f30818cff2041f25256":[0,0,0,28,0,2],
+"classcutex_1_1_qx_sql_script.html#ad2d75c88fb121aa47ff5775650efe431a9e45ed160366a144e989cd730504a9fb":[0,0,0,28,0,0],
+"classcutex_1_1_qx_sql_script.html#ad2d75c88fb121aa47ff5775650efe431aaba8df48c342e1571f59938133955b27":[0,0,0,28,0,1],
 "classcutex_1_1_qx_sql_script.html#afec24b49d7bc0850ec8decd63c1d10a6":[0,0,0,28,12],
 "classcutex_1_1_qx_sql_table_view.html":[0,0,0,29],
 "classcutex_1_1_qx_sql_table_view.html#a07c4fc550e2d38fd56f628b6ad3badfd":[0,0,0,29,3],
@@ -242,12 +249,5 @@ var NAVTREEINDEX2 =
 "classcutex_1_1_qx_ui_field.html#ae0be2b43e28eb0e73b9c60ed78aafd53":[0,0,0,39,0],
 "classcutex_1_1_qx_ui_field.html#affd3affe8de93e35b5e4c7e82be1ad1c":[0,0,0,39,4],
 "classcutex_1_1_qx_wait_cursor.html":[0,0,0,40],
-"classcutex_1_1_qx_wait_cursor.html#a17c3b1af0967ac034a7a5d5172a2138b":[0,0,0,40,0],
-"classcutex_1_1_qx_wait_cursor.html#afa3af848907895d291009861eeb10a72":[0,0,0,40,1],
-"classcutex_1_1_qx_wizard.html":[0,0,0,41],
-"classcutex_1_1_qx_wizard.html#a010e23ac7506881ebf96e5731822973c":[0,0,0,41,47],
-"classcutex_1_1_qx_wizard.html#a03e2f69f40781f8861b7560c06075366":[0,0,0,41,25],
-"classcutex_1_1_qx_wizard.html#a070049043014ae40e43eae9e90e98dc3":[0,0,0,41,27],
-"classcutex_1_1_qx_wizard.html#a0a0e2fdb86469a9e187e9e98b52e4ca1":[0,0,0,41,7],
-"classcutex_1_1_qx_wizard.html#a10c6c2dc2b02b4e0692b1749b4b067b1":[0,0,0,41,39]
+"classcutex_1_1_qx_wait_cursor.html#a17c3b1af0967ac034a7a5d5172a2138b":[0,0,0,40,0]
 };

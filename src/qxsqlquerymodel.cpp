@@ -236,6 +236,7 @@ bool QxSqlQueryModel::setQuery(QSqlQuery &query)
     while (query.next())
         m_data.append(new QSqlRecord(query.record()));
 
+    selectSqlRelations();
     endResetModel();
 
     return success;
@@ -286,6 +287,7 @@ bool QxSqlQueryModel::setRecord(int row, const QSqlRecord &values)
             QString fieldName = m_dummy.fieldName(n);
             record->setValue(fieldName, values.value(fieldName));
         }
+        selectSqlRelations(record);
         emit dataChanged(index(row, 0), index(row, columnCount() - 1));
 
         return true;
@@ -401,6 +403,15 @@ void QxSqlQueryModel::setColumnType(const QString &column, QVariant::Type type, 
 }
 
 /*!
+  Setzt für die Spalte <i>column</i> die SQL-Relation <i>sqlRelation</i>.
+*/
+void QxSqlQueryModel::setSqlRelation(int column, const QSqlRelation &sqlRelation)
+{
+    m_sqlRelations.insert(column, sqlRelation);
+    selectSqlRelation(column);
+}
+
+/*!
   Erzeugt einen Completer aus den Werten der Spalte <i>column</i>.
 */
 QCompleter* QxSqlQueryModel::createCompleter(int column, QObject *parent)
@@ -457,6 +468,46 @@ int QxSqlQueryModel::columnIndex(const QString &caption)
     }
 
     return column;
+}
+
+void QxSqlQueryModel::selectSqlRelation(QSqlRecord *record, int column, const QSqlRelation &sqlRelation)
+{
+    QSqlQuery query;
+
+    query.prepare(QString("SELECT %1 FROM %2 WHERE %3 = :%3").
+        arg(sqlRelation.displayColumn()).arg(sqlRelation.tableName()).arg(sqlRelation.indexColumn()));
+    query.bindValue(QString(":%1").arg(sqlRelation.indexColumn()), record->value(column));
+
+    if (query.exec() && query.first())
+        record->setValue(column, query.value(0));
+}
+
+void QxSqlQueryModel::selectSqlRelation(int column)
+{
+    QSqlRelation relation;
+    QSqlQuery query;
+
+    for (QSqlRecord *record : m_data) {
+        if (column < record->count())
+            selectSqlRelation(record, column, m_sqlRelations.value(column));
+    }
+}
+
+void QxSqlQueryModel::selectSqlRelations(QSqlRecord *record)
+{
+    QSqlRelation sqlRelation;
+    QSqlQuery query;
+
+    for (int column : m_sqlRelations.keys()) {
+        if (column < record->count())
+            selectSqlRelation(record, column, m_sqlRelations.value(column));
+    }
+}
+
+void QxSqlQueryModel::selectSqlRelations()
+{
+    for (QSqlRecord *record : m_data)
+        selectSqlRelations(record);
 }
 
 /*!

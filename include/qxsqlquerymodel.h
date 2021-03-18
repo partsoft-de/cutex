@@ -92,6 +92,7 @@ public:
     void setColumnAlignment(const QString &column, Qt::AlignmentFlag alignment);
     void setColumnType(int column, QVariant::Type type, const QString &format = QString());
     void setColumnType(const QString &column, QVariant::Type type, const QString &format = QString());
+    void setSqlRelation(int column, const QSqlRelation &sqlRelation);
     QCompleter* createCompleter(int column = 0, QObject *parent = 0);
     static QCompleter* createCompleter(QSqlQuery query, int column = 0, QObject *parent = 0);
     static QCompleter* createCompleter(const QString &query, int column = 0, QObject *parent = 0);
@@ -111,9 +112,16 @@ private:
 
 private:
     QVector<QSqlRecord*> m_data;
+    QMap<int, QSqlRelation> m_sqlRelations;
     QSqlRecord m_dummy;
     QVector<ColumnInfo*> m_columns;
     QSqlError m_error;
+
+private:
+    void selectSqlRelation(QSqlRecord *record, int column, const QSqlRelation &sqlRelation);
+    void selectSqlRelation(int column);
+    void selectSqlRelations(QSqlRecord *record);
+    void selectSqlRelations();
 };
 
 } // namespace

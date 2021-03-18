@@ -16,6 +16,10 @@ var classcutex_1_1_qx_sql_query_model =
     [ "record", "classcutex_1_1_qx_sql_query_model.html#a7f8777bb8149b012ab407fcd406522b4", null ],
     [ "removeRecord", "classcutex_1_1_qx_sql_query_model.html#adcf7fb366b8b5bdb5a9f2ec07d6d55d0", null ],
     [ "rowCount", "classcutex_1_1_qx_sql_query_model.html#a7028e86b1ffe2e9947f7b646c91aa8ca", null ],
+    [ "selectSqlRelation", "classcutex_1_1_qx_sql_query_model.html#a57dd6087c914f6992f3429d94c0e9554", null ],
+    [ "selectSqlRelation", "classcutex_1_1_qx_sql_query_model.html#ada0533021bab48b89c56c17810bb3827", null ],
+    [ "selectSqlRelations", "classcutex_1_1_qx_sql_query_model.html#a645ab70dc06a78730a2ed9c63ec8e0c4", null ],
+    [ "selectSqlRelations", "classcutex_1_1_qx_sql_query_model.html#adb6ea9807e266fca4d6f8eff37c0a9a6", null ],
     [ "setColumnAlignment", "classcutex_1_1_qx_sql_query_model.html#a8e36e41fab0a737334e8cf887a3872db", null ],
     [ "setColumnAlignment", "classcutex_1_1_qx_sql_query_model.html#ae1473c1dac27dfa7a47a23775e4641e0", null ],
     [ "setColumnCaption", "classcutex_1_1_qx_sql_query_model.html#a69f1366ead81894f07053981ad142022", null ],
@@ -27,8 +31,10 @@ var classcutex_1_1_qx_sql_query_model =
     [ "setQuery", "classcutex_1_1_qx_sql_query_model.html#a8f7ad29f6833861f473512249a01a9f0", null ],
     [ "setQuery", "classcutex_1_1_qx_sql_query_model.html#a2c6a913dfb77c1a3cb75df4d4f9f64dc", null ],
     [ "setRecord", "classcutex_1_1_qx_sql_query_model.html#a7c11cc052939d07505e12dbd965c50fd", null ],
+    [ "setSqlRelation", "classcutex_1_1_qx_sql_query_model.html#adb04e229b435597422b46a9f61fe7a53", null ],
     [ "m_columns", "classcutex_1_1_qx_sql_query_model.html#af865af43bf9a38028652fb503736a122", null ],
     [ "m_data", "classcutex_1_1_qx_sql_query_model.html#a1284b33b4f9c793d37d8b3e2bf810fd9", null ],
     [ "m_dummy", "classcutex_1_1_qx_sql_query_model.html#aeb68fbce5f099f88c5dc45c7cb6a42fb", null ],
-    [ "m_error", "classcutex_1_1_qx_sql_query_model.html#a5bc9e26970524d3a3fd39a550df2e79c", null ]
+    [ "m_error", "classcutex_1_1_qx_sql_query_model.html#a5bc9e26970524d3a3fd39a550df2e79c", null ],
+    [ "m_sqlRelations", "classcutex_1_1_qx_sql_query_model.html#a915d908737db92ec14f2b9e2ce3d50da", null ]
 ];
