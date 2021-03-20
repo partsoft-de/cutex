@@ -409,6 +409,9 @@ void QxSqlQueryModel::setSqlRelation(int column, const QSqlRelation &sqlRelation
 {
     m_sqlRelations.insert(column, sqlRelation);
     selectSqlRelation(column);
+
+    if (column < columnCount())
+        emit dataChanged(index(0, column), index(rowCount() - 1, column));
 }
 
 /*!
@@ -484,9 +487,6 @@ void QxSqlQueryModel::selectSqlRelation(QSqlRecord *record, int column, const QS
 
 void QxSqlQueryModel::selectSqlRelation(int column)
 {
-    QSqlRelation relation;
-    QSqlQuery query;
-
     for (QSqlRecord *record : m_data) {
         if (column < record->count())
             selectSqlRelation(record, column, m_sqlRelations.value(column));
@@ -495,9 +495,6 @@ void QxSqlQueryModel::selectSqlRelation(int column)
 
 void QxSqlQueryModel::selectSqlRelations(QSqlRecord *record)
 {
-    QSqlRelation sqlRelation;
-    QSqlQuery query;
-
     for (int column : m_sqlRelations.keys()) {
         if (column < record->count())
             selectSqlRelation(record, column, m_sqlRelations.value(column));

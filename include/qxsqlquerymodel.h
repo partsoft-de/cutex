@@ -51,8 +51,8 @@ public:
     virtual bool setQuery(const QString &query);
     QSqlRecord record() const;
     QSqlRecord record(int row) const;
-    bool setRecord(int row, const QSqlRecord &values);
-    bool insertRecord(int row, const QSqlRecord &record);
+    virtual bool setRecord(int row, const QSqlRecord &values);
+    virtual bool insertRecord(int row, const QSqlRecord &record);
     bool appendRecord(const QSqlRecord &record);
     bool removeRecord(int row);
     template<typename T> QList<T> columnValues(int column = 0) const

@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">cutex
-   &#160;<span id="projectnumber">1.5.04</span>
+   &#160;<span id="projectnumber">1.5.05</span>
    </div>
    <div id="projectbrief">cute Qt extensions</div>
   </td>
@@ -135,9 +135,9 @@ Klassendiagramm für cutex::QxSqlQueryModel:</div>
 <tr class="separator:a62754a856eb14861b17b420ef0317322"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7f8777bb8149b012ab407fcd406522b4"><td class="memItemLeft" align="right" valign="top">QSqlRecord&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcutex_1_1_qx_sql_query_model.html#a7f8777bb8149b012ab407fcd406522b4">record</a> (int row) const</td></tr>
 <tr class="separator:a7f8777bb8149b012ab407fcd406522b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7c11cc052939d07505e12dbd965c50fd"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcutex_1_1_qx_sql_query_model.html#a7c11cc052939d07505e12dbd965c50fd">setRecord</a> (int row, const QSqlRecord &amp;values)</td></tr>
+<tr class="memitem:a7c11cc052939d07505e12dbd965c50fd"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcutex_1_1_qx_sql_query_model.html#a7c11cc052939d07505e12dbd965c50fd">setRecord</a> (int row, const QSqlRecord &amp;values)</td></tr>
 <tr class="separator:a7c11cc052939d07505e12dbd965c50fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9385d814bf40aef7787a303656cd9e91"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcutex_1_1_qx_sql_query_model.html#a9385d814bf40aef7787a303656cd9e91">insertRecord</a> (int row, const QSqlRecord &amp;<a class="el" href="classcutex_1_1_qx_sql_query_model.html#a62754a856eb14861b17b420ef0317322">record</a>)</td></tr>
+<tr class="memitem:a9385d814bf40aef7787a303656cd9e91"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcutex_1_1_qx_sql_query_model.html#a9385d814bf40aef7787a303656cd9e91">insertRecord</a> (int row, const QSqlRecord &amp;<a class="el" href="classcutex_1_1_qx_sql_query_model.html#a62754a856eb14861b17b420ef0317322">record</a>)</td></tr>
 <tr class="separator:a9385d814bf40aef7787a303656cd9e91"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3fd11dc942c7ded4739d109480a66488"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcutex_1_1_qx_sql_query_model.html#a3fd11dc942c7ded4739d109480a66488">appendRecord</a> (const QSqlRecord &amp;<a class="el" href="classcutex_1_1_qx_sql_query_model.html#a62754a856eb14861b17b420ef0317322">record</a>)</td></tr>
 <tr class="separator:a3fd11dc942c7ded4739d109480a66488"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -561,6 +561,9 @@ template&lt;typename T &gt; </div>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">bool QxSqlQueryModel::insertRecord </td>
@@ -580,6 +583,11 @@ template&lt;typename T &gt; </div>
           <td></td><td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 <p>Fügt an Position <em>row</em> einen neuen Datensatz mit den Werten <em>record</em> ein. Die Änderungen werden dabei nicht in die Datenbank geschrieben (für die Aktualisierung der Datenbank ist der Aufrufer verantwortlich).</p>
 <dl class="section see"><dt>Siehe auch</dt><dd><a class="el" href="classcutex_1_1_qx_sql_query_model.html#a3fd11dc942c7ded4739d109480a66488">appendRecord(const QSqlRecord &amp;record)</a> </dd></dl>
@@ -1043,6 +1051,9 @@ template&lt;typename T &gt; </div>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">bool QxSqlQueryModel::setRecord </td>
@@ -1062,6 +1073,11 @@ template&lt;typename T &gt; </div>
           <td></td><td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 <p>Aktualisiert den Datensatz an Position <em>row</em> mit den Daten von <em>values</em>. Die Änderungen werden dabei nicht in die Datenbank geschrieben (für die Aktualisierung der Datenbank ist der Aufrufer verantwortlich). </p>
 
