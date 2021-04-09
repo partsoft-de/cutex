@@ -54,7 +54,9 @@ public:
     virtual bool setRecord(int row, const QSqlRecord &values);
     virtual bool insertRecord(int row, const QSqlRecord &record);
     bool appendRecord(const QSqlRecord &record);
+    bool appendRecords(const QVector<QSqlRecord> &records);
     bool removeRecord(int row);
+    bool removeRecords(QVector<int> rows);
     template<typename T> QList<T> columnValues(int column = 0) const
     {
         QList<T> list;

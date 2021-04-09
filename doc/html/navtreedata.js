@@ -47,8 +47,8 @@ var NAVTREEINDEX =
 [
 "",
 "classcutex_1_1_qx_help_window.html#a088c37bf0ee3c9e231f25142814be04a",
-"classcutex_1_1_qx_sql_script.html#acfbd6ed767227ace8dc2a10408e1a82a",
-"classcutex_1_1_qx_wait_cursor.html#afa3af848907895d291009861eeb10a72"
+"classcutex_1_1_qx_sql_script.html#aa07ee0d27cc9dab0976ff40648e896df",
+"classcutex_1_1_qx_wait_cursor.html"
 ];
 
 var SYNCONMSG = 'Klicken um Panelsynchronisation auszuschalten';

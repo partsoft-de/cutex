@@ -223,12 +223,14 @@ void QxSqlTableView::updateConnections()
             connect(model(), SIGNAL(modelReset()), this, SLOT(resizeColumnsToContents()));
             connect(model(), SIGNAL(dataChanged(QModelIndex,QModelIndex,QVector<int>)), this,
                 SLOT(resizeColumnsToContents()));
-            connect(model(), SIGNAL(rowsRemoved(QModelIndex,int,int)), this, SLOT(resizeColumnsToContents()));
+            connect(model(), SIGNAL(rowsInserted(QModelIndex, int, int)), this, SLOT(resizeColumnsToContents()));
+            connect(model(), SIGNAL(rowsRemoved(QModelIndex, int, int)), this, SLOT(resizeColumnsToContents()));
         } else {
             disconnect(model(), SIGNAL(modelReset()), this, SLOT(resizeColumnsToContents()));
-            disconnect(model(), SIGNAL(dataChanged(QModelIndex,QModelIndex,QVector<int>)), this,
+            disconnect(model(), SIGNAL(dataChanged(QModelIndex, QModelIndex, QVector<int>)), this,
                 SLOT(resizeColumnsToContents()));
-            disconnect(model(), SIGNAL(rowsRemoved(QModelIndex,int,int)), this, SLOT(resizeColumnsToContents()));
+            disconnect(model(), SIGNAL(rowsInserted(QModelIndex, int, int)), this, SLOT(resizeColumnsToContents()));
+            disconnect(model(), SIGNAL(rowsRemoved(QModelIndex, int, int)), this, SLOT(resizeColumnsToContents()));
         }
     }
 }

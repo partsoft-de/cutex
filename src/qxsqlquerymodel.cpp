@@ -18,6 +18,7 @@
 ***********************************************************************************************************************/
 
 #include "qxsqlquerymodel.h"
+#include "qxwaitcursor.h"
 
 using namespace cutex;
 
@@ -324,6 +325,7 @@ bool QxSqlQueryModel::insertRecord(int row, const QSqlRecord &record)
   geschrieben (für die Aktualisierung der Datenbank ist der Aufrufer verantwortlich).
 
   \sa insertRecord(int row, const QSqlRecord &record)
+  \sa appendRecords(const QVector<QSqlRecord> &records)
 */
 bool QxSqlQueryModel::appendRecord(const QSqlRecord &record)
 {
@@ -331,8 +333,39 @@ bool QxSqlQueryModel::appendRecord(const QSqlRecord &record)
 }
 
 /*!
+  Fügt neue Datensätze mit den Werten <i>records</i> hinzu. Die Änderungen werden dabei nicht in die Datenbank
+  geschrieben (für die Aktualisierung der Datenbank ist der Aufrufer verantwortlich).
+
+  \sa appendRecord(const QSqlRecord &record)
+*/
+bool QxSqlQueryModel::appendRecords(const QVector<QSqlRecord> &records)
+{
+    QxWaitCursor wait;
+    bool success = false;
+    int row = rowCount();
+    Q_UNUSED(wait);
+
+    if (records.count()) {
+        beginInsertRows(QModelIndex(), row, row + records.count() - 1);
+        blockSignals(true);
+        for (int n = 0; n < records.count(); ++n) {
+            m_data.append(new QSqlRecord(m_dummy));
+            success = setRecord(row + n, records.at(n));
+            if (!success)
+                break;
+        }
+        blockSignals(false);
+        endInsertRows();
+    }
+
+    return success;
+}
+
+/*!
   Entfernt den Datensatz an Position <i>row</i>. Die Änderungen werden dabei nicht in die Datenbank geschrieben (für
   die Aktualisierung der Datenbank ist der Aufrufer verantwortlich).
+
+  \sa removeRecords(QVector<int> rows)
 */
 bool QxSqlQueryModel::removeRecord(int row)
 {
@@ -344,6 +377,29 @@ bool QxSqlQueryModel::removeRecord(int row)
     endRemoveRows();
 
     return true;
+}
+
+/*!
+  Entfernt die Datensätze an den Positionen <i>rows</i>. Die Änderungen werden dabei nicht in die Datenbank geschrieben
+  (für die Aktualisierung der Datenbank ist der Aufrufer verantwortlich).
+
+  \sa removeRecord(int row)
+*/
+bool QxSqlQueryModel::removeRecords(QVector<int> rows)
+{
+    bool success = false;
+
+    if (rows.count()) {
+        std::sort(rows.rbegin(), rows.rend());
+        beginResetModel();
+        for (int row : rows) {
+            if (row >= 0 && row < m_data.size())
+                delete m_data.takeAt(row);
+        }
+        endResetModel();
+    }
+
+    return success;
 }
 
 /*!

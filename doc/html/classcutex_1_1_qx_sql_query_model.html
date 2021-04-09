@@ -141,8 +141,12 @@ Klassendiagramm für cutex::QxSqlQueryModel:</div>
 <tr class="separator:a9385d814bf40aef7787a303656cd9e91"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3fd11dc942c7ded4739d109480a66488"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcutex_1_1_qx_sql_query_model.html#a3fd11dc942c7ded4739d109480a66488">appendRecord</a> (const QSqlRecord &amp;<a class="el" href="classcutex_1_1_qx_sql_query_model.html#a62754a856eb14861b17b420ef0317322">record</a>)</td></tr>
 <tr class="separator:a3fd11dc942c7ded4739d109480a66488"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaa177bcb90c476230c0717f6bcfb74dd"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcutex_1_1_qx_sql_query_model.html#aaa177bcb90c476230c0717f6bcfb74dd">appendRecords</a> (const QVector&lt; QSqlRecord &gt; &amp;records)</td></tr>
+<tr class="separator:aaa177bcb90c476230c0717f6bcfb74dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adcf7fb366b8b5bdb5a9f2ec07d6d55d0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcutex_1_1_qx_sql_query_model.html#adcf7fb366b8b5bdb5a9f2ec07d6d55d0">removeRecord</a> (int row)</td></tr>
 <tr class="separator:adcf7fb366b8b5bdb5a9f2ec07d6d55d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af8b195b0cba646ab22a73351f6c3aa2e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcutex_1_1_qx_sql_query_model.html#af8b195b0cba646ab22a73351f6c3aa2e">removeRecords</a> (QVector&lt; int &gt; rows)</td></tr>
+<tr class="separator:af8b195b0cba646ab22a73351f6c3aa2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ada435ca8c996bb220bfe8f28ed28ae13"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:ada435ca8c996bb220bfe8f28ed28ae13"><td class="memTemplItemLeft" align="right" valign="top">QList&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classcutex_1_1_qx_sql_query_model.html#ada435ca8c996bb220bfe8f28ed28ae13">columnValues</a> (int column=0) const</td></tr>
 <tr class="separator:ada435ca8c996bb220bfe8f28ed28ae13"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -256,7 +260,29 @@ QSqlError&#160;</td><td class="memItemRight" valign="bottom"><b>m_error</b></td>
       </table>
 </div><div class="memdoc">
 <p>Fügt einen neuen Datensatz mit den Werten <em>record</em> hinzu. Die Änderungen werden dabei nicht in die Datenbank geschrieben (für die Aktualisierung der Datenbank ist der Aufrufer verantwortlich).</p>
-<dl class="section see"><dt>Siehe auch</dt><dd><a class="el" href="classcutex_1_1_qx_sql_query_model.html#a9385d814bf40aef7787a303656cd9e91">insertRecord(int row, const QSqlRecord &amp;record)</a> </dd></dl>
+<dl class="section see"><dt>Siehe auch</dt><dd><a class="el" href="classcutex_1_1_qx_sql_query_model.html#a9385d814bf40aef7787a303656cd9e91">insertRecord(int row, const QSqlRecord &amp;record)</a> </dd>
+<dd>
+<a class="el" href="classcutex_1_1_qx_sql_query_model.html#aaa177bcb90c476230c0717f6bcfb74dd">appendRecords(const QVector&lt;QSqlRecord&gt; &amp;records)</a> </dd></dl>
+
+</div>
+</div>
+<a id="aaa177bcb90c476230c0717f6bcfb74dd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaa177bcb90c476230c0717f6bcfb74dd">&#9670;&nbsp;</a></span>appendRecords()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool QxSqlQueryModel::appendRecords </td>
+          <td>(</td>
+          <td class="paramtype">const QVector&lt; QSqlRecord &gt; &amp;&#160;</td>
+          <td class="paramname"><em>records</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Fügt neue Datensätze mit den Werten <em>records</em> hinzu. Die Änderungen werden dabei nicht in die Datenbank geschrieben (für die Aktualisierung der Datenbank ist der Aufrufer verantwortlich).</p>
+<dl class="section see"><dt>Siehe auch</dt><dd><a class="el" href="classcutex_1_1_qx_sql_query_model.html#a3fd11dc942c7ded4739d109480a66488">appendRecord(const QSqlRecord &amp;record)</a> </dd></dl>
 
 </div>
 </div>
@@ -665,7 +691,28 @@ template&lt;typename T &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Entfernt den Datensatz an Position <em>row</em>. Die Änderungen werden dabei nicht in die Datenbank geschrieben (für die Aktualisierung der Datenbank ist der Aufrufer verantwortlich). </p>
+<p>Entfernt den Datensatz an Position <em>row</em>. Die Änderungen werden dabei nicht in die Datenbank geschrieben (für die Aktualisierung der Datenbank ist der Aufrufer verantwortlich).</p>
+<dl class="section see"><dt>Siehe auch</dt><dd><a class="el" href="classcutex_1_1_qx_sql_query_model.html#af8b195b0cba646ab22a73351f6c3aa2e">removeRecords(QVector&lt;int&gt; rows)</a> </dd></dl>
+
+</div>
+</div>
+<a id="af8b195b0cba646ab22a73351f6c3aa2e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af8b195b0cba646ab22a73351f6c3aa2e">&#9670;&nbsp;</a></span>removeRecords()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool QxSqlQueryModel::removeRecords </td>
+          <td>(</td>
+          <td class="paramtype">QVector&lt; int &gt;&#160;</td>
+          <td class="paramname"><em>rows</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Entfernt die Datensätze an den Positionen <em>rows</em>. Die Änderungen werden dabei nicht in die Datenbank geschrieben (für die Aktualisierung der Datenbank ist der Aufrufer verantwortlich).</p>
+<dl class="section see"><dt>Siehe auch</dt><dd><a class="el" href="classcutex_1_1_qx_sql_query_model.html#adcf7fb366b8b5bdb5a9f2ec07d6d55d0">removeRecord(int row)</a> </dd></dl>
 
 </div>
 </div>

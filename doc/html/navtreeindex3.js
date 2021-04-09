@@ -1,5 +1,7 @@
 var NAVTREEINDEX3 =
 {
+"classcutex_1_1_qx_wait_cursor.html":[0,0,0,40],
+"classcutex_1_1_qx_wait_cursor.html#a17c3b1af0967ac034a7a5d5172a2138b":[0,0,0,40,0],
 "classcutex_1_1_qx_wait_cursor.html#afa3af848907895d291009861eeb10a72":[0,0,0,40,1],
 "classcutex_1_1_qx_wizard.html":[0,0,0,41],
 "classcutex_1_1_qx_wizard.html#a010e23ac7506881ebf96e5731822973c":[0,0,0,41,47],
@@ -103,8 +105,8 @@ var NAVTREEINDEX3 =
 "cutex_8h_source.html":[1,0,0,0],
 "dir_d44c64559bbebec7f509842c48db8b23.html":[1,0,0],
 "files.html":[1,0],
-"functions.html":[0,3,0],
 "functions.html":[0,3,0,0],
+"functions.html":[0,3,0],
 "functions_b.html":[0,3,0,1],
 "functions_c.html":[0,3,0,2],
 "functions_d.html":[0,3,0,3],
@@ -112,8 +114,8 @@ var NAVTREEINDEX3 =
 "functions_enum.html":[0,3,2],
 "functions_eval.html":[0,3,3],
 "functions_f.html":[0,3,0,5],
-"functions_func.html":[0,3,1,0],
 "functions_func.html":[0,3,1],
+"functions_func.html":[0,3,1,0],
 "functions_func_b.html":[0,3,1,1],
 "functions_func_c.html":[0,3,1,2],
 "functions_func_d.html":[0,3,1,3],
