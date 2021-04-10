@@ -1,6 +1,6 @@
 var classcutex_1_1_qx_int_edit =
 [
-    [ "QxIntEdit", "classcutex_1_1_qx_int_edit.html#a20de457e2ce49406a833f5b9d52f4ef9", null ],
+    [ "QxIntEdit", "classcutex_1_1_qx_int_edit.html#a594158ecfd849fcd975fdc64104198b7", null ],
     [ "focusOutEvent", "classcutex_1_1_qx_int_edit.html#aa451deb52abf5d49d0675f6dd8148f5c", null ],
     [ "maximum", "classcutex_1_1_qx_int_edit.html#a59138d9a6a2c8668e159307bccb0985e", null ],
     [ "minimum", "classcutex_1_1_qx_int_edit.html#ab00e719109f996eb7017ae4b8aba83d4", null ],

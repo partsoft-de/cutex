@@ -41,7 +41,7 @@ class QxTreeItemModel : public QAbstractItemModel
     friend class QxTreeItem;
 
 public:
-    QxTreeItemModel(QObject *parent = 0);
+    QxTreeItemModel(QObject *parent = nullptr);
     ~QxTreeItemModel();
     virtual QModelIndex	index(int row, int column, const QModelIndex &parent = QModelIndex()) const;
     virtual QModelIndex	parent(const QModelIndex &index) const;

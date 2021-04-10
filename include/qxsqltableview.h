@@ -41,7 +41,7 @@ class QxSqlTableView : public QTableView
     //! @endcond
 
 public:
-    QxSqlTableView(QWidget *parent = 0);
+    QxSqlTableView(QWidget *parent = nullptr);
     void setSortingColumn(const QString &column, Qt::SortOrder order = Qt::AscendingOrder);
     void setColumnVisible(const QString &column, bool visible = true);
     bool isProxyEnabled() const;

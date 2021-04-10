@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">cutex
-   &#160;<span id="projectnumber">1.5.05</span>
+   &#160;<span id="projectnumber">1.5.06</span>
    </div>
    <div id="projectbrief">cute Qt extensions</div>
   </td>
@@ -126,7 +126,7 @@ $(document).ready(function(){initNavTree('qxsingleton_8h_source.html',''); initR
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;   }</div>
 <div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="classcutex_1_1_qx_singleton.html#a2ec07e6c0896b3f0fc02cf980bf1087e">   42</a></span>&#160;   <span class="keyword">virtual</span> <a class="code" href="classcutex_1_1_qx_singleton.html#a2ec07e6c0896b3f0fc02cf980bf1087e">~QxSingleton</a>()</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;   {</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;       m_instance = 0;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;       m_instance = <span class="keyword">nullptr</span>;</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;   }</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="keyword">protected</span>:</div>
@@ -138,7 +138,7 @@ $(document).ready(function(){initNavTree('qxsingleton_8h_source.html',''); initR
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;   <span class="keyword">static</span> T* m_instance;</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;};</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt; T* QxSingleton&lt;T&gt;::m_instance = 0;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt; T* QxSingleton&lt;T&gt;::m_instance = <span class="keyword">nullptr</span>;</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;} <span class="comment">// namespace</span></div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>

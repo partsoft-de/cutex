@@ -40,7 +40,7 @@ public:
     void prepend(const QString &text);
     static void append(QxMessage *message, const QString &text);
     static void prepend(QxMessage *message, const QString &text);
-    void show(QWidget *parent = 0);
+    void show(QWidget *parent = nullptr);
 
 private:
     QString m_title;

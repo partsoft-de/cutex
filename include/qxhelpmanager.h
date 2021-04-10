@@ -29,10 +29,10 @@ class QxHelpManager : public QNetworkAccessManager
     Q_OBJECT
 
 public:
-    QxHelpManager(QHelpEngine *helpEngine, QObject *parent = 0);
+    QxHelpManager(QHelpEngine *helpEngine, QObject *parent = nullptr);
 
 protected:
-    virtual QNetworkReply* createRequest(Operation op, const QNetworkRequest &request, QIODevice *data = 0);
+    virtual QNetworkReply* createRequest(Operation op, const QNetworkRequest &request, QIODevice *data = nullptr);
 
 private:
     QHelpEngine *m_helpEngine;

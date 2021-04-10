@@ -39,8 +39,8 @@ public:
     };
 
 public:
-    QxSqlScript(QObject *parent = 0);
-    QxSqlScript(const QString &fileName, QObject *parent = 0);
+    QxSqlScript(QObject *parent = nullptr);
+    QxSqlScript(const QString &fileName, QObject *parent = nullptr);
     bool exec(const QString &fileName, QSqlDatabase database = QSqlDatabase());
     bool exec(QSqlDatabase database = QSqlDatabase());
 #if QT_VERSION >= QT_VERSION_CHECK(6,0,0)

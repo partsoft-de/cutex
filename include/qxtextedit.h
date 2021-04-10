@@ -50,7 +50,7 @@ public:
     };
 
 public:
-    QxTextEdit(QWidget *parent = 0);
+    QxTextEdit(QWidget *parent = nullptr);
     void setCurrentLine(int lineNumber, bool select = false);
     bool fontBold() const;
     void setFontBold(bool bold);

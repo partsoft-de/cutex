@@ -1,6 +1,6 @@
 var classcutex_1_1_qx_sql_table_view =
 [
-    [ "QxSqlTableView", "classcutex_1_1_qx_sql_table_view.html#af33697127f2efcb104200264bd1ae090", null ],
+    [ "QxSqlTableView", "classcutex_1_1_qx_sql_table_view.html#aa378a0524053d9349527ca2922319afc", null ],
     [ "isProxyEnabled", "classcutex_1_1_qx_sql_table_view.html#a297549c553279eeb70a4fb303c7e0812", null ],
     [ "isResizeColumnsEnabled", "classcutex_1_1_qx_sql_table_view.html#a9ad871aa1800eca55eefba156bacd9fb", null ],
     [ "mapFromSource", "classcutex_1_1_qx_sql_table_view.html#a07c4fc550e2d38fd56f628b6ad3badfd", null ],

@@ -36,7 +36,7 @@ class QxSqlQueryModel : public QAbstractTableModel
     Q_OBJECT
 
 public:
-    QxSqlQueryModel(QObject *parent = 0);
+    QxSqlQueryModel(QObject *parent = nullptr);
     virtual ~QxSqlQueryModel();
     virtual int rowCount(const QModelIndex &parent = QModelIndex()) const;
     virtual int columnCount(const QModelIndex &parent = QModelIndex()) const;
@@ -95,9 +95,9 @@ public:
     void setColumnType(int column, QVariant::Type type, const QString &format = QString());
     void setColumnType(const QString &column, QVariant::Type type, const QString &format = QString());
     void setSqlRelation(int column, const QSqlRelation &sqlRelation);
-    QCompleter* createCompleter(int column = 0, QObject *parent = 0);
-    static QCompleter* createCompleter(QSqlQuery query, int column = 0, QObject *parent = 0);
-    static QCompleter* createCompleter(const QString &query, int column = 0, QObject *parent = 0);
+    QCompleter* createCompleter(int column = 0, QObject *parent = nullptr);
+    static QCompleter* createCompleter(QSqlQuery query, int column = 0, QObject *parent = nullptr);
+    static QCompleter* createCompleter(const QString &query, int column = 0, QObject *parent = nullptr);
 
 protected:
     int columnIndex(const QString &caption);

@@ -44,11 +44,11 @@ class QxMainWindow : public QMainWindow
     Q_OBJECT
 
 public:
-    QxMainWindow(QWidget *parent = 0);
+    QxMainWindow(QWidget *parent = nullptr);
     QString currentFile();
     QxRecentFiles* recentFiles();
     void setRecentFiles(QxRecentFiles *recentFiles);
-    void setupMdiArea(QMdiArea *mdiArea, QMenu *windowMenu = 0);
+    void setupMdiArea(QMdiArea *mdiArea, QMenu *windowMenu = nullptr);
     QMdiArea* mdiArea();
     QMdiSubWindow* addSubWindow(QxForm *form, QSize size = QSize());
     virtual void retranslateUi();

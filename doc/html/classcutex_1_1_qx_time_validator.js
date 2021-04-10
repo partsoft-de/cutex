@@ -1,7 +1,7 @@
 var classcutex_1_1_qx_time_validator =
 [
-    [ "QxTimeValidator", "classcutex_1_1_qx_time_validator.html#a18964eff181c293e9df5d993c79e9a02", null ],
-    [ "QxTimeValidator", "classcutex_1_1_qx_time_validator.html#a2482595b7dd568c4fbe873467feebd71", null ],
+    [ "QxTimeValidator", "classcutex_1_1_qx_time_validator.html#a607d53e97b5d25e59f5d64c43006c0a8", null ],
+    [ "QxTimeValidator", "classcutex_1_1_qx_time_validator.html#a44066f250bdc952bf9be94bb26afb59c", null ],
     [ "determineSeparator", "classcutex_1_1_qx_time_validator.html#aa64999800a981ff47f19db6032530a13", null ],
     [ "fixup", "classcutex_1_1_qx_time_validator.html#a63c191f4d48ffc2b8cdf6356c15d036a", null ],
     [ "prepare", "classcutex_1_1_qx_time_validator.html#a8c1363cfd17a9ed47749490c4976b109", null ],

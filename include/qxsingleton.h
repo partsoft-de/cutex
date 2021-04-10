@@ -41,7 +41,7 @@ public:
    }
    virtual ~QxSingleton()
    {
-       m_instance = 0;
+       m_instance = nullptr;
    }
 
 protected:
@@ -53,7 +53,7 @@ private:
    static T* m_instance;
 };
 
-template<typename T> T* QxSingleton<T>::m_instance = 0;
+template<typename T> T* QxSingleton<T>::m_instance = nullptr;
 
 } // namespace
 

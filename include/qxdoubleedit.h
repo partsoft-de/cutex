@@ -44,7 +44,7 @@ class QxDoubleEdit : public QLineEdit
     //! @endcond
 
 public:
-    QxDoubleEdit(QWidget *parent = 0);
+    QxDoubleEdit(QWidget *parent = nullptr);
     int decimals() const;
     void setDecimals(int decimals);
     double minimum() const;

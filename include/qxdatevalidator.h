@@ -38,8 +38,8 @@ class QxDateValidator : public QValidator
     Q_OBJECT
 
 public:
-    QxDateValidator(QObject *parent = 0);
-    QxDateValidator(const QString &format, QObject *parent = 0);
+    QxDateValidator(QObject *parent = nullptr);
+    QxDateValidator(const QString &format, QObject *parent = nullptr);
     virtual void fixup(QString &input) const;
     virtual QValidator::State validate(QString &input, int &pos) const;
 

@@ -47,7 +47,7 @@ class QxDateEdit : public QWidget
     //! @endcond
 
 public:
-    QxDateEdit(QWidget *parent = 0);
+    QxDateEdit(QWidget *parent = nullptr);
     QDate date() const;
     void setDate(const QDate &date);
     QDate maximumDate() const;

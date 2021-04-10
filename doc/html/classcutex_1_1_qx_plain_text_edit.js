@@ -1,6 +1,6 @@
 var classcutex_1_1_qx_plain_text_edit =
 [
-    [ "QxPlainTextEdit", "classcutex_1_1_qx_plain_text_edit.html#a7755d8547abfd5f1b0a2f6af14bc0501", null ],
+    [ "QxPlainTextEdit", "classcutex_1_1_qx_plain_text_edit.html#ac862e407f68e696c4f9b225963eb293f", null ],
     [ "canCopy", "classcutex_1_1_qx_plain_text_edit.html#af997ab74846faeb5537ddd72fccf1768", null ],
     [ "canRedo", "classcutex_1_1_qx_plain_text_edit.html#a57d47b9a7a8561ce61165d451d600419", null ],
     [ "canUndo", "classcutex_1_1_qx_plain_text_edit.html#acde88fb4680f15a00b452dd453060aed", null ],

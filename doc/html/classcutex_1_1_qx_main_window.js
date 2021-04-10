@@ -1,6 +1,6 @@
 var classcutex_1_1_qx_main_window =
 [
-    [ "QxMainWindow", "classcutex_1_1_qx_main_window.html#a14e39645f79f8c686691162bf0a74c39", null ],
+    [ "QxMainWindow", "classcutex_1_1_qx_main_window.html#acc6a5e6450c650e08dd74677a16a2d87", null ],
     [ "addSubWindow", "classcutex_1_1_qx_main_window.html#a797d18c6e7475fb5495230cee7e1dc1d", null ],
     [ "changeEvent", "classcutex_1_1_qx_main_window.html#a41ea6e8a98beef8cbe574351ce89d4ee", null ],
     [ "closeAllSubWindows", "classcutex_1_1_qx_main_window.html#a5d4069d0ec0b5194bc26f61002f7e8a8", null ],
@@ -20,7 +20,7 @@ var classcutex_1_1_qx_main_window =
     [ "setModified", "classcutex_1_1_qx_main_window.html#a2c40ca858cef3ba80d0655bd7cac0f03", null ],
     [ "setRecentFiles", "classcutex_1_1_qx_main_window.html#adff61c35b0549ca098444bce8bfa9cc0", null ],
     [ "setStatusText", "classcutex_1_1_qx_main_window.html#a0e3963ef318059d13acccff7c254d573", null ],
-    [ "setupMdiArea", "classcutex_1_1_qx_main_window.html#ab1a828ec7918af4694ca95d8e1acf29f", null ],
+    [ "setupMdiArea", "classcutex_1_1_qx_main_window.html#a9afc95ea26c90ce9d4a3b70afebeab72", null ],
     [ "showEvent", "classcutex_1_1_qx_main_window.html#a5359ba253ebe27b83e1f535a1732ec3d", null ],
     [ "updateMenu", "classcutex_1_1_qx_main_window.html#ab58e391343b4a1282b48bebccf5b2dab", null ],
     [ "updateMenu", "classcutex_1_1_qx_main_window.html#a7075e7160a0877e519858b284dea70ad", null ],

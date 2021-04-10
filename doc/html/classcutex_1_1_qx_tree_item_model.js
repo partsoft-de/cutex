@@ -1,6 +1,6 @@
 var classcutex_1_1_qx_tree_item_model =
 [
-    [ "QxTreeItemModel", "classcutex_1_1_qx_tree_item_model.html#aba1ebb1cf751390e1e4054bea0df6fdc", null ],
+    [ "QxTreeItemModel", "classcutex_1_1_qx_tree_item_model.html#a9c1fb13c09439d033d210eb25a4f749a", null ],
     [ "~QxTreeItemModel", "classcutex_1_1_qx_tree_item_model.html#a2bb8a336b8e622646493945e78f891d5", null ],
     [ "appendRow", "classcutex_1_1_qx_tree_item_model.html#a6ad81653192e81cdd29352558758ba48", null ],
     [ "canDemote", "classcutex_1_1_qx_tree_item_model.html#a43564107a6053e8f9a47682286907c67", null ],

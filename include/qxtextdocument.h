@@ -36,7 +36,7 @@ class QxTextDocument : public QTextDocument
     Q_OBJECT
 
 public:
-    QxTextDocument(QObject *parent = 0);
+    QxTextDocument(QObject *parent = nullptr);
     QList<QUrl> images() const;
     QStringList anchors() const;
     QList<QxHyperlink> hyperlinks() const;

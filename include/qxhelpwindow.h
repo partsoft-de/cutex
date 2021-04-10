@@ -42,7 +42,7 @@ class QxHelpWindow : public QWidget {
     Q_OBJECT
 
 public:
-    QxHelpWindow(const QString &collectionFile, QWidget *parent = 0);
+    QxHelpWindow(const QString &collectionFile, QWidget *parent = nullptr);
     ~QxHelpWindow();
 
 public slots:

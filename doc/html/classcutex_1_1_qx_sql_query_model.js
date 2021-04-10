@@ -1,6 +1,6 @@
 var classcutex_1_1_qx_sql_query_model =
 [
-    [ "QxSqlQueryModel", "classcutex_1_1_qx_sql_query_model.html#a0db0c2b6710edd2c28cb01bd8b2847f1", null ],
+    [ "QxSqlQueryModel", "classcutex_1_1_qx_sql_query_model.html#a3e32ff84bb7921263d37c0c417f5f3ce", null ],
     [ "~QxSqlQueryModel", "classcutex_1_1_qx_sql_query_model.html#a26569d4d0be2ab171c1ab44c27d10b82", null ],
     [ "appendRecord", "classcutex_1_1_qx_sql_query_model.html#a3fd11dc942c7ded4739d109480a66488", null ],
     [ "appendRecords", "classcutex_1_1_qx_sql_query_model.html#aaa177bcb90c476230c0717f6bcfb74dd", null ],
@@ -8,7 +8,7 @@ var classcutex_1_1_qx_sql_query_model =
     [ "columnCount", "classcutex_1_1_qx_sql_query_model.html#a8c271dbf55195b07673563a77a60e121", null ],
     [ "columnIndex", "classcutex_1_1_qx_sql_query_model.html#ae7f08bf3290aeac8608196a504f8c034", null ],
     [ "columnValues", "classcutex_1_1_qx_sql_query_model.html#ada435ca8c996bb220bfe8f28ed28ae13", null ],
-    [ "createCompleter", "classcutex_1_1_qx_sql_query_model.html#a6f2d7223b3482e5e0121e4b41eff48e6", null ],
+    [ "createCompleter", "classcutex_1_1_qx_sql_query_model.html#aae6f2175ec3c67743ab67c474e75f723", null ],
     [ "data", "classcutex_1_1_qx_sql_query_model.html#af3cd753984a6a3f67a11c4a6e54a789f", null ],
     [ "headerData", "classcutex_1_1_qx_sql_query_model.html#a048e63b697b329d0f97324a307394260", null ],
     [ "insertRecord", "classcutex_1_1_qx_sql_query_model.html#a9385d814bf40aef7787a303656cd9e91", null ],

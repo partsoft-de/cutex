@@ -37,8 +37,8 @@ class QxTimeValidator : public QValidator
     Q_OBJECT
 
 public:
-    QxTimeValidator(QObject *parent = 0);
-    QxTimeValidator(const QString &format, QObject *parent = 0);
+    QxTimeValidator(QObject *parent = nullptr);
+    QxTimeValidator(const QString &format, QObject *parent = nullptr);
     virtual void fixup(QString &input) const;
     virtual QValidator::State validate(QString &input, int &pos) const;
 

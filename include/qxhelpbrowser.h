@@ -34,7 +34,7 @@ class QxHelpBrowser : public QWebView
     Q_OBJECT
 
 public:
-    QxHelpBrowser(QWidget *parent = 0);
+    QxHelpBrowser(QWidget *parent = nullptr);
     void setHelpEngine(QHelpEngine *helpEngine);
     bool isBackwardAvailable() const;
     bool isForwardAvailable() const;
@@ -63,7 +63,7 @@ class QxHelpBrowser : public QTextBrowser
     Q_OBJECT
 
 public:
-    QxHelpBrowser(QWidget *parent = 0);
+    QxHelpBrowser(QWidget *parent = nullptr);
     virtual QVariant loadResource(int type, const QUrl &url);
     void setHelpEngine(QHelpEngine *helpEngine);
 

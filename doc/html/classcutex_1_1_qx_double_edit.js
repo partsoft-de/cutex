@@ -1,6 +1,6 @@
 var classcutex_1_1_qx_double_edit =
 [
-    [ "QxDoubleEdit", "classcutex_1_1_qx_double_edit.html#ab47e4e0a5c30d91fc583a48056c38ab4", null ],
+    [ "QxDoubleEdit", "classcutex_1_1_qx_double_edit.html#aa86af4b4dd1003b5c48d2b73b229918b", null ],
     [ "decimals", "classcutex_1_1_qx_double_edit.html#ada1e7d377fbf70a86b9fa13f898a696f", null ],
     [ "focusOutEvent", "classcutex_1_1_qx_double_edit.html#a3c741e3987dab7019b05182b853985a0", null ],
     [ "maximum", "classcutex_1_1_qx_double_edit.html#a0eb0920753a004fe6c724143f215a10c", null ],

@@ -43,7 +43,7 @@ class QxIntEdit : public QLineEdit
     //! @endcond
 
 public:
-    QxIntEdit(QWidget *parent = 0);
+    QxIntEdit(QWidget *parent = nullptr);
     int minimum() const;
     void setMinimum(int minimum);
     int maximum() const;

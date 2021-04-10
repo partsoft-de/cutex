@@ -1,6 +1,6 @@
 var classcutex_1_1_qx_styled_item_delegate =
 [
-    [ "QxStyledItemDelegate", "classcutex_1_1_qx_styled_item_delegate.html#af22ed8ac2eab4f56958e58a677ac7b96", null ],
+    [ "QxStyledItemDelegate", "classcutex_1_1_qx_styled_item_delegate.html#aadfcc322e1b436d5200e62406750cde4", null ],
     [ "createDoubleSpinBoxEditor", "classcutex_1_1_qx_styled_item_delegate.html#ad628a1305a00635eca2dee0732419a91", null ],
     [ "createLineEditEditor", "classcutex_1_1_qx_styled_item_delegate.html#a7e48596a640fc6643b4fbfc6839d5614", null ],
     [ "createPlainTextEditEditor", "classcutex_1_1_qx_styled_item_delegate.html#ab9f2caf7c3b8d4581c5dd9362bddd069", null ],
@@ -18,7 +18,7 @@ var classcutex_1_1_qx_styled_item_delegate =
     [ "processUiField", "classcutex_1_1_qx_styled_item_delegate.html#a39fd84086632b431ca757ec8bd5e5756", null ],
     [ "processUiField", "classcutex_1_1_qx_styled_item_delegate.html#a6c245986c6817197f6520a71e3d10d56", null ],
     [ "setEditorData", "classcutex_1_1_qx_styled_item_delegate.html#ac6422ff97c063c022489302c19272d59", null ],
-    [ "setFieldHeight", "classcutex_1_1_qx_styled_item_delegate.html#aea269d3aca5222785773be796a1bb9b7", null ],
+    [ "setFieldHeight", "classcutex_1_1_qx_styled_item_delegate.html#a79dc922bd07fc32c4c15a39f33d7c0b5", null ],
     [ "setModelData", "classcutex_1_1_qx_styled_item_delegate.html#a5b97718af73b0df148682e46d8064aca", null ],
     [ "setUiFieldModified", "classcutex_1_1_qx_styled_item_delegate.html#ac32db681a98be9891a4ea008faa45bbe", null ],
     [ "setUiFieldValue", "classcutex_1_1_qx_styled_item_delegate.html#a07c7a5f0d98b1bf2cfdc068aca2a97ef", null ],

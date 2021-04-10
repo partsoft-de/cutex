@@ -45,7 +45,7 @@ class QxPlainTextEdit : public QPlainTextEdit
     friend class QxLineNumberArea;
 
 public:
-    QxPlainTextEdit(QWidget *parent = 0);
+    QxPlainTextEdit(QWidget *parent = nullptr);
     void setCurrentLine(int lineNumber, bool select = false);
     bool canUndo() const;
     bool canRedo() const;

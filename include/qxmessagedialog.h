@@ -42,7 +42,7 @@ class QxMessageDialog : public QxDialog
     Q_OBJECT
 
 public:
-    QxMessageDialog(const QString &title, const QStringList &messages, QWidget *parent = 0);
+    QxMessageDialog(const QString &title, const QStringList &messages, QWidget *parent = nullptr);
     ~QxMessageDialog();
     void retranslateUi();
 

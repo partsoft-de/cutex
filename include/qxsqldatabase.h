@@ -36,8 +36,8 @@ class QxSqlDatabase : public QObject
     Q_OBJECT
 
 public:
-    QxSqlDatabase(QObject *parent = 0);
-    QxSqlDatabase(const QxSqlDatabase &other, QObject *parent = 0);
+    QxSqlDatabase(QObject *parent = nullptr);
+    QxSqlDatabase(const QxSqlDatabase &other, QObject *parent = nullptr);
     virtual ~QxSqlDatabase();    
     static QMap<QString, QString> drivers();
     static bool isDriverAvailable(const QString &name);

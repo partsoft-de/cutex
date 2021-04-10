@@ -47,7 +47,7 @@ public:
     };
 
 public:
-    QxFindDialog(QWidget *parent = 0);
+    QxFindDialog(QWidget *parent = nullptr);
     ~QxFindDialog();
     void setMode(QxFindDialog::Mode mode);
     void retranslateUi();

@@ -1,11 +1,11 @@
 var classcutex_1_1_qx_form =
 [
-    [ "QxForm", "classcutex_1_1_qx_form.html#a67a619b3f18bcfd433d3f27b0f196b95", null ],
+    [ "QxForm", "classcutex_1_1_qx_form.html#a8fe08432dac709dcb73ee460096b110e", null ],
     [ "buttonClicked", "classcutex_1_1_qx_form.html#af5bcf6152b2f3512e6281c181e288ee9", null ],
     [ "buttonClicked", "classcutex_1_1_qx_form.html#a0e74c77097b4a059a441570709d8b72e", null ],
     [ "changeEvent", "classcutex_1_1_qx_form.html#a6e15bc4f2258a8074c8679c45e908aa8", null ],
     [ "eventFilter", "classcutex_1_1_qx_form.html#adc4758a8a95e10e9279df42ba7fd5623", null ],
-    [ "focusFirstUiField", "classcutex_1_1_qx_form.html#ae31f007e080313e35a0728ff5db32a25", null ],
+    [ "focusFirstUiField", "classcutex_1_1_qx_form.html#a73b674ad53b649fda10d283d2f73a8cb", null ],
     [ "initialize", "classcutex_1_1_qx_form.html#a31ae5433aa641f18dbae10ef5da8f946", null ],
     [ "isModified", "classcutex_1_1_qx_form.html#a0d25975f0fe2733a3ba7fdc87a1fb6c4", null ],
     [ "isUiFieldValid", "classcutex_1_1_qx_form.html#a427e6f7bc535404560a5fab6f5ad7b91", null ],
@@ -36,7 +36,7 @@ var classcutex_1_1_qx_form =
     [ "uiFieldValue", "classcutex_1_1_qx_form.html#a88515d355a8b6dff116c983d5d4d8454", null ],
     [ "uiFieldValues", "classcutex_1_1_qx_form.html#a3d8d78313293fcb5b90fe9e29a8f968c", null ],
     [ "uiFieldValues", "classcutex_1_1_qx_form.html#a312df2364864ced50ee557e5a126354b", null ],
-    [ "validate", "classcutex_1_1_qx_form.html#abbe2b4e3f830ca682889da7c0166c3ad", null ],
+    [ "validate", "classcutex_1_1_qx_form.html#acc187d8cedf76f9d4522dbbb712cf570", null ],
     [ "validateUiField", "classcutex_1_1_qx_form.html#a8c9c86eaf3ec9f55029c5a05e9167960", null ],
     [ "m_initialized", "classcutex_1_1_qx_form.html#a5ec2786d8af0ac30a8dd91c7a394b53c", null ],
     [ "m_invalidUiFields", "classcutex_1_1_qx_form.html#a5367e1a2057db65854dfb9caf76ef544", null ],

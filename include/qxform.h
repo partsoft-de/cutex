@@ -38,10 +38,10 @@ class QxForm : public QWidget
     Q_OBJECT
 
 public:
-    QxForm(QWidget *parent = 0);
+    QxForm(QWidget *parent = nullptr);
     bool isModified();
     bool isValid();
-    void validate(QWidget *uiField = 0);
+    void validate(QWidget *uiField = nullptr);
     bool isUiFieldValid(QWidget *uiField);
     virtual void retranslateUi();
 
@@ -59,7 +59,7 @@ protected:
     QVariant uiFieldValue(QWidget *uiField) const;
     bool setUiFieldValue(QWidget *uiField, QVariant value, const QSqlRelation &sqlRelation = QSqlRelation());
     void relockUiFields();
-    virtual void focusFirstUiField(QWidget *parent = 0);
+    virtual void focusFirstUiField(QWidget *parent = nullptr);
     void resetUiField(QWidget *uiField);
     void resetUiFields();
     QString uiFieldSqlMapping(QWidget *uiField);

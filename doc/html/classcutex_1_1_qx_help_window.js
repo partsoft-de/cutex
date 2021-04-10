@@ -1,6 +1,6 @@
 var classcutex_1_1_qx_help_window =
 [
-    [ "QxHelpWindow", "classcutex_1_1_qx_help_window.html#a5fae47d72a5e35e41a143ea0d5d7f2d1", null ],
+    [ "QxHelpWindow", "classcutex_1_1_qx_help_window.html#ad9a007c2930bed1212c4d8c266af140c", null ],
     [ "~QxHelpWindow", "classcutex_1_1_qx_help_window.html#a32544d4dcedc982b1bfa33ab4707bc1a", null ],
     [ "changeEvent", "classcutex_1_1_qx_help_window.html#a21c0e27274bbf054caaff1db85376796", null ],
     [ "relockActions", "classcutex_1_1_qx_help_window.html#a39b464ccca1033e4356471fd2a4ccd98", null ],

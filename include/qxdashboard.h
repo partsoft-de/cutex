@@ -39,7 +39,7 @@ class QxDashboard : public QxForm
     Q_OBJECT
 
 public:
-    QxDashboard(QWidget *parent = 0);
+    QxDashboard(QWidget *parent = nullptr);
     QFont font() const;
     void setFont(const QFont &font);
     void setIntroText(const QString &text);

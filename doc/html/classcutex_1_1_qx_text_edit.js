@@ -11,7 +11,7 @@ var classcutex_1_1_qx_text_edit =
       [ "ListLowerRoman", "classcutex_1_1_qx_text_edit.html#abfdae775e1de35416e0488349e8d0e5daefe79eedc87ffcd06a99fcff013d9ec9", null ],
       [ "ListUpperRoman", "classcutex_1_1_qx_text_edit.html#abfdae775e1de35416e0488349e8d0e5da568b80e27dd677b5304ab920124e30b6", null ]
     ] ],
-    [ "QxTextEdit", "classcutex_1_1_qx_text_edit.html#a1bc199b1a1eb0c22d7df66f1487ae7ad", null ],
+    [ "QxTextEdit", "classcutex_1_1_qx_text_edit.html#ade03be7749c104eb4302103068323b14", null ],
     [ "anchor", "classcutex_1_1_qx_text_edit.html#aa47c59e4422ede69e47b2811bb0be693", null ],
     [ "anchors", "classcutex_1_1_qx_text_edit.html#a671ad58ec3288cd6d919b1eb26f9df10", null ],
     [ "canCopy", "classcutex_1_1_qx_text_edit.html#a00bb5852dc09a134fb2f41ab07d5704c", null ],

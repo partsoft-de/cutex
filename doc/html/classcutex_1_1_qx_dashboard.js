@@ -1,6 +1,6 @@
 var classcutex_1_1_qx_dashboard =
 [
-    [ "QxDashboard", "classcutex_1_1_qx_dashboard.html#a8440ed3a51551c1dc2ae15626fd8f7ee", null ],
+    [ "QxDashboard", "classcutex_1_1_qx_dashboard.html#a746419bc813cb1cca1ca6c206a09806b", null ],
     [ "fileNewClicked", "classcutex_1_1_qx_dashboard.html#aefc24b1536c2882db70be8fdff4882f6", null ],
     [ "fileOpenClicked", "classcutex_1_1_qx_dashboard.html#afa47fe62ea9ea52682cb513c62636bae", null ],
     [ "fileOpenClicked", "classcutex_1_1_qx_dashboard.html#a56d9a652ccffd83c2de43966cc13de57", null ],

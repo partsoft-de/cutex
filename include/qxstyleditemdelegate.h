@@ -36,13 +36,13 @@ class QxStyledItemDelegate : public QStyledItemDelegate
     Q_OBJECT
 
 public:
-    QxStyledItemDelegate(QObject *parent = 0);
+    QxStyledItemDelegate(QObject *parent = nullptr);
     virtual void setEditorData(QWidget *editor, const QModelIndex &index) const;
     virtual void setModelData(QWidget *editor, QAbstractItemModel *model, const QModelIndex &index) const;
 
 protected:
     int fieldHeight() const;
-    void setFieldHeight(int height, QWidget *editor = 0);
+    void setFieldHeight(int height, QWidget *editor = nullptr);
     QWidget* createLineEditEditor(QWidget *parent, const QString &name, bool fieldButton = false) const;
     QWidget* createSpinBoxEditor(QWidget *parent, const QString &name) const;
     QWidget* createDoubleSpinBoxEditor(QWidget *parent, const QString &name) const;

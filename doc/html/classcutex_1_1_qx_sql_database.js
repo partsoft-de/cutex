@@ -1,7 +1,7 @@
 var classcutex_1_1_qx_sql_database =
 [
-    [ "QxSqlDatabase", "classcutex_1_1_qx_sql_database.html#a52e8ea95d3a73c9b34ddbe7bea6642fa", null ],
-    [ "QxSqlDatabase", "classcutex_1_1_qx_sql_database.html#a27c25566807a26958c6428eba5428aea", null ],
+    [ "QxSqlDatabase", "classcutex_1_1_qx_sql_database.html#a55b9f7182d5a43820f368beb21d870f1", null ],
+    [ "QxSqlDatabase", "classcutex_1_1_qx_sql_database.html#abe0fde5f61498e8415f12b337fa911d2", null ],
     [ "~QxSqlDatabase", "classcutex_1_1_qx_sql_database.html#aac8a8f7c648f7ce75b910812424d2a73", null ],
     [ "addDatabase", "classcutex_1_1_qx_sql_database.html#a6ce94af66627a4b4873b217dc5516a11", null ],
     [ "addDatabase", "classcutex_1_1_qx_sql_database.html#a58c4102baccb995af92ad8a13d9949ba", null ],

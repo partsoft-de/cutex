@@ -45,10 +45,10 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"",
-"classcutex_1_1_qx_help_window.html#a088c37bf0ee3c9e231f25142814be04a",
-"classcutex_1_1_qx_sql_script.html#aa07ee0d27cc9dab0976ff40648e896df",
-"classcutex_1_1_qx_wait_cursor.html"
+"annotated.html",
+"classcutex_1_1_qx_help_window.html#a21c0e27274bbf054caaff1db85376796",
+"classcutex_1_1_qx_sql_script.html#ab85e41dd5df72f3b59c72a9700dbfcf7",
+"classcutex_1_1_qx_wait_cursor.html#a17c3b1af0967ac034a7a5d5172a2138b"
 ];
 
 var SYNCONMSG = 'Klicken um Panelsynchronisation auszuschalten';
