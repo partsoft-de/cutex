@@ -369,7 +369,7 @@ bool QxSqlQueryModel::appendRecords(const QVector<QSqlRecord> &records)
 */
 bool QxSqlQueryModel::removeRecord(int row)
 {
-    if (row < 0 || row > rowCount())
+    if (row < 0 || row >= rowCount())
         return false;
 
     beginRemoveRows(QModelIndex(), row, row);
@@ -400,6 +400,60 @@ bool QxSqlQueryModel::removeRecords(QVector<int> rows)
     }
 
     return success;
+}
+
+/*!
+  Gibt den Wert in Zeile <i>row</i> und Spalte <i>column</i> zurück.
+
+  \sa value(int row, const QString &column) const
+*/
+QVariant QxSqlQueryModel::value(int row, int column) const
+{
+    QVariant value;
+
+    if (row >= 0 && row < rowCount() && column >= 0 && column < columnCount())
+        value = m_data.at(row)->value(column);
+
+    return value;
+}
+
+/*!
+  Gibt den Wert in Zeile <i>row</i> und Spalte <i>column</i> zurück.
+
+  \sa value(int row, int column) const
+*/
+QVariant QxSqlQueryModel::value(int row, const QString &column) const
+{
+    return value(row, record().indexOf(column));
+}
+
+/*!
+  Sucht in der Spalte <i>column</i> nach dem Wert <i>value</i> und gibt eine Liste der übereinstimmenden Indizes zurück.
+
+  \sa find(const QString &column, const QVariant &value) const
+*/
+QModelIndexList QxSqlQueryModel::find(int column, const QVariant &value) const
+{
+    QModelIndexList list;
+
+    if (column >= 0 && column < columnCount()) {
+        for (int row = 0; row < rowCount(); ++row) {
+            if (m_data[row]->value(column) == value)
+                list.append(createIndex(row, column));
+        }
+    }
+
+    return list;
+}
+
+/*!
+  Sucht in der Spalte <i>column</i> nach dem Wert <i>value</i> und gibt eine Liste der übereinstimmenden Indizes zurück.
+
+  \sa find(int column, const QVariant &value) const
+*/
+QModelIndexList QxSqlQueryModel::find(const QString &column, const QVariant &value) const
+{
+    return find(record().indexOf(column), value);
 }
 
 /*!
@@ -570,13 +624,13 @@ void QxSqlQueryModel::selectSqlRelations()
 */
 
 /*!
-  \fn columnValues(QSqlQuery query, int column = 0)
+  \fn QxSqlQueryModel::columnValues(QSqlQuery query, int column = 0)
 
   Führt die in <i>query</i> angegebene Abfrage aus und gibt alle Werte der Spalte <i>column</i> in einer Liste zurück.
 */
 
 /*!
-  \fn columnValues(const QString &query, int column = 0)
+  \fn QxSqlQueryModel::columnValues(const QString &query, int column = 0)
 
   Führt die in <i>query</i> angegebene Abfrage aus und gibt alle Werte der Spalte <i>column</i> in einer Liste zurück.
 */

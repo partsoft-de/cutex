@@ -57,6 +57,8 @@ public:
     bool appendRecords(const QVector<QSqlRecord> &records);
     bool removeRecord(int row);
     bool removeRecords(QVector<int> rows);
+    QVariant value(int row, int column) const;
+    QVariant value(int row, const QString &column) const;
     template<typename T> QList<T> columnValues(int column = 0) const
     {
         QList<T> list;
@@ -88,6 +90,8 @@ public:
 
         return list;
     }
+    QModelIndexList find(int column, const QVariant &value) const;
+    QModelIndexList find(const QString &column, const QVariant &value) const;
     void setColumnCaption(int column, const QString &caption, Qt::AlignmentFlag alignment = Qt::AlignLeft);
     void setColumnCaption(const QString &column, const QString &caption, Qt::AlignmentFlag alignment = Qt::AlignLeft);
     void setColumnAlignment(int column, Qt::AlignmentFlag alignment);
