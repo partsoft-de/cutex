@@ -591,8 +591,11 @@ void QxSqlQueryModel::selectSqlRelation(QSqlRecord *record, int column, const QS
         arg(sqlRelation.displayColumn()).arg(sqlRelation.tableName()).arg(sqlRelation.indexColumn()));
     query.bindValue(QString(":%1").arg(sqlRelation.indexColumn()), record->value(column));
 
-    if (query.exec() && query.first())
+    if (query.exec() && query.first()) {
         record->setValue(column, query.value(0));
+    } else {
+        record->setValue(column, QVariant());
+    }
 }
 
 void QxSqlQueryModel::selectSqlRelation(int column)
