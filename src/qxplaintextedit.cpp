@@ -200,21 +200,31 @@ bool QxPlainTextEdit::findOrReplace(const QxFindOptions &options)
     if (options.backward() && options.mode() != QxFindOptions::ReplaceAll)
         flags = flags | QTextDocument::FindBackward;
 
+#if QT_VERSION >= QT_VERSION_CHECK(5,13,0)
     QRegularExpression::PatternOption patternOption = QRegularExpression::NoPatternOption;
     if (caseSensitivity == Qt::CaseInsensitive)
         patternOption = QRegularExpression::CaseInsensitiveOption;
+#endif
 
     switch (options.mode()) {
     case QxFindOptions::Find:
         if (options.regularExpression()) {
+#if QT_VERSION >= QT_VERSION_CHECK(5,13,0)
             success = find(QRegularExpression(options.findText(), patternOption), flags);
+#else
+            success = find(QRegExp(options.findText(), caseSensitivity), flags);
+#endif
         } else {
             success = find(options.findText(), flags);
         }
         break;
     case QxFindOptions::Replace:
         if (options.regularExpression()) {
+#if QT_VERSION >= QT_VERSION_CHECK(5,13,0)
             success = find(QRegularExpression(options.findText(), patternOption), flags);
+#else
+            success = find(QRegExp(options.findText(), caseSensitivity), flags);
+#endif
         } else {
             success = find(options.findText(), flags);
         }
@@ -228,7 +238,11 @@ bool QxPlainTextEdit::findOrReplace(const QxFindOptions &options)
         break;
     case QxFindOptions::ReplaceAll:
         if (options.regularExpression()) {
+#if QT_VERSION >= QT_VERSION_CHECK(5,13,0)
             success = find(QRegularExpression(options.findText(), patternOption), flags);
+#else
+            success = find(QRegExp(options.findText(), caseSensitivity), flags);
+#endif
         } else {
             cursor = document()->find(options.findText());
         }
