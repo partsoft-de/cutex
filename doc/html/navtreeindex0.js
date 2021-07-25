@@ -1,6 +1,5 @@
 var NAVTREEINDEX0 =
 {
-"":[0,0,0],
 "annotated.html":[0,0],
 "classcutex_1_1_qx_application.html":[0,0,0,0],
 "classcutex_1_1_qx_application.html#a05e32969bf58962d3e5ab63fc9babcd5":[0,0,0,0,9],
@@ -249,5 +248,6 @@ var NAVTREEINDEX0 =
 "classcutex_1_1_qx_help_browser.html#a9871c9d234ced9b983b350f8f7e87865":[0,0,0,12,1],
 "classcutex_1_1_qx_help_browser.html#abbaafd1d65db9e14dccd499f6be7e51b":[0,0,0,12,3],
 "classcutex_1_1_qx_help_browser.html#ac112a8f678f336c08dce65302803be14":[0,0,0,12,4],
-"classcutex_1_1_qx_help_window.html":[0,0,0,13]
+"classcutex_1_1_qx_help_window.html":[0,0,0,13],
+"classcutex_1_1_qx_help_window.html#a088c37bf0ee3c9e231f25142814be04a":[0,0,0,13,11]
 };
