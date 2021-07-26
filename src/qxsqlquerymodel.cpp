@@ -390,7 +390,13 @@ bool QxSqlQueryModel::removeRecords(QVector<int> rows)
     bool success = false;
 
     if (rows.count()) {
+#if QT_VERSION < QT_VERSION_CHECK(5,6,0)
+        std::vector<int> temp = rows.toStdVector();
+        std::sort(temp.rbegin(), temp.rend());
+        rows = QVector<int>::fromStdVector(temp);
+#else
         std::sort(rows.rbegin(), rows.rend());
+#endif
         beginResetModel();
         for (int row : rows) {
             if (row >= 0 && row < m_data.size())
