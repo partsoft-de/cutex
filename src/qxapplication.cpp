@@ -43,6 +43,7 @@ QString QxApplication::m_themesPath = QString();
 QxApplication::QxApplication(int &argc, char **argv) : QApplication(argc, argv)
 {
     qxApp = this;
+    m_logger = new QxLogger(this);
     m_fieldButtonHotkey = Qt::Key_F5;
 
     // Bei Verwendung von QGtkStyle werden cutex-spezifische Stylesheets nicht korrekt dargestellt
@@ -59,6 +60,17 @@ QxApplication::QxApplication(int &argc, char **argv) : QApplication(argc, argv)
 
     initResource();
     registerStatics();
+}
+
+QxLogger* QxApplication::logger() const
+{
+    return m_logger;
+}
+
+void QxApplication::setLogger(QxLogger *logger)
+{
+    delete m_logger;
+    m_logger = logger;
 }
 
 /*!

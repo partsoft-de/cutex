@@ -32,6 +32,7 @@ HEADERS += \
     ../include/qxdoubleedit.h \
     ../include/qxexception.h \
     ../include/qxintedit.h \
+    ../include/qxlogger.h \
     ../include/qxsingleton.h \
     ../include/qxswipebar.h \
     ../include/qxswipebutton.h \
@@ -83,6 +84,7 @@ SOURCES += \
     qxdoubleedit.cpp \
     qxexception.cpp \
     qxintedit.cpp \
+    qxlogger.cpp \
     qxsingleton.cpp \
     qxswipebar.cpp \
     qxswipebutton.cpp \
