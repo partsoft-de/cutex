@@ -69,7 +69,6 @@ QxLogger* QxApplication::logger() const
 
 void QxApplication::setLogger(QxLogger *logger)
 {
-    delete m_logger;
     m_logger = logger;
 }
 
