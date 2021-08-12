@@ -110,6 +110,10 @@ Klassendiagramm für cutex::QxApplication:</div>
 Öffentliche Methoden</h2></td></tr>
 <tr class="memitem:a6efcbd6c83ec1483f9ee4025c88ea252"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcutex_1_1_qx_application.html#a6efcbd6c83ec1483f9ee4025c88ea252">QxApplication</a> (int &amp;argc, char **argv)</td></tr>
 <tr class="separator:a6efcbd6c83ec1483f9ee4025c88ea252"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad6813d5c6b559c7c4c6106604a5710d5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcutex_1_1_qx_logger.html">QxLogger</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcutex_1_1_qx_application.html#ad6813d5c6b559c7c4c6106604a5710d5">logger</a> () const</td></tr>
+<tr class="separator:ad6813d5c6b559c7c4c6106604a5710d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab90d86662a75f38d20da9dfa34f3ee84"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcutex_1_1_qx_application.html#ab90d86662a75f38d20da9dfa34f3ee84">setLogger</a> (<a class="el" href="classcutex_1_1_qx_logger.html">QxLogger</a> *<a class="el" href="classcutex_1_1_qx_application.html#ad6813d5c6b559c7c4c6106604a5710d5">logger</a>)</td></tr>
+<tr class="separator:ab90d86662a75f38d20da9dfa34f3ee84"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afff778136f591d43a0516c6a8cdf17ec"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcutex_1_1_qx_application.html#afff778136f591d43a0516c6a8cdf17ec">setFieldButtonHotkey</a> (Qt::Key key)</td></tr>
 <tr class="separator:afff778136f591d43a0516c6a8cdf17ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a696a26e9916b9206ee6343b29f45413e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcutex_1_1_qx_application.html#a696a26e9916b9206ee6343b29f45413e">fieldButtonHotkey</a> () const</td></tr>
@@ -141,6 +145,9 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>loadTranslation</b> (
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attribute</h2></td></tr>
+<tr class="memitem:a65a9e82309bc1eb36938c69b602e8db5"><td class="memItemLeft" align="right" valign="top"><a id="a65a9e82309bc1eb36938c69b602e8db5"></a>
+<a class="el" href="classcutex_1_1_qx_logger.html">QxLogger</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>m_logger</b></td></tr>
+<tr class="separator:a65a9e82309bc1eb36938c69b602e8db5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2cbf8e9745beae49c9c4181b86a0c52b"><td class="memItemLeft" align="right" valign="top"><a id="a2cbf8e9745beae49c9c4181b86a0c52b"></a>
 Qt::Key&#160;</td><td class="memItemRight" valign="bottom"><b>m_fieldButtonHotkey</b></td></tr>
 <tr class="separator:a2cbf8e9745beae49c9c4181b86a0c52b"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -277,6 +284,25 @@ static QString&#160;</td><td class="memItemRight" valign="bottom"><b>m_themesPat
 
 </div>
 </div>
+<a id="ad6813d5c6b559c7c4c6106604a5710d5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad6813d5c6b559c7c4c6106604a5710d5">&#9670;&nbsp;</a></span>logger()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classcutex_1_1_qx_logger.html">QxLogger</a> * QxApplication::logger </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Gibt einen Zeiger auf das interne Logging-Objekt zurück.</p>
+<dl class="section see"><dt>Siehe auch</dt><dd><a class="el" href="classcutex_1_1_qx_application.html#ab90d86662a75f38d20da9dfa34f3ee84">setLogger(QxLogger *logger)</a> </dd></dl>
+
+</div>
+</div>
 <a id="afff778136f591d43a0516c6a8cdf17ec"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#afff778136f591d43a0516c6a8cdf17ec">&#9670;&nbsp;</a></span>setFieldButtonHotkey()</h2>
 
@@ -294,6 +320,26 @@ static QString&#160;</td><td class="memItemRight" valign="bottom"><b>m_themesPat
 </div><div class="memdoc">
 <p>Setzt den anwendungsweiten Hotkey für Field-Buttons. Ein Field in cutex ist ein beliebiges Eingabefeld (z.B. QLineEdit) und kann mit einem QPushButton verbunden werden, indem der Button genauso wie das Eingabefeld und dem Suffix "Button" benannt wird (z.B. FileField, FileFieldButton). Besitzt das Eingabefeld den Fokus, kann ein Klick auf den zugehörigen Button durch den hier übergebenen Hotkey ausgelöst werden.</p>
 <dl class="section see"><dt>Siehe auch</dt><dd><a class="el" href="classcutex_1_1_qx_application.html#a696a26e9916b9206ee6343b29f45413e">fieldButtonHotkey()</a> </dd></dl>
+
+</div>
+</div>
+<a id="ab90d86662a75f38d20da9dfa34f3ee84"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab90d86662a75f38d20da9dfa34f3ee84">&#9670;&nbsp;</a></span>setLogger()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void QxApplication::setLogger </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classcutex_1_1_qx_logger.html">QxLogger</a> *&#160;</td>
+          <td class="paramname"><em>logger</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Setzt den Zeiger des internen Logging-Objekts auf <em>logger</em>.</p>
+<dl class="section see"><dt>Siehe auch</dt><dd><a class="el" href="classcutex_1_1_qx_application.html#ad6813d5c6b559c7c4c6106604a5710d5">logger()</a> </dd></dl>
 
 </div>
 </div>

@@ -21,6 +21,7 @@
 #define QXAPPLICATION_H
 
 #include "cutex.h"
+#include "qxlogger.h"
 
 namespace cutex {
 
@@ -38,6 +39,8 @@ class QxApplication : public QApplication
 {
 public:
     QxApplication(int &argc, char **argv);
+    QxLogger* logger() const;
+    void setLogger(QxLogger *logger);
     void setFieldButtonHotkey(Qt::Key key);
     int fieldButtonHotkey() const;
     bool addTranslator(const QString &name, const QString &locale = QString());
@@ -48,6 +51,7 @@ public:
     static QStringList themes();
 
 private:
+    QxLogger *m_logger;
     Qt::Key m_fieldButtonHotkey;
     QMap<QString, QTranslator*> m_translators;
     static QString m_translationsPath;

@@ -30,7 +30,7 @@
 using namespace cutex;
 
 namespace cutex {
-QxApplication *qxApp;
+QxApplication *qxApp = nullptr;
 }
 
 QString QxApplication::m_translationsPath = QString();
@@ -43,6 +43,7 @@ QString QxApplication::m_themesPath = QString();
 QxApplication::QxApplication(int &argc, char **argv) : QApplication(argc, argv)
 {
     qxApp = this;
+    m_logger = new QxLogger(this);
     m_fieldButtonHotkey = Qt::Key_F5;
 
     // Bei Verwendung von QGtkStyle werden cutex-spezifische Stylesheets nicht korrekt dargestellt
@@ -59,6 +60,26 @@ QxApplication::QxApplication(int &argc, char **argv) : QApplication(argc, argv)
 
     initResource();
     registerStatics();
+}
+
+/*!
+  Gibt einen Zeiger auf das interne Logging-Objekt zurück.
+
+  \sa setLogger(QxLogger *logger)
+*/
+QxLogger* QxApplication::logger() const
+{
+    return m_logger;
+}
+
+/*!
+  Setzt den Zeiger des internen Logging-Objekts auf <i>logger</i>.
+
+  \sa logger()
+*/
+void QxApplication::setLogger(QxLogger *logger)
+{
+    m_logger = logger;
 }
 
 /*!

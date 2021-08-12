@@ -6,8 +6,11 @@ var classcutex_1_1_qx_application =
     [ "changeTheme", "classcutex_1_1_qx_application.html#abd162a3ea41b76d178950c2d43ef689e", null ],
     [ "fieldButtonHotkey", "classcutex_1_1_qx_application.html#a696a26e9916b9206ee6343b29f45413e", null ],
     [ "loadTranslation", "classcutex_1_1_qx_application.html#a482580e86cd10d2584c3a4a24948ae53", null ],
+    [ "logger", "classcutex_1_1_qx_application.html#ad6813d5c6b559c7c4c6106604a5710d5", null ],
     [ "registerStatics", "classcutex_1_1_qx_application.html#a29cc972b96dc380d1ceb21fa7104d347", null ],
     [ "setFieldButtonHotkey", "classcutex_1_1_qx_application.html#afff778136f591d43a0516c6a8cdf17ec", null ],
+    [ "setLogger", "classcutex_1_1_qx_application.html#ab90d86662a75f38d20da9dfa34f3ee84", null ],
     [ "m_fieldButtonHotkey", "classcutex_1_1_qx_application.html#a2cbf8e9745beae49c9c4181b86a0c52b", null ],
+    [ "m_logger", "classcutex_1_1_qx_application.html#a65a9e82309bc1eb36938c69b602e8db5", null ],
     [ "m_translators", "classcutex_1_1_qx_application.html#a05e32969bf58962d3e5ab63fc9babcd5", null ]
 ];
