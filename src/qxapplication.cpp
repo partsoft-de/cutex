@@ -30,7 +30,7 @@
 using namespace cutex;
 
 namespace cutex {
-QxApplication *qxApp;
+QxApplication *qxApp = nullptr;
 }
 
 QString QxApplication::m_translationsPath = QString();
@@ -62,11 +62,21 @@ QxApplication::QxApplication(int &argc, char **argv) : QApplication(argc, argv)
     registerStatics();
 }
 
+/*!
+  Gibt einen Zeiger auf das interne Logging-Objekt zurück.
+
+  \sa setLogger(QxLogger *logger)
+*/
 QxLogger* QxApplication::logger() const
 {
     return m_logger;
 }
 
+/*!
+  Setzt den Zeiger des internen Logging-Objekts auf <i>logger</i>.
+
+  \sa logger()
+*/
 void QxApplication::setLogger(QxLogger *logger)
 {
     m_logger = logger;

@@ -21,12 +21,18 @@
 
 using namespace cutex;
 
+/*!
+  Erzeugt ein neues Logging-Objekt mit dem Elternobjekt <i>parent</i>.
+*/
 QxLogger::QxLogger(QObject *parent) : QObject(parent)
 {
     m_dateFormat = "yyyy-MM-dd HH:mm:ss";
     m_maxLines = 10000;
 }
 
+/*!
+  Schließt die Logdatei und zerstört das Objekt.
+*/
 QxLogger::~QxLogger()
 {
     if (m_file.isOpen()) {
@@ -35,11 +41,21 @@ QxLogger::~QxLogger()
     }
 }
 
+/*!
+  Gibt den Pfad zur Logdatei zurück.
+
+  \sa setFileName(const QString &fileName)
+*/
 QString QxLogger::fileName() const
 {
     return m_file.fileName();
 }
 
+/*!
+  Setzt den Pfad der Logdatei auf <i>fileName</i> und öffnet die Datei.
+
+  \sa fileName()
+*/
 bool QxLogger::setFileName(const QString &fileName)
 {
     bool success = false;
@@ -60,11 +76,21 @@ bool QxLogger::setFileName(const QString &fileName)
     return success;
 }
 
+/*!
+  Gibt die maximale Anzahl an Zeilen zurück.
+
+  \sa setMaxLines(int count)
+*/
 int QxLogger::maxLines() const
 {
     return m_maxLines;
 }
 
+/*!
+  Setzt die maximale Anzahl an Zeilen auf den Wert <i>count</i>.
+
+  \sa maxLines()
+*/
 void QxLogger::setMaxLines(int count)
 {
     if (m_maxLines != count) {
@@ -73,6 +99,9 @@ void QxLogger::setMaxLines(int count)
     }
 }
 
+/*!
+  Schreibt einen Eintrag mit dem Loglevel <i>level</i> und dem Text <i>text</i> in die Logdatei.
+*/
 bool QxLogger::log(LogLevel level, const QString &text)
 {
     bool success = false;
@@ -83,13 +112,17 @@ bool QxLogger::log(LogLevel level, const QString &text)
 
         success = m_file.write(QString("%1\n").arg(line).toLatin1());
         m_file.flush();
-
         qDebug() << line;
     }
 
     return success;
 }
 
+/*!
+  Löscht ältere Einträge aus der Logdatei.
+
+  \sa setMaxLines(int count)
+*/
 bool QxLogger::cleanUp()
 {
     bool success = false;

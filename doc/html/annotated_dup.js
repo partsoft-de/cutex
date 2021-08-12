@@ -18,6 +18,7 @@ var annotated_dup =
       [ "QxHtmlCursor", "classcutex_1_1_qx_html_cursor.html", "classcutex_1_1_qx_html_cursor" ],
       [ "QxHyperlink", "classcutex_1_1_qx_hyperlink.html", "classcutex_1_1_qx_hyperlink" ],
       [ "QxIntEdit", "classcutex_1_1_qx_int_edit.html", "classcutex_1_1_qx_int_edit" ],
+      [ "QxLogger", "classcutex_1_1_qx_logger.html", "classcutex_1_1_qx_logger" ],
       [ "QxMainWindow", "classcutex_1_1_qx_main_window.html", "classcutex_1_1_qx_main_window" ],
       [ "QxMath", "classcutex_1_1_qx_math.html", null ],
       [ "QxMessage", "classcutex_1_1_qx_message.html", "classcutex_1_1_qx_message" ],

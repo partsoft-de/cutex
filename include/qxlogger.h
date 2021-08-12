@@ -29,6 +29,16 @@ namespace cutex {
 #define QX_LOG_WARNING(text) qxApp->logger()->log(QxLogger::Warning, text)
 #define QX_LOG_CRITICAL(text) qxApp->logger()->log(QxLogger::Critical, text)
 
+/*!
+  \brief Mit der Klasse %QxLogger können Einträge in eine Logdatei geschrieben werden.
+
+  %QxLogger stellt Funktionen zum schreiben von Einträgen in eine Logdatei zur Verfügung. Eine Instanz dieser Klasse
+  wird automatisch zusammen mit QxApplication erzeugt. Nach dem setzten des Dateinamens mit setFileName() können die
+  Makros QX_LOG_DEBUG, QX_LOG_INFO, QX_LOG_WARNING und QX_LOG_CRITICAL verwendet werden um Einträge in die Logdatei zu
+  schreiben.
+
+  \sa QxApplication
+*/
 class QxLogger : public QObject
 {
     Q_OBJECT

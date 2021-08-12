@@ -18,6 +18,7 @@ var dir_d44c64559bbebec7f509842c48db8b23 =
     [ "qxhtmlcursor.h", "qxhtmlcursor_8h_source.html", null ],
     [ "qxhyperlink.h", "qxhyperlink_8h_source.html", null ],
     [ "qxintedit.h", "qxintedit_8h_source.html", null ],
+    [ "qxlogger.h", "qxlogger_8h_source.html", null ],
     [ "qxmainwindow.h", "qxmainwindow_8h_source.html", null ],
     [ "qxmath.h", "qxmath_8h_source.html", null ],
     [ "qxmessage.h", "qxmessage_8h_source.html", null ],

@@ -29,6 +29,7 @@ var hierarchy =
       [ "cutex::QxMainWindow", "classcutex_1_1_qx_main_window.html", null ]
     ] ],
     [ "QObject", null, [
+      [ "cutex::QxLogger", "classcutex_1_1_qx_logger.html", null ],
       [ "cutex::QxRecentFiles", "classcutex_1_1_qx_recent_files.html", null ],
       [ "cutex::QxSpellChecker", "classcutex_1_1_qx_spell_checker.html", null ],
       [ "cutex::QxSqlDatabase", "classcutex_1_1_qx_sql_database.html", null ],
