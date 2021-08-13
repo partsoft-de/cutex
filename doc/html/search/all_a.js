@@ -8,8 +8,8 @@ var searchData=
   ['listcircle_150',['ListCircle',['../classcutex_1_1_qx_text_edit.html#abfdae775e1de35416e0488349e8d0e5da560f083fcee79fc2065b84f7f3a3462b',1,'cutex::QxTextEdit']]],
   ['listdecimal_151',['ListDecimal',['../classcutex_1_1_qx_text_edit.html#abfdae775e1de35416e0488349e8d0e5da43ca7042e3f691a328637e1e09607367',1,'cutex::QxTextEdit']]],
   ['listdisc_152',['ListDisc',['../classcutex_1_1_qx_text_edit.html#abfdae775e1de35416e0488349e8d0e5da2e9259f361a853e177f3bd86be8284b1',1,'cutex::QxTextEdit']]],
-  ['listformat_153',['listFormat',['../classcutex_1_1_qx_text_edit.html#ad786cb1d02b3dd845795f1335ba35f84',1,'cutex::QxTextEdit']]],
-  ['listformat_154',['ListFormat',['../classcutex_1_1_qx_text_edit.html#abfdae775e1de35416e0488349e8d0e5d',1,'cutex::QxTextEdit']]],
+  ['listformat_153',['ListFormat',['../classcutex_1_1_qx_text_edit.html#abfdae775e1de35416e0488349e8d0e5d',1,'cutex::QxTextEdit']]],
+  ['listformat_154',['listFormat',['../classcutex_1_1_qx_text_edit.html#ad786cb1d02b3dd845795f1335ba35f84',1,'cutex::QxTextEdit']]],
   ['listloweralpha_155',['ListLowerAlpha',['../classcutex_1_1_qx_text_edit.html#abfdae775e1de35416e0488349e8d0e5da3de9a7b93626f35d888d4822bccf4872',1,'cutex::QxTextEdit']]],
   ['listlowerroman_156',['ListLowerRoman',['../classcutex_1_1_qx_text_edit.html#abfdae775e1de35416e0488349e8d0e5daefe79eedc87ffcd06a99fcff013d9ec9',1,'cutex::QxTextEdit']]],
   ['listnone_157',['ListNone',['../classcutex_1_1_qx_text_edit.html#abfdae775e1de35416e0488349e8d0e5da8021fa99cfcf7f5216eb30302917c369',1,'cutex::QxTextEdit']]],
@@ -21,5 +21,6 @@ var searchData=
   ['loadresource_163',['loadResource',['../classcutex_1_1_qx_help_browser.html#a9871c9d234ced9b983b350f8f7e87865',1,'cutex::QxHelpBrowser']]],
   ['loadsettings_164',['loadSettings',['../classcutex_1_1_qx_sql_database.html#a6788bedabb62234aa10770c98199bddd',1,'cutex::QxSqlDatabase']]],
   ['log_165',['log',['../classcutex_1_1_qx_logger.html#aebb92d888a5a4d4d92264704e35e9856',1,'cutex::QxLogger']]],
-  ['logger_166',['logger',['../classcutex_1_1_qx_application.html#ad6813d5c6b559c7c4c6106604a5710d5',1,'cutex::QxApplication']]]
+  ['logger_166',['logger',['../classcutex_1_1_qx_application.html#ad6813d5c6b559c7c4c6106604a5710d5',1,'cutex::QxApplication']]],
+  ['loglevel_167',['logLevel',['../classcutex_1_1_qx_logger.html#a2f0820ad3ea31c9b46fa9329d525a65e',1,'cutex::QxLogger']]]
 ];

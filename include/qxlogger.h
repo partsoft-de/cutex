@@ -1,4 +1,4 @@
-/***********************************************************************************************************************
+ /***********************************************************************************************************************
 **
 ** Copyright (C) 2016-2021 Partsoft UG (haftungsbeschränkt)
 ** Contact: https://www.partsoft.de/index.php/kontakt
@@ -54,6 +54,8 @@ public:
     ~QxLogger();
     QString fileName() const;
     bool setFileName(const QString &fileName);
+    LogLevel logLevel() const;
+    void setLogLevel(LogLevel level);
     int maxLines() const;
     void setMaxLines(int count);
     bool log(LogLevel level, const QString &text);
@@ -62,6 +64,7 @@ public:
 private:
     QFile m_file;
     QString m_dateFormat;
+    LogLevel m_logLevel;
     int m_maxLines;
 };
 

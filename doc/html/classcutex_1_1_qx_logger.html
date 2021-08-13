@@ -123,6 +123,10 @@ Klassendiagramm für cutex::QxLogger:</div>
 <tr class="separator:a9c77fad116c2f8c1f79114bb6aab9db1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abbc7c5677b8e9c35afba777b21b1c651"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcutex_1_1_qx_logger.html#abbc7c5677b8e9c35afba777b21b1c651">setFileName</a> (const QString &amp;<a class="el" href="classcutex_1_1_qx_logger.html#a9c77fad116c2f8c1f79114bb6aab9db1">fileName</a>)</td></tr>
 <tr class="separator:abbc7c5677b8e9c35afba777b21b1c651"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2f0820ad3ea31c9b46fa9329d525a65e"><td class="memItemLeft" align="right" valign="top">LogLevel&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcutex_1_1_qx_logger.html#a2f0820ad3ea31c9b46fa9329d525a65e">logLevel</a> () const</td></tr>
+<tr class="separator:a2f0820ad3ea31c9b46fa9329d525a65e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8655e57816cc7643ad634588131266e8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcutex_1_1_qx_logger.html#a8655e57816cc7643ad634588131266e8">setLogLevel</a> (LogLevel level)</td></tr>
+<tr class="separator:a8655e57816cc7643ad634588131266e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac627d6a1dd829d40b92c710952dfcc4c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcutex_1_1_qx_logger.html#ac627d6a1dd829d40b92c710952dfcc4c">maxLines</a> () const</td></tr>
 <tr class="separator:ac627d6a1dd829d40b92c710952dfcc4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9433ea9484dc01da8a96b03b6e048841"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcutex_1_1_qx_logger.html#a9433ea9484dc01da8a96b03b6e048841">setMaxLines</a> (int count)</td></tr>
@@ -140,6 +144,9 @@ QFile&#160;</td><td class="memItemRight" valign="bottom"><b>m_file</b></td></tr>
 <tr class="memitem:a383f479e952aa4a71a2b9ea0f2c806d7"><td class="memItemLeft" align="right" valign="top"><a id="a383f479e952aa4a71a2b9ea0f2c806d7"></a>
 QString&#160;</td><td class="memItemRight" valign="bottom"><b>m_dateFormat</b></td></tr>
 <tr class="separator:a383f479e952aa4a71a2b9ea0f2c806d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4082d3e1d02a7ac5e2f1211bcaa8a7d0"><td class="memItemLeft" align="right" valign="top"><a id="a4082d3e1d02a7ac5e2f1211bcaa8a7d0"></a>
+LogLevel&#160;</td><td class="memItemRight" valign="bottom"><b>m_logLevel</b></td></tr>
+<tr class="separator:a4082d3e1d02a7ac5e2f1211bcaa8a7d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acc65ddb8abfd82adebbf21c2517ab018"><td class="memItemLeft" align="right" valign="top"><a id="acc65ddb8abfd82adebbf21c2517ab018"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><b>m_maxLines</b></td></tr>
 <tr class="separator:acc65ddb8abfd82adebbf21c2517ab018"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -254,6 +261,25 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>m_maxLines</b></td></t
 
 </div>
 </div>
+<a id="a2f0820ad3ea31c9b46fa9329d525a65e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2f0820ad3ea31c9b46fa9329d525a65e">&#9670;&nbsp;</a></span>logLevel()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QxLogger::LogLevel QxLogger::logLevel </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Gibt den aktuellen Loglevel zurück.</p>
+<dl class="section see"><dt>Siehe auch</dt><dd><a class="el" href="classcutex_1_1_qx_logger.html#a8655e57816cc7643ad634588131266e8">setLogLevel(LogLevel level)</a> </dd></dl>
+
+</div>
+</div>
 <a id="ac627d6a1dd829d40b92c710952dfcc4c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac627d6a1dd829d40b92c710952dfcc4c">&#9670;&nbsp;</a></span>maxLines()</h2>
 
@@ -290,6 +316,26 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>m_maxLines</b></td></t
 </div><div class="memdoc">
 <p>Setzt den Pfad der Logdatei auf <em>fileName</em> und öffnet die Datei.</p>
 <dl class="section see"><dt>Siehe auch</dt><dd><a class="el" href="classcutex_1_1_qx_logger.html#a9c77fad116c2f8c1f79114bb6aab9db1">fileName()</a> </dd></dl>
+
+</div>
+</div>
+<a id="a8655e57816cc7643ad634588131266e8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8655e57816cc7643ad634588131266e8">&#9670;&nbsp;</a></span>setLogLevel()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void QxLogger::setLogLevel </td>
+          <td>(</td>
+          <td class="paramtype">LogLevel&#160;</td>
+          <td class="paramname"><em>level</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Setzt den Loglevel auf den Wert <em>level</em>.</p>
+<dl class="section see"><dt>Siehe auch</dt><dd><a class="el" href="classcutex_1_1_qx_logger.html#a2f0820ad3ea31c9b46fa9329d525a65e">logLevel()</a> </dd></dl>
 
 </div>
 </div>

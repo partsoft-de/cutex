@@ -11,10 +11,13 @@ var classcutex_1_1_qx_logger =
     [ "cleanUp", "classcutex_1_1_qx_logger.html#aca9d52f64f719223bad17c800870deec", null ],
     [ "fileName", "classcutex_1_1_qx_logger.html#a9c77fad116c2f8c1f79114bb6aab9db1", null ],
     [ "log", "classcutex_1_1_qx_logger.html#aebb92d888a5a4d4d92264704e35e9856", null ],
+    [ "logLevel", "classcutex_1_1_qx_logger.html#a2f0820ad3ea31c9b46fa9329d525a65e", null ],
     [ "maxLines", "classcutex_1_1_qx_logger.html#ac627d6a1dd829d40b92c710952dfcc4c", null ],
     [ "setFileName", "classcutex_1_1_qx_logger.html#abbc7c5677b8e9c35afba777b21b1c651", null ],
+    [ "setLogLevel", "classcutex_1_1_qx_logger.html#a8655e57816cc7643ad634588131266e8", null ],
     [ "setMaxLines", "classcutex_1_1_qx_logger.html#a9433ea9484dc01da8a96b03b6e048841", null ],
     [ "m_dateFormat", "classcutex_1_1_qx_logger.html#a383f479e952aa4a71a2b9ea0f2c806d7", null ],
     [ "m_file", "classcutex_1_1_qx_logger.html#a559b5ac8e2e14f59c8cb03853de8f1bd", null ],
+    [ "m_logLevel", "classcutex_1_1_qx_logger.html#a4082d3e1d02a7ac5e2f1211bcaa8a7d0", null ],
     [ "m_maxLines", "classcutex_1_1_qx_logger.html#acc65ddb8abfd82adebbf21c2517ab018", null ]
 ];

@@ -1,5 +1,8 @@
 var NAVTREEINDEX3 =
 {
+"classcutex_1_1_qx_tree_item_model.html#a6ad81653192e81cdd29352558758ba48":[0,0,0,39,2],
+"classcutex_1_1_qx_tree_item_model.html#a707055882ece8b5cd243984979630a52":[0,0,0,39,13],
+"classcutex_1_1_qx_tree_item_model.html#a787213a9ef80cfaec4228008558a46de":[0,0,0,39,6],
 "classcutex_1_1_qx_tree_item_model.html#a78f576d4a1860e14545eb9cd8a3252dd":[0,0,0,39,4],
 "classcutex_1_1_qx_tree_item_model.html#a79cbb52296f15e39d10dd25e13dfd81a":[0,0,0,39,8],
 "classcutex_1_1_qx_tree_item_model.html#a7a106fa49773e0a51e10a9b096d6cb8b":[0,0,0,39,28],

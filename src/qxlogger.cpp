@@ -27,6 +27,7 @@ using namespace cutex;
 QxLogger::QxLogger(QObject *parent) : QObject(parent)
 {
     m_dateFormat = "yyyy-MM-dd HH:mm:ss";
+    m_logLevel = LogLevel::Debug;
     m_maxLines = 10000;
 }
 
@@ -77,6 +78,26 @@ bool QxLogger::setFileName(const QString &fileName)
 }
 
 /*!
+  Gibt den aktuellen Loglevel zurück.
+
+  \sa setLogLevel(LogLevel level)
+*/
+QxLogger::LogLevel QxLogger::logLevel() const
+{
+    return m_logLevel;
+}
+
+/*!
+  Setzt den Loglevel auf den Wert <i>level</i>.
+
+  \sa logLevel()
+*/
+void QxLogger::setLogLevel(LogLevel level)
+{
+    m_logLevel = level;
+}
+
+/*!
   Gibt die maximale Anzahl an Zeilen zurück.
 
   \sa setMaxLines(int count)
@@ -106,7 +127,7 @@ bool QxLogger::log(LogLevel level, const QString &text)
 {
     bool success = false;
 
-    if (m_file.isOpen()) {
+    if (m_file.isOpen() && level >= m_logLevel) {
         QString line = QString("%1 [%2] %3").arg(QDateTime::currentDateTime().toString(m_dateFormat),
             QMetaEnum::fromType<LogLevel>().valueToKey(level), text);
 
