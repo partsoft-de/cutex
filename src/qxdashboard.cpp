@@ -46,6 +46,7 @@ QxDashboard::QxDashboard(QWidget *parent) : QxForm(parent)
 #endif
 
     setWindowTitle(tr("Dashboard"));
+    setWindowIcon(QIcon(":/icons/16x16/house.png"));
 
     QHBoxLayout *layout = new QHBoxLayout();
     layout->addWidget(m_dashboard);

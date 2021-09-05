@@ -365,17 +365,7 @@ void QxTextEdit::insertLine()
 */
 void QxTextEdit::insertImage(const QString &fileName)
 {
-    QImage image(fileName);
-    QString url;
-    QVariant resource;
-
-    do {
-        url = "image://" + QxRandom::get(10, QxRandom::LOWERCHARS);
-        resource = document()->resource(QTextDocument::ImageResource, url);
-    } while (resource.isValid());
-
-    document()->addResource(QTextDocument::ImageResource, QUrl(url), image);
-    textCursor().insertImage(image, url);
+    insertImage(QImage(fileName));
 }
 
 /*!
@@ -685,6 +675,52 @@ void QxTextEdit::keyPressEvent(QKeyEvent *event)
     }
 
     QTextEdit::keyPressEvent(event);
+}
+
+/*!
+  Prüft ob die übergebenen MIME-Daten <i>source</i> eingefügt werden können.
+*/
+bool QxTextEdit::canInsertFromMimeData(const QMimeData *source) const
+{
+    QStringList formats = source->formats();
+
+    if (formats.count() == 1) {
+        if (formats.first() == "application/x-qt-image")
+            return true;
+    }
+
+    return QTextEdit::canInsertFromMimeData(source);
+}
+
+/*!
+  Fügt die MIME-Daten <i>source</i> ein.
+*/
+void QxTextEdit::insertFromMimeData(const QMimeData *source)
+{
+    QStringList formats = source->formats();
+
+    if (formats.count() == 1) {
+        if (formats.first() == "application/x-qt-image") {
+            insertImage(qvariant_cast<QImage>(source->imageData()));
+            return;
+        }
+    }
+
+    QTextEdit::insertFromMimeData(source);
+}
+
+void QxTextEdit::insertImage(const QImage &image)
+{
+    QString url;
+    QVariant resource;
+
+    do {
+        url = "image://" + QxRandom::get(10, QxRandom::LOWERCHARS);
+        resource = document()->resource(QTextDocument::ImageResource, url);
+    } while (resource.isValid());
+
+    document()->addResource(QTextDocument::ImageResource, QUrl(url), image);
+    textCursor().insertImage(image, url);
 }
 
 void QxTextEdit::setUndoEnabled(bool enabled)

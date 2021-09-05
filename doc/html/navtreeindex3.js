@@ -1,5 +1,8 @@
 var NAVTREEINDEX3 =
 {
+"classcutex_1_1_qx_tree_item_model.html#a48b4b72442266ebd9b1f57f4e11273d5":[0,0,0,39,10],
+"classcutex_1_1_qx_tree_item_model.html#a57402ecc7f58ebd47e0ec69532655e9b":[0,0,0,39,16],
+"classcutex_1_1_qx_tree_item_model.html#a5e7c8b79d6db2e2d503ea94e91942a3d":[0,0,0,39,22],
 "classcutex_1_1_qx_tree_item_model.html#a6ad81653192e81cdd29352558758ba48":[0,0,0,39,2],
 "classcutex_1_1_qx_tree_item_model.html#a707055882ece8b5cd243984979630a52":[0,0,0,39,13],
 "classcutex_1_1_qx_tree_item_model.html#a787213a9ef80cfaec4228008558a46de":[0,0,0,39,6],
@@ -140,8 +143,8 @@ var NAVTREEINDEX3 =
 "functions_enum.html":[0,3,2],
 "functions_eval.html":[0,3,3],
 "functions_f.html":[0,3,0,5],
-"functions_func.html":[0,3,1,0],
 "functions_func.html":[0,3,1],
+"functions_func.html":[0,3,1,0],
 "functions_func_b.html":[0,3,1,1],
 "functions_func_c.html":[0,3,1,2],
 "functions_func_d.html":[0,3,1,3],

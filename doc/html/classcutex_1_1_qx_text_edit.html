@@ -90,6 +90,7 @@ $(document).ready(function(){initNavTree('classcutex_1_1_qx_text_edit.html','');
 <a href="#pub-methods">Öffentliche Methoden</a> &#124;
 <a href="#pro-methods">Geschützte Methoden</a> &#124;
 <a href="#pri-slots">Private Slots</a> &#124;
+<a href="#pri-methods">Private Methoden</a> &#124;
 <a href="#pri-attribs">Private Attribute</a> &#124;
 <a href="classcutex_1_1_qx_text_edit-members.html">Aufstellung aller Elemente</a>  </div>
   <div class="headertitle">
@@ -213,6 +214,10 @@ Geschützte Methoden</h2></td></tr>
 <tr class="separator:adfac6f4941721a09cb62e9bfe9d4b054"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a07de347a7f67eed322500bb0713c891f"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcutex_1_1_qx_text_edit.html#a07de347a7f67eed322500bb0713c891f">keyPressEvent</a> (QKeyEvent *event)</td></tr>
 <tr class="separator:a07de347a7f67eed322500bb0713c891f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0caed5738e7ef6f7a39681bd6fe566cd"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcutex_1_1_qx_text_edit.html#a0caed5738e7ef6f7a39681bd6fe566cd">canInsertFromMimeData</a> (const QMimeData *source) const</td></tr>
+<tr class="separator:a0caed5738e7ef6f7a39681bd6fe566cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a32bf021f87dea7982dd29fb7ed55cc86"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcutex_1_1_qx_text_edit.html#a32bf021f87dea7982dd29fb7ed55cc86">insertFromMimeData</a> (const QMimeData *source)</td></tr>
+<tr class="separator:a32bf021f87dea7982dd29fb7ed55cc86"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-slots"></a>
 Private Slots</h2></td></tr>
@@ -222,6 +227,12 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>setUndoEnabled</b> (b
 <tr class="memitem:a6deda34c0de338abbeadc80e9fd93505"><td class="memItemLeft" align="right" valign="top"><a id="a6deda34c0de338abbeadc80e9fd93505"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>setRedoEnabled</b> (bool enabled)</td></tr>
 <tr class="separator:a6deda34c0de338abbeadc80e9fd93505"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Private Methoden</h2></td></tr>
+<tr class="memitem:a9c3dbce9543f22332cd66c73c6b8a1ea"><td class="memItemLeft" align="right" valign="top"><a id="a9c3dbce9543f22332cd66c73c6b8a1ea"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>insertImage</b> (const QImage &amp;image)</td></tr>
+<tr class="separator:a9c3dbce9543f22332cd66c73c6b8a1ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attribute</h2></td></tr>
@@ -346,6 +357,33 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>m_tabSpaces</b></td></
       </table>
 </div><div class="memdoc">
 <p>Gibt true zurück, wenn Text in die Zwischenablage kopiert werden kann. </p>
+
+</div>
+</div>
+<a id="a0caed5738e7ef6f7a39681bd6fe566cd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0caed5738e7ef6f7a39681bd6fe566cd">&#9670;&nbsp;</a></span>canInsertFromMimeData()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool QxTextEdit::canInsertFromMimeData </td>
+          <td>(</td>
+          <td class="paramtype">const QMimeData *&#160;</td>
+          <td class="paramname"><em>source</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Prüft ob die übergebenen MIME-Daten <em>source</em> eingefügt werden können. </p>
 
 </div>
 </div>
@@ -554,6 +592,33 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>m_tabSpaces</b></td></
 </div><div class="memdoc">
 <p>Fügt die Sprungmarke mit dem Namen <em>name</em> und dem Text <em>text</em> an der aktuellen Cursorposition ein.</p>
 <dl class="section see"><dt>Siehe auch</dt><dd><a class="el" href="classcutex_1_1_qx_text_edit.html#aa47c59e4422ede69e47b2811bb0be693">anchor()</a> </dd></dl>
+
+</div>
+</div>
+<a id="a32bf021f87dea7982dd29fb7ed55cc86"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a32bf021f87dea7982dd29fb7ed55cc86">&#9670;&nbsp;</a></span>insertFromMimeData()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void QxTextEdit::insertFromMimeData </td>
+          <td>(</td>
+          <td class="paramtype">const QMimeData *&#160;</td>
+          <td class="paramname"><em>source</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Fügt die MIME-Daten <em>source</em> ein. </p>
 
 </div>
 </div>

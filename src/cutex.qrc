@@ -7,5 +7,6 @@
         <file>icons/16x16/resultset_previous.png</file>
         <file>icons/16x16/folder.png</file>
         <file>icons/16x16/page_white.png</file>
+        <file>icons/16x16/house.png</file>
     </qresource>
 </RCC>

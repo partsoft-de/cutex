@@ -91,11 +91,16 @@ public slots:
 protected:
     virtual void mouseDoubleClickEvent(QMouseEvent *event);
     virtual void keyPressEvent(QKeyEvent *event);
+    virtual bool canInsertFromMimeData(const QMimeData *source) const;
+    virtual void insertFromMimeData(const QMimeData *source);
 
 private:
     bool m_canUndo;
     bool m_canRedo;
     int m_tabSpaces;
+
+private:
+    void insertImage(const QImage &image);
 
 private slots:
     void setUndoEnabled(bool enabled);
