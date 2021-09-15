@@ -10,6 +10,14 @@
     </message>
 </context>
 <context>
+    <name>QxCalculatorDialog</name>
+    <message>
+        <location filename="qxcalculatordialog.ui" line="14"/>
+        <source>Taschenrechner</source>
+        <translation>Calculator</translation>
+    </message>
+</context>
+<context>
     <name>QxFindDialog</name>
     <message>
         <location filename="qxfinddialog.ui" line="14"/>
@@ -123,34 +131,47 @@
     </message>
 </context>
 <context>
+    <name>cutex::QxCalculatorDialog</name>
+    <message>
+        <location filename="qxcalculatordialog.cpp" line="176"/>
+        <source>Fehler</source>
+        <translation>Error</translation>
+    </message>
+    <message>
+        <location filename="qxcalculatordialog.cpp" line="176"/>
+        <source>Teilen durch 0 ist nicht möglich!</source>
+        <translation>Division with zero is not possible!</translation>
+    </message>
+</context>
+<context>
     <name>cutex::QxDashboard</name>
     <message>
         <location filename="qxdashboard.cpp" line="31"/>
-        <location filename="qxdashboard.cpp" line="161"/>
+        <location filename="qxdashboard.cpp" line="162"/>
         <source>Willkommen</source>
         <translation>Welcome</translation>
     </message>
     <message>
         <location filename="qxdashboard.cpp" line="32"/>
-        <location filename="qxdashboard.cpp" line="163"/>
+        <location filename="qxdashboard.cpp" line="164"/>
         <source>Neue Datei</source>
         <translation>New File</translation>
     </message>
     <message>
         <location filename="qxdashboard.cpp" line="33"/>
-        <location filename="qxdashboard.cpp" line="165"/>
+        <location filename="qxdashboard.cpp" line="166"/>
         <source>Datei öffnen</source>
         <translation>File open</translation>
     </message>
     <message>
         <location filename="qxdashboard.cpp" line="34"/>
-        <location filename="qxdashboard.cpp" line="167"/>
+        <location filename="qxdashboard.cpp" line="168"/>
         <source>Zuletzt verwendete Dateien</source>
         <translation>Recent files</translation>
     </message>
     <message>
         <location filename="qxdashboard.cpp" line="48"/>
-        <location filename="qxdashboard.cpp" line="158"/>
+        <location filename="qxdashboard.cpp" line="159"/>
         <source>Dashboard</source>
         <translation>Dashboard</translation>
     </message>
@@ -192,22 +213,22 @@
 <context>
     <name>cutex::QxMainWindow</name>
     <message>
-        <location filename="qxmainwindow.cpp" line="221"/>
+        <location filename="qxmainwindow.cpp" line="220"/>
         <source>Überlappend</source>
         <translation>Overlapping</translation>
     </message>
     <message>
-        <location filename="qxmainwindow.cpp" line="226"/>
+        <location filename="qxmainwindow.cpp" line="225"/>
         <source>Nebeneinander</source>
         <translation>Side by side</translation>
     </message>
     <message>
-        <location filename="qxmainwindow.cpp" line="232"/>
+        <location filename="qxmainwindow.cpp" line="231"/>
         <source>Alle schließen</source>
         <translation>Close all</translation>
     </message>
     <message>
-        <location filename="qxmainwindow.cpp" line="345"/>
+        <location filename="qxmainwindow.cpp" line="344"/>
         <source>Unbenannt</source>
         <translation>Unnamed</translation>
     </message>
@@ -248,6 +269,14 @@
         <location filename="qxsqldatabase.cpp" line="74"/>
         <source>PostgreSQL-Datenbanktreiber (v7)</source>
         <translation>PostgreSQL driver (v7)</translation>
+    </message>
+</context>
+<context>
+    <name>cutex::QxSwipeWidget</name>
+    <message>
+        <location filename="qxswipewidget.cpp" line="150"/>
+        <source>Seite %1</source>
+        <translation>Page %1</translation>
     </message>
 </context>
 <context>

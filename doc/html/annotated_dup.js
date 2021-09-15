@@ -2,6 +2,7 @@ var annotated_dup =
 [
     [ "cutex", null, [
       [ "QxApplication", "classcutex_1_1_qx_application.html", "classcutex_1_1_qx_application" ],
+      [ "QxCalculatorDialog", "classcutex_1_1_qx_calculator_dialog.html", "classcutex_1_1_qx_calculator_dialog" ],
       [ "QxCrypt", "classcutex_1_1_qx_crypt.html", null ],
       [ "QxDashboard", "classcutex_1_1_qx_dashboard.html", "classcutex_1_1_qx_dashboard" ],
       [ "QxDateEdit", "classcutex_1_1_qx_date_edit.html", "classcutex_1_1_qx_date_edit" ],

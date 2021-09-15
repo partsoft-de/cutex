@@ -11,6 +11,7 @@ var hierarchy =
     ] ],
     [ "QDialog", null, [
       [ "cutex::QxDialog", "classcutex_1_1_qx_dialog.html", [
+        [ "cutex::QxCalculatorDialog", "classcutex_1_1_qx_calculator_dialog.html", null ],
         [ "cutex::QxFindDialog", "classcutex_1_1_qx_find_dialog.html", null ],
         [ "cutex::QxMessageDialog", "classcutex_1_1_qx_message_dialog.html", null ]
       ] ]

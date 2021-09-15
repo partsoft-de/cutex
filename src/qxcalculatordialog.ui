@@ -1,0 +1,375 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>QxCalculatorDialog</class>
+ <widget class="QDialog" name="QxCalculatorDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>299</width>
+    <height>194</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Taschenrechner</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <layout class="QGridLayout" name="gridLayout">
+     <item row="1" column="1">
+      <widget class="QPushButton" name="Number8Button">
+       <property name="maximumSize">
+        <size>
+         <width>51</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="text">
+        <string notr="true">8</string>
+       </property>
+       <property name="shortcut">
+        <string notr="true">8</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="2">
+      <widget class="QPushButton" name="Number9Button">
+       <property name="maximumSize">
+        <size>
+         <width>51</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="text">
+        <string notr="true">9</string>
+       </property>
+       <property name="shortcut">
+        <string notr="true">9</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0">
+      <widget class="QPushButton" name="Number7Button">
+       <property name="maximumSize">
+        <size>
+         <width>51</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="text">
+        <string notr="true">7</string>
+       </property>
+       <property name="shortcut">
+        <string notr="true">7</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="3">
+      <widget class="QPushButton" name="DivideButton">
+       <property name="maximumSize">
+        <size>
+         <width>51</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="text">
+        <string notr="true">÷</string>
+       </property>
+       <property name="shortcut">
+        <string notr="true">/</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="4">
+      <widget class="QPushButton" name="DeleteButton">
+       <property name="maximumSize">
+        <size>
+         <width>51</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="text">
+        <string notr="true">DEL</string>
+       </property>
+       <property name="shortcut">
+        <string notr="true">Backspace</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="0">
+      <widget class="QPushButton" name="Number4Button">
+       <property name="maximumSize">
+        <size>
+         <width>51</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="text">
+        <string notr="true">4</string>
+       </property>
+       <property name="shortcut">
+        <string notr="true">4</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="1">
+      <widget class="QPushButton" name="Number5Button">
+       <property name="maximumSize">
+        <size>
+         <width>51</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="text">
+        <string notr="true">5</string>
+       </property>
+       <property name="shortcut">
+        <string notr="true">5</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="2">
+      <widget class="QPushButton" name="Number6Button">
+       <property name="maximumSize">
+        <size>
+         <width>51</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="text">
+        <string notr="true">6</string>
+       </property>
+       <property name="shortcut">
+        <string notr="true">6</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="4">
+      <widget class="QPushButton" name="SignButton">
+       <property name="maximumSize">
+        <size>
+         <width>51</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="text">
+        <string notr="true">±</string>
+       </property>
+       <property name="shortcut">
+        <string notr="true"/>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="3">
+      <widget class="QPushButton" name="MultiplyButton">
+       <property name="maximumSize">
+        <size>
+         <width>51</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="text">
+        <string notr="true">×</string>
+       </property>
+       <property name="shortcut">
+        <string notr="true">*</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="0">
+      <widget class="QPushButton" name="Number1Button">
+       <property name="maximumSize">
+        <size>
+         <width>51</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="text">
+        <string notr="true">1</string>
+       </property>
+       <property name="shortcut">
+        <string notr="true">1</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="1">
+      <widget class="QPushButton" name="Number2Button">
+       <property name="maximumSize">
+        <size>
+         <width>51</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="text">
+        <string notr="true">2</string>
+       </property>
+       <property name="shortcut">
+        <string notr="true">2</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="2">
+      <widget class="QPushButton" name="Number3Button">
+       <property name="maximumSize">
+        <size>
+         <width>51</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="text">
+        <string notr="true">3</string>
+       </property>
+       <property name="shortcut">
+        <string notr="true">3</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="3">
+      <widget class="QPushButton" name="SubtractButton">
+       <property name="maximumSize">
+        <size>
+         <width>51</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="text">
+        <string notr="true">-</string>
+       </property>
+       <property name="shortcut">
+        <string notr="true">-</string>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="0" colspan="2">
+      <widget class="QPushButton" name="Number0Button">
+       <property name="maximumSize">
+        <size>
+         <width>111</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="text">
+        <string notr="true">0</string>
+       </property>
+       <property name="shortcut">
+        <string notr="true">0</string>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="2">
+      <widget class="QPushButton" name="CommaButton">
+       <property name="maximumSize">
+        <size>
+         <width>51</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="text">
+        <string notr="true">,</string>
+       </property>
+       <property name="shortcut">
+        <string notr="true">,</string>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="3">
+      <widget class="QPushButton" name="AddButton">
+       <property name="maximumSize">
+        <size>
+         <width>51</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="text">
+        <string notr="true">+</string>
+       </property>
+       <property name="shortcut">
+        <string notr="true">+</string>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="4">
+      <widget class="QPushButton" name="CalculateButton">
+       <property name="maximumSize">
+        <size>
+         <width>51</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="text">
+        <string notr="true">=</string>
+       </property>
+       <property name="shortcut">
+        <string notr="true">Return</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="4">
+      <widget class="QPushButton" name="PercentButton">
+       <property name="maximumSize">
+        <size>
+         <width>51</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="text">
+        <string notr="true">%</string>
+       </property>
+       <property name="shortcut">
+        <string notr="true">%</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="0" colspan="5">
+      <widget class="QLineEdit" name="ValueField">
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <widget class="Line" name="ButtonSeparator">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QDialogButtonBox" name="ButtonBox">
+     <property name="standardButtons">
+      <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <tabstops>
+  <tabstop>ValueField</tabstop>
+  <tabstop>Number7Button</tabstop>
+  <tabstop>Number8Button</tabstop>
+  <tabstop>Number9Button</tabstop>
+  <tabstop>DivideButton</tabstop>
+  <tabstop>DeleteButton</tabstop>
+  <tabstop>Number4Button</tabstop>
+  <tabstop>Number5Button</tabstop>
+  <tabstop>Number6Button</tabstop>
+  <tabstop>MultiplyButton</tabstop>
+  <tabstop>SignButton</tabstop>
+  <tabstop>Number1Button</tabstop>
+  <tabstop>Number2Button</tabstop>
+  <tabstop>Number3Button</tabstop>
+  <tabstop>SubtractButton</tabstop>
+  <tabstop>PercentButton</tabstop>
+  <tabstop>Number0Button</tabstop>
+  <tabstop>CommaButton</tabstop>
+  <tabstop>AddButton</tabstop>
+  <tabstop>CalculateButton</tabstop>
+ </tabstops>
+ <resources/>
+ <connections/>
+</ui>

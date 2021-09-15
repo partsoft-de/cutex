@@ -46,9 +46,9 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "annotated.html",
-"classcutex_1_1_qx_help_browser.html#ac112a8f678f336c08dce65302803be14",
-"classcutex_1_1_qx_sql_query_model.html#a9385d814bf40aef7787a303656cd9e91",
-"classcutex_1_1_qx_tree_item_model.html#a48b4b72442266ebd9b1f57f4e11273d5"
+"classcutex_1_1_qx_form.html#ade37f8005d3433ae3448da6b53dd19fb",
+"classcutex_1_1_qx_sql_query_model.html#a62754a856eb14861b17b420ef0317322",
+"classcutex_1_1_qx_tree_item.html#af610f711d07c28a9aabfe8a5166ed16f"
 ];
 
 var SYNCONMSG = 'Klicken um Panelsynchronisation auszuschalten';

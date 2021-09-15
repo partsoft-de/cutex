@@ -29,6 +29,7 @@ INCLUDEPATH += \
     ../include
 
 HEADERS += \
+    ../include/qxcalculatordialog.h \
     ../include/qxdoubleedit.h \
     ../include/qxexception.h \
     ../include/qxintedit.h \
@@ -81,6 +82,7 @@ HEADERS += \
     ../include/qxxmlnode.h
 
 SOURCES += \
+    qxcalculatordialog.cpp \
     qxdoubleedit.cpp \
     qxexception.cpp \
     qxintedit.cpp \
@@ -131,6 +133,7 @@ SOURCES += \
     qxxmlnode.cpp
 
 FORMS += \
+    qxcalculatordialog.ui \
     qxmessagedialog.ui \
     qxhelpwindow.ui \
     qxfinddialog.ui

@@ -2,6 +2,7 @@ var dir_d44c64559bbebec7f509842c48db8b23 =
 [
     [ "cutex.h", "cutex_8h_source.html", null ],
     [ "qxapplication.h", "qxapplication_8h_source.html", null ],
+    [ "qxcalculatordialog.h", "qxcalculatordialog_8h_source.html", null ],
     [ "qxcrypt.h", "qxcrypt_8h_source.html", null ],
     [ "qxdashboard.h", "qxdashboard_8h_source.html", null ],
     [ "qxdateedit.h", "qxdateedit_8h_source.html", null ],
