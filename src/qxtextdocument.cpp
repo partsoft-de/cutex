@@ -77,7 +77,6 @@ QStringList QxTextDocument::anchors() const
 QList<QxHyperlink> QxTextDocument::hyperlinks() const
 {
     QList<QxHyperlink> list;
-    QString html = toHtml();
     QTextBlock block = begin();
 
     while (block.isValid()) {

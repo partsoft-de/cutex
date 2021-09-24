@@ -18,6 +18,7 @@ var classcutex_1_1_qx_text_edit =
     [ "canInsertFromMimeData", "classcutex_1_1_qx_text_edit.html#a0caed5738e7ef6f7a39681bd6fe566cd", null ],
     [ "canRedo", "classcutex_1_1_qx_text_edit.html#a553ba8e23477bf89f81dc6516fa98c6a", null ],
     [ "canUndo", "classcutex_1_1_qx_text_edit.html#ac75ae286779c49ab4c981e9b81db2053", null ],
+    [ "createMimeDataFromSelection", "classcutex_1_1_qx_text_edit.html#a22f0bba52a7e8e2fba8b87a1c94c6f37", null ],
     [ "currentTable", "classcutex_1_1_qx_text_edit.html#ad4132fb52869fa721d996e6555254338", null ],
     [ "findOrReplace", "classcutex_1_1_qx_text_edit.html#a2135389066246ad153fe4c8168cb5915", null ],
     [ "fontBold", "classcutex_1_1_qx_text_edit.html#a70631f9d20f889bb5e9da1a5ae690deb", null ],

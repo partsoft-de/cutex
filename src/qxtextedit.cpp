@@ -23,6 +23,8 @@
 
 using namespace cutex;
 
+const QString QxTextEdit::MIMETYPE = "application/cutex/qxtextedit";
+
 /*!
   Erzeugt einen neuen Texteditor mit dem Elternobjekt <i>parent</i>.
 */
@@ -693,20 +695,55 @@ bool QxTextEdit::canInsertFromMimeData(const QMimeData *source) const
 }
 
 /*!
+  Erzeugt das Datenobjekt für die aktuelle Markierung.
+*/
+QMimeData* QxTextEdit::createMimeDataFromSelection() const
+{
+    QMimeData *data = QTextEdit::createMimeDataFromSelection();
+    QxTextDocument *sourceDoc = static_cast<QxTextDocument*>(document());
+    QxTextDocument doc;
+    QTextDocumentFragment fragment(textCursor());
+
+    doc.setHtml(fragment.toHtml());
+    for (const QUrl &url : doc.images())
+        doc.addResource(QTextDocument::ImageResource, url, sourceDoc->resource(QTextDocument::ImageResource, url));
+
+    QByteArray array;
+    QBuffer buffer(&array);
+    buffer.open(QBuffer::WriteOnly);
+    QDataStream out(&buffer);
+
+    out << doc;
+    data->setData(MIMETYPE, array);
+
+    return data;
+}
+
+/*!
   Fügt die MIME-Daten <i>source</i> ein.
 */
 void QxTextEdit::insertFromMimeData(const QMimeData *source)
 {
     QStringList formats = source->formats();
 
-    if (formats.count() == 1) {
-        if (formats.first() == "application/x-qt-image") {
-            insertImage(qvariant_cast<QImage>(source->imageData()));
-            return;
-        }
-    }
+    if (formats.contains(MIMETYPE)) {
+        QxTextDocument *destDoc = static_cast<QxTextDocument*>(document());
+        QxTextDocument doc;
 
-    QTextEdit::insertFromMimeData(source);
+        QByteArray array = source->data(MIMETYPE);
+        QBuffer buffer(&array);
+        buffer.open(QBuffer::ReadOnly);
+        QDataStream in(&buffer);
+
+        in >> doc;
+        for (const QUrl &url : doc.images())
+            destDoc->addResource(QTextDocument::ImageResource, url, doc.resource(QTextDocument::ImageResource, url));
+        insertHtml(doc.toHtml());
+    } else if (formats.contains("application/x-qt-image")) {
+        insertImage(qvariant_cast<QImage>(source->imageData()));
+    } else {
+        QTextEdit::insertFromMimeData(source);
+    }
 }
 
 void QxTextEdit::insertImage(const QImage &image)

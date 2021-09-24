@@ -92,9 +92,11 @@ protected:
     virtual void mouseDoubleClickEvent(QMouseEvent *event);
     virtual void keyPressEvent(QKeyEvent *event);
     virtual bool canInsertFromMimeData(const QMimeData *source) const;
+    virtual QMimeData *createMimeDataFromSelection() const;
     virtual void insertFromMimeData(const QMimeData *source);
 
 private:
+    static const QString MIMETYPE;
     bool m_canUndo;
     bool m_canRedo;
     int m_tabSpaces;

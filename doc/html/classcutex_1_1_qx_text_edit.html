@@ -92,6 +92,7 @@ $(document).ready(function(){initNavTree('classcutex_1_1_qx_text_edit.html','');
 <a href="#pri-slots">Private Slots</a> &#124;
 <a href="#pri-methods">Private Methoden</a> &#124;
 <a href="#pri-attribs">Private Attribute</a> &#124;
+<a href="#pri-static-attribs">Statische, private Attribute</a> &#124;
 <a href="classcutex_1_1_qx_text_edit-members.html">Aufstellung aller Elemente</a>  </div>
   <div class="headertitle">
 <div class="title">cutex::QxTextEdit Klassenreferenz</div>  </div>
@@ -216,6 +217,8 @@ Geschützte Methoden</h2></td></tr>
 <tr class="separator:a07de347a7f67eed322500bb0713c891f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0caed5738e7ef6f7a39681bd6fe566cd"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcutex_1_1_qx_text_edit.html#a0caed5738e7ef6f7a39681bd6fe566cd">canInsertFromMimeData</a> (const QMimeData *source) const</td></tr>
 <tr class="separator:a0caed5738e7ef6f7a39681bd6fe566cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a22f0bba52a7e8e2fba8b87a1c94c6f37"><td class="memItemLeft" align="right" valign="top">virtual QMimeData *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcutex_1_1_qx_text_edit.html#a22f0bba52a7e8e2fba8b87a1c94c6f37">createMimeDataFromSelection</a> () const</td></tr>
+<tr class="separator:a22f0bba52a7e8e2fba8b87a1c94c6f37"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a32bf021f87dea7982dd29fb7ed55cc86"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcutex_1_1_qx_text_edit.html#a32bf021f87dea7982dd29fb7ed55cc86">insertFromMimeData</a> (const QMimeData *source)</td></tr>
 <tr class="separator:a32bf021f87dea7982dd29fb7ed55cc86"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -245,6 +248,12 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>m_canRedo</b></td></t
 <tr class="memitem:a1b92519089bc8cc7fa985e745ccbc74c"><td class="memItemLeft" align="right" valign="top"><a id="a1b92519089bc8cc7fa985e745ccbc74c"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><b>m_tabSpaces</b></td></tr>
 <tr class="separator:a1b92519089bc8cc7fa985e745ccbc74c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-attribs"></a>
+Statische, private Attribute</h2></td></tr>
+<tr class="memitem:a1884c0199d8d05c4ddba9485b22027d3"><td class="memItemLeft" align="right" valign="top"><a id="a1884c0199d8d05c4ddba9485b22027d3"></a>
+static const QString&#160;</td><td class="memItemRight" valign="bottom"><b>MIMETYPE</b> = &quot;application/cutex/qxtextedit&quot;</td></tr>
+<tr class="separator:a1884c0199d8d05c4ddba9485b22027d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Ausführliche Beschreibung</h2>
 <div class="textblock"><p>Die Klasse QxTextEdit erweitert die Qt-Klasse QTextEdit. </p>
@@ -422,6 +431,32 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>m_tabSpaces</b></td></
 </div><div class="memdoc">
 <p>Gibt true zurück, wenn die letzte Aktion rückgängig gemacht werden kann.</p>
 <dl class="section see"><dt>Siehe auch</dt><dd><a class="el" href="classcutex_1_1_qx_text_edit.html#a553ba8e23477bf89f81dc6516fa98c6a">canRedo()</a> </dd></dl>
+
+</div>
+</div>
+<a id="a22f0bba52a7e8e2fba8b87a1c94c6f37"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a22f0bba52a7e8e2fba8b87a1c94c6f37">&#9670;&nbsp;</a></span>createMimeDataFromSelection()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QMimeData * QxTextEdit::createMimeDataFromSelection </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Erzeugt das Datenobjekt für die aktuelle Markierung. </p>
 
 </div>
 </div>
