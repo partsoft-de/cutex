@@ -1,5 +1,6 @@
 var NAVTREEINDEX3 =
 {
+"classcutex_1_1_qx_tree_item.html#ae6b1d1630a0c4c057ad9c5b2073bb24e":[0,0,0,39,17],
 "classcutex_1_1_qx_tree_item.html#aec7520ffb13636b764f993213dea194e":[0,0,0,39,18],
 "classcutex_1_1_qx_tree_item.html#af610f711d07c28a9aabfe8a5166ed16f":[0,0,0,39,6],
 "classcutex_1_1_qx_tree_item.html#afa11cdc4571d8465a0dc2c246ca428eb":[0,0,0,39,25],
@@ -147,8 +148,8 @@ var NAVTREEINDEX3 =
 "cutex_8h_source.html":[1,0,0,0],
 "dir_d44c64559bbebec7f509842c48db8b23.html":[1,0,0],
 "files.html":[1,0],
-"functions.html":[0,3,0],
 "functions.html":[0,3,0,0],
+"functions.html":[0,3,0],
 "functions_b.html":[0,3,0,1],
 "functions_c.html":[0,3,0,2],
 "functions_d.html":[0,3,0,3],
@@ -248,6 +249,5 @@ var NAVTREEINDEX3 =
 "qxuifield_8h_source.html":[1,0,0,43],
 "qxwaitcursor_8h_source.html":[1,0,0,44],
 "qxwizard_8h_source.html":[1,0,0,45],
-"qxxmldocument_8h_source.html":[1,0,0,46],
-"qxxmlnode_8h_source.html":[1,0,0,47]
+"qxxmldocument_8h_source.html":[1,0,0,46]
 };

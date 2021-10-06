@@ -127,30 +127,34 @@ $(document).ready(function(){initNavTree('qxcalculatordialog_8h_source.html','')
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    ~<a class="code" href="classcutex_1_1_qx_calculator_dialog.html">QxCalculatorDialog</a>();</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classcutex_1_1_qx_calculator_dialog.html#aeb51ce81633df1b8eb7a9a2c1e12f11b">showButtonBox</a>(<span class="keywordtype">bool</span> show);</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordtype">double</span> <a class="code" href="classcutex_1_1_qx_calculator_dialog.html#af6cde87ff61a9f747f0b8c420e2da912">value</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classcutex_1_1_qx_calculator_dialog.html#a766a104e5cb70d2bed37730aed2f5f7d">setValue</a>(<span class="keywordtype">double</span> <a class="code" href="classcutex_1_1_qx_calculator_dialog.html#af6cde87ff61a9f747f0b8c420e2da912">value</a>);</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classcutex_1_1_qx_calculator_dialog.html#ac265dd351b9b00927cdd680e90fff0eb">buttonClicked</a>(QAbstractButton *button);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="keyword">public</span> slots:</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classcutex_1_1_qx_calculator_dialog.html#a851ef748ff5ae69239356ddfaf80950d">clear</a>();</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classcutex_1_1_qx_calculator_dialog.html#a766a104e5cb70d2bed37730aed2f5f7d">setValue</a>(<span class="keywordtype">double</span> <a class="code" href="classcutex_1_1_qx_calculator_dialog.html#af6cde87ff61a9f747f0b8c420e2da912">value</a>);</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    Ui::QxCalculatorDialog *m_ui;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keywordtype">double</span> m_value;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    QChar m_operator;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordtype">bool</span> m_clear;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    QString calculate();</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;};</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;} <span class="comment">// namespace</span></div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// CALCULATORDIALOG_H</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classcutex_1_1_qx_calculator_dialog.html#ac265dd351b9b00927cdd680e90fff0eb">buttonClicked</a>(QAbstractButton *button);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    Ui::QxCalculatorDialog *m_ui;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordtype">double</span> m_value;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    QChar m_operator;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keywordtype">bool</span> m_clear;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    QString calculate();</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;};</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;} <span class="comment">// namespace</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// CALCULATORDIALOG_H</span></div>
 <div class="ttc" id="aclasscutex_1_1_qx_calculator_dialog_html"><div class="ttname"><a href="classcutex_1_1_qx_calculator_dialog.html">cutex::QxCalculatorDialog</a></div><div class="ttdoc">QxCalculatorDialog ist ein fertiger Dialog für einen einfachen Taschenrechner.</div><div class="ttdef"><b>Definition:</b> qxcalculatordialog.h:38</div></div>
 <div class="ttc" id="aclasscutex_1_1_qx_calculator_dialog_html_a23c497a23084b211df45c7d6dcb88225"><div class="ttname"><a href="classcutex_1_1_qx_calculator_dialog.html#a23c497a23084b211df45c7d6dcb88225">cutex::QxCalculatorDialog::QxCalculatorDialog</a></div><div class="ttdeci">QxCalculatorDialog(QWidget *parent=nullptr)</div><div class="ttdef"><b>Definition:</b> qxcalculatordialog.cpp:28</div></div>
-<div class="ttc" id="aclasscutex_1_1_qx_calculator_dialog_html_a766a104e5cb70d2bed37730aed2f5f7d"><div class="ttname"><a href="classcutex_1_1_qx_calculator_dialog.html#a766a104e5cb70d2bed37730aed2f5f7d">cutex::QxCalculatorDialog::setValue</a></div><div class="ttdeci">void setValue(double value)</div><div class="ttdef"><b>Definition:</b> qxcalculatordialog.cpp:67</div></div>
-<div class="ttc" id="aclasscutex_1_1_qx_calculator_dialog_html_ac265dd351b9b00927cdd680e90fff0eb"><div class="ttname"><a href="classcutex_1_1_qx_calculator_dialog.html#ac265dd351b9b00927cdd680e90fff0eb">cutex::QxCalculatorDialog::buttonClicked</a></div><div class="ttdeci">void buttonClicked(QAbstractButton *button)</div><div class="ttdef"><b>Definition:</b> qxcalculatordialog.cpp:74</div></div>
+<div class="ttc" id="aclasscutex_1_1_qx_calculator_dialog_html_a766a104e5cb70d2bed37730aed2f5f7d"><div class="ttname"><a href="classcutex_1_1_qx_calculator_dialog.html#a766a104e5cb70d2bed37730aed2f5f7d">cutex::QxCalculatorDialog::setValue</a></div><div class="ttdeci">void setValue(double value)</div><div class="ttdef"><b>Definition:</b> qxcalculatordialog.cpp:82</div></div>
+<div class="ttc" id="aclasscutex_1_1_qx_calculator_dialog_html_a851ef748ff5ae69239356ddfaf80950d"><div class="ttname"><a href="classcutex_1_1_qx_calculator_dialog.html#a851ef748ff5ae69239356ddfaf80950d">cutex::QxCalculatorDialog::clear</a></div><div class="ttdeci">void clear()</div><div class="ttdef"><b>Definition:</b> qxcalculatordialog.cpp:69</div></div>
+<div class="ttc" id="aclasscutex_1_1_qx_calculator_dialog_html_ac265dd351b9b00927cdd680e90fff0eb"><div class="ttname"><a href="classcutex_1_1_qx_calculator_dialog.html#ac265dd351b9b00927cdd680e90fff0eb">cutex::QxCalculatorDialog::buttonClicked</a></div><div class="ttdeci">void buttonClicked(QAbstractButton *button)</div><div class="ttdef"><b>Definition:</b> qxcalculatordialog.cpp:90</div></div>
 <div class="ttc" id="aclasscutex_1_1_qx_calculator_dialog_html_aeb51ce81633df1b8eb7a9a2c1e12f11b"><div class="ttname"><a href="classcutex_1_1_qx_calculator_dialog.html#aeb51ce81633df1b8eb7a9a2c1e12f11b">cutex::QxCalculatorDialog::showButtonBox</a></div><div class="ttdeci">void showButtonBox(bool show)</div><div class="ttdef"><b>Definition:</b> qxcalculatordialog.cpp:46</div></div>
-<div class="ttc" id="aclasscutex_1_1_qx_calculator_dialog_html_af6cde87ff61a9f747f0b8c420e2da912"><div class="ttname"><a href="classcutex_1_1_qx_calculator_dialog.html#af6cde87ff61a9f747f0b8c420e2da912">cutex::QxCalculatorDialog::value</a></div><div class="ttdeci">double value() const</div><div class="ttdef"><b>Definition:</b> qxcalculatordialog.cpp:59</div></div>
+<div class="ttc" id="aclasscutex_1_1_qx_calculator_dialog_html_af6cde87ff61a9f747f0b8c420e2da912"><div class="ttname"><a href="classcutex_1_1_qx_calculator_dialog.html#af6cde87ff61a9f747f0b8c420e2da912">cutex::QxCalculatorDialog::value</a></div><div class="ttdeci">double value() const</div><div class="ttdef"><b>Definition:</b> qxcalculatordialog.cpp:61</div></div>
 <div class="ttc" id="aclasscutex_1_1_qx_dialog_html"><div class="ttname"><a href="classcutex_1_1_qx_dialog.html">cutex::QxDialog</a></div><div class="ttdoc">Die Klasse QxDialog vereinfacht die Implementierung von Dialogen.</div><div class="ttdef"><b>Definition:</b> qxdialog.h:37</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

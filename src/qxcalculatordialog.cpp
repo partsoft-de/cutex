@@ -55,6 +55,8 @@ void QxCalculatorDialog::showButtonBox(bool show)
 
 /*!
    Gibt den aktuellen Wert zurück.
+
+   \sa setValue(double value)
 */
 double QxCalculatorDialog::value() const
 {
@@ -62,13 +64,27 @@ double QxCalculatorDialog::value() const
 }
 
 /*!
+   Setzt alle Eingaben zurück.
+*/
+void QxCalculatorDialog::clear()
+{
+    m_clear = false;
+    m_operator = QChar();
+
+    setValue(0.0);
+}
+
+/*!
    Setzt den aktuellen Wert auf <i>value</i>.
+
+   \sa value() const
 */
 void QxCalculatorDialog::setValue(double value)
 {
     m_value = value;
 
     setUiFieldValue(m_ui->ValueField, QLocale::system().toString(value));
+    m_ui->ValueField->deselect();
 }
 
 void QxCalculatorDialog::buttonClicked(QAbstractButton *button)

@@ -43,6 +43,9 @@ public:
     ~QxCalculatorDialog();
     void showButtonBox(bool show);
     double value() const;
+
+public slots:
+    void clear();
     void setValue(double value);
 
 protected:

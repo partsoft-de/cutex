@@ -31,7 +31,7 @@ namespace cutex {
 
 #define QX_VERSION_MAJOR    1
 #define QX_VERSION_MINOR    5
-#define QX_VERSION_PATCH    13
+#define QX_VERSION_PATCH    14
 #define QX_VERSION          QX_VERSION_CHECK(QX_VERSION_MAJOR, QX_VERSION_MINOR, QX_VERSION_PATCH)
 #define QX_VERSION_STR      QString("%1.%2.%3").arg(QX_VERSION_MAJOR).arg(QX_VERSION_MINOR).arg(QX_VERSION_PATCH)
 #define QX_VERSION_CHECK(major, minor, patch)   ((major << 16) | (minor << 8) | (patch))

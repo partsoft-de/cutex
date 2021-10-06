@@ -4,6 +4,7 @@ var classcutex_1_1_qx_calculator_dialog =
     [ "~QxCalculatorDialog", "classcutex_1_1_qx_calculator_dialog.html#a7c3ecf2dd7ef74a78d1e4f12b1de6447", null ],
     [ "buttonClicked", "classcutex_1_1_qx_calculator_dialog.html#ac265dd351b9b00927cdd680e90fff0eb", null ],
     [ "calculate", "classcutex_1_1_qx_calculator_dialog.html#a8b62a582653781de70aff250a9508800", null ],
+    [ "clear", "classcutex_1_1_qx_calculator_dialog.html#a851ef748ff5ae69239356ddfaf80950d", null ],
     [ "setValue", "classcutex_1_1_qx_calculator_dialog.html#a766a104e5cb70d2bed37730aed2f5f7d", null ],
     [ "showButtonBox", "classcutex_1_1_qx_calculator_dialog.html#aeb51ce81633df1b8eb7a9a2c1e12f11b", null ],
     [ "value", "classcutex_1_1_qx_calculator_dialog.html#af6cde87ff61a9f747f0b8c420e2da912", null ],
