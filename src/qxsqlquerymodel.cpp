@@ -105,7 +105,15 @@ QVariant QxSqlQueryModel::data(const QModelIndex &item, int role) const
 
     if (role == Qt::DisplayRole) {
         ColumnInfo *column = m_columns.at(item.column());
-        QVariant value = m_data.at(item.row())->value(item.column());
+        QxSqlRecord *record = m_data.at(item.row());
+        QVariant value;
+
+        if (m_sqlRelations.contains(item.column())) {
+            value = record->relationValue(item.column());
+        } else {
+            value = record->value(item.column());
+        }
+
         QVariant::Type type = value.type();
 
         switch (column->type) {
@@ -168,7 +176,7 @@ bool QxSqlQueryModel::setData(const QModelIndex &index, const QVariant &value, i
 
     if (role == Qt::EditRole) {
         if (index.row() >= 0 && index.row() < m_data.size()) {
-            QSqlRecord *record = m_data.at(index.row());
+            QxSqlRecord *record = m_data.at(index.row());
 
             if (index.column() >= 0 && index.column() < record->count()) {
                 record->setValue(index.column(), value);
@@ -235,7 +243,7 @@ bool QxSqlQueryModel::setQuery(QSqlQuery &query)
     }
 
     while (query.next())
-        m_data.append(new QSqlRecord(query.record()));
+        m_data.append(new QxSqlRecord(query.record()));
 
     selectSqlRelations();
     endResetModel();
@@ -283,7 +291,7 @@ QSqlRecord QxSqlQueryModel::record(int row) const
 bool QxSqlQueryModel::setRecord(int row, const QSqlRecord &values)
 {
     if (row >= 0 && row < rowCount()) {
-        QSqlRecord *record = m_data.at(row);
+        QxSqlRecord *record = m_data.at(row);
         for (int n = 0; n < m_dummy.count(); n++) {
             QString fieldName = m_dummy.fieldName(n);
             record->setValue(fieldName, values.value(fieldName));
@@ -312,7 +320,7 @@ bool QxSqlQueryModel::insertRecord(int row, const QSqlRecord &record)
 
     if (row >= 0 && row <= rowCount()) {
         beginInsertRows(QModelIndex(), row, row);
-        m_data.insert(row, new QSqlRecord(m_dummy));
+        m_data.insert(row, new QxSqlRecord(m_dummy));
         endInsertRows();
         success = setRecord(row, record);
     }
@@ -349,7 +357,7 @@ bool QxSqlQueryModel::appendRecords(const QVector<QSqlRecord> &records)
         beginInsertRows(QModelIndex(), row, row + records.count() - 1);
         blockSignals(true);
         for (int n = 0; n < records.count(); ++n) {
-            m_data.append(new QSqlRecord(m_dummy));
+            m_data.append(new QxSqlRecord(m_dummy));
             success = setRecord(row + n, records.at(n));
             if (!success)
                 break;
@@ -589,7 +597,7 @@ int QxSqlQueryModel::columnIndex(const QString &caption)
     return column;
 }
 
-void QxSqlQueryModel::selectSqlRelation(QSqlRecord *record, int column, const QSqlRelation &sqlRelation)
+void QxSqlQueryModel::selectSqlRelation(QxSqlRecord *record, int column, const QSqlRelation &sqlRelation)
 {
     QSqlQuery query;
 
@@ -598,21 +606,21 @@ void QxSqlQueryModel::selectSqlRelation(QSqlRecord *record, int column, const QS
     query.bindValue(QString(":%1").arg(sqlRelation.indexColumn()), record->value(column));
 
     if (query.exec() && query.first()) {
-        record->setValue(column, query.value(0));
+        record->setRelationValue(column, query.value(0));
     } else {
-        record->setValue(column, QVariant());
+        record->setRelationValue(column, QVariant());
     }
 }
 
 void QxSqlQueryModel::selectSqlRelation(int column)
 {
-    for (QSqlRecord *record : m_data) {
+    for (QxSqlRecord *record : m_data) {
         if (column < record->count())
             selectSqlRelation(record, column, m_sqlRelations.value(column));
     }
 }
 
-void QxSqlQueryModel::selectSqlRelations(QSqlRecord *record)
+void QxSqlQueryModel::selectSqlRelations(QxSqlRecord *record)
 {
     for (int column : m_sqlRelations.keys()) {
         if (column < record->count())
@@ -622,7 +630,7 @@ void QxSqlQueryModel::selectSqlRelations(QSqlRecord *record)
 
 void QxSqlQueryModel::selectSqlRelations()
 {
-    for (QSqlRecord *record : m_data)
+    for (QxSqlRecord *record : m_data)
         selectSqlRelations(record);
 }
 

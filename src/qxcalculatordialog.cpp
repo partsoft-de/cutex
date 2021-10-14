@@ -30,6 +30,7 @@ QxCalculatorDialog::QxCalculatorDialog(QWidget *parent) : QxDialog(parent), m_ui
     m_clear = false;
 
     m_ui->setupUi(this);
+    setWindowIcon(QIcon(":/icons/16x16/calculator.png"));
     showButtonBox(false);
 
     setUiFieldValue(m_ui->ValueField, "0");

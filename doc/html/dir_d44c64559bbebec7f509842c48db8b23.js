@@ -32,6 +32,7 @@ var dir_d44c64559bbebec7f509842c48db8b23 =
     [ "qxspellchecker.h", "qxspellchecker_8h_source.html", null ],
     [ "qxsqldatabase.h", "qxsqldatabase_8h_source.html", null ],
     [ "qxsqlquerymodel.h", "qxsqlquerymodel_8h_source.html", null ],
+    [ "qxsqlrecord.h", "qxsqlrecord_8h_source.html", null ],
     [ "qxsqlscript.h", "qxsqlscript_8h_source.html", null ],
     [ "qxsqltableview.h", "qxsqltableview_8h_source.html", null ],
     [ "qxstyleditemdelegate.h", "qxstyleditemdelegate_8h_source.html", null ],

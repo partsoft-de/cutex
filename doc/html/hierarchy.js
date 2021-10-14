@@ -42,6 +42,9 @@ var hierarchy =
     [ "QScrollArea", null, [
       [ "cutex::QxSwipeBar", "classcutex_1_1_qx_swipe_bar.html", null ]
     ] ],
+    [ "QSqlRecord", null, [
+      [ "cutex::QxSqlRecord", "classcutex_1_1_qx_sql_record.html", null ]
+    ] ],
     [ "QStyledItemDelegate", null, [
       [ "cutex::QxStyledItemDelegate", "classcutex_1_1_qx_styled_item_delegate.html", null ]
     ] ],

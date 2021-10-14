@@ -21,6 +21,7 @@
 #define QXSQLQUERYMODEL_H
 
 #include "cutex.h"
+#include "qxsqlrecord.h"
 
 namespace cutex {
 
@@ -117,16 +118,16 @@ private:
     //! @endcond
 
 private:
-    QVector<QSqlRecord*> m_data;
+    QVector<QxSqlRecord*> m_data;
     QMap<int, QSqlRelation> m_sqlRelations;
     QSqlRecord m_dummy;
     QVector<ColumnInfo*> m_columns;
     QSqlError m_error;
 
 private:
-    void selectSqlRelation(QSqlRecord *record, int column, const QSqlRelation &sqlRelation);
+    void selectSqlRelation(QxSqlRecord *record, int column, const QSqlRelation &sqlRelation);
     void selectSqlRelation(int column);
-    void selectSqlRelations(QSqlRecord *record);
+    void selectSqlRelations(QxSqlRecord *record);
     void selectSqlRelations();
 };
 

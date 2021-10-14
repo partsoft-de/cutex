@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>cutex: C:/Users/SHold/Documents/Projekte/libs/cutex/include/cutex.h Quellcode</title>
+<title>cutex: C:/Users/SHold/Documents/Projekte/libs/cutex/include/qxsqlrecord.h Quellcode</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -64,7 +64,7 @@ $(function() {
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(document).ready(function(){initNavTree('cutex_8h_source.html',''); initResizable(); });
+$(document).ready(function(){initNavTree('qxsqlrecord_8h_source.html',''); initResizable(); });
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -84,7 +84,7 @@ $(document).ready(function(){initNavTree('cutex_8h_source.html',''); initResizab
 
 <div class="header">
   <div class="headertitle">
-<div class="title">cutex.h</div>  </div>
+<div class="title">qxsqlrecord.h</div>  </div>
 </div><!--header-->
 <div class="contents">
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/***********************************************************************************************************************</span></div>
@@ -106,37 +106,40 @@ $(document).ready(function(){initNavTree('cutex_8h_source.html',''); initResizab
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">**</span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment">***********************************************************************************************************************/</span></div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#ifndef CUTEX_H</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#define CUTEX_H</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#ifndef QXSQLRECORD_H</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#define QXSQLRECORD_H</span></div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &lt;QtGlobal&gt;</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &lt;QtWidgets&gt;</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &lt;QtNetwork&gt;</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &lt;QtXml&gt;</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &lt;QtSql&gt;</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#include &lt;QtHelp&gt;</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">namespace </span>cutex {</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#define QX_VERSION_MAJOR    1</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#define QX_VERSION_MINOR    5</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#define QX_VERSION_PATCH    15</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#define QX_VERSION          QX_VERSION_CHECK(QX_VERSION_MAJOR, QX_VERSION_MINOR, QX_VERSION_PATCH)</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#define QX_VERSION_STR      QString(&quot;%1.%2.%3&quot;</span>).arg(QX_VERSION_MAJOR).arg(QX_VERSION_MINOR).arg(QX_VERSION_PATCH)</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#define QX_VERSION_CHECK(major, minor, patch)   ((major &lt;&lt; 16) | (minor &lt;&lt; 8) | (patch))</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#define CLASSNAME(obj)      QString(obj-&gt;metaObject()-&gt;className())</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#define BREAKABLE_BLOCK     for (bool _b = false; _b == false; _b = true)</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &quot;cutex.h&quot;</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">namespace </span>cutex {</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="classcutex_1_1_qx_sql_record.html">   32</a></span>&#160;<span class="keyword">class </span><a class="code" href="classcutex_1_1_qx_sql_record.html">QxSqlRecord</a> : <span class="keyword">public</span> QSqlRecord</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;{</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <a class="code" href="classcutex_1_1_qx_sql_record.html#aef2e597b523ae9659f1bd1ad0e9fe8cc">QxSqlRecord</a>();</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <a class="code" href="classcutex_1_1_qx_sql_record.html#aef2e597b523ae9659f1bd1ad0e9fe8cc">QxSqlRecord</a>(<span class="keyword">const</span> QSqlRecord &amp;record);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    QVariant <a class="code" href="classcutex_1_1_qx_sql_record.html#a507518f6fcb714c774213f60c3e15dec">relationValue</a>(<span class="keywordtype">int</span> index) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    QVariant <a class="code" href="classcutex_1_1_qx_sql_record.html#a507518f6fcb714c774213f60c3e15dec">relationValue</a>(<span class="keyword">const</span> QString &amp;name) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classcutex_1_1_qx_sql_record.html#a7a6d360aec9cf399e0e504b9b3508a80">setRelationValue</a>(<span class="keywordtype">int</span> index, <span class="keyword">const</span> QVariant &amp;value);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classcutex_1_1_qx_sql_record.html#a7a6d360aec9cf399e0e504b9b3508a80">setRelationValue</a>(<span class="keyword">const</span> QString &amp;name, <span class="keyword">const</span> QVariant &amp;value);</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;} <span class="comment">// namespace</span></div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// CUTEX_H</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    QMap&lt;int, QVariant&gt; m_relationValues;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;};</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;} <span class="comment">// namespace</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// QXSQLRECORD_H</span></div>
+<div class="ttc" id="aclasscutex_1_1_qx_sql_record_html"><div class="ttname"><a href="classcutex_1_1_qx_sql_record.html">cutex::QxSqlRecord</a></div><div class="ttdoc">Die Klasse QxSqlRecord ist eine Erweiterung der Qt-Klasse QSqlRecord.</div><div class="ttdef"><b>Definition:</b> qxsqlrecord.h:33</div></div>
+<div class="ttc" id="aclasscutex_1_1_qx_sql_record_html_a507518f6fcb714c774213f60c3e15dec"><div class="ttname"><a href="classcutex_1_1_qx_sql_record.html#a507518f6fcb714c774213f60c3e15dec">cutex::QxSqlRecord::relationValue</a></div><div class="ttdeci">QVariant relationValue(int index) const</div><div class="ttdef"><b>Definition:</b> qxsqlrecord.cpp:43</div></div>
+<div class="ttc" id="aclasscutex_1_1_qx_sql_record_html_a7a6d360aec9cf399e0e504b9b3508a80"><div class="ttname"><a href="classcutex_1_1_qx_sql_record.html#a7a6d360aec9cf399e0e504b9b3508a80">cutex::QxSqlRecord::setRelationValue</a></div><div class="ttdeci">void setRelationValue(int index, const QVariant &amp;value)</div><div class="ttdef"><b>Definition:</b> qxsqlrecord.cpp:63</div></div>
+<div class="ttc" id="aclasscutex_1_1_qx_sql_record_html_aef2e597b523ae9659f1bd1ad0e9fe8cc"><div class="ttname"><a href="classcutex_1_1_qx_sql_record.html#aef2e597b523ae9659f1bd1ad0e9fe8cc">cutex::QxSqlRecord::QxSqlRecord</a></div><div class="ttdeci">QxSqlRecord()</div><div class="ttdef"><b>Definition:</b> qxsqlrecord.cpp:27</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><b>cutex.h</b></li>
+    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><b>qxsqlrecord.h</b></li>
     <li class="footer">Erzeugt von <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>

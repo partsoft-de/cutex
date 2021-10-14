@@ -31,6 +31,7 @@ var annotated_dup =
       [ "QxSpellChecker", "classcutex_1_1_qx_spell_checker.html", "classcutex_1_1_qx_spell_checker" ],
       [ "QxSqlDatabase", "classcutex_1_1_qx_sql_database.html", "classcutex_1_1_qx_sql_database" ],
       [ "QxSqlQueryModel", "classcutex_1_1_qx_sql_query_model.html", "classcutex_1_1_qx_sql_query_model" ],
+      [ "QxSqlRecord", "classcutex_1_1_qx_sql_record.html", "classcutex_1_1_qx_sql_record" ],
       [ "QxSqlScript", "classcutex_1_1_qx_sql_script.html", "classcutex_1_1_qx_sql_script" ],
       [ "QxSqlTableView", "classcutex_1_1_qx_sql_table_view.html", "classcutex_1_1_qx_sql_table_view" ],
       [ "QxStyledItemDelegate", "classcutex_1_1_qx_styled_item_delegate.html", "classcutex_1_1_qx_styled_item_delegate" ],

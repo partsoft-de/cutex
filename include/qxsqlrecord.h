@@ -17,9 +17,32 @@
 **
 ***********************************************************************************************************************/
 
-#ifndef QXRESOURCE_H
-#define QXRESOURCE_H
+#ifndef QXSQLRECORD_H
+#define QXSQLRECORD_H
 
-void qxInitResource() { Q_INIT_RESOURCE(cutex); }
+#include "cutex.h"
 
-#endif // QXRESOURCE_H
+namespace cutex {
+
+/*!
+  \brief Die Klasse %QxSqlRecord ist eine Erweiterung der Qt-Klasse QSqlRecord.
+
+  %QxSqlRecord erweitert die Qt-Klasse QSqlRecord zum Verwalten von Relationswerten.
+*/
+class QxSqlRecord : public QSqlRecord
+{
+public:
+    QxSqlRecord();
+    QxSqlRecord(const QSqlRecord &record);
+    QVariant relationValue(int index) const;
+    QVariant relationValue(const QString &name) const;
+    void setRelationValue(int index, const QVariant &value);
+    void setRelationValue(const QString &name, const QVariant &value);
+
+private:
+    QMap<int, QVariant> m_relationValues;
+};
+
+} // namespace
+
+#endif // QXSQLRECORD_H

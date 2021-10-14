@@ -58,7 +58,7 @@ QxApplication::QxApplication(int &argc, char **argv) : QApplication(argc, argv)
     addTranslator("qt_", QLocale::system().name());
     addTranslator("cutex_", QLocale::system().name());
 
-    initResource();
+    qxInitResource();
     registerStatics();
 }
 

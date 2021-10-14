@@ -8,5 +8,6 @@
         <file>icons/16x16/folder.png</file>
         <file>icons/16x16/page_white.png</file>
         <file>icons/16x16/house.png</file>
+        <file>icons/16x16/calculator.png</file>
     </qresource>
 </RCC>
