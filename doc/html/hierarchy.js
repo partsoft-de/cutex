@@ -70,6 +70,7 @@ var hierarchy =
         [ "cutex::QxDashboard", "classcutex_1_1_qx_dashboard.html", null ]
       ] ],
       [ "cutex::QxHelpWindow", "classcutex_1_1_qx_help_window.html", null ],
+      [ "cutex::QxMouseGripBand", "classcutex_1_1_qx_mouse_grip_band.html", null ],
       [ "cutex::QxSwipeWidget", "classcutex_1_1_qx_swipe_widget.html", null ]
     ] ],
     [ "QWizard", null, [

@@ -39,9 +39,12 @@ var classcutex_1_1_qx_text_edit =
     [ "linkActivated", "classcutex_1_1_qx_text_edit.html#af3d383a6187bec85c4ef6b395361c3f9", null ],
     [ "listFormat", "classcutex_1_1_qx_text_edit.html#ad786cb1d02b3dd845795f1335ba35f84", null ],
     [ "mouseDoubleClickEvent", "classcutex_1_1_qx_text_edit.html#adfac6f4941721a09cb62e9bfe9d4b054", null ],
+    [ "mousePressEvent", "classcutex_1_1_qx_text_edit.html#ae2c1e0c9249e8baf81d84ac7dd1c1baa", null ],
     [ "removeAnchor", "classcutex_1_1_qx_text_edit.html#aa0d60fcf2c5f6685883e178d4dce44a4", null ],
     [ "removeTableColumn", "classcutex_1_1_qx_text_edit.html#a0363b750f22e2cc82ab1035b3a2a28bb", null ],
     [ "removeTableRow", "classcutex_1_1_qx_text_edit.html#a6a6a4e53a777d26f8f8a1b1f97a5dcea", null ],
+    [ "resizeEvent", "classcutex_1_1_qx_text_edit.html#a0110aa34b8597216b1733b5b64af69fe", null ],
+    [ "resizeObject", "classcutex_1_1_qx_text_edit.html#a6826275f060ffbb49a798eeea96639c9", null ],
     [ "setCurrentLine", "classcutex_1_1_qx_text_edit.html#a733b8f1383b2f1ae875184663ba38cdd", null ],
     [ "setFontBold", "classcutex_1_1_qx_text_edit.html#aedc63d5507171f65e9cc86ecea3176d6", null ],
     [ "setHyperlink", "classcutex_1_1_qx_text_edit.html#a995d5d66b1c737adbe8ec746f7727d62", null ],
@@ -55,7 +58,9 @@ var classcutex_1_1_qx_text_edit =
     [ "showLineAndParagraphSeparators", "classcutex_1_1_qx_text_edit.html#a85d5a46f0eff2dbe0c4524eb4673544d", null ],
     [ "showTabsAndSpaces", "classcutex_1_1_qx_text_edit.html#a9f68499292c89021874fc4990e85974a", null ],
     [ "tabSpaces", "classcutex_1_1_qx_text_edit.html#a52ad74294f9559fa4085b60510d237a0", null ],
+    [ "updateGripBand", "classcutex_1_1_qx_text_edit.html#a06537166bc727155d919126a5980f21b", null ],
     [ "m_canRedo", "classcutex_1_1_qx_text_edit.html#ab7c1e6700d058b650cc54acd950ddc3e", null ],
     [ "m_canUndo", "classcutex_1_1_qx_text_edit.html#a818fe61fad83c782228842682a0abd88", null ],
+    [ "m_gripBand", "classcutex_1_1_qx_text_edit.html#a3282cc5072168ace89a5ccf99a5c8907", null ],
     [ "m_tabSpaces", "classcutex_1_1_qx_text_edit.html#a1b92519089bc8cc7fa985e745ccbc74c", null ]
 ];

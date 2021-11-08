@@ -24,6 +24,7 @@
 #include "qxhtmlcursor.h"
 #include "qxhyperlink.h"
 #include "qxfindoptions.h"
+#include "qxmousegripband.h"
 
 namespace cutex {
 
@@ -89,8 +90,10 @@ public slots:
     virtual bool findOrReplace(const QxFindOptions &options);
 
 protected:
+    virtual void mousePressEvent(QMouseEvent *event);
     virtual void mouseDoubleClickEvent(QMouseEvent *event);
     virtual void keyPressEvent(QKeyEvent *event);
+    virtual void resizeEvent(QResizeEvent *event);
     virtual bool canInsertFromMimeData(const QMimeData *source) const;
     virtual QMimeData *createMimeDataFromSelection() const;
     virtual void insertFromMimeData(const QMimeData *source);
@@ -100,6 +103,7 @@ private:
     bool m_canUndo;
     bool m_canRedo;
     int m_tabSpaces;
+    QxMouseGripBand *m_gripBand;
 
 private:
     void insertImage(const QImage &image);
@@ -107,6 +111,8 @@ private:
 private slots:
     void setUndoEnabled(bool enabled);
     void setRedoEnabled(bool enabled);
+    void updateGripBand();
+    void resizeObject(const QRect &rect);
 
 signals:
     void linkActivated(const QString &url);

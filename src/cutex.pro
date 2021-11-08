@@ -34,6 +34,7 @@ HEADERS += \
     ../include/qxexception.h \
     ../include/qxintedit.h \
     ../include/qxlogger.h \
+    ../include/qxmousegripband.h \
     ../include/qxsingleton.h \
     ../include/qxsqlrecord.h \
     ../include/qxswipebar.h \
@@ -88,6 +89,7 @@ SOURCES += \
     qxexception.cpp \
     qxintedit.cpp \
     qxlogger.cpp \
+    qxmousegripband.cpp \
     qxsingleton.cpp \
     qxsqlrecord.cpp \
     qxswipebar.cpp \

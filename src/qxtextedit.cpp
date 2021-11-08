@@ -32,10 +32,19 @@ QxTextEdit::QxTextEdit(QWidget *parent) : QTextEdit(parent)
 {
     m_canUndo = false;
     m_canRedo = false;
-    m_tabSpaces = 0;
+    m_tabSpaces = 0;    
+    m_gripBand = new QxMouseGripBand(this);
+
+    m_gripBand->setMoveEnabled(false);
+    m_gripBand->setVisible(false);
 
     connect(this, SIGNAL(undoAvailable(bool)), this, SLOT(setUndoEnabled(bool)));
     connect(this, SIGNAL(redoAvailable(bool)), this, SLOT(setRedoEnabled(bool)));
+    connect(this, SIGNAL(cursorPositionChanged()), this, SLOT(updateGripBand()));
+    connect(this, SIGNAL(textChanged()), this, SLOT(updateGripBand()));
+    connect(horizontalScrollBar(), SIGNAL(valueChanged(int)), this, SLOT(updateGripBand()));
+    connect(verticalScrollBar(), SIGNAL(valueChanged(int)), this, SLOT(updateGripBand()));
+    connect(m_gripBand, SIGNAL(resizeFinished(QRect)), this, SLOT(resizeObject(QRect)));
 }
 
 /*!
@@ -649,6 +658,17 @@ bool QxTextEdit::findOrReplace(const QxFindOptions &options)
     return success;
 }
 
+void QxTextEdit::mousePressEvent(QMouseEvent *event)
+{
+    QTextCursor cursor = cursorForPosition(event->windowPos().toPoint());
+
+    if (!cursor.charFormat().isImageFormat() && !cursor.atBlockEnd())
+        cursor.movePosition(QTextCursor::Right);
+    setTextCursor(cursor);
+
+    QTextEdit::mousePressEvent(event);
+}
+
 /*!
   Wird bei einem Doppelklick mit der Maus aufgerufen.
 */
@@ -677,6 +697,13 @@ void QxTextEdit::keyPressEvent(QKeyEvent *event)
     }
 
     QTextEdit::keyPressEvent(event);
+}
+
+void QxTextEdit::resizeEvent(QResizeEvent *event)
+{
+    updateGripBand();
+
+    QTextEdit::resizeEvent(event);
 }
 
 /*!
@@ -750,6 +777,7 @@ void QxTextEdit::insertImage(const QImage &image)
 {
     QString url;
     QVariant resource;
+    QTextImageFormat format;
 
     do {
         url = "image://" + QxRandom::get(10, QxRandom::LOWERCHARS);
@@ -757,7 +785,10 @@ void QxTextEdit::insertImage(const QImage &image)
     } while (resource.isValid());
 
     document()->addResource(QTextDocument::ImageResource, QUrl(url), image);
-    textCursor().insertImage(image, url);
+    format.setName(url);
+    format.setWidth(image.width());
+    format.setHeight(image.height());
+    textCursor().insertImage(format);
 }
 
 void QxTextEdit::setUndoEnabled(bool enabled)
@@ -768,6 +799,57 @@ void QxTextEdit::setUndoEnabled(bool enabled)
 void QxTextEdit::setRedoEnabled(bool enabled)
 {
     m_canRedo = enabled;
+}
+
+void QxTextEdit::updateGripBand()
+{
+    QTextCursor cursor = textCursor();
+    m_gripBand->setVisible(!cursor.hasSelection() && cursor.charFormat().isImageFormat());
+
+    if (!cursor.hasSelection() && cursor.charFormat().isImageFormat()) {
+        QTextImageFormat fmt = cursor.charFormat().toImageFormat();
+
+        if (!cursor.atBlockStart())
+            cursor.movePosition(QTextCursor::Left);
+
+        QRect rc = cursorRect(cursor);
+        rc.setLeft(rc.left() + 1);
+        rc.setTop(rc.top() + 1);
+        rc.setWidth(fmt.width());
+        rc.setHeight(rc.height() + 1);
+
+        if (!rc.width()) {
+            QImage image = document()->resource(QTextDocument::ImageResource, fmt.name()).value<QImage>();
+            rc.setWidth(image.width());
+        }
+
+        m_gripBand->setGeometry(rc);
+    }
+}
+
+void QxTextEdit::resizeObject(const QRect &rect)
+{
+    QTextCursor cursor = textCursor();
+
+    if (cursor.charFormat().isImageFormat()) {
+        QTextImageFormat fmt = cursor.charFormat().toImageFormat();
+        fmt.setWidth(rect.width());
+        fmt.setHeight(rect.height());
+        cursor.setCharFormat(fmt);
+
+        QTextCursor temp = cursor;
+
+        if (!temp.atBlockStart()) {
+            temp.movePosition(QTextCursor::Left, QTextCursor::KeepAnchor);
+        } else {
+            temp.movePosition(QTextCursor::Right, QTextCursor::KeepAnchor);
+        }
+
+
+        setTextCursor(temp);
+        setCurrentCharFormat(fmt);
+        setTextCursor(cursor);
+    }
 }
 
 /*!

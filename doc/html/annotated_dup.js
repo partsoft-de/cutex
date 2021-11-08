@@ -24,6 +24,7 @@ var annotated_dup =
       [ "QxMath", "classcutex_1_1_qx_math.html", null ],
       [ "QxMessage", "classcutex_1_1_qx_message.html", "classcutex_1_1_qx_message" ],
       [ "QxMessageDialog", "classcutex_1_1_qx_message_dialog.html", "classcutex_1_1_qx_message_dialog" ],
+      [ "QxMouseGripBand", "classcutex_1_1_qx_mouse_grip_band.html", "classcutex_1_1_qx_mouse_grip_band" ],
       [ "QxPlainTextEdit", "classcutex_1_1_qx_plain_text_edit.html", "classcutex_1_1_qx_plain_text_edit" ],
       [ "QxRandom", "classcutex_1_1_qx_random.html", null ],
       [ "QxRecentFiles", "classcutex_1_1_qx_recent_files.html", "classcutex_1_1_qx_recent_files" ],
