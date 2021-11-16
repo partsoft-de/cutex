@@ -42,6 +42,7 @@ QxTextEdit::QxTextEdit(QWidget *parent) : QTextEdit(parent)
     connect(this, SIGNAL(redoAvailable(bool)), this, SLOT(setRedoEnabled(bool)));
     connect(this, SIGNAL(cursorPositionChanged()), this, SLOT(updateGripBand()));
     connect(this, SIGNAL(textChanged()), this, SLOT(updateGripBand()));
+    connect(this, SIGNAL(currentCharFormatChanged(const QTextCharFormat&)), this, SLOT(updateGripBand()));
     connect(horizontalScrollBar(), SIGNAL(valueChanged(int)), this, SLOT(updateGripBand()));
     connect(verticalScrollBar(), SIGNAL(valueChanged(int)), this, SLOT(updateGripBand()));
     connect(m_gripBand, SIGNAL(resizeFinished(QRect)), this, SLOT(resizeObject(QRect)));
@@ -662,9 +663,11 @@ void QxTextEdit::mousePressEvent(QMouseEvent *event)
 {
     QTextCursor cursor = cursorForPosition(event->windowPos().toPoint());
 
-    if (!cursor.charFormat().isImageFormat() && !cursor.atBlockEnd())
+    if (!cursor.charFormat().isImageFormat() && !cursor.atBlockEnd()) {
         cursor.movePosition(QTextCursor::Right);
-    setTextCursor(cursor);
+        if (cursor.charFormat().isImageFormat())
+            setTextCursor(cursor);
+    }
 
     QTextEdit::mousePressEvent(event);
 }
