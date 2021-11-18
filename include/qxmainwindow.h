@@ -67,8 +67,8 @@ protected:
     virtual void changeEvent(QEvent *event);
     virtual void updateMenu(QMenu *menu);
     virtual void processAction(QAction *action);
-    virtual void restoreSettings(QSettings *settings);
-    virtual void saveSettings(QSettings *settings);
+    virtual void restoreSettings(QSettings *settings, int version = 0);
+    virtual void saveSettings(QSettings *settings, int version = 0);
     virtual void setCurrentFile(QString fileName);
 
 private:

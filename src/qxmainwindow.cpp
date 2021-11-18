@@ -296,11 +296,11 @@ void QxMainWindow::processAction(QAction *action)
 
   \sa saveSettings(QSettings *settings)
 */
-void QxMainWindow::restoreSettings(QSettings *settings)
+void QxMainWindow::restoreSettings(QSettings *settings, int version)
 {
     settings->beginGroup(CLASSNAME(this));
     restoreGeometry(settings->value("geometry").toByteArray());
-    restoreState(settings->value("state").toByteArray());
+    restoreState(settings->value("state").toByteArray(), version);
     if (m_recentFiles) {
         QStringList recentFiles = settings->value("recentFiles").toStringList();
         m_recentFiles->setFiles(recentFiles);
@@ -314,11 +314,11 @@ void QxMainWindow::restoreSettings(QSettings *settings)
 
   \sa restoreSettings(QSettings *settings)
 */
-void QxMainWindow::saveSettings(QSettings *settings)
+void QxMainWindow::saveSettings(QSettings *settings, int version)
 {
     settings->beginGroup(CLASSNAME(this));
     settings->setValue("geometry", saveGeometry());
-    settings->setValue("state", saveState());
+    settings->setValue("state", saveState(version));
     if (m_recentFiles) {
         QStringList recentFiles = m_recentFiles->files();
         settings->setValue("recentFiles", recentFiles);
