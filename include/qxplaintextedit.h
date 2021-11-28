@@ -53,14 +53,14 @@ public:
     bool showLineNumbers() const;
     void setShowLineNumbers(bool show);
     bool showTabsAndSpaces() const;
-    void setShowTabsAndSpaces(bool show);
     bool showLineAndParagraphSeparators() const;
-    void setShowLineAndParagraphSeparators(bool show);
     int tabSpaces() const;
     void setTabSpaces(int spaces);
 
 public slots:
     virtual bool findOrReplace(const QxFindOptions &options);
+    void setShowTabsAndSpaces(bool show);
+    void setShowLineAndParagraphSeparators(bool show);
 
 protected:
     virtual void resizeEvent(QResizeEvent *event);

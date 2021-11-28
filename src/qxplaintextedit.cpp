@@ -116,25 +116,6 @@ bool QxPlainTextEdit::showTabsAndSpaces() const
 }
 
 /*!
-  Legt fest, ob der Editor Whitespaces anzeigt.
-*/
-void QxPlainTextEdit::setShowTabsAndSpaces(bool show)
-{
-    QTextDocument *doc = document();
-    QTextOption option = doc->defaultTextOption();
-    QFlags<QTextOption::Flag> flags = option.flags();
-
-    if (show) {
-        flags |= QTextOption::ShowTabsAndSpaces;
-    } else {
-        flags &= ~QTextOption::ShowTabsAndSpaces;
-    }
-
-    option.setFlags(flags);
-    doc->setDefaultTextOption(option);
-}
-
-/*!
   Gibt true zurück, wenn der Editor Zeilenendezeichen anzeigt.
 */
 bool QxPlainTextEdit::showLineAndParagraphSeparators() const
@@ -144,25 +125,6 @@ bool QxPlainTextEdit::showLineAndParagraphSeparators() const
     QFlags<QTextOption::Flag> flags = option.flags();
 
     return flags.testFlag(QTextOption::ShowLineAndParagraphSeparators);
-}
-
-/*!
-  Legt fest, ob der Editor Zeilenendezeichen anzeigt.
-*/
-void QxPlainTextEdit::setShowLineAndParagraphSeparators(bool show)
-{
-    QTextDocument *doc = document();
-    QTextOption option = doc->defaultTextOption();
-    QFlags<QTextOption::Flag> flags = option.flags();
-
-    if (show) {
-        flags |= QTextOption::ShowLineAndParagraphSeparators;
-    } else {
-        flags &= ~QTextOption::ShowLineAndParagraphSeparators;
-    }
-
-    option.setFlags(flags);
-    doc->setDefaultTextOption(option);
 }
 
 /*!
@@ -255,6 +217,34 @@ bool QxPlainTextEdit::findOrReplace(const QxFindOptions &options)
     }
 
     return success;
+}
+
+/*!
+  Legt fest, ob der Editor Whitespaces anzeigt.
+*/
+void QxPlainTextEdit::setShowTabsAndSpaces(bool show)
+{
+    QTextDocument *doc = document();
+    QTextOption option = doc->defaultTextOption();
+    QFlags<QTextOption::Flag> flags = option.flags();
+
+    flags.setFlag(QTextOption::ShowTabsAndSpaces, show);
+    option.setFlags(flags);
+    doc->setDefaultTextOption(option);
+}
+
+/*!
+  Legt fest, ob der Editor Zeilenendezeichen anzeigt.
+*/
+void QxPlainTextEdit::setShowLineAndParagraphSeparators(bool show)
+{
+    QTextDocument *doc = document();
+    QTextOption option = doc->defaultTextOption();
+    QFlags<QTextOption::Flag> flags = option.flags();
+
+    flags.setFlag(QTextOption::ShowLineAndParagraphSeparators, show);
+    option.setFlags(flags);
+    doc->setDefaultTextOption(option);
 }
 
 /*!
