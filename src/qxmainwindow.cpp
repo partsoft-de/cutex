@@ -33,6 +33,7 @@ QxMainWindow::QxMainWindow(QWidget *parent) : QMainWindow(parent)
     qxMainWin = this;
 
     m_initialized = false;
+    m_modified = false;
     m_recentFiles = 0;
     m_mapper = new QSignalMapper(this);
     m_mdiArea = 0;
@@ -160,6 +161,8 @@ void QxMainWindow::updateStatusBar()
 */
 void QxMainWindow::setModified(bool modified)
 {
+    m_modified = modified;
+
     setWindowModified(modified);
     relockActions();
 }
@@ -267,9 +270,17 @@ void QxMainWindow::showEvent(QShowEvent *event)
 */
 void QxMainWindow::changeEvent(QEvent *event)
 {
-    if (event->type() == QEvent::LanguageChange) {
+    switch (event->type()) {
+    case QEvent::LanguageChange:
         retranslateUi();
         updateWindowMenu();
+        break;
+    case QEvent::ModifiedChange:
+        if (isWindowModified() != m_modified)
+            setWindowModified(m_modified);
+        break;
+    default:
+        break;
     }
 
     QMainWindow::changeEvent(event);

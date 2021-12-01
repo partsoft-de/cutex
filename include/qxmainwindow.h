@@ -73,6 +73,7 @@ protected:
 
 private:
     bool m_initialized;
+    bool m_modified;
     QString m_currentFile;
     QxRecentFiles *m_recentFiles;
     QSignalMapper *m_mapper;
