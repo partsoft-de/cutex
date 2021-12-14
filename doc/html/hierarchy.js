@@ -83,6 +83,7 @@ var hierarchy =
     [ "cutex::QxHyperlink", "classcutex_1_1_qx_hyperlink.html", null ],
     [ "cutex::QxMath", "classcutex_1_1_qx_math.html", null ],
     [ "cutex::QxMessage", "classcutex_1_1_qx_message.html", null ],
+    [ "cutex::QxOptional< T >", "classcutex_1_1_qx_optional.html", null ],
     [ "cutex::QxRandom", "classcutex_1_1_qx_random.html", null ],
     [ "cutex::QxSingleton< T >", "classcutex_1_1_qx_singleton.html", null ],
     [ "cutex::QxTreeItem", "classcutex_1_1_qx_tree_item.html", null ],

@@ -132,6 +132,10 @@ Klassendiagramm für cutex::QxTextEdit:</div>
 Öffentliche Slots</h2></td></tr>
 <tr class="memitem:a2135389066246ad153fe4c8168cb5915"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcutex_1_1_qx_text_edit.html#a2135389066246ad153fe4c8168cb5915">findOrReplace</a> (const <a class="el" href="classcutex_1_1_qx_find_options.html">QxFindOptions</a> &amp;options)</td></tr>
 <tr class="separator:a2135389066246ad153fe4c8168cb5915"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a28d1c4829eb39efe57fda316f2989ddc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcutex_1_1_qx_text_edit.html#a28d1c4829eb39efe57fda316f2989ddc">setShowTabsAndSpaces</a> (bool show)</td></tr>
+<tr class="separator:a28d1c4829eb39efe57fda316f2989ddc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af96cbfee954e87dd33c74daca7b218b4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcutex_1_1_qx_text_edit.html#af96cbfee954e87dd33c74daca7b218b4">setShowLineAndParagraphSeparators</a> (bool show)</td></tr>
+<tr class="separator:af96cbfee954e87dd33c74daca7b218b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="signals"></a>
 Signale</h2></td></tr>
@@ -198,12 +202,8 @@ Signale</h2></td></tr>
 <tr class="separator:a00bb5852dc09a134fb2f41ab07d5704c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9f68499292c89021874fc4990e85974a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcutex_1_1_qx_text_edit.html#a9f68499292c89021874fc4990e85974a">showTabsAndSpaces</a> () const</td></tr>
 <tr class="separator:a9f68499292c89021874fc4990e85974a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a28d1c4829eb39efe57fda316f2989ddc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcutex_1_1_qx_text_edit.html#a28d1c4829eb39efe57fda316f2989ddc">setShowTabsAndSpaces</a> (bool show)</td></tr>
-<tr class="separator:a28d1c4829eb39efe57fda316f2989ddc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a85d5a46f0eff2dbe0c4524eb4673544d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcutex_1_1_qx_text_edit.html#a85d5a46f0eff2dbe0c4524eb4673544d">showLineAndParagraphSeparators</a> () const</td></tr>
 <tr class="separator:a85d5a46f0eff2dbe0c4524eb4673544d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af96cbfee954e87dd33c74daca7b218b4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcutex_1_1_qx_text_edit.html#af96cbfee954e87dd33c74daca7b218b4">setShowLineAndParagraphSeparators</a> (bool show)</td></tr>
-<tr class="separator:af96cbfee954e87dd33c74daca7b218b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a52ad74294f9559fa4085b60510d237a0"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcutex_1_1_qx_text_edit.html#a52ad74294f9559fa4085b60510d237a0">tabSpaces</a> () const</td></tr>
 <tr class="separator:a52ad74294f9559fa4085b60510d237a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae04c9a72d64f85399b1de16ba4c07f7f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcutex_1_1_qx_text_edit.html#ae04c9a72d64f85399b1de16ba4c07f7f">setTabSpaces</a> (int spaces)</td></tr>
@@ -1068,10 +1068,13 @@ static const QString&#160;</td><td class="memItemRight" valign="bottom"><b>MIMET
 </div>
 </div>
 <a id="af96cbfee954e87dd33c74daca7b218b4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af96cbfee954e87dd33c74daca7b218b4">&#9670;&nbsp;</a></span>setShowLineAndParagraphSeparators()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#af96cbfee954e87dd33c74daca7b218b4">&#9670;&nbsp;</a></span>setShowLineAndParagraphSeparators</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void QxTextEdit::setShowLineAndParagraphSeparators </td>
@@ -1081,16 +1084,24 @@ static const QString&#160;</td><td class="memItemRight" valign="bottom"><b>MIMET
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 <p>Legt fest, ob der Editor Zeilenendezeichen anzeigt. </p>
 
 </div>
 </div>
 <a id="a28d1c4829eb39efe57fda316f2989ddc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a28d1c4829eb39efe57fda316f2989ddc">&#9670;&nbsp;</a></span>setShowTabsAndSpaces()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a28d1c4829eb39efe57fda316f2989ddc">&#9670;&nbsp;</a></span>setShowTabsAndSpaces</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void QxTextEdit::setShowTabsAndSpaces </td>
@@ -1100,6 +1111,11 @@ static const QString&#160;</td><td class="memItemRight" valign="bottom"><b>MIMET
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 <p>Legt fest, ob der Editor Whitespaces anzeigt. </p>
 

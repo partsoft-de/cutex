@@ -25,6 +25,7 @@ var dir_d44c64559bbebec7f509842c48db8b23 =
     [ "qxmessage.h", "qxmessage_8h_source.html", null ],
     [ "qxmessagedialog.h", "qxmessagedialog_8h_source.html", null ],
     [ "qxmousegripband.h", "qxmousegripband_8h_source.html", null ],
+    [ "qxoptional.h", "qxoptional_8h_source.html", null ],
     [ "qxplaintextedit.h", "qxplaintextedit_8h_source.html", null ],
     [ "qxrandom.h", "qxrandom_8h_source.html", null ],
     [ "qxrecentfiles.h", "qxrecentfiles_8h_source.html", null ],

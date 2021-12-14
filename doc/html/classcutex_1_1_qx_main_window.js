@@ -12,9 +12,9 @@ var classcutex_1_1_qx_main_window =
     [ "recentFiles", "classcutex_1_1_qx_main_window.html#a2115d290e1e4cc67461002d8f82d7334", null ],
     [ "recentFilesChanged", "classcutex_1_1_qx_main_window.html#aad94b6b846a078a1f2132adc798076b8", null ],
     [ "relockActions", "classcutex_1_1_qx_main_window.html#ad4c66f4a9a06031f63780fef46471855", null ],
-    [ "restoreSettings", "classcutex_1_1_qx_main_window.html#a7d36c752e4a14b6b733c651f355f4423", null ],
+    [ "restoreSettings", "classcutex_1_1_qx_main_window.html#ad52e2a33e2960e33836416fd5aa10fa1", null ],
     [ "retranslateUi", "classcutex_1_1_qx_main_window.html#a4fa05f41682de4296a478fd4ca15b83e", null ],
-    [ "saveSettings", "classcutex_1_1_qx_main_window.html#abc1f7db2601deacfeea48a90843c8b47", null ],
+    [ "saveSettings", "classcutex_1_1_qx_main_window.html#ad3e031ad6c8d5229f5ff7341f806c54e", null ],
     [ "setActiveSubWindow", "classcutex_1_1_qx_main_window.html#a3f1934dbe51f3371cc1310cd0f353a5e", null ],
     [ "setCurrentFile", "classcutex_1_1_qx_main_window.html#a1a87c878e5e54934ac7316947bea3ff5", null ],
     [ "setModified", "classcutex_1_1_qx_main_window.html#a2c40ca858cef3ba80d0655bd7cac0f03", null ],
@@ -30,6 +30,7 @@ var classcutex_1_1_qx_main_window =
     [ "m_initialized", "classcutex_1_1_qx_main_window.html#a3df03adcd369e03048117588f0eb3522", null ],
     [ "m_mapper", "classcutex_1_1_qx_main_window.html#a4cf4c5cb98c6e8e2f7d6bb84623b668e", null ],
     [ "m_mdiArea", "classcutex_1_1_qx_main_window.html#acfc4426010c6c505299d92c3e42576db", null ],
+    [ "m_modified", "classcutex_1_1_qx_main_window.html#a339784145be8c4c736e821d1df099bc3", null ],
     [ "m_recentFiles", "classcutex_1_1_qx_main_window.html#a488bb753ea8a25303f5000c3d61e9ef2", null ],
     [ "m_windowMenu", "classcutex_1_1_qx_main_window.html#a2bbc8246e9171fcb4d802c9fecedf7fb", null ]
 ];

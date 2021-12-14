@@ -159,10 +159,10 @@ Geschützte Methoden</h2></td></tr>
 <tr class="separator:a7075e7160a0877e519858b284dea70ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1232175054e178b309ae511f2c762c05"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcutex_1_1_qx_main_window.html#a1232175054e178b309ae511f2c762c05">processAction</a> (QAction *action)</td></tr>
 <tr class="separator:a1232175054e178b309ae511f2c762c05"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7d36c752e4a14b6b733c651f355f4423"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcutex_1_1_qx_main_window.html#a7d36c752e4a14b6b733c651f355f4423">restoreSettings</a> (QSettings *settings)</td></tr>
-<tr class="separator:a7d36c752e4a14b6b733c651f355f4423"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abc1f7db2601deacfeea48a90843c8b47"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcutex_1_1_qx_main_window.html#abc1f7db2601deacfeea48a90843c8b47">saveSettings</a> (QSettings *settings)</td></tr>
-<tr class="separator:abc1f7db2601deacfeea48a90843c8b47"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad52e2a33e2960e33836416fd5aa10fa1"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcutex_1_1_qx_main_window.html#ad52e2a33e2960e33836416fd5aa10fa1">restoreSettings</a> (QSettings *settings, int version=0)</td></tr>
+<tr class="separator:ad52e2a33e2960e33836416fd5aa10fa1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad3e031ad6c8d5229f5ff7341f806c54e"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcutex_1_1_qx_main_window.html#ad3e031ad6c8d5229f5ff7341f806c54e">saveSettings</a> (QSettings *settings, int version=0)</td></tr>
+<tr class="separator:ad3e031ad6c8d5229f5ff7341f806c54e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1a87c878e5e54934ac7316947bea3ff5"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcutex_1_1_qx_main_window.html#a1a87c878e5e54934ac7316947bea3ff5">setCurrentFile</a> (QString fileName)</td></tr>
 <tr class="separator:a1a87c878e5e54934ac7316947bea3ff5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -186,6 +186,9 @@ Private Attribute</h2></td></tr>
 <tr class="memitem:a3df03adcd369e03048117588f0eb3522"><td class="memItemLeft" align="right" valign="top"><a id="a3df03adcd369e03048117588f0eb3522"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>m_initialized</b></td></tr>
 <tr class="separator:a3df03adcd369e03048117588f0eb3522"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a339784145be8c4c736e821d1df099bc3"><td class="memItemLeft" align="right" valign="top"><a id="a339784145be8c4c736e821d1df099bc3"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>m_modified</b></td></tr>
+<tr class="separator:a339784145be8c4c736e821d1df099bc3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a714fb739bf871db9c0709d44adec2725"><td class="memItemLeft" align="right" valign="top"><a id="a714fb739bf871db9c0709d44adec2725"></a>
 QString&#160;</td><td class="memItemRight" valign="bottom"><b>m_currentFile</b></td></tr>
 <tr class="separator:a714fb739bf871db9c0709d44adec2725"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -449,8 +452,8 @@ QMenu *&#160;</td><td class="memItemRight" valign="bottom"><b>m_windowMenu</b></
 
 </div>
 </div>
-<a id="a7d36c752e4a14b6b733c651f355f4423"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7d36c752e4a14b6b733c651f355f4423">&#9670;&nbsp;</a></span>restoreSettings()</h2>
+<a id="ad52e2a33e2960e33836416fd5aa10fa1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad52e2a33e2960e33836416fd5aa10fa1">&#9670;&nbsp;</a></span>restoreSettings()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -462,8 +465,18 @@ QMenu *&#160;</td><td class="memItemRight" valign="bottom"><b>m_windowMenu</b></
           <td class="memname">void QxMainWindow::restoreSettings </td>
           <td>(</td>
           <td class="paramtype">QSettings *&#160;</td>
-          <td class="paramname"><em>settings</em></td><td>)</td>
+          <td class="paramname"><em>settings</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>version</em> = <code>0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -473,7 +486,7 @@ QMenu *&#160;</td><td class="memItemRight" valign="bottom"><b>m_windowMenu</b></
 </table>
 </div><div class="memdoc">
 <p>Stellt die gespeicherten Einstellungen des Hauptfensters wieder her.</p>
-<dl class="section see"><dt>Siehe auch</dt><dd><a class="el" href="classcutex_1_1_qx_main_window.html#abc1f7db2601deacfeea48a90843c8b47">saveSettings(QSettings *settings)</a> </dd></dl>
+<dl class="section see"><dt>Siehe auch</dt><dd>saveSettings(QSettings *settings) </dd></dl>
 
 </div>
 </div>
@@ -503,8 +516,8 @@ QMenu *&#160;</td><td class="memItemRight" valign="bottom"><b>m_windowMenu</b></
 
 </div>
 </div>
-<a id="abc1f7db2601deacfeea48a90843c8b47"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abc1f7db2601deacfeea48a90843c8b47">&#9670;&nbsp;</a></span>saveSettings()</h2>
+<a id="ad3e031ad6c8d5229f5ff7341f806c54e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad3e031ad6c8d5229f5ff7341f806c54e">&#9670;&nbsp;</a></span>saveSettings()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -516,8 +529,18 @@ QMenu *&#160;</td><td class="memItemRight" valign="bottom"><b>m_windowMenu</b></
           <td class="memname">void QxMainWindow::saveSettings </td>
           <td>(</td>
           <td class="paramtype">QSettings *&#160;</td>
-          <td class="paramname"><em>settings</em></td><td>)</td>
+          <td class="paramname"><em>settings</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>version</em> = <code>0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -527,7 +550,7 @@ QMenu *&#160;</td><td class="memItemRight" valign="bottom"><b>m_windowMenu</b></
 </table>
 </div><div class="memdoc">
 <p>Speichert die Einstellungen des Hauptfensters.</p>
-<dl class="section see"><dt>Siehe auch</dt><dd><a class="el" href="classcutex_1_1_qx_main_window.html#a7d36c752e4a14b6b733c651f355f4423">restoreSettings(QSettings *settings)</a> </dd></dl>
+<dl class="section see"><dt>Siehe auch</dt><dd>restoreSettings(QSettings *settings) </dd></dl>
 
 </div>
 </div>
