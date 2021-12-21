@@ -33,7 +33,6 @@ QxMainWindow::QxMainWindow(QWidget *parent) : QMainWindow(parent)
     qxMainWin = this;
 
     m_initialized = false;
-    m_modified = false;
     m_recentFiles = 0;
     m_mapper = new QSignalMapper(this);
     m_mdiArea = 0;
@@ -161,7 +160,7 @@ void QxMainWindow::updateStatusBar()
 */
 void QxMainWindow::setModified(bool modified)
 {
-    m_modified = modified;
+    m_modified.setValue(modified);
 
     setWindowModified(modified);
     relockActions();
@@ -276,8 +275,8 @@ void QxMainWindow::changeEvent(QEvent *event)
         updateWindowMenu();
         break;
     case QEvent::ModifiedChange:
-        if (isWindowModified() != m_modified)
-            setWindowModified(m_modified);
+        if (m_modified.hasValue() && isWindowModified() != m_modified.value())
+            setWindowModified(m_modified.value());
         break;
     default:
         break;
@@ -347,7 +346,12 @@ void QxMainWindow::setCurrentFile(QString fileName)
     static QString originTitle = windowTitle();
 
     m_currentFile = fileName;
-    setModified(false);
+
+    if (m_modified.hasValue()) {
+        setModified(false);
+    } else {
+        setWindowModified(false);
+    }
 
     if (!m_mdiArea) {
         QString title;
