@@ -48,8 +48,8 @@ var NAVTREEINDEX =
 "annotated.html",
 "classcutex_1_1_qx_form.html#adc943c83eafadeec5380aed6aa7167a8",
 "classcutex_1_1_qx_sql_database.html#a8432ec585eaaf06dd76d59db30f893a4",
-"classcutex_1_1_qx_text_edit.html#abfdae775e1de35416e0488349e8d0e5da2e9259f361a853e177f3bd86be8284b1",
-"functions_u.html"
+"classcutex_1_1_qx_text_edit.html#a995d5d66b1c737adbe8ec746f7727d62",
+"functions_m.html"
 ];
 
 var SYNCONMSG = 'Klicken um Panelsynchronisation auszuschalten';

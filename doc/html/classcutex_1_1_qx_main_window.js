@@ -30,7 +30,7 @@ var classcutex_1_1_qx_main_window =
     [ "m_initialized", "classcutex_1_1_qx_main_window.html#a3df03adcd369e03048117588f0eb3522", null ],
     [ "m_mapper", "classcutex_1_1_qx_main_window.html#a4cf4c5cb98c6e8e2f7d6bb84623b668e", null ],
     [ "m_mdiArea", "classcutex_1_1_qx_main_window.html#acfc4426010c6c505299d92c3e42576db", null ],
-    [ "m_modified", "classcutex_1_1_qx_main_window.html#a339784145be8c4c736e821d1df099bc3", null ],
+    [ "m_modified", "classcutex_1_1_qx_main_window.html#af02d9502e28fe891e5561dda3e7b1a9c", null ],
     [ "m_recentFiles", "classcutex_1_1_qx_main_window.html#a488bb753ea8a25303f5000c3d61e9ef2", null ],
     [ "m_windowMenu", "classcutex_1_1_qx_main_window.html#a2bbc8246e9171fcb4d802c9fecedf7fb", null ]
 ];

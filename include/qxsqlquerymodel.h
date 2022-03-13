@@ -60,6 +60,13 @@ public:
     bool removeRecords(QVector<int> rows);
     QVariant value(int row, int column) const;
     QVariant value(int row, const QString &column) const;
+    QVariant value(const QModelIndex &index) const;
+    QVariant relationValue(int row, int column) const;
+    QVariant relationValue(int row, const QString &column) const;
+    QVariant relationValue(const QModelIndex &index) const;
+    void setRelationValue(int row, int column, const QVariant &value);
+    void setRelationValue(int row, const QString &column, const QVariant &value);
+    void setRelationValue(const QModelIndex &index, const QVariant &value);
     template<typename T> QList<T> columnValues(int column = 0) const
     {
         QList<T> list;
