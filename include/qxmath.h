@@ -34,8 +34,8 @@ class QxMath
 {
 public:
     static double round(double value, int decimals);
-    static double gross(double net, int vat);
-    static double net(double gross, int vat);
+    static double gross(double net, double vat);
+    static double net(double gross, double vat);
 };
 
 } // namespace
