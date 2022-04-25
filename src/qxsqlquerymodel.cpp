@@ -81,6 +81,7 @@ bool QxSqlQueryModel::setHeaderData(int section, Qt::Orientation orientation, co
     if (role == Qt::EditRole && orientation == Qt::Horizontal) {
         if (section >= 0 && section < columnCount()) {
             m_columns.at(section)->caption = value.toString();
+            emit headerDataChanged(orientation, section, section);
             return true;
         }
     }
@@ -88,6 +89,7 @@ bool QxSqlQueryModel::setHeaderData(int section, Qt::Orientation orientation, co
     if (role == Qt::TextAlignmentRole && orientation == Qt::Horizontal) {
         if (section >= 0 && section < columnCount()) {
             m_columns.at(section)->alignment = static_cast<Qt::Alignment>(value.toInt());
+            emit headerDataChanged(orientation, section, section);
             return true;
         }
     }
