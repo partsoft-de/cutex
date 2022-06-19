@@ -48,6 +48,10 @@ private:
     static const QString STYLE_VALID;
     static const QString STYLE_INVALID;
 
+public:
+    static QString sqlMapping(QWidget *uiField);
+    static void setSqlMapping(QWidget *uiField, const QString &sqlField);
+
 private:
     QxUiField();
     static bool isUiField(QWidget *widget);
@@ -62,8 +66,6 @@ private:
     static void setErrorText(QWidget *uiField, const QString &errorText);
     static QString errorText(QWidget *uiField);
     static QCompleter* completer(QWidget *uiField);
-    static QString sqlMapping(QWidget *uiField);
-    static void setSqlMapping(QWidget *uiField, const QString &sqlField);
     static QString className(QWidget *uiField);
 };
 

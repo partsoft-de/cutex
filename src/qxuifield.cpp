@@ -27,6 +27,16 @@ using namespace cutex;
 const QString QxUiField::STYLE_VALID = "background-color: none; selection-background-color: none;";
 const QString QxUiField::STYLE_INVALID = "background-color: orange; selection-background-color: orange;";
 
+QString QxUiField::sqlMapping(QWidget *uiField)
+{
+    return uiField->property("sqlMapping").toString();
+}
+
+void QxUiField::setSqlMapping(QWidget *uiField, const QString &sqlField)
+{
+    uiField->setProperty("sqlMapping", sqlField);
+}
+
 bool QxUiField::isUiField(QWidget *widget)
 {
     QString className = QxUiField::className(widget);
@@ -533,16 +543,6 @@ QCompleter* QxUiField::completer(QWidget *uiField)
         return qobject_cast<QComboBox*>(uiField)->completer();
 
     return 0;
-}
-
-QString QxUiField::sqlMapping(QWidget *uiField)
-{
-    return uiField->property("sqlMapping").toString();
-}
-
-void QxUiField::setSqlMapping(QWidget *uiField, const QString &sqlField)
-{
-    uiField->setProperty("sqlMapping", sqlField);
 }
 
 QString QxUiField::className(QWidget *uiField)

@@ -42,6 +42,14 @@ QxDateValidator::QxDateValidator(const QString &format, QObject *parent) : QVali
 }
 
 /*!
+  Gibt das Datumsformat zurück.
+*/
+QString QxDateValidator::format() const
+{
+    return m_format;
+}
+
+/*!
   Nimmt automatische Korrekturen der Eingabe <i>input</i> vor.
 */
 void QxDateValidator::fixup(QString &input) const
