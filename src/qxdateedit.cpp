@@ -24,142 +24,12 @@ using namespace cutex;
 /*!
   Erzeugt ein neues Widget mit dem Elternobjekt <i>parent</i>.
 */
-QxDateEdit::QxDateEdit(QWidget *parent) : QWidget(parent)
+QxDateEdit::QxDateEdit(QWidget *parent) : QDateEdit(parent)
 {
-    m_dateField = new QDateEdit(this);
-    m_dateEnableBox = new QCheckBox(this);
+    m_emptyDateEnabled = false;
+    m_valid = true;
 
-    setLayout(new QHBoxLayout(this));
-    layout()->setContentsMargins(0, 0, 0, 0);
-    layout()->setSpacing(2);
-    setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Fixed);
-
-    layout()->addWidget(m_dateEnableBox);
-    layout()->addWidget(m_dateField);
-
-    m_dateField->setMinimumHeight(m_dateField->sizeHint().height());
-    m_dateField->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
-
-    setFocusProxy(m_dateField);
-    setFocusPolicy(Qt::StrongFocus);
-
-    setEmptyDateEnabled(false);
-    setDateEnabled(true);
-    setReadOnly(false);
-
-    connect(m_dateField, SIGNAL(dateChanged(QDate)), this, SIGNAL(dateChanged(QDate)));
-    connect(m_dateField, SIGNAL(editingFinished()), this, SIGNAL(editingFinished()));
-    connect(m_dateEnableBox, SIGNAL(clicked(bool)), this, SLOT(setDateEnabled(bool)));
-}
-
-/*!
-  Gibt das aktuelle Datum zurück.
-
-  \sa setDate(const QDate &date)
-*/
-QDate QxDateEdit::date() const
-{
-    QDate date;
-
-    if (!m_emptyDate || !m_emptyDateEnabled)
-        date = m_dateField->date();
-
-    return date;
-}
-
-/*!
-  Ändert das aktuelle Datum auf den Wert <i>date</i>.
-
-  \sa date() const
-*/
-void QxDateEdit::setDate(const QDate &date)
-{
-    if (date.isValid() && date.toJulianDay() > 0) {
-        m_dateField->setDate(date);
-        setDateEnabled(true);
-    } else if (m_emptyDateEnabled){
-        setDateEnabled(false);
-    }
-}
-
-/*!
-  Gibt das größtmögliche Datum zurück.
-
-  \sa setMaximumDate(const QDate &date)
-*/
-QDate QxDateEdit::maximumDate() const
-{
-    return m_dateField->maximumDate();
-}
-
-/*!
-  Setzt das größtmögliche Datum auf den Wert <i>date</i>.
-
-  \sa maximumDate() const
-*/
-void QxDateEdit::setMaximumDate(const QDate &date)
-{
-    m_dateField->setMaximumDate(date);
-}
-
-/*!
-  Gibt das kleinstmögliche Datum zurück.
-
-  \sa setMinimumDate(const QDate &date)
-*/
-QDate QxDateEdit::minimumDate() const
-{
-    return m_dateField->minimumDate();
-}
-
-/*!
-  Setzt das kleinstmögliche Datum auf den Wert <i>date</i>.
-
-  \sa minimumDate() const
-*/
-void QxDateEdit::setMinimumDate(const QDate &date)
-{
-    m_dateField->setMinimumDate(date);
-}
-
-/*!
-  Gibt das Datumsformat zurück.
-
-  \sa setDisplayFormat(const QString &format)
-*/
-QString QxDateEdit::displayFormat() const
-{
-    return m_dateField->displayFormat();
-}
-
-/*!
-  Setzt das Datumsformat auf den Wert <i>format</i>.
-
-  \sa displayFormat() const
-*/
-void QxDateEdit::setDisplayFormat(const QString &format)
-{
-    m_dateField->setDisplayFormat(format);
-}
-
-/*!
-  Gibt true zurück, wenn das Popup für die Datumsauswahl aktiviert ist.
-
-  \sa setCalendarPopup(bool enable)
-*/
-bool QxDateEdit::calendarPopup() const
-{
-    return m_dateField->calendarPopup();
-}
-
-/*!
-  Aktiviert, bzw. deaktiviert das Popup für die Datumsauswahl.
-
-  \sa calendarPopup() const
-*/
-void QxDateEdit::setCalendarPopup(bool enable)
-{
-    m_dateField->setCalendarPopup(enable);
+    connect(qApp, SIGNAL(focusChanged(QWidget*,QWidget*)), this, SLOT(focusChanged(QWidget*,QWidget*)));
 }
 
 /*!
@@ -180,56 +50,78 @@ bool QxDateEdit::isEmptyDateEnabled() const
 void QxDateEdit::setEmptyDateEnabled(bool enabled)
 {
     m_emptyDateEnabled = enabled;
-    m_dateEnableBox->setVisible(enabled);
-    if (!m_emptyDateEnabled && m_emptyDate)
-        setDateEnabled(true);
 }
 
 /*!
-  Gibt true zurück, wenn das Feld schreibgeschützt ist.
+  Gibt das aktuelle Datum zurück.
 
-  \sa setReadOnly(bool readOnly)
+  \sa setDate(const QDate &date)
 */
-bool QxDateEdit::isReadOnly() const
+QDate QxDateEdit::date() const
 {
-    return m_readOnly;
+    QDate date;
+
+    if (m_valid)
+        date = QDateEdit::date();
+
+    return date;
 }
 
 /*!
-  Aktiviert, bzw. deaktiviert den Schreibschutz für das Feld.
+  Ändert das aktuelle Datum auf den Wert <i>date</i>.
 
-  \sa isReadOnly() const
+  \sa date() const
 */
-void QxDateEdit::setReadOnly(bool readOnly)
+void QxDateEdit::setDate(const QDate &date)
 {
-    m_readOnly = readOnly;
-    m_dateField->setReadOnly(readOnly);
-    m_dateEnableBox->setDisabled(readOnly);
+    bool valid = m_valid;
+
+    if (date.isValid() && date.toJulianDay() > 0) {
+        QDateEdit::setDate(date);
+        m_valid = true;
+
+        if (!valid) {
+            lineEdit()->setSelection(0, 0);
+            emit dateChanged(date);
+        }
+    } else if (m_emptyDateEnabled) {
+        lineEdit()->setText(QString());
+        m_valid = false;
+        emit dateChanged(QDate());
+    }
 }
 
 /*!
-  Markiert alle Benutzereingaben.
+  Wird aufgerufen wenn eine Taste gedrückt wurde.
 */
-void QxDateEdit::selectAll()
+void QxDateEdit::keyPressEvent(QKeyEvent *event)
 {
-    m_dateField->selectAll();
+    if (m_emptyDateEnabled) {
+        int key = event->key();
+
+        if (!m_valid) {
+            if (key >= Qt::Key_0 && key <= Qt::Key_9) {
+                setDate(QDateEdit::date());
+            } else if (key == Qt::Key_Tab || key == Qt::Key_Backtab) {
+                QAbstractSpinBox::keyPressEvent(event);
+                return;
+            }
+        }
+
+        if (key == Qt::Key_Backspace) {
+            setDate(QDate());
+            return;
+        }
+    }
+
+    QDateEdit::keyPressEvent(event);
 }
 
-void QxDateEdit::setDateEnabled(bool enabled)
+void QxDateEdit::focusChanged(QWidget *old, QWidget *now)
 {
-    m_emptyDate = !enabled;
-    m_dateField->setEnabled(enabled);
-    m_dateEnableBox->setChecked(enabled);
+    Q_UNUSED(old);
+    Q_UNUSED(now);
+
+    if (!m_valid)
+        lineEdit()->setText(QString());
 }
-
-/*!
-  \fn QxDateEdit::dateChanged(const QDate &date)
-
-  Das Signal wird ausgelöst wenn das Datum auf den Wert <i>date</i> geändert wurde.
-*/
-
-/*!
-  \fn QxDateEdit::editingFinished()
-
-  Das Signal wird ausgelöst wenn der Benutzer das Bearbeiten des Datums beendet hat.
-*/

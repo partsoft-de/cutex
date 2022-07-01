@@ -9,6 +9,9 @@ var hierarchy =
     [ "QApplication", null, [
       [ "cutex::QxApplication", "classcutex_1_1_qx_application.html", null ]
     ] ],
+    [ "QDateEdit", null, [
+      [ "cutex::QxDateEdit", "classcutex_1_1_qx_date_edit.html", null ]
+    ] ],
     [ "QDialog", null, [
       [ "cutex::QxDialog", "classcutex_1_1_qx_dialog.html", [
         [ "cutex::QxCalculatorDialog", "classcutex_1_1_qx_calculator_dialog.html", null ],
@@ -65,7 +68,6 @@ var hierarchy =
       [ "cutex::QxTimeValidator", "classcutex_1_1_qx_time_validator.html", null ]
     ] ],
     [ "QWidget", null, [
-      [ "cutex::QxDateEdit", "classcutex_1_1_qx_date_edit.html", null ],
       [ "cutex::QxForm", "classcutex_1_1_qx_form.html", [
         [ "cutex::QxDashboard", "classcutex_1_1_qx_dashboard.html", null ]
       ] ],
@@ -84,6 +86,7 @@ var hierarchy =
     [ "cutex::QxMath", "classcutex_1_1_qx_math.html", null ],
     [ "cutex::QxMessage", "classcutex_1_1_qx_message.html", null ],
     [ "cutex::QxOptional< T >", "classcutex_1_1_qx_optional.html", null ],
+    [ "cutex::QxOptional< bool >", "classcutex_1_1_qx_optional.html", null ],
     [ "cutex::QxRandom", "classcutex_1_1_qx_random.html", null ],
     [ "cutex::QxSingleton< T >", "classcutex_1_1_qx_singleton.html", null ],
     [ "cutex::QxTreeItem", "classcutex_1_1_qx_tree_item.html", null ],

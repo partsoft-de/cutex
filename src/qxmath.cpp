@@ -42,7 +42,7 @@ double QxMath::round(double value, int decimals)
 /*!
   Berechnet den Bruttobetrag aus dem Nettowert <i>net</i> für den Steuersatz <i>vat</i>.
 */
-double QxMath::gross(double net, int vat)
+double QxMath::gross(double net, double vat)
 {
     return net + ((net * vat) / 100.0);
 }
@@ -50,7 +50,7 @@ double QxMath::gross(double net, int vat)
 /*!
   Berechnet den Nettobetrag aus dem Bruttowert <i>gross</i> für den Steuersatz <i>vat</i>.
 */
-double QxMath::net(double gross, int vat)
+double QxMath::net(double gross, double vat)
 {
     return gross - ((gross / (100.0 + vat)) * vat);
 }

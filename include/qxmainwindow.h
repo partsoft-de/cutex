@@ -23,6 +23,7 @@
 #include "cutex.h"
 #include "qxform.h"
 #include "qxrecentfiles.h"
+#include "qxoptional.h"
 
 namespace cutex {
 
@@ -73,7 +74,7 @@ protected:
 
 private:
     bool m_initialized;
-    bool m_modified;
+    QxOptional<bool> m_modified;
     QString m_currentFile;
     QxRecentFiles *m_recentFiles;
     QSignalMapper *m_mapper;

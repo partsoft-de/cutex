@@ -34,6 +34,8 @@ class QxSqlRecord : public QSqlRecord
 public:
     QxSqlRecord();
     QxSqlRecord(const QSqlRecord &record);
+    bool hasRelationValue(int index) const;
+    bool hasRelationValue(const QString &name) const;
     QVariant relationValue(int index) const;
     QVariant relationValue(const QString &name) const;
     void setRelationValue(int index, const QVariant &value);

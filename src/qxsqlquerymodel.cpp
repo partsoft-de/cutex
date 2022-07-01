@@ -81,6 +81,7 @@ bool QxSqlQueryModel::setHeaderData(int section, Qt::Orientation orientation, co
     if (role == Qt::EditRole && orientation == Qt::Horizontal) {
         if (section >= 0 && section < columnCount()) {
             m_columns.at(section)->caption = value.toString();
+            emit headerDataChanged(orientation, section, section);
             return true;
         }
     }
@@ -88,6 +89,7 @@ bool QxSqlQueryModel::setHeaderData(int section, Qt::Orientation orientation, co
     if (role == Qt::TextAlignmentRole && orientation == Qt::Horizontal) {
         if (section >= 0 && section < columnCount()) {
             m_columns.at(section)->alignment = static_cast<Qt::Alignment>(value.toInt());
+            emit headerDataChanged(orientation, section, section);
             return true;
         }
     }
@@ -108,7 +110,7 @@ QVariant QxSqlQueryModel::data(const QModelIndex &item, int role) const
         QxSqlRecord *record = m_data.at(item.row());
         QVariant value;
 
-        if (m_sqlRelations.contains(item.column())) {
+        if (record->hasRelationValue(item.column())) {
             value = record->relationValue(item.column());
         } else {
             value = record->value(item.column());
@@ -420,6 +422,7 @@ bool QxSqlQueryModel::removeRecords(QVector<int> rows)
   Gibt den Wert in Zeile <i>row</i> und Spalte <i>column</i> zurück.
 
   \sa value(int row, const QString &column) const
+  \sa value(const QModelIndex &index) const
 */
 QVariant QxSqlQueryModel::value(int row, int column) const
 {
@@ -435,10 +438,96 @@ QVariant QxSqlQueryModel::value(int row, int column) const
   Gibt den Wert in Zeile <i>row</i> und Spalte <i>column</i> zurück.
 
   \sa value(int row, int column) const
+  \sa value(const QModelIndex &index) const
 */
 QVariant QxSqlQueryModel::value(int row, const QString &column) const
 {
     return value(row, record().indexOf(column));
+}
+
+/*!
+  Gibt den Wert für die Zelle <i>index</i> zurück.
+
+  \sa value(int row, int column) const
+  \sa value(int row, const QString &column) const
+*/
+QVariant QxSqlQueryModel::value(const QModelIndex &index) const
+{
+    return value(index.row(), index.column());
+}
+
+/*!
+  Gibt den Relationswert in Zeile <i>row</i> und Spalte <i>column</i> zurück.
+
+  \sa relationValue(int row, const QString &column) const
+  \sa relationValue(const QModelIndex &index) const
+*/
+QVariant QxSqlQueryModel::relationValue(int row, int column) const
+{
+    QVariant value;
+
+    if (row >= 0 && row < rowCount() && column >= 0 && column < columnCount())
+        value = m_data.at(row)->relationValue(column);
+
+    return value;
+}
+
+/*!
+  Gibt den Relationswert in Zeile <i>row</i> und Spalte <i>column</i> zurück.
+
+  \sa relationValue(int row, int column) const
+  \sa relationValue(const QModelIndex &index) const
+*/
+QVariant QxSqlQueryModel::relationValue(int row, const QString &column) const
+{
+    return relationValue(row, record().indexOf(column));
+}
+
+/*!
+  Gibt den Relationswert für die Zelle <i>index</i> zurück.
+
+  \sa relationValue(int row, int column) const
+  \sa relationValue(int row, const QString &column) const
+*/
+QVariant QxSqlQueryModel::relationValue(const QModelIndex &index) const
+{
+    return relationValue(index.row(), index.column());
+}
+
+/*!
+  Setzt den Relationswert für Zeile <i>row</i> und Spalte <i>column</i> auf den Wert <i>value</i>.
+
+  \sa relationValue(int row, const QString &column) const
+  \sa relationValue(const QModelIndex &index) const
+*/
+void QxSqlQueryModel::setRelationValue(int row, int column, const QVariant &value)
+{
+    if (row >= 0 && row < rowCount() && column >= 0 && column < columnCount()) {
+        m_data.at(row)->setRelationValue(column, value);
+        emit dataChanged(createIndex(row, column), createIndex(row, column));
+    }
+}
+
+/*!
+  Setzt den Relationswert für Zeile <i>row</i> und Spalte <i>column</i> auf den Wert <i>value</i>.
+
+  \sa setRelationValue(int row, const QString &column, const QVariant &value)
+  \sa setRelationValue(const QModelIndex &index, const QVariant &value)
+*/
+void QxSqlQueryModel::setRelationValue(int row, const QString &column, const QVariant &value)
+{
+    setRelationValue(row, record().indexOf(column), value);
+}
+
+/*!
+  Setzt den Relationswert für die Zelle <i>index</i> auf den Wert <i>value</i>.
+
+  \sa setRelationValue(int row, int column, const QVariant &value)
+  \sa setRelationValue(int row, const QString &column, const QVariant &value)
+*/
+void QxSqlQueryModel::setRelationValue(const QModelIndex &index, const QVariant &value)
+{
+    setRelationValue(index.row(), index.column(), value);
 }
 
 /*!

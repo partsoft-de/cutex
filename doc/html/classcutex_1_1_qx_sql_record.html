@@ -109,6 +109,10 @@ Klassendiagramm für cutex::QxSqlRecord:</div>
 <tr class="separator:aef2e597b523ae9659f1bd1ad0e9fe8cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afa019eff884f076360023980e4cd53c6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcutex_1_1_qx_sql_record.html#afa019eff884f076360023980e4cd53c6">QxSqlRecord</a> (const QSqlRecord &amp;record)</td></tr>
 <tr class="separator:afa019eff884f076360023980e4cd53c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8e4cd6badcd1de3032c6a8b82d242b30"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcutex_1_1_qx_sql_record.html#a8e4cd6badcd1de3032c6a8b82d242b30">hasRelationValue</a> (int index) const</td></tr>
+<tr class="separator:a8e4cd6badcd1de3032c6a8b82d242b30"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa1d93235677c0f56b14eec2973f198ee"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcutex_1_1_qx_sql_record.html#aa1d93235677c0f56b14eec2973f198ee">hasRelationValue</a> (const QString &amp;name) const</td></tr>
+<tr class="separator:aa1d93235677c0f56b14eec2973f198ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a507518f6fcb714c774213f60c3e15dec"><td class="memItemLeft" align="right" valign="top">QVariant&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcutex_1_1_qx_sql_record.html#a507518f6fcb714c774213f60c3e15dec">relationValue</a> (int index) const</td></tr>
 <tr class="separator:a507518f6fcb714c774213f60c3e15dec"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a130a818094d5f6fc159ee7e095777a44"><td class="memItemLeft" align="right" valign="top">QVariant&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcutex_1_1_qx_sql_record.html#a130a818094d5f6fc159ee7e095777a44">relationValue</a> (const QString &amp;name) const</td></tr>
@@ -166,6 +170,46 @@ QMap&lt; int, QVariant &gt;&#160;</td><td class="memItemRight" valign="bottom"><
 </div>
 </div>
 <h2 class="groupheader">Dokumentation der Elementfunktionen</h2>
+<a id="aa1d93235677c0f56b14eec2973f198ee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa1d93235677c0f56b14eec2973f198ee">&#9670;&nbsp;</a></span>hasRelationValue() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool QxSqlRecord::hasRelationValue </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>name</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Prüft ob für das Datenbankfeld mit dem Namen <em>name</em> ein Relationswert existiert.</p>
+<dl class="section see"><dt>Siehe auch</dt><dd><a class="el" href="classcutex_1_1_qx_sql_record.html#aa1d93235677c0f56b14eec2973f198ee">hasRelationValue(const QString &amp;name) const</a> </dd></dl>
+
+</div>
+</div>
+<a id="a8e4cd6badcd1de3032c6a8b82d242b30"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8e4cd6badcd1de3032c6a8b82d242b30">&#9670;&nbsp;</a></span>hasRelationValue() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool QxSqlRecord::hasRelationValue </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>index</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Prüft ob für das Datenbankfeld mit dem Index <em>index</em> ein Relationswert existiert.</p>
+<dl class="section see"><dt>Siehe auch</dt><dd><a class="el" href="classcutex_1_1_qx_sql_record.html#aa1d93235677c0f56b14eec2973f198ee">hasRelationValue(const QString &amp;name) const</a> </dd></dl>
+
+</div>
+</div>
 <a id="a130a818094d5f6fc159ee7e095777a44"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a130a818094d5f6fc159ee7e095777a44">&#9670;&nbsp;</a></span>relationValue() <span class="overload">[1/2]</span></h2>
 

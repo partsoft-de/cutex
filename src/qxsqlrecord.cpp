@@ -36,6 +36,26 @@ QxSqlRecord::QxSqlRecord(const QSqlRecord &record) : QSqlRecord(record)
 }
 
 /*!
+  Prüft ob für das Datenbankfeld mit dem Index <i>index</i> ein Relationswert existiert.
+
+  \sa hasRelationValue(const QString &name) const
+*/
+bool QxSqlRecord::hasRelationValue(int index) const
+{
+    return m_relationValues.contains(index);
+}
+
+/*!
+  Prüft ob für das Datenbankfeld mit dem Namen <i>name</i> ein Relationswert existiert.
+
+  \sa hasRelationValue(const QString &name) const
+*/
+bool QxSqlRecord::hasRelationValue(const QString &name) const
+{
+    return m_relationValues.contains(indexOf(name));
+}
+
+/*!
   Gibt den Relationswert des Datenbankfeldes mit dem Index <i>index</i> zurück.
 
   \sa setRelationValue(int index, const QVariant &value)

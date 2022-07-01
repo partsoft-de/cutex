@@ -40,6 +40,7 @@ class QxDateValidator : public QValidator
 public:
     QxDateValidator(QObject *parent = nullptr);
     QxDateValidator(const QString &format, QObject *parent = nullptr);
+    QString format() const;
     virtual void fixup(QString &input) const;
     virtual QValidator::State validate(QString &input, int &pos) const;
 
