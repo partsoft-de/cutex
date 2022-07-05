@@ -186,6 +186,30 @@ QWidget* QxStyledItemDelegate::createPlainTextEditEditor(QWidget *parent, const 
 }
 
 /*!
+  Erzeugt einen Editor für ein QxDateEdit mit dem Namen <i>name</i>.
+*/
+QWidget* QxStyledItemDelegate::createDateEditEditor(QWidget *parent, const QString &name) const
+{
+    QWidget *editor = new QWidget(parent);
+    QHBoxLayout *layout = new QHBoxLayout(editor);
+    QxDateEdit *uiField = new QxDateEdit(editor);
+
+    layout->setContentsMargins(0, 0, 0, 0);
+    layout->setSpacing(0);
+    layout->addWidget(uiField);
+
+    editor->setObjectName(name);
+    editor->setFont(qxApp->font());
+    editor->setLayout(layout);
+    editor->setFocusProxy(uiField);
+
+    uiField->setFixedHeight(m_fieldHeight);
+    uiField->setButtonSymbols(QDoubleSpinBox::NoButtons);
+
+    return editor;
+}
+
+/*!
   Gibt einen Zeiger auf das QLineEdit des Editors <i>editor</i> zurück.
 */
 QLineEdit* QxStyledItemDelegate::lineEditField(QWidget *editor) const
@@ -215,6 +239,14 @@ QDoubleSpinBox* QxStyledItemDelegate::doubleSpinBoxField(QWidget *editor) const
 QPlainTextEdit* QxStyledItemDelegate::plainTextEditField(QWidget *editor) const
 {
     return editor->findChild<QPlainTextEdit*>();
+}
+
+/*!
+  Gibt einen Zeiger auf das QxDateEdit des Editors <i>editor</i> zurück.
+*/
+QxDateEdit* QxStyledItemDelegate::dateEditField(QWidget *editor) const
+{
+    return editor->findChild<QxDateEdit*>();
 }
 
 /*!

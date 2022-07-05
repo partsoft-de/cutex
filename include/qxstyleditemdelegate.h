@@ -21,6 +21,7 @@
 #define QXSTYLEDITEMDELEGATE_H
 
 #include "cutex.h"
+#include "qxdateedit.h"
 
 namespace cutex {
 
@@ -47,10 +48,12 @@ protected:
     QWidget* createSpinBoxEditor(QWidget *parent, const QString &name) const;
     QWidget* createDoubleSpinBoxEditor(QWidget *parent, const QString &name) const;
     QWidget* createPlainTextEditEditor(QWidget *parent, const QString &name) const;
+    QWidget* createDateEditEditor(QWidget *parent, const QString &name) const;
     QLineEdit* lineEditField(QWidget *editor) const;
     QSpinBox* spinBoxField(QWidget *editor) const;
     QDoubleSpinBox* doubleSpinBoxField(QWidget *editor) const;
     QPlainTextEdit* plainTextEditField(QWidget *editor) const;
+    QxDateEdit* dateEditField(QWidget *editor) const;
     QToolButton* fieldButton(QWidget *editor) const;
     void processUiField(QWidget *editor);
     virtual QString validateUiField(QWidget *editor) const;

@@ -102,6 +102,8 @@ void QxDateEdit::keyPressEvent(QKeyEvent *event)
         if (!m_valid) {
             if (key >= Qt::Key_0 && key <= Qt::Key_9) {
                 setDate(QDateEdit::date());
+                setCurrentSectionIndex(0);
+                setSelectedSection(currentSection());
             } else if (key == Qt::Key_Tab || key == Qt::Key_Backtab) {
                 QAbstractSpinBox::keyPressEvent(event);
                 return;
