@@ -358,8 +358,8 @@ void QxStyledItemDelegate::fieldButtonClicked(QWidget *editor)
 bool QxStyledItemDelegate::eventFilter(QObject *object, QEvent *event)
 {
     QWidget *widget = static_cast<QWidget*>(object);
-    QWidget *editor = 0;
-    QWidget *uiField = 0;
+    QWidget *editor = nullptr;
+    QWidget *uiField = nullptr;
 
     if (widget->focusProxy()) {
         editor = widget;
@@ -412,6 +412,12 @@ bool QxStyledItemDelegate::eventFilter(QObject *object, QEvent *event)
                 return true;
             }
         }
+    }
+
+    if (event->type() == QEvent::FocusOut) {
+        QFocusEvent *focusEvent = static_cast<QFocusEvent*>(event);
+        if (focusEvent->reason() == Qt::PopupFocusReason)
+            return true;
     }
 
     if (!m_fieldButtonClicked) {
