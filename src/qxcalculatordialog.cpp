@@ -85,7 +85,6 @@ void QxCalculatorDialog::setValue(double value)
     m_value = value;
 
     setUiFieldValue(m_ui->ValueField, QLocale::system().toString(value));
-    m_ui->ValueField->deselect();
 }
 
 void QxCalculatorDialog::buttonClicked(QAbstractButton *button)
