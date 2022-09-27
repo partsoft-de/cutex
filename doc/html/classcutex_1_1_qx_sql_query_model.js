@@ -9,7 +9,7 @@ var classcutex_1_1_qx_sql_query_model =
     [ "columnIndex", "classcutex_1_1_qx_sql_query_model.html#ae7f08bf3290aeac8608196a504f8c034", null ],
     [ "columnValues", "classcutex_1_1_qx_sql_query_model.html#ada435ca8c996bb220bfe8f28ed28ae13", null ],
     [ "createCompleter", "classcutex_1_1_qx_sql_query_model.html#aae6f2175ec3c67743ab67c474e75f723", null ],
-    [ "data", "classcutex_1_1_qx_sql_query_model.html#af3cd753984a6a3f67a11c4a6e54a789f", null ],
+    [ "data", "classcutex_1_1_qx_sql_query_model.html#ad270348f9e7bec1c49aeecc5d599f79a", null ],
     [ "find", "classcutex_1_1_qx_sql_query_model.html#a127e5869da54717a80beca325d8fa6d6", null ],
     [ "find", "classcutex_1_1_qx_sql_query_model.html#a593fed9ba078da4e899232d0fbd46e6c", null ],
     [ "headerData", "classcutex_1_1_qx_sql_query_model.html#a048e63b697b329d0f97324a307394260", null ],

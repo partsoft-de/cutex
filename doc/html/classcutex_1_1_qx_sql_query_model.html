@@ -118,8 +118,8 @@ Klassendiagramm für cutex::QxSqlQueryModel:</div>
 <tr class="separator:a048e63b697b329d0f97324a307394260"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a17e9495a29465a864673e32d94f1686b"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcutex_1_1_qx_sql_query_model.html#a17e9495a29465a864673e32d94f1686b">setHeaderData</a> (int section, Qt::Orientation orientation, const QVariant &amp;<a class="el" href="classcutex_1_1_qx_sql_query_model.html#a492716b738841f59c7366e23ab60f1c8">value</a>, int role=Qt::EditRole)</td></tr>
 <tr class="separator:a17e9495a29465a864673e32d94f1686b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af3cd753984a6a3f67a11c4a6e54a789f"><td class="memItemLeft" align="right" valign="top">virtual QVariant&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcutex_1_1_qx_sql_query_model.html#af3cd753984a6a3f67a11c4a6e54a789f">data</a> (const QModelIndex &amp;item, int role=Qt::DisplayRole) const</td></tr>
-<tr class="separator:af3cd753984a6a3f67a11c4a6e54a789f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad270348f9e7bec1c49aeecc5d599f79a"><td class="memItemLeft" align="right" valign="top">virtual QVariant&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcutex_1_1_qx_sql_query_model.html#ad270348f9e7bec1c49aeecc5d599f79a">data</a> (const QModelIndex &amp;index, int role=Qt::DisplayRole) const</td></tr>
+<tr class="separator:ad270348f9e7bec1c49aeecc5d599f79a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a513a36c37805ea7ba007290064297f2b"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcutex_1_1_qx_sql_query_model.html#a513a36c37805ea7ba007290064297f2b">setData</a> (const QModelIndex &amp;index, const QVariant &amp;<a class="el" href="classcutex_1_1_qx_sql_query_model.html#a492716b738841f59c7366e23ab60f1c8">value</a>, int role=Qt::EditRole)</td></tr>
 <tr class="separator:a513a36c37805ea7ba007290064297f2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a583e066b6541d5df063b3307338ec713"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcutex_1_1_qx_sql_query_model.html#a583e066b6541d5df063b3307338ec713">clear</a> ()</td></tr>
@@ -599,8 +599,8 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
-<a id="af3cd753984a6a3f67a11c4a6e54a789f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af3cd753984a6a3f67a11c4a6e54a789f">&#9670;&nbsp;</a></span>data()</h2>
+<a id="ad270348f9e7bec1c49aeecc5d599f79a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad270348f9e7bec1c49aeecc5d599f79a">&#9670;&nbsp;</a></span>data()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -612,7 +612,7 @@ template&lt;typename T &gt; </div>
           <td class="memname">QVariant QxSqlQueryModel::data </td>
           <td>(</td>
           <td class="paramtype">const QModelIndex &amp;&#160;</td>
-          <td class="paramname"><em>item</em>, </td>
+          <td class="paramname"><em>index</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -632,7 +632,7 @@ template&lt;typename T &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Gibt die Daten zur Zelle <em>item</em> und der Rolle <em>role</em> zurück. </p>
+<p>Gibt die Daten zur Zelle <em>index</em> und der Rolle <em>role</em> zurück. </p>
 
 </div>
 </div>

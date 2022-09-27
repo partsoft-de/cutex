@@ -44,7 +44,7 @@ public:
     virtual QVariant headerData(int section, Qt::Orientation orientation, int role = Qt::DisplayRole) const;
     virtual bool setHeaderData(int section, Qt::Orientation orientation, const QVariant &value,
         int role = Qt::EditRole);
-    virtual QVariant data(const QModelIndex &item, int role = Qt::DisplayRole) const;
+    virtual QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const;
     virtual bool setData(const QModelIndex &index, const QVariant &value, int role = Qt::EditRole);
     void clear();
     QSqlError lastError() const;

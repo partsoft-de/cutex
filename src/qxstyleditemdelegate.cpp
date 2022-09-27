@@ -34,6 +34,18 @@ QxStyledItemDelegate::QxStyledItemDelegate(QObject *parent) : QStyledItemDelegat
 }
 
 /*!
+  Erzeugt einen Editor für ein QLineEdit.
+*/
+QWidget* QxStyledItemDelegate::createEditor(QWidget *parent, const QStyleOptionViewItem &option,
+    const QModelIndex &index) const
+{
+    Q_UNUSED(option);
+    Q_UNUSED(index);
+
+    return createLineEditEditor(parent, QString());
+}
+
+/*!
   Übernimmt die Daten des Models in den Editor <i>editor</i>.
 */
 void QxStyledItemDelegate::setEditorData(QWidget *editor, const QModelIndex &index) const
