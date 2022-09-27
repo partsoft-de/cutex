@@ -1,10 +1,13 @@
 var classcutex_1_1_qx_styled_item_delegate =
 [
     [ "QxStyledItemDelegate", "classcutex_1_1_qx_styled_item_delegate.html#aadfcc322e1b436d5200e62406750cde4", null ],
+    [ "createDateEditEditor", "classcutex_1_1_qx_styled_item_delegate.html#a8b965e7378b5e92f9b50095f1d741472", null ],
     [ "createDoubleSpinBoxEditor", "classcutex_1_1_qx_styled_item_delegate.html#ad628a1305a00635eca2dee0732419a91", null ],
+    [ "createEditor", "classcutex_1_1_qx_styled_item_delegate.html#a1a7d699196b6ac908ff6112fb83838d5", null ],
     [ "createLineEditEditor", "classcutex_1_1_qx_styled_item_delegate.html#a7e48596a640fc6643b4fbfc6839d5614", null ],
     [ "createPlainTextEditEditor", "classcutex_1_1_qx_styled_item_delegate.html#ab9f2caf7c3b8d4581c5dd9362bddd069", null ],
     [ "createSpinBoxEditor", "classcutex_1_1_qx_styled_item_delegate.html#a2e11d8cce34b62c1c5d7e8fbcf0e0cfb", null ],
+    [ "dateEditField", "classcutex_1_1_qx_styled_item_delegate.html#a28ccc9234604bc0d34703b6cc1030fe7", null ],
     [ "doubleSpinBoxField", "classcutex_1_1_qx_styled_item_delegate.html#a44f5c38f5312eefb46bcf15896d28f76", null ],
     [ "eventFilter", "classcutex_1_1_qx_styled_item_delegate.html#a1d291c3b45d06b2af0075f355db83221", null ],
     [ "fieldButton", "classcutex_1_1_qx_styled_item_delegate.html#a9715d6a9170d8a3f70d62d98d11b2e9f", null ],

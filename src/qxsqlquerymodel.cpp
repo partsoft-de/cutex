@@ -98,22 +98,22 @@ bool QxSqlQueryModel::setHeaderData(int section, Qt::Orientation orientation, co
 }
 
 /*!
-  Gibt die Daten zur Zelle <i>item</i> und der Rolle <i>role</i> zurück.
+  Gibt die Daten zur Zelle <i>index</i> und der Rolle <i>role</i> zurück.
 */
-QVariant QxSqlQueryModel::data(const QModelIndex &item, int role) const
+QVariant QxSqlQueryModel::data(const QModelIndex &index, int role) const
 {
-    if (!item.isValid())
+    if (!index.isValid())
         return QVariant();
 
     if (role == Qt::DisplayRole) {
-        ColumnInfo *column = m_columns.at(item.column());
-        QxSqlRecord *record = m_data.at(item.row());
+        ColumnInfo *column = m_columns.at(index.column());
+        QxSqlRecord *record = m_data.at(index.row());
         QVariant value;
 
-        if (record->hasRelationValue(item.column())) {
-            value = record->relationValue(item.column());
+        if (record->hasRelationValue(index.column())) {
+            value = record->relationValue(index.column());
         } else {
-            value = record->value(item.column());
+            value = record->value(index.column());
         }
 
         QVariant::Type type = value.type();
@@ -144,14 +144,14 @@ QVariant QxSqlQueryModel::data(const QModelIndex &item, int role) const
     }
 
     if (role == Qt::EditRole)
-        return m_data.at(item.row())->value(item.column());
+        return m_data.at(index.row())->value(index.column());
 
     if (role == Qt::TextAlignmentRole)
-        return (headerData(item.column(), Qt::Horizontal, Qt::TextAlignmentRole).toInt() | Qt::AlignVCenter);
+        return (headerData(index.column(), Qt::Horizontal, Qt::TextAlignmentRole).toInt() | Qt::AlignVCenter);
 
     if (role == Qt::CheckStateRole) {
-        ColumnInfo *column = m_columns.at(item.column());
-        QVariant value = m_data.at(item.row())->value(item.column());
+        ColumnInfo *column = m_columns.at(index.column());
+        QVariant value = m_data.at(index.row())->value(index.column());
 
         switch (column->type) {
         case QVariant::Bool:

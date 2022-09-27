@@ -34,6 +34,18 @@ QxStyledItemDelegate::QxStyledItemDelegate(QObject *parent) : QStyledItemDelegat
 }
 
 /*!
+  Erzeugt einen Editor für ein QLineEdit.
+*/
+QWidget* QxStyledItemDelegate::createEditor(QWidget *parent, const QStyleOptionViewItem &option,
+    const QModelIndex &index) const
+{
+    Q_UNUSED(option);
+    Q_UNUSED(index);
+
+    return createLineEditEditor(parent, QString());
+}
+
+/*!
   Übernimmt die Daten des Models in den Editor <i>editor</i>.
 */
 void QxStyledItemDelegate::setEditorData(QWidget *editor, const QModelIndex &index) const
@@ -186,6 +198,30 @@ QWidget* QxStyledItemDelegate::createPlainTextEditEditor(QWidget *parent, const 
 }
 
 /*!
+  Erzeugt einen Editor für ein QxDateEdit mit dem Namen <i>name</i>.
+*/
+QWidget* QxStyledItemDelegate::createDateEditEditor(QWidget *parent, const QString &name) const
+{
+    QWidget *editor = new QWidget(parent);
+    QHBoxLayout *layout = new QHBoxLayout(editor);
+    QxDateEdit *uiField = new QxDateEdit(editor);
+
+    layout->setContentsMargins(0, 0, 0, 0);
+    layout->setSpacing(0);
+    layout->addWidget(uiField);
+
+    editor->setObjectName(name);
+    editor->setFont(qxApp->font());
+    editor->setLayout(layout);
+    editor->setFocusProxy(uiField);
+
+    uiField->setFixedHeight(m_fieldHeight);
+    uiField->setButtonSymbols(QDoubleSpinBox::NoButtons);
+
+    return editor;
+}
+
+/*!
   Gibt einen Zeiger auf das QLineEdit des Editors <i>editor</i> zurück.
 */
 QLineEdit* QxStyledItemDelegate::lineEditField(QWidget *editor) const
@@ -215,6 +251,14 @@ QDoubleSpinBox* QxStyledItemDelegate::doubleSpinBoxField(QWidget *editor) const
 QPlainTextEdit* QxStyledItemDelegate::plainTextEditField(QWidget *editor) const
 {
     return editor->findChild<QPlainTextEdit*>();
+}
+
+/*!
+  Gibt einen Zeiger auf das QxDateEdit des Editors <i>editor</i> zurück.
+*/
+QxDateEdit* QxStyledItemDelegate::dateEditField(QWidget *editor) const
+{
+    return editor->findChild<QxDateEdit*>();
 }
 
 /*!
@@ -326,8 +370,8 @@ void QxStyledItemDelegate::fieldButtonClicked(QWidget *editor)
 bool QxStyledItemDelegate::eventFilter(QObject *object, QEvent *event)
 {
     QWidget *widget = static_cast<QWidget*>(object);
-    QWidget *editor = 0;
-    QWidget *uiField = 0;
+    QWidget *editor = nullptr;
+    QWidget *uiField = nullptr;
 
     if (widget->focusProxy()) {
         editor = widget;
@@ -380,6 +424,12 @@ bool QxStyledItemDelegate::eventFilter(QObject *object, QEvent *event)
                 return true;
             }
         }
+    }
+
+    if (event->type() == QEvent::FocusOut) {
+        QFocusEvent *focusEvent = static_cast<QFocusEvent*>(event);
+        if (focusEvent->reason() == Qt::PopupFocusReason)
+            return true;
     }
 
     if (!m_fieldButtonClicked) {
