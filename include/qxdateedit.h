@@ -1,6 +1,6 @@
 /***********************************************************************************************************************
 **
-** Copyright (C) 2016-2021 Partsoft UG (haftungsbeschränkt)
+** Copyright (C) 2016-2022 Partsoft UG (haftungsbeschränkt)
 ** Contact: https://www.partsoft.de/index.php/kontakt
 **
 ** This file is part of cutex
@@ -30,6 +30,7 @@ namespace cutex {
   Ein Widget der Klasse %QxDateEdit ermöglicht die Eingabe optionaler Datumswerte, z.B. für Geburtstage in einer
   Adressenverwaltung. Das Datum kann durch betätigen der Backspace-Taste gelöscht werden.
 
+  \sa QxTimeEdit
   \sa QxDateValidator
 */
 class QxDateEdit : public QDateEdit

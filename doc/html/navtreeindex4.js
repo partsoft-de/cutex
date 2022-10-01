@@ -1,5 +1,15 @@
 var NAVTREEINDEX4 =
 {
+"functions_n.html":[0,3,0,12],
+"functions_o.html":[0,3,0,13],
+"functions_p.html":[0,3,0,14],
+"functions_q.html":[0,3,0,15],
+"functions_r.html":[0,3,0,16],
+"functions_rela.html":[0,3,4],
+"functions_s.html":[0,3,0,17],
+"functions_t.html":[0,3,0,18],
+"functions_u.html":[0,3,0,19],
+"functions_v.html":[0,3,0,20],
 "functions_w.html":[0,3,0,21],
 "functions_z.html":[0,3,0,22],
 "functions_~.html":[0,3,0,23],
@@ -48,12 +58,13 @@ var NAVTREEINDEX4 =
 "qxswipewidget_8h_source.html":[1,0,0,40],
 "qxtextdocument_8h_source.html":[1,0,0,41],
 "qxtextedit_8h_source.html":[1,0,0,42],
-"qxtimevalidator_8h_source.html":[1,0,0,43],
-"qxtreeitem_8h_source.html":[1,0,0,44],
-"qxtreeitemmodel_8h_source.html":[1,0,0,45],
-"qxuifield_8h_source.html":[1,0,0,46],
-"qxwaitcursor_8h_source.html":[1,0,0,47],
-"qxwizard_8h_source.html":[1,0,0,48],
-"qxxmldocument_8h_source.html":[1,0,0,49],
-"qxxmlnode_8h_source.html":[1,0,0,50]
+"qxtimeedit_8h_source.html":[1,0,0,43],
+"qxtimevalidator_8h_source.html":[1,0,0,44],
+"qxtreeitem_8h_source.html":[1,0,0,45],
+"qxtreeitemmodel_8h_source.html":[1,0,0,46],
+"qxuifield_8h_source.html":[1,0,0,47],
+"qxwaitcursor_8h_source.html":[1,0,0,48],
+"qxwizard_8h_source.html":[1,0,0,49],
+"qxxmldocument_8h_source.html":[1,0,0,50],
+"qxxmlnode_8h_source.html":[1,0,0,51]
 };
