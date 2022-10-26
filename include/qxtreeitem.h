@@ -49,9 +49,9 @@ public:
     QxTreeItem* parent() const;
     bool hasChildren();
     QxTreeItem* child(int row) const;
-    QList<QxTreeItem*> children() const;
+    QList<QxTreeItem*> children(bool recursively = false) const;
     int row() const;
-    int rowCount();
+    int rowCount() const;
     void insertRow(int row, QxTreeItem *item);
     void appendRow(QxTreeItem *item);
     QxTreeItem* takeRow(int row);

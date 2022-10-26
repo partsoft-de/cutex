@@ -371,10 +371,10 @@ void QxMainWindow::setCurrentFile(QString fileName)
         int maxFiles = m_recentFiles->maxFiles();
         recentFiles.removeAll(fileName);
         recentFiles.prepend(fileName);
-        while (recentFiles.size() > maxFiles) {
+        while (recentFiles.size() > maxFiles)
             recentFiles.removeLast();
-        }
         m_recentFiles->setFiles(recentFiles);
+
         emit recentFilesChanged(m_recentFiles);
     }
 }

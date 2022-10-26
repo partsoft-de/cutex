@@ -119,11 +119,23 @@ QxTreeItem* QxTreeItem::child(int row) const
 }
 
 /*!
-  Gibt eine Liste aller untergeordneten Elemente zurück.
+  Gibt eine Liste aller untergeordneten Elemente zurück. Wenn <i>recursively</i> gesetzt ist, werden auch deren Kinder
+  zurück gegeben.
 */
-QList<QxTreeItem*> QxTreeItem::children() const
+QList<QxTreeItem*> QxTreeItem::children(bool recursively) const
 {
-    return m_childItems;
+    QList<QxTreeItem*> childItems;
+
+    if (recursively) {
+        for (QxTreeItem *item : m_childItems) {
+            childItems.append(item);
+            childItems.append(item->children(true));
+        }
+    } else {
+        childItems = m_childItems;
+    }
+
+    return childItems;
 }
 
 /*!
@@ -142,7 +154,7 @@ int QxTreeItem::row() const
 /*!
   Gibt die Anzahl der untergeordneten Elemente zurück.
 */
-int QxTreeItem::rowCount()
+int QxTreeItem::rowCount() const
 {
     return m_childItems.count();
 }
