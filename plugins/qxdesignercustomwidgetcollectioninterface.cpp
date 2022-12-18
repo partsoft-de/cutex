@@ -1,6 +1,6 @@
 /***********************************************************************************************************************
 **
-** Copyright (C) 2016-2019 Partsoft UG (haftungsbeschränkt)
+** Copyright (C) 2016-2022 Partsoft UG (haftungsbeschränkt)
 ** Contact: https://www.partsoft.de/index.php/kontakt
 **
 ** This file is part of cutex
@@ -26,6 +26,7 @@
 #include "qxplaintexteditplugin.h"
 #include "qxsqltableviewplugin.h"
 #include "qxtexteditplugin.h"
+#include "qxtimeeditplugin.h"
 #include "qxswipewidgetplugin.h"
 
 using namespace cutex;
@@ -41,6 +42,7 @@ QxDesignerCustomWidgetCollectionInterface::QxDesignerCustomWidgetCollectionInter
     m_widgets.append(new QxPlainTextEditPlugin(this));
     m_widgets.append(new QxSqlTableViewPlugin(this));
     m_widgets.append(new QxTextEditPlugin(this));
+    m_widgets.append(new QxTimeEditPlugin(this));
     m_widgets.append(new QxSwipeWidgetPlugin(this));
 }
 

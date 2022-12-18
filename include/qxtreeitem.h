@@ -1,6 +1,6 @@
 /***********************************************************************************************************************
 **
-** Copyright (C) 2016-2021 Partsoft UG (haftungsbeschränkt)
+** Copyright (C) 2016-2022 Partsoft UG (haftungsbeschränkt)
 ** Contact: https://www.partsoft.de/index.php/kontakt
 **
 ** This file is part of cutex
@@ -49,9 +49,9 @@ public:
     QxTreeItem* parent() const;
     bool hasChildren();
     QxTreeItem* child(int row) const;
-    QList<QxTreeItem*> children() const;
+    QList<QxTreeItem*> children(bool recursively = false) const;
     int row() const;
-    int rowCount();
+    int rowCount() const;
     void insertRow(int row, QxTreeItem *item);
     void appendRow(QxTreeItem *item);
     QxTreeItem* takeRow(int row);

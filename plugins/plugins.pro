@@ -36,7 +36,8 @@ HEADERS += \
     qxswipewidgetextensionfactory.h \
     qxswipewidgetplugin.h \
     qxtexteditplugin.h \
-    qxplaintexteditplugin.h
+    qxplaintexteditplugin.h \
+    qxtimeeditplugin.h
 
 SOURCES += \
     qxdesignercustomwidgetcollectioninterface.cpp \
@@ -49,7 +50,8 @@ SOURCES += \
     qxswipewidgetextensionfactory.cpp \
     qxswipewidgetplugin.cpp \
     qxtexteditplugin.cpp \
-    qxplaintexteditplugin.cpp
+    qxplaintexteditplugin.cpp \
+    qxtimeeditplugin.cpp
 
 RESOURCES += \
     plugins.qrc

@@ -1,6 +1,6 @@
 /***********************************************************************************************************************
 **
-** Copyright (C) 2016-2021 Partsoft UG (haftungsbeschränkt)
+** Copyright (C) 2016-2022 Partsoft UG (haftungsbeschränkt)
 ** Contact: https://www.partsoft.de/index.php/kontakt
 **
 ** This file is part of cutex
@@ -48,7 +48,7 @@ QModelIndex QxTreeItemModel::index(int row, int column, const QModelIndex &paren
     if (!hasIndex(row, column, parent))
         return QModelIndex();
 
-    QxTreeItem *parentItem = 0;
+    QxTreeItem *parentItem = nullptr;
     if (parent.isValid()) {
         parentItem = static_cast<QxTreeItem*>(parent.internalPointer());
     } else {
@@ -57,7 +57,7 @@ QModelIndex QxTreeItemModel::index(int row, int column, const QModelIndex &paren
 
     QxTreeItem *item = parentItem->child(row);
     if (item)
-        return createIndex(row, 0, item);
+        return createIndex(row, column, item);
 
     return QModelIndex();
 }
@@ -84,7 +84,7 @@ QModelIndex QxTreeItemModel::parent(const QModelIndex &index) const
 */
 int	QxTreeItemModel::rowCount(const QModelIndex &parent) const
 {
-    QxTreeItem *parentItem = 0;
+    QxTreeItem *parentItem = nullptr;
 
     if (parent.isValid()) {
         parentItem = static_cast<QxTreeItem*>(parent.internalPointer());
@@ -198,7 +198,7 @@ void QxTreeItemModel::appendRow(QxTreeItem *item)
 */
 bool QxTreeItemModel::removeRows(int row, int count, const QModelIndex &parent)
 {
-    QxTreeItem *parentItem = 0;
+    QxTreeItem *parentItem = nullptr;
 
     if (parent.isValid()) {
         parentItem = itemFromIndex(parent);
@@ -395,7 +395,7 @@ QStringList	QxTreeItemModel::mimeTypes() const
 QMimeData* QxTreeItemModel::mimeData(const QModelIndexList &indexes) const
 {
     if (indexes.count() != 1)
-        return 0;
+        return nullptr;
 
     QxTreeItem *item = itemFromIndex(indexes.at(0));
 
@@ -410,7 +410,7 @@ QMimeData* QxTreeItemModel::mimeData(const QModelIndexList &indexes) const
         return data;
     }
 
-    return 0;
+    return nullptr;
 }
 
 /*!

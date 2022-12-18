@@ -1,6 +1,6 @@
 /***********************************************************************************************************************
 **
-** Copyright (C) 2016-2021 Partsoft UG (haftungsbeschränkt)
+** Copyright (C) 2016-2022 Partsoft UG (haftungsbeschränkt)
 ** Contact: https://www.partsoft.de/index.php/kontakt
 **
 ** This file is part of cutex
@@ -371,10 +371,10 @@ void QxMainWindow::setCurrentFile(QString fileName)
         int maxFiles = m_recentFiles->maxFiles();
         recentFiles.removeAll(fileName);
         recentFiles.prepend(fileName);
-        while (recentFiles.size() > maxFiles) {
+        while (recentFiles.size() > maxFiles)
             recentFiles.removeLast();
-        }
         m_recentFiles->setFiles(recentFiles);
+
         emit recentFilesChanged(m_recentFiles);
     }
 }
