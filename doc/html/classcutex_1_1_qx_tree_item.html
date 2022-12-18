@@ -122,12 +122,12 @@ $(document).ready(function(){initNavTree('classcutex_1_1_qx_tree_item.html','');
 <tr class="separator:a8323f76aac136c0d6729f557fc755ebb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a84ca6bb32732745306bd9817cf1dad92"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcutex_1_1_qx_tree_item.html">QxTreeItem</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcutex_1_1_qx_tree_item.html#a84ca6bb32732745306bd9817cf1dad92">child</a> (int <a class="el" href="classcutex_1_1_qx_tree_item.html#a83ebf9fb6eb7b0bb13d2c352ac4b703e">row</a>) const</td></tr>
 <tr class="separator:a84ca6bb32732745306bd9817cf1dad92"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acc3cc159772a971ed9fb97323d43abb4"><td class="memItemLeft" align="right" valign="top">QList&lt; <a class="el" href="classcutex_1_1_qx_tree_item.html">QxTreeItem</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcutex_1_1_qx_tree_item.html#acc3cc159772a971ed9fb97323d43abb4">children</a> () const</td></tr>
-<tr class="separator:acc3cc159772a971ed9fb97323d43abb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a08dc563663c5209d4064dd49966bd658"><td class="memItemLeft" align="right" valign="top">QList&lt; <a class="el" href="classcutex_1_1_qx_tree_item.html">QxTreeItem</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcutex_1_1_qx_tree_item.html#a08dc563663c5209d4064dd49966bd658">children</a> (bool recursively=false) const</td></tr>
+<tr class="separator:a08dc563663c5209d4064dd49966bd658"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a83ebf9fb6eb7b0bb13d2c352ac4b703e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcutex_1_1_qx_tree_item.html#a83ebf9fb6eb7b0bb13d2c352ac4b703e">row</a> () const</td></tr>
 <tr class="separator:a83ebf9fb6eb7b0bb13d2c352ac4b703e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3b9da157c0a82ab3564665a967e0fbab"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcutex_1_1_qx_tree_item.html#a3b9da157c0a82ab3564665a967e0fbab">rowCount</a> ()</td></tr>
-<tr class="separator:a3b9da157c0a82ab3564665a967e0fbab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aac1afc17175bb67daad6ca337ba74ecf"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcutex_1_1_qx_tree_item.html#aac1afc17175bb67daad6ca337ba74ecf">rowCount</a> () const</td></tr>
+<tr class="separator:aac1afc17175bb67daad6ca337ba74ecf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0b58accf251eb5dbde91af44b3af0721"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcutex_1_1_qx_tree_item.html#a0b58accf251eb5dbde91af44b3af0721">insertRow</a> (int <a class="el" href="classcutex_1_1_qx_tree_item.html#a83ebf9fb6eb7b0bb13d2c352ac4b703e">row</a>, <a class="el" href="classcutex_1_1_qx_tree_item.html">QxTreeItem</a> *item)</td></tr>
 <tr class="separator:a0b58accf251eb5dbde91af44b3af0721"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afe48b1a4420665cfbcbebc000d6cbf6e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcutex_1_1_qx_tree_item.html#afe48b1a4420665cfbcbebc000d6cbf6e">appendRow</a> (<a class="el" href="classcutex_1_1_qx_tree_item.html">QxTreeItem</a> *item)</td></tr>
@@ -263,8 +263,8 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>QxTreeItemModel</b><
 
 </div>
 </div>
-<a id="acc3cc159772a971ed9fb97323d43abb4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acc3cc159772a971ed9fb97323d43abb4">&#9670;&nbsp;</a></span>children()</h2>
+<a id="a08dc563663c5209d4064dd49966bd658"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a08dc563663c5209d4064dd49966bd658">&#9670;&nbsp;</a></span>children()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -272,12 +272,13 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>QxTreeItemModel</b><
         <tr>
           <td class="memname">QList&lt; <a class="el" href="classcutex_1_1_qx_tree_item.html">QxTreeItem</a> * &gt; QxTreeItem::children </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>recursively</em> = <code>false</code></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Gibt eine Liste aller untergeordneten Elemente zurück. </p>
+<p>Gibt eine Liste aller untergeordneten Elemente zurück. Wenn <em>recursively</em> gesetzt ist, werden auch deren Kinder zurück gegeben. </p>
 
 </div>
 </div>
@@ -482,8 +483,8 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>QxTreeItemModel</b><
 
 </div>
 </div>
-<a id="a3b9da157c0a82ab3564665a967e0fbab"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3b9da157c0a82ab3564665a967e0fbab">&#9670;&nbsp;</a></span>rowCount()</h2>
+<a id="aac1afc17175bb67daad6ca337ba74ecf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aac1afc17175bb67daad6ca337ba74ecf">&#9670;&nbsp;</a></span>rowCount()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -492,7 +493,7 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>QxTreeItemModel</b><
           <td class="memname">int QxTreeItem::rowCount </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">

@@ -13,7 +13,7 @@ var searchData=
   ['changelanguage_557',['changeLanguage',['../classcutex_1_1_qx_application.html#a44f38b4ebe336e71712b2512e6c551d3',1,'cutex::QxApplication']]],
   ['changetheme_558',['changeTheme',['../classcutex_1_1_qx_application.html#abd162a3ea41b76d178950c2d43ef689e',1,'cutex::QxApplication']]],
   ['child_559',['child',['../classcutex_1_1_qx_tree_item.html#a84ca6bb32732745306bd9817cf1dad92',1,'cutex::QxTreeItem']]],
-  ['children_560',['children',['../classcutex_1_1_qx_tree_item.html#acc3cc159772a971ed9fb97323d43abb4',1,'cutex::QxTreeItem::children()'],['../classcutex_1_1_qx_xml_node.html#a6445ce19ed47e3e1c90bdeda57e82e87',1,'cutex::QxXmlNode::children()']]],
+  ['children_560',['children',['../classcutex_1_1_qx_tree_item.html#a08dc563663c5209d4064dd49966bd658',1,'cutex::QxTreeItem::children()'],['../classcutex_1_1_qx_xml_node.html#a6445ce19ed47e3e1c90bdeda57e82e87',1,'cutex::QxXmlNode::children()']]],
   ['cleanup_561',['cleanUp',['../classcutex_1_1_qx_logger.html#aca9d52f64f719223bad17c800870deec',1,'cutex::QxLogger']]],
   ['clear_562',['clear',['../classcutex_1_1_qx_calculator_dialog.html#a851ef748ff5ae69239356ddfaf80950d',1,'cutex::QxCalculatorDialog::clear()'],['../classcutex_1_1_qx_optional.html#ab37dd6c3ed9fb140ece233eaab828302',1,'cutex::QxOptional::clear()'],['../classcutex_1_1_qx_sql_query_model.html#a583e066b6541d5df063b3307338ec713',1,'cutex::QxSqlQueryModel::clear()'],['../classcutex_1_1_qx_tree_item_model.html#a0b2bdbb19f3ca89c7dd983b72c8aac90',1,'cutex::QxTreeItemModel::clear()'],['../classcutex_1_1_qx_xml_document.html#a12e26a176a2aa4655fe03ea67e1b3ba2',1,'cutex::QxXmlDocument::clear()']]],
   ['clone_563',['clone',['../classcutex_1_1_qx_exception.html#a6001ae58c7391c1866defda852cba10f',1,'cutex::QxException']]],
