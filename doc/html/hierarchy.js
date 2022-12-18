@@ -63,6 +63,9 @@ var hierarchy =
     [ "QTextEdit", null, [
       [ "cutex::QxTextEdit", "classcutex_1_1_qx_text_edit.html", null ]
     ] ],
+    [ "QTimeEdit", null, [
+      [ "cutex::QxTimeEdit", "classcutex_1_1_qx_time_edit.html", null ]
+    ] ],
     [ "QValidator", null, [
       [ "cutex::QxDateValidator", "classcutex_1_1_qx_date_validator.html", null ],
       [ "cutex::QxTimeValidator", "classcutex_1_1_qx_time_validator.html", null ]

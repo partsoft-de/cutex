@@ -43,6 +43,7 @@ var dir_d44c64559bbebec7f509842c48db8b23 =
     [ "qxswipewidget.h", "qxswipewidget_8h_source.html", null ],
     [ "qxtextdocument.h", "qxtextdocument_8h_source.html", null ],
     [ "qxtextedit.h", "qxtextedit_8h_source.html", null ],
+    [ "qxtimeedit.h", "qxtimeedit_8h_source.html", null ],
     [ "qxtimevalidator.h", "qxtimevalidator_8h_source.html", null ],
     [ "qxtreeitem.h", "qxtreeitem_8h_source.html", null ],
     [ "qxtreeitemmodel.h", "qxtreeitemmodel_8h_source.html", null ],

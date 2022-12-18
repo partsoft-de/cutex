@@ -41,6 +41,7 @@ HEADERS += \
     ../include/qxswipebar.h \
     ../include/qxswipebutton.h \
     ../include/qxswipewidget.h \
+    ../include/qxtimeedit.h \
     ../include/qxwizard.h \
     ../include/qxwaitcursor.h \
     ../include/qxuifield.h \
@@ -97,6 +98,7 @@ SOURCES += \
     qxswipebar.cpp \
     qxswipebutton.cpp \
     qxswipewidget.cpp \
+    qxtimeedit.cpp \
     qxwizard.cpp \
     qxuifield.cpp \
     qxrandom.cpp \

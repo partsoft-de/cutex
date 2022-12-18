@@ -42,6 +42,7 @@ var annotated_dup =
       [ "QxSwipeWidget", "classcutex_1_1_qx_swipe_widget.html", "classcutex_1_1_qx_swipe_widget" ],
       [ "QxTextDocument", "classcutex_1_1_qx_text_document.html", "classcutex_1_1_qx_text_document" ],
       [ "QxTextEdit", "classcutex_1_1_qx_text_edit.html", "classcutex_1_1_qx_text_edit" ],
+      [ "QxTimeEdit", "classcutex_1_1_qx_time_edit.html", "classcutex_1_1_qx_time_edit" ],
       [ "QxTimeValidator", "classcutex_1_1_qx_time_validator.html", "classcutex_1_1_qx_time_validator" ],
       [ "QxTreeItem", "classcutex_1_1_qx_tree_item.html", "classcutex_1_1_qx_tree_item" ],
       [ "QxTreeItemModel", "classcutex_1_1_qx_tree_item_model.html", "classcutex_1_1_qx_tree_item_model" ],
