@@ -32,6 +32,8 @@ HEADERS += \
     ../include/qxcalculatordialog.h \
     ../include/qxdoubleedit.h \
     ../include/qxexception.h \
+    ../include/qxganttchart.h \
+    ../include/qxganttmodel.h \
     ../include/qxintedit.h \
     ../include/qxlogger.h \
     ../include/qxmousegripband.h \
@@ -89,6 +91,8 @@ SOURCES += \
     qxcalculatordialog.cpp \
     qxdoubleedit.cpp \
     qxexception.cpp \
+    qxganttchart.cpp \
+    qxganttmodel.cpp \
     qxintedit.cpp \
     qxlogger.cpp \
     qxmousegripband.cpp \

@@ -27,6 +27,7 @@ HEADERS += \
     plugins.h \
     qxdesignercustomwidgetcollectioninterface.h \
     qxdoubleeditplugin.h \
+    qxganttchartplugin.h \
     qxhelpbrowserplugin.h \
     qxinteditplugin.h \
     qxresource.h \
@@ -42,6 +43,7 @@ HEADERS += \
 SOURCES += \
     qxdesignercustomwidgetcollectioninterface.cpp \
     qxdoubleeditplugin.cpp \
+    qxganttchartplugin.cpp \
     qxhelpbrowserplugin.cpp \
     qxinteditplugin.cpp \
     qxsqltableviewplugin.cpp \

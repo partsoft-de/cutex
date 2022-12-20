@@ -21,13 +21,14 @@
 #include "qxresource.h"
 #include "qxdateeditplugin.h"
 #include "qxdoubleeditplugin.h"
+#include "qxganttchartplugin.h"
 #include "qxhelpbrowserplugin.h"
 #include "qxinteditplugin.h"
 #include "qxplaintexteditplugin.h"
 #include "qxsqltableviewplugin.h"
+#include "qxswipewidgetplugin.h"
 #include "qxtexteditplugin.h"
 #include "qxtimeeditplugin.h"
-#include "qxswipewidgetplugin.h"
 
 using namespace cutex;
 
@@ -37,6 +38,7 @@ QxDesignerCustomWidgetCollectionInterface::QxDesignerCustomWidgetCollectionInter
 
     m_widgets.append(new QxDateEditPlugin(this));
     m_widgets.append(new QxDoubleEditPlugin(this));
+    m_widgets.append(new QxGanttChartPlugin(this));
     m_widgets.append(new QxHelpBrowserPlugin(this));
     m_widgets.append(new QxIntEditPlugin(this));
     m_widgets.append(new QxPlainTextEditPlugin(this));
