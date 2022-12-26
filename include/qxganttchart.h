@@ -33,19 +33,31 @@ class QxGanttChart : public QAbstractScrollArea
 
 public:
     QxGanttChart(QWidget *parent = nullptr);
+    QxGanttModel* model() const;
+    void setModel(QxGanttModel *model);
 
 protected:
     virtual void paintEvent(QPaintEvent *event);
     virtual void resizeEvent(QResizeEvent *event);
+    virtual void changeEvent(QEvent *event);
 
 private:
     QxGanttModel *m_model;
     QDate m_minDate;
     QDate m_maxDate;
+    int m_margins;
+    int m_fmHeight;
+    int m_fmMaxWidth;
+    int m_headerHeight;
 
 private:
+    void updateMetrics();
     void updateScrollbars();
     void updateDateRange();
+    void paintHeader(QPainter &painter);
+
+private slots:
+    void dataChanged();
 };
 
 } // namespace

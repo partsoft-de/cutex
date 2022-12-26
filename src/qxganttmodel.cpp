@@ -25,6 +25,7 @@ using namespace cutex;
 */
 QxGanttModel::QxGanttModel(QObject *parent) : QxTreeItemModel(parent)
 {
+    m_workDays = WorkDay::Monday | WorkDay::Tuesday | WorkDay::Wednesday | WorkDay::Thursday | WorkDay::Friday;
 }
 
 /*!
@@ -32,4 +33,53 @@ QxGanttModel::QxGanttModel(QObject *parent) : QxTreeItemModel(parent)
 void QxGanttModel::dateRange(QDate &min, QDate &max) const
 {
     min = max = QDate();
+}
+
+/*!
+*/
+QxGanttModel::WorkDays QxGanttModel::workDays() const
+{
+    return m_workDays;
+}
+
+/*!
+*/
+bool QxGanttModel::isWorkDay(const QDate &date) const
+{
+    bool result = false;
+
+    switch (date.dayOfWeek()) {
+    case Qt::Monday:
+        result = (m_workDays & QxGanttModel::Monday);
+        break;
+    case Qt::Tuesday:
+        result = (m_workDays & QxGanttModel::Tuesday);
+        break;
+    case Qt::Wednesday:
+        result = (m_workDays & QxGanttModel::Wednesday);
+        break;
+    case Qt::Thursday:
+        result = (m_workDays & QxGanttModel::Thursday);
+        break;
+    case Qt::Friday:
+        result = (m_workDays & QxGanttModel::Friday);
+        break;
+    case Qt::Saturday:
+        result = (m_workDays & QxGanttModel::Saturday);
+        break;
+    case Qt::Sunday:
+        result = (m_workDays & QxGanttModel::Sunday);
+        break;
+    }
+
+    return result;
+}
+
+void QxGanttModel::setWorkDays(WorkDays workDays)
+{
+    if (m_workDays != workDays) {
+        beginResetModel();
+        m_workDays = workDays;
+        endResetModel();
+    }
 }

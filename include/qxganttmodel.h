@@ -32,9 +32,34 @@ class QxGanttModel : public QxTreeItemModel
     Q_OBJECT
 
 public:
+    enum WorkDay {
+        NoDay = 0x00,
+        Monday = 0x01,
+        Tuesday = 0x02,
+        Wednesday = 0x04,
+        Thursday = 0x08,
+        Friday = 0x10,
+        Saturday = 0x20,
+        Sunday = 0x40,
+        Everyday = 0x3f
+    };
+    Q_DECLARE_FLAGS(WorkDays, WorkDay)
+    Q_FLAG(WorkDays)
+
+public:
     QxGanttModel(QObject *parent = nullptr);
     void dateRange(QDate &min, QDate &max) const;
+    WorkDays workDays() const;
+    bool isWorkDay(const QDate &date) const;
+
+public slots:
+    void setWorkDays(WorkDays workDays);
+
+private:
+    WorkDays m_workDays;
 };
+
+Q_DECLARE_OPERATORS_FOR_FLAGS(QxGanttModel::WorkDays)
 
 } // namespace
 
