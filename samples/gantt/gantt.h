@@ -17,18 +17,20 @@
 **
 ***********************************************************************************************************************/
 
-#include "contacts.h"
-#include "qxapplication.h"
-#include "mainwindow.h"
+#ifndef GANTT_H
+#define GANTT_H
+
+#include <QtGlobal>
+#include <QtCore>
+#include <QtGui>
+#include "cutex.h"
+#include "qxmainwindow.h"
+#include "qxdialog.h"
 
 using namespace cutex;
 
-int main(int argc, char *argv[])
-{
-    QxApplication app(argc, argv);
-    MainWindow mainWin;
+const QString APP_PUBLISHER = "Partsoft";
+const QString APP_NAME = "Gantt-Demo";
+const QString APP_TITLE = "Partsoft Gantt-Demo";
 
-    mainWin.show();
-
-    return app.exec();
-}
+#endif // GANTT_H

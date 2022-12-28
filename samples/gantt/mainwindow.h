@@ -17,40 +17,24 @@
 **
 ***********************************************************************************************************************/
 
-#ifndef CONTACTSMODEL_H
-#define CONTACTSMODEL_H
+#ifndef MAINWINDOW_H
+#define MAINWINDOW_H
 
-#include "contacts.h"
-#include "contact.h"
+#include "gantt.h"
+#include "ui_mainwindow.h"
 
-class ContactsModel : public QAbstractTableModel
+class MainWindow : public QxMainWindow, private Ui::MainWindow
 {
     Q_OBJECT
 
 public:
-    enum {
-        AnredeColumn = 0, VornameColumn, NameColumn, LandColumn, PostleitzahlColumn, OrtColumn, StrasseColumn,
-        TelefonColumn, MobilColumn, EmailColumn
-    };
+    MainWindow();
 
-public:
-    ContactsModel(QObject *parent = 0);
-    void clear();
-    int rowCount(const QModelIndex &parent) const;
-    int columnCount(const QModelIndex &parent) const;
-    QVariant headerData(int section, Qt::Orientation orientation, int role) const;
-    QVariant data(const QModelIndex &index, int role) const;
-    Contact* contact(const QModelIndex &index);
-    void insertContact(Contact *contact);
-    void removeContact(Contact *contact);
-    friend QDataStream& operator <<(QDataStream &out, const ContactsModel &model);
-    friend QDataStream& operator >>(QDataStream &in, ContactsModel &model);
+protected:
+    void processAction(QAction *action);
 
 private:
-    QList<Contact*> m_contacts;
-
-signals:
-    void rowChanged(QModelIndex);
+    Ui::MainWindow m_ui;
 };
 
-#endif // CONTACTSMODEL_H
+#endif // MAINWINDOW_H

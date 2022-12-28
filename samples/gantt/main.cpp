@@ -17,7 +17,7 @@
 **
 ***********************************************************************************************************************/
 
-#include "contacts.h"
+#include "gantt.h"
 #include "qxapplication.h"
 #include "mainwindow.h"
 

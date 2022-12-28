@@ -17,18 +17,19 @@
 **
 ***********************************************************************************************************************/
 
-#include "contacts.h"
-#include "qxapplication.h"
 #include "mainwindow.h"
 
-using namespace cutex;
-
-int main(int argc, char *argv[])
+MainWindow::MainWindow() : QxMainWindow()
 {
-    QxApplication app(argc, argv);
-    MainWindow mainWin;
+    m_ui.setupUi(this);
+    setWindowTitle(APP_TITLE);
+}
 
-    mainWin.show();
+// Die Methode processAction() wird aufgerufen, wenn eine Menüaktion ausgelöst wurde
+void MainWindow::processAction(QAction *action)
+{
+    QxMainWindow::processAction(action);
 
-    return app.exec();
+    if (action == m_ui.DateiBeendenAction)
+        close();
 }
