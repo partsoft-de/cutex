@@ -17,49 +17,10 @@
 **
 ***********************************************************************************************************************/
 
-#ifndef QXGANTTCHART_H
-#define QXGANTTCHART_H
+#include "qxganttitem.h"
 
-#include "cutex.h"
-#include "qxganttitemmodel.h"
+using namespace cutex;
 
-namespace cutex {
-
-/*!
-*/
-class QxGanttChart : public QAbstractScrollArea
+QxGanttItem::QxGanttItem(const QString &name) : QxTreeItem(name)
 {
-    Q_OBJECT
-
-public:
-    QxGanttChart(QWidget *parent = nullptr);
-    QxGanttItemModel* model() const;
-    void setModel(QxGanttItemModel *model);
-
-protected:
-    virtual void paintEvent(QPaintEvent *event);
-    virtual void resizeEvent(QResizeEvent *event);
-    virtual void changeEvent(QEvent *event);
-
-private:
-    QxGanttItemModel *m_model;
-    QDate m_minDate;
-    QDate m_maxDate;
-    int m_margins;
-    int m_fmHeight;
-    int m_fmMaxWidth;
-    int m_headerHeight;
-
-private:
-    void updateMetrics();
-    void updateScrollbars();
-    void updateDateRange();
-    void paintHeader(QPainter &painter);
-
-private slots:
-    void dataChanged();
-};
-
-} // namespace
-
-#endif // QXGANTTCHART_H
+}

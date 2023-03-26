@@ -17,8 +17,8 @@
 **
 ***********************************************************************************************************************/
 
-#ifndef QXGANTTMODEL_H
-#define QXGANTTMODEL_H
+#ifndef QXGANTTITEMMODEL_H
+#define QXGANTTITEMMODEL_H
 
 #include "cutex.h"
 #include "qxtreeitemmodel.h"
@@ -27,7 +27,7 @@ namespace cutex {
 
 /*!
 */
-class QxGanttModel : public QxTreeItemModel
+class QxGanttItemModel : public QxTreeItemModel
 {
     Q_OBJECT
 
@@ -47,7 +47,7 @@ public:
     Q_FLAG(WorkDays)
 
 public:
-    QxGanttModel(QObject *parent = nullptr);
+    QxGanttItemModel(QObject *parent = nullptr);
     void dateRange(QDate &min, QDate &max) const;
     WorkDays workDays() const;
     bool isWorkDay(const QDate &date) const;
@@ -59,8 +59,8 @@ private:
     WorkDays m_workDays;
 };
 
-Q_DECLARE_OPERATORS_FOR_FLAGS(QxGanttModel::WorkDays)
+Q_DECLARE_OPERATORS_FOR_FLAGS(QxGanttItemModel::WorkDays)
 
 } // namespace
 
-#endif // QXGANTTMODEL_H
+#endif // QXGANTTITEMMODEL_H

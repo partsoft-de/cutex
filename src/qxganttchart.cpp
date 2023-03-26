@@ -35,14 +35,14 @@ QxGanttChart::QxGanttChart(QWidget *parent) : QAbstractScrollArea(parent)
 
 /*!
 */
-QxGanttModel* QxGanttChart::model() const
+QxGanttItemModel* QxGanttChart::model() const
 {
     return m_model;
 }
 
 /*!
 */
-void QxGanttChart::setModel(QxGanttModel *model)
+void QxGanttChart::setModel(QxGanttItemModel *model)
 {
     if (m_model)
         m_model->disconnect();
@@ -145,7 +145,7 @@ void QxGanttChart::paintHeader(QPainter &painter)
         if (m_model) {
             workDay = m_model->isWorkDay(date);
         } else {
-            workDay = QxGanttModel().isWorkDay(date);
+            workDay = QxGanttItemModel().isWorkDay(date);
         }
         if (!workDay)
             painter.fillRect(x1, m_headerHeight, x2 - x1, viewport()->height(), Qt::lightGray);

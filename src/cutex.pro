@@ -33,7 +33,8 @@ HEADERS += \
     ../include/qxdoubleedit.h \
     ../include/qxexception.h \
     ../include/qxganttchart.h \
-    ../include/qxganttmodel.h \
+    ../include/qxganttitem.h \
+    ../include/qxganttitemmodel.h \
     ../include/qxintedit.h \
     ../include/qxlogger.h \
     ../include/qxmousegripband.h \
@@ -92,7 +93,8 @@ SOURCES += \
     qxdoubleedit.cpp \
     qxexception.cpp \
     qxganttchart.cpp \
-    qxganttmodel.cpp \
+    qxganttitem.cpp \
+    qxganttitemmodel.cpp \
     qxintedit.cpp \
     qxlogger.cpp \
     qxmousegripband.cpp \

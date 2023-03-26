@@ -17,65 +17,65 @@
 **
 ***********************************************************************************************************************/
 
-#include "qxganttmodel.h"
+#include "qxganttitemmodel.h"
 
 using namespace cutex;
 
 /*!
 */
-QxGanttModel::QxGanttModel(QObject *parent) : QxTreeItemModel(parent)
+QxGanttItemModel::QxGanttItemModel(QObject *parent) : QxTreeItemModel(parent)
 {
     m_workDays = WorkDay::Monday | WorkDay::Tuesday | WorkDay::Wednesday | WorkDay::Thursday | WorkDay::Friday;
 }
 
 /*!
 */
-void QxGanttModel::dateRange(QDate &min, QDate &max) const
+void QxGanttItemModel::dateRange(QDate &min, QDate &max) const
 {
     min = max = QDate();
 }
 
 /*!
 */
-QxGanttModel::WorkDays QxGanttModel::workDays() const
+QxGanttItemModel::WorkDays QxGanttItemModel::workDays() const
 {
     return m_workDays;
 }
 
 /*!
 */
-bool QxGanttModel::isWorkDay(const QDate &date) const
+bool QxGanttItemModel::isWorkDay(const QDate &date) const
 {
     bool result = false;
 
     switch (date.dayOfWeek()) {
     case Qt::Monday:
-        result = (m_workDays & QxGanttModel::Monday);
+        result = (m_workDays & QxGanttItemModel::Monday);
         break;
     case Qt::Tuesday:
-        result = (m_workDays & QxGanttModel::Tuesday);
+        result = (m_workDays & QxGanttItemModel::Tuesday);
         break;
     case Qt::Wednesday:
-        result = (m_workDays & QxGanttModel::Wednesday);
+        result = (m_workDays & QxGanttItemModel::Wednesday);
         break;
     case Qt::Thursday:
-        result = (m_workDays & QxGanttModel::Thursday);
+        result = (m_workDays & QxGanttItemModel::Thursday);
         break;
     case Qt::Friday:
-        result = (m_workDays & QxGanttModel::Friday);
+        result = (m_workDays & QxGanttItemModel::Friday);
         break;
     case Qt::Saturday:
-        result = (m_workDays & QxGanttModel::Saturday);
+        result = (m_workDays & QxGanttItemModel::Saturday);
         break;
     case Qt::Sunday:
-        result = (m_workDays & QxGanttModel::Sunday);
+        result = (m_workDays & QxGanttItemModel::Sunday);
         break;
     }
 
     return result;
 }
 
-void QxGanttModel::setWorkDays(WorkDays workDays)
+void QxGanttItemModel::setWorkDays(WorkDays workDays)
 {
     if (m_workDays != workDays) {
         beginResetModel();
