@@ -1,5 +1,9 @@
 var NAVTREEINDEX1 =
 {
+"classcutex_1_1_qx_help_browser.html#a72fa2bc28f8e8ce93b8c01e7f9dff97f":[0,0,0,13,0],
+"classcutex_1_1_qx_help_browser.html#a9871c9d234ced9b983b350f8f7e87865":[0,0,0,13,1],
+"classcutex_1_1_qx_help_browser.html#abbaafd1d65db9e14dccd499f6be7e51b":[0,0,0,13,3],
+"classcutex_1_1_qx_help_browser.html#ac112a8f678f336c08dce65302803be14":[0,0,0,13,4],
 "classcutex_1_1_qx_help_window.html":[0,0,0,14],
 "classcutex_1_1_qx_help_window.html#a088c37bf0ee3c9e231f25142814be04a":[0,0,0,14,11],
 "classcutex_1_1_qx_help_window.html#a21c0e27274bbf054caaff1db85376796":[0,0,0,14,2],
@@ -245,9 +249,5 @@ var NAVTREEINDEX1 =
 "classcutex_1_1_qx_sql_database.html#ac9437fc0b5c4d7f7352eaeb202ca5bf5":[0,0,0,30,45],
 "classcutex_1_1_qx_sql_database.html#acb06ace361cfd6c958df1dc0973b4229":[0,0,0,30,43],
 "classcutex_1_1_qx_sql_database.html#acb91fe83ee38ad8494114f40ae385fd1":[0,0,0,30,35],
-"classcutex_1_1_qx_sql_database.html#ada2221212eeff08b8d476a237380c5d7":[0,0,0,30,8],
-"classcutex_1_1_qx_sql_database.html#adc6393410252466d03dd5e8c14f6164d":[0,0,0,30,47],
-"classcutex_1_1_qx_sql_database.html#adda75c5c3e9b08118ba8dea41ae50b01":[0,0,0,30,13],
-"classcutex_1_1_qx_sql_database.html#ade2b2ff330e9bb7e81408eb17917fc38":[0,0,0,30,34],
-"classcutex_1_1_qx_sql_database.html#ae32443f97322c7f1b53a28333943c221":[0,0,0,30,16]
+"classcutex_1_1_qx_sql_database.html#ada2221212eeff08b8d476a237380c5d7":[0,0,0,30,8]
 };
