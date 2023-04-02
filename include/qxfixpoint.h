@@ -39,7 +39,11 @@ public:
     operator double() const;
     QString toString(int decimals = DECIMALS) const;
     QxFixPoint& operator +=(const QxFixPoint &value);
-    QxFixPoint operator +(const QxFixPoint &value);
+    QxFixPoint operator +(const QxFixPoint &value) const;
+    QxFixPoint operator +(double value) const;
+    QxFixPoint& operator -=(const QxFixPoint &value);
+    QxFixPoint operator -(const QxFixPoint &value) const;
+    QxFixPoint operator -(double value) const;
     friend QDataStream& operator <<(QDataStream &out, const QxFixPoint &fp);
     friend QDataStream& operator >>(QDataStream &in, QxFixPoint &fp);
 

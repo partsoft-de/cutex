@@ -84,12 +84,55 @@ QxFixPoint& QxFixPoint::operator +=(const QxFixPoint &value)
 /*!
   Addiert den Wert <i>value</i>.
 */
-QxFixPoint QxFixPoint::operator +(const QxFixPoint &value)
+QxFixPoint QxFixPoint::operator +(const QxFixPoint &value) const
 {
     QxFixPoint fp;
-    fp.m_value = m_value;
+    fp.m_value = m_value + value.m_value;
 
-    return fp += value;
+    return fp;
+}
+
+/*!
+  Addiert den Wert <i>value</i>.
+*/
+QxFixPoint QxFixPoint::operator +(double value) const
+{
+    QxFixPoint fp(value);
+    fp.m_value = m_value + fp.m_value;
+
+    return fp;
+}
+
+/*!
+  Subtrahiert den Wert <i>value</i>.
+*/
+QxFixPoint& QxFixPoint::operator -=(const QxFixPoint &value)
+{
+    m_value -= value.m_value;
+
+    return *this;
+}
+
+/*!
+  Subtrahiert den Wert <i>value</i>.
+*/
+QxFixPoint QxFixPoint::operator -(const QxFixPoint &value) const
+{
+    QxFixPoint fp(value);
+    fp.m_value = m_value - fp.m_value;
+
+    return fp;
+}
+
+/*!
+  Subtrahiert den Wert <i>value</i>.
+*/
+QxFixPoint QxFixPoint::operator -(double value) const
+{
+    QxFixPoint fp(value);
+    fp.m_value = m_value - fp.m_value;
+
+    return fp;
 }
 
 namespace cutex {
