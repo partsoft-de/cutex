@@ -18,6 +18,7 @@
 ***********************************************************************************************************************/
 
 #include "qxfixpoint.h"
+#include "qxmath.h"
 
 using namespace cutex;
 
@@ -36,6 +37,7 @@ QxFixPoint::QxFixPoint()
 */
 QxFixPoint::QxFixPoint(double value)
 {
+    value = QxMath::round(value, DECIMALS);
     value *= pow(10, DECIMALS);
     m_value = static_cast<qint64>(value);
 }
@@ -45,6 +47,7 @@ QxFixPoint::QxFixPoint(double value)
 */
 void QxFixPoint::operator =(double value)
 {
+    value = QxMath::round(value, DECIMALS);
     value *= pow(10, DECIMALS);
     m_value = static_cast<qint64>(value);
 }

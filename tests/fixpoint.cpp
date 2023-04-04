@@ -3,9 +3,6 @@
 
 using namespace cutex;
 
-const double VALUE_1 = 16.43;
-const double VALUE_2 = 3.57;
-
 class FixPoint : public QObject
 {
     Q_OBJECT
@@ -19,32 +16,32 @@ void FixPoint::operands()
 {
     QxFixPoint fp;
 
-    fp = VALUE_1;
-    fp += VALUE_2;
-    QVERIFY(fp == VALUE_1 + VALUE_2);
+    fp = 16.43;
+    fp += 3.57;
+    QVERIFY(QString::number(fp) == "20");
 
-    fp = VALUE_1 + VALUE_2;
-    QVERIFY(fp == VALUE_1 + VALUE_2);
+    fp = 16.43 + 3.57;
+    QVERIFY(QString::number(fp) == "20");
 
-    fp = VALUE_1;
-    fp -= VALUE_2;
-    QVERIFY(fp == VALUE_1 - VALUE_2);
+    fp = 16.43;
+    fp -= 3.57;
+    QVERIFY(QString::number(fp) == "12.86");
 
-    fp = VALUE_1 - VALUE_2;
-    QVERIFY(fp == VALUE_1 - VALUE_2);
+    fp = 16.43 - 3.57;
+    QVERIFY(QString::number(fp) == "12.86");
 }
 
 void FixPoint::stream()
 {
     QBuffer buffer;
     QDataStream stream(&buffer);
-    QxFixPoint fp = VALUE_1;
+    QxFixPoint fp = 16.43;
 
     buffer.open(QIODevice::ReadWrite);
     stream << fp;
     buffer.seek(0);
     stream >> fp;
-    QVERIFY(fp == VALUE_1);
+    QVERIFY(QString::number(fp) == "16.43");
 }
 
 QTEST_MAIN(FixPoint)
