@@ -32,5 +32,6 @@ using namespace cutex;
 const QString APP_PUBLISHER = "Partsoft";
 const QString APP_NAME = "Gantt-Demo";
 const QString APP_TITLE = "Partsoft Gantt-Demo";
+const QString APP_ID = "QY77G7GMFD";
 
 #endif // GANTT_H

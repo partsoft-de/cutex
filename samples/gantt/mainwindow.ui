@@ -39,9 +39,47 @@
     <property name="title">
      <string>&amp;Datei</string>
     </property>
+    <widget class="QMenu" name="LetzteDateienMenu">
+     <property name="title">
+      <string>Zuletzt verwendete Dateien</string>
+     </property>
+    </widget>
+    <addaction name="DateiNeuAction"/>
+    <addaction name="DateiOeffnenAction"/>
+    <addaction name="LetzteDateienMenu"/>
+    <addaction name="separator"/>
+    <addaction name="DateiSpeichernAction"/>
+    <addaction name="DateiSpeichernUnterAction"/>
+    <addaction name="separator"/>
     <addaction name="DateiBeendenAction"/>
    </widget>
+   <widget class="QMenu" name="VorgangMenu">
+    <property name="title">
+     <string>&amp;Vorgang</string>
+    </property>
+    <addaction name="VorgangHinzufuegenAction"/>
+    <addaction name="VorgangBearbeitenAction"/>
+    <addaction name="VorgangLoeschenAction"/>
+   </widget>
    <addaction name="DateiMenu"/>
+   <addaction name="VorgangMenu"/>
+  </widget>
+  <widget class="QToolBar" name="ToolBar">
+   <property name="windowTitle">
+    <string>toolBar</string>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="DateiOeffnenAction"/>
+   <addaction name="DateiSpeichernAction"/>
+   <addaction name="separator"/>
+   <addaction name="VorgangHinzufuegenAction"/>
+   <addaction name="VorgangBearbeitenAction"/>
+   <addaction name="VorgangLoeschenAction"/>
   </widget>
   <action name="DateiBeendenAction">
    <property name="text">
@@ -49,6 +87,71 @@
    </property>
    <property name="shortcut">
     <string>Ctrl+Q</string>
+   </property>
+  </action>
+  <action name="DateiNeuAction">
+   <property name="icon">
+    <iconset resource="gantt.qrc">
+     <normaloff>:/icons/16x16/page_white.png</normaloff>:/icons/16x16/page_white.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Neu</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+N</string>
+   </property>
+  </action>
+  <action name="DateiOeffnenAction">
+   <property name="icon">
+    <iconset resource="gantt.qrc">
+     <normaloff>:/icons/16x16/folder.png</normaloff>:/icons/16x16/folder.png</iconset>
+   </property>
+   <property name="text">
+    <string>Öffnen</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+O</string>
+   </property>
+  </action>
+  <action name="DateiSpeichernAction">
+   <property name="icon">
+    <iconset resource="gantt.qrc">
+     <normaloff>:/icons/16x16/disk.png</normaloff>:/icons/16x16/disk.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Speichern</string>
+   </property>
+  </action>
+  <action name="DateiSpeichernUnterAction">
+   <property name="text">
+    <string>Speichern unter...</string>
+   </property>
+  </action>
+  <action name="VorgangHinzufuegenAction">
+   <property name="icon">
+    <iconset resource="gantt.qrc">
+     <normaloff>:/icons/16x16/date_edit.png</normaloff>:/icons/16x16/date_edit.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Hinzufügen</string>
+   </property>
+  </action>
+  <action name="VorgangBearbeitenAction">
+   <property name="icon">
+    <iconset resource="gantt.qrc">
+     <normaloff>:/icons/16x16/date_add.png</normaloff>:/icons/16x16/date_add.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Bearbeiten...</string>
+   </property>
+  </action>
+  <action name="VorgangLoeschenAction">
+   <property name="icon">
+    <iconset resource="gantt.qrc">
+     <normaloff>:/icons/16x16/date_delete.png</normaloff>:/icons/16x16/date_delete.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Löschen</string>
    </property>
   </action>
  </widget>
@@ -60,6 +163,8 @@
    <container>1</container>
   </customwidget>
  </customwidgets>
- <resources/>
+ <resources>
+  <include location="gantt.qrc"/>
+ </resources>
  <connections/>
 </ui>

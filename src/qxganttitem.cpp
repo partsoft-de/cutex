@@ -21,6 +21,24 @@
 
 using namespace cutex;
 
-QxGanttItem::QxGanttItem(const QString &name) : QxTreeItem(name)
+/*!
+*/
+QxGanttItem::QxGanttItem(const QString &text) : QxTreeItem(text)
 {
+    m_expanded = false;
+}
+
+/*!
+*/
+bool QxGanttItem::isExpanded() const
+{
+    return m_expanded;
+}
+
+/*!
+*/
+void QxGanttItem::setExpanded()
+{
+    m_expanded = true;
+    emitDataChanged();
 }

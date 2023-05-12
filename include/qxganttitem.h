@@ -30,7 +30,12 @@ namespace cutex {
 class QxGanttItem : public QxTreeItem
 {
 public:
-    QxGanttItem(const QString &name = QString());
+    QxGanttItem(const QString &text = QString());
+    bool isExpanded() const;
+    void setExpanded();
+
+private:
+    bool m_expanded;
 };
 
 } // namespace

@@ -17,6 +17,7 @@
 **
 ***********************************************************************************************************************/
 
+#include "qxganttitem.h"
 #include "qxganttitemmodel.h"
 
 using namespace cutex;
@@ -26,6 +27,63 @@ using namespace cutex;
 QxGanttItemModel::QxGanttItemModel(QObject *parent) : QxTreeItemModel(parent)
 {
     m_workDays = WorkDay::Monday | WorkDay::Tuesday | WorkDay::Wednesday | WorkDay::Thursday | WorkDay::Friday;
+}
+
+/*!
+*/
+int	QxGanttItemModel::columnCount(const QModelIndex &parent) const
+{
+    Q_UNUSED(parent);
+
+    return (Column::Finish + 1);
+}
+
+/*!
+*/
+QVariant QxGanttItemModel::headerData(int section, Qt::Orientation orientation, int role) const
+{
+    Q_UNUSED(orientation);
+
+    QVariant result;
+
+    if (role == Qt::DisplayRole) {
+        switch (section) {
+        case Column::Text:
+            result = tr("Name");
+            break;
+        }
+    }
+
+    if (role == Qt::TextAlignmentRole)
+        result = Qt::AlignTop + Qt::AlignLeft;
+
+    return result;
+}
+
+/*!
+*/
+QVariant QxGanttItemModel::data(const QModelIndex &index, int role) const
+{
+    if (!index.isValid())
+        return QVariant();
+
+    if (role == Qt::DisplayRole || role == Qt::EditRole) {
+        QxGanttItem *item = static_cast<QxGanttItem*>(itemFromIndex(index));
+        QVariant value;
+
+        switch (index.column()) {
+        case Column::Text:
+            value = item->text();
+            break;
+        }
+
+        return value;
+    }
+
+    if (role == Qt::SizeHintRole)
+        return QSize(100, 30);
+
+    return QVariant();
 }
 
 /*!

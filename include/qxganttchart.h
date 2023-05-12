@@ -35,6 +35,7 @@ public:
     QxGanttChart(QWidget *parent = nullptr);
     QxGanttItemModel* model() const;
     void setModel(QxGanttItemModel *model);
+    int headerHeight() const;
 
 protected:
     virtual void paintEvent(QPaintEvent *event);

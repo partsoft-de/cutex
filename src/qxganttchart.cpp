@@ -52,6 +52,13 @@ void QxGanttChart::setModel(QxGanttItemModel *model)
     connect(m_model, SIGNAL(modelReset()), this, SLOT(dataChanged()));
 }
 
+/*!
+*/
+int QxGanttChart::headerHeight() const
+{
+    return m_headerHeight;
+}
+
 void QxGanttChart::paintEvent(QPaintEvent *event)
 {
     Q_UNUSED(event);

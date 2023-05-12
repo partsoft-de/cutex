@@ -24,3 +24,6 @@ HEADERS += \
 SOURCES += \
     mainwindow.cpp \
     main.cpp
+
+RESOURCES += \
+    gantt.qrc

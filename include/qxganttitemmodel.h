@@ -32,6 +32,10 @@ class QxGanttItemModel : public QxTreeItemModel
     Q_OBJECT
 
 public:
+    enum Column {
+        Text = 0, Duration, Start, Finish
+    };
+
     enum WorkDay {
         NoDay = 0x00,
         Monday = 0x01,
@@ -48,6 +52,9 @@ public:
 
 public:
     QxGanttItemModel(QObject *parent = nullptr);
+    virtual int	columnCount(const QModelIndex &parent = QModelIndex()) const;
+    virtual QVariant headerData(int section, Qt::Orientation orientation, int role = Qt::DisplayRole) const;
+    virtual QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const;
     void dateRange(QDate &min, QDate &max) const;
     WorkDays workDays() const;
     bool isWorkDay(const QDate &date) const;

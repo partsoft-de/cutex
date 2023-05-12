@@ -20,6 +20,7 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
+#include <qxganttitemmodel.h>
 #include "gantt.h"
 #include "ui_mainwindow.h"
 
@@ -30,11 +31,33 @@ class MainWindow : public QxMainWindow, private Ui::MainWindow
 public:
     MainWindow();
 
+public slots:
+    void relockActions();
+
 protected:
     void processAction(QAction *action);
+    void closeEvent(QCloseEvent *event);
 
 private:
     Ui::MainWindow m_ui;
+    QxRecentFiles *m_recentFiles;
+    QxGanttItemModel m_model;
+
+private:
+    void initGanttTree();
+    bool saveRequest();
+    bool loadFile(const QString &fileName);
+    bool saveFile(const QString &fileName);
+
+private slots:
+    void fileNew();
+    void fileOpen();
+    void fileOpen(const QString &fileName);
+    bool fileSave();
+    bool fileSaveAs();
+    void insertVorgang();
+    void editVorgang();
+    void removeVorgang();
 };
 
 #endif // MAINWINDOW_H
