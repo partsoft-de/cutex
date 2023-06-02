@@ -53,7 +53,7 @@ public:
     QString fileName() const;
     QString lastStatement() const;
     QxSqlScript::Error lastError() const;
-    QSqlQuery query() const;
+    const QSqlQuery& query() const;
 
 private:
     QString m_fileName;

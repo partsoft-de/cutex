@@ -27,6 +27,11 @@ QxSwipeWidgetContainerExtension::QxSwipeWidgetContainerExtension(QxSwipeWidget *
     m_widget = widget;
 }
 
+bool QxSwipeWidgetContainerExtension::canAddWidget() const
+{
+    return true;
+}
+
 void QxSwipeWidgetContainerExtension::addWidget(QWidget *widget)
 {
     m_widget->addWidget(widget);
@@ -45,6 +50,13 @@ int QxSwipeWidgetContainerExtension::currentIndex() const
 void QxSwipeWidgetContainerExtension::insertWidget(int index, QWidget *widget)
 {
     m_widget->insertWidget(index, widget);
+}
+
+bool QxSwipeWidgetContainerExtension::canRemove(int index) const
+{
+    Q_UNUSED(index);
+
+    return true;
 }
 
 void QxSwipeWidgetContainerExtension::remove(int index)

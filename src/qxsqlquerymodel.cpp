@@ -116,6 +116,33 @@ QVariant QxSqlQueryModel::data(const QModelIndex &index, int role) const
             value = record->value(index.column());
         }
 
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+        QMetaType::Type type = static_cast<QMetaType::Type>(value.metaType().id());
+
+        switch (column->type) {
+        case QMetaType::QDate:
+            if (type == QMetaType::QDate) {
+                if (column->format.isEmpty()) {
+                    return value.toDate().toString(Qt::TextDate);
+                } else {
+                    return value.toDate().toString(column->format);
+                }
+            }
+
+            if (type == QMetaType::Int || type == QMetaType::LongLong) {
+                if (column->format.isEmpty()) {
+                    return QDate::fromJulianDay(value.toLongLong()).toString(Qt::TextDate);
+                } else {
+                    return QDate::fromJulianDay(value.toLongLong()).toString(column->format);
+                }
+            }
+            break;
+        case QMetaType::Bool:
+            return QVariant();
+        default:
+            return value;
+        }
+#else
         QVariant::Type type = value.type();
 
         switch (column->type) {
@@ -141,6 +168,7 @@ QVariant QxSqlQueryModel::data(const QModelIndex &index, int role) const
         default:
             return value;
         }
+#endif
     }
 
     if (role == Qt::EditRole)
@@ -154,7 +182,11 @@ QVariant QxSqlQueryModel::data(const QModelIndex &index, int role) const
         QVariant value = m_data.at(index.row())->value(index.column());
 
         switch (column->type) {
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+        case QMetaType::Bool:
+#else
         case QVariant::Bool:
+#endif
             if (value.toBool()) {
                 return Qt::Checked;
             } else {
@@ -239,7 +271,11 @@ bool QxSqlQueryModel::setQuery(QSqlQuery &query)
         ColumnInfo *column = new ColumnInfo;
         column->caption = query.record().fieldName(n);
         column->alignment = Qt::AlignCenter;
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+        column->type = static_cast<QMetaType::Type>(query.record().field(n).metaType().id());
+#else
         column->type = query.record().field(n).type();
+#endif
         column->format = QString();
         m_columns.insert(n, column);
     }
@@ -595,7 +631,11 @@ void QxSqlQueryModel::setColumnAlignment(const QString &column, Qt::AlignmentFla
 /*!
   Setzt den Datentyp der Spalte <i>column</i> auf den Typ <i>type</i>.
 */
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+void QxSqlQueryModel::setColumnType(int column, QMetaType::Type type, const QString &format)
+#else
 void QxSqlQueryModel::setColumnType(int column, QVariant::Type type, const QString &format)
+#endif
 {
     if (column >= 0 && column < m_columns.count()) {
         ColumnInfo *info = m_columns.at(column);
@@ -610,7 +650,11 @@ void QxSqlQueryModel::setColumnType(int column, QVariant::Type type, const QStri
 /*!
   Setzt den Datentyp der Spalte <i>column</i> auf den Typ <i>type</i>.
 */
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+void QxSqlQueryModel::setColumnType(const QString &column, QMetaType::Type type, const QString &format)
+#else
 void QxSqlQueryModel::setColumnType(const QString &column, QVariant::Type type, const QString &format)
+#endif
 {
     setColumnType(columnIndex(column), type, format);
 }
@@ -644,7 +688,7 @@ QCompleter* QxSqlQueryModel::createCompleter(int column, QObject *parent)
 /*!
   Führt die in <i>query</i> angegebene Abfrage aus und erzeugt einen Completer aus den Werten der Spalte <i>column</i>.
 */
-QCompleter* QxSqlQueryModel::createCompleter(QSqlQuery query, int column, QObject *parent)
+QCompleter* QxSqlQueryModel::createCompleter(QSqlQuery &query, int column, QObject *parent)
 {
     QStringList list = QxSqlQueryModel::columnValues<QString>(query, column);
     list.sort();

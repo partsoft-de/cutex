@@ -246,7 +246,11 @@ bool QxApplication::loadTranslation(QTranslator *translator, const QString &file
     if (translator->load(fileName, applicationDirPath()))
         return true;
 
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+    if (translator->load(fileName, QLibraryInfo::path(QLibraryInfo::TranslationsPath)))
+#else
     if (translator->load(fileName, QLibraryInfo::location(QLibraryInfo::TranslationsPath)))
+#endif
         return true;
 
     return false;

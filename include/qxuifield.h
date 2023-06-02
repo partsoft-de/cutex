@@ -59,7 +59,11 @@ private:
     static bool isModified(QWidget *uiField);
     static void setModified(QWidget *uiField, bool modified);
     static bool isReadOnly(QWidget *uiField);
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+    static QVariant value(QWidget *uiField, QMetaType::Type = QMetaType::UnknownType);
+#else
     static QVariant value(QWidget *uiField, QVariant::Type type = QVariant::Invalid);
+#endif
     static bool setValue(QWidget *uiField, const QVariant &value);
     static void reset(QWidget *uiField);
     static void selectAll(QWidget *uiField);

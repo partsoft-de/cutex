@@ -629,7 +629,12 @@ void QxWizard::uiFieldValues(QSqlRecord *record, QWidget *uiField)
     if (QxUiField::isUiField(uiField)) {
         QString name = QxUiField::sqlMapping(uiField);
         if (!name.isEmpty() && record->contains(name)) {
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+            QMetaType::Type type = static_cast<QMetaType::Type>(record->field(name).metaType().id());
+            QVariant value = QxUiField::value(uiField, type);
+#else
             QVariant value = QxUiField::value(uiField, record->field(name).type());
+#endif
             if (m_sqlRelations.contains(uiField)) {
                 QSqlRelation relation = m_sqlRelations.value(uiField);
                 QSqlQuery query;

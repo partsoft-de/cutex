@@ -254,6 +254,90 @@ bool QxUiField::isReadOnly(QWidget *uiField)
     return false;
 }
 
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+QVariant QxUiField::value(QWidget *uiField, QMetaType::Type type)
+{
+    QString className = QxUiField::className(uiField);
+
+    if (className == "QLineEdit") {
+        QLineEdit *lineEdit = qobject_cast<QLineEdit*>(uiField);
+        return lineEdit->text();
+    }
+
+    if (className == "QxIntEdit") {
+        QxIntEdit *intEdit = qobject_cast<QxIntEdit*>(uiField);
+        return intEdit->value();
+    }
+
+    if (className == "QxDoubleEdit") {
+        QxDoubleEdit *doubleEdit = qobject_cast<QxDoubleEdit*>(uiField);
+        return doubleEdit->value();
+    }
+
+    if (className == "QPlainTextEdit") {
+        QPlainTextEdit *plainTextEdit = qobject_cast<QPlainTextEdit*>(uiField);
+        return plainTextEdit->toPlainText();
+    }
+
+    if (className == "QSpinBox") {
+        QSpinBox *spinBox = qobject_cast<QSpinBox*>(uiField);
+        return spinBox->value();
+    }
+
+    if (className == "QDoubleSpinBox") {
+        QDoubleSpinBox *doubleSpinBox = qobject_cast<QDoubleSpinBox*>(uiField);
+        return doubleSpinBox->value();
+    }
+
+    if (className == "QCheckBox") {
+        QCheckBox *checkBox = qobject_cast<QCheckBox*>(uiField);
+        return checkBox->isChecked();
+    }
+
+    if (className == "QComboBox") {
+        QComboBox *comboBox = qobject_cast<QComboBox*>(uiField);
+        if (type == QMetaType::Int || type == QMetaType::Double || type == QMetaType::LongLong) {
+            return comboBox->currentIndex();
+        } else {
+            return comboBox->currentText();
+        }
+    }
+
+    if (className == "QDateEdit") {
+        QDateEdit *dateEdit = qobject_cast<QDateEdit*>(uiField);
+        if (type == QMetaType::Int || type == QMetaType::LongLong) {
+            return dateEdit->date().toJulianDay();
+        } else if (type == QMetaType::QString) {
+            return dateEdit->date().toString(Qt::ISODate);
+        } else {
+            return dateEdit->date();
+        }
+    }
+
+    if (className == "QRadioButton") {
+        QRadioButton *radioButton = qobject_cast<QRadioButton*>(uiField);
+        return radioButton->isChecked();
+    }
+
+    if (className == "QFontComboBox") {
+        QFontComboBox *fontComboBox = qobject_cast<QFontComboBox*>(uiField);
+        return fontComboBox->currentFont().family();
+    }
+
+    if (className == "cutex::QxDateEdit") {
+        QxDateEdit *dateEdit = qobject_cast<QxDateEdit*>(uiField);
+        if (type == QMetaType::Int || type == QMetaType::LongLong) {
+            return dateEdit->date().toJulianDay();
+        } else if (type == QMetaType::QString) {
+            return dateEdit->date().toString(Qt::ISODate);
+        } else {
+            return dateEdit->date();
+        }
+    }
+
+    return QVariant();
+}
+#else
 QVariant QxUiField::value(QWidget *uiField, QVariant::Type type)
 {
     QString className = QxUiField::className(uiField);
@@ -336,10 +420,13 @@ QVariant QxUiField::value(QWidget *uiField, QVariant::Type type)
 
     return QVariant();
 }
+#endif
 
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
 bool QxUiField::setValue(QWidget *uiField, const QVariant &value)
 {
     QString className = QxUiField::className(uiField);
+    QMetaType::Type type = static_cast<QMetaType::Type>(value.metaType().id());
 
     if (className == "QLineEdit") {
         QLineEdit *lineEdit = qobject_cast<QLineEdit*>(uiField);
@@ -386,7 +473,7 @@ bool QxUiField::setValue(QWidget *uiField, const QVariant &value)
     if (className == "QComboBox") {
         QComboBox *comboBox = qobject_cast<QComboBox*>(uiField);
         bool success = false;
-        if (value.type() == QVariant::String) {
+        if (type == QMetaType::QString) {
             QLineEdit *lineEdit = comboBox->lineEdit();
             if (lineEdit) {
                 lineEdit->setText(value.toString());
@@ -399,7 +486,7 @@ bool QxUiField::setValue(QWidget *uiField, const QVariant &value)
             }
             return success;
         }
-        if (value.type() == QVariant::Int || value.type() == QVariant::Double || value.type() == QVariant::LongLong) {
+        if (type == QMetaType::Int || type == QMetaType::Double || type == QMetaType::LongLong) {
             comboBox->setCurrentIndex(value.toInt());
             if (comboBox->currentIndex() == value.toInt())
                 success = true;
@@ -409,9 +496,9 @@ bool QxUiField::setValue(QWidget *uiField, const QVariant &value)
 
     if (className == "QDateEdit") {
         QDateEdit *dateEdit = qobject_cast<QDateEdit*>(uiField);
-        if (value.type() == QVariant::Int || value.type() == QVariant::LongLong) {
+        if (type == QMetaType::Int || type == QMetaType::LongLong) {
             dateEdit->setDate(QDate::fromJulianDay(value.toLongLong()));
-        } else if (value.type() == QVariant::String) {
+        } else if (type == QMetaType::QString) {
             dateEdit->setDate(QDate::fromString(value.toString(), Qt::ISODate));
         } else {
             dateEdit->setDate(value.toDate());
@@ -427,11 +514,11 @@ bool QxUiField::setValue(QWidget *uiField, const QVariant &value)
 
     if (className == "QFontComboBox") {
         QFontComboBox *fontComboBox = qobject_cast<QFontComboBox*>(uiField);
-        if (value.type() == QVariant::Font) {
+        if (type == QMetaType::QFont) {
             fontComboBox->setCurrentFont(value.value<QFont>());
             return true;
         }
-        if (value.type() == QVariant::String) {
+        if (type == QMetaType::QString) {
             fontComboBox->setCurrentFont(QFont(value.toString()));
             return true;
         }
@@ -439,9 +526,9 @@ bool QxUiField::setValue(QWidget *uiField, const QVariant &value)
 
     if (className == "cutex::QxDateEdit") {
         QxDateEdit *dateEdit = qobject_cast<QxDateEdit*>(uiField);
-        if (value.type() == QVariant::Int || value.type() == QVariant::LongLong) {
+        if (type == QMetaType::Int || type == QMetaType::LongLong) {
             dateEdit->setDate(QDate::fromJulianDay(value.toLongLong()));
-        } else if (value.type() == QVariant::String) {
+        } else if (type == QMetaType::QString) {
             dateEdit->setDate(QDate::fromString(value.toString(), Qt::ISODate));
         } else {
             dateEdit->setDate(value.toDate());
@@ -451,6 +538,123 @@ bool QxUiField::setValue(QWidget *uiField, const QVariant &value)
 
     return false;
 }
+#else
+bool QxUiField::setValue(QWidget *uiField, const QVariant &value)
+{
+    QString className = QxUiField::className(uiField);
+    QVariant::Type type = value.type();
+
+    if (className == "QLineEdit") {
+        QLineEdit *lineEdit = qobject_cast<QLineEdit*>(uiField);
+        lineEdit->setText(value.toString());
+        return true;
+    }
+
+    if (className == "QxIntEdit") {
+        QxIntEdit *intEdit = qobject_cast<QxIntEdit*>(uiField);
+        intEdit->setValue(value.toInt());
+        return true;
+    }
+
+    if (className == "QxDoubleEdit") {
+        QxDoubleEdit *doubleEdit = qobject_cast<QxDoubleEdit*>(uiField);
+        doubleEdit->setValue(value.toDouble());
+        return true;
+    }
+
+    if (className == "QPlainTextEdit") {
+        QPlainTextEdit *plainTextEdit = qobject_cast<QPlainTextEdit*>(uiField);
+        plainTextEdit->setPlainText(value.toString());
+        return true;
+    }
+
+    if (className == "QSpinBox") {
+        QSpinBox *spinBox = qobject_cast<QSpinBox*>(uiField);
+        spinBox->setValue(value.toInt());
+        return true;
+    }
+
+    if (className == "QDoubleSpinBox") {
+        QDoubleSpinBox *doubleSpinBox = qobject_cast<QDoubleSpinBox*>(uiField);
+        doubleSpinBox->setValue(value.toDouble());
+        return true;
+    }
+
+    if (className == "QCheckBox") {
+        QCheckBox *checkBox = qobject_cast<QCheckBox*>(uiField);
+        checkBox->setChecked(value.toBool());
+        return true;
+    }
+
+    if (className == "QComboBox") {
+        QComboBox *comboBox = qobject_cast<QComboBox*>(uiField);
+        bool success = false;
+        if (type == QVariant::String) {
+            QLineEdit *lineEdit = comboBox->lineEdit();
+            if (lineEdit) {
+                lineEdit->setText(value.toString());
+                success = true;
+            }
+            int index = comboBox->findText(value.toString());
+            if (index > -1) {
+                comboBox->setCurrentIndex(index);
+                success = true;
+            }
+            return success;
+        }
+        if (type == QVariant::Int || type == QVariant::Double || type == QVariant::LongLong) {
+            comboBox->setCurrentIndex(value.toInt());
+            if (comboBox->currentIndex() == value.toInt())
+                success = true;
+            return success;
+        }
+    }
+
+    if (className == "QDateEdit") {
+        QDateEdit *dateEdit = qobject_cast<QDateEdit*>(uiField);
+        if (type == QVariant::Int || type == QVariant::LongLong) {
+            dateEdit->setDate(QDate::fromJulianDay(value.toLongLong()));
+        } else if (type == QVariant::String) {
+            dateEdit->setDate(QDate::fromString(value.toString(), Qt::ISODate));
+        } else {
+            dateEdit->setDate(value.toDate());
+        }
+        return true;
+    }
+
+    if (className == "QRadioButton") {
+        QRadioButton *radioButton = qobject_cast<QRadioButton*>(uiField);
+        radioButton->setChecked(value.toBool());
+        return true;
+    }
+
+    if (className == "QFontComboBox") {
+        QFontComboBox *fontComboBox = qobject_cast<QFontComboBox*>(uiField);
+        if (type == QVariant::Font) {
+            fontComboBox->setCurrentFont(value.value<QFont>());
+            return true;
+        }
+        if (type == QVariant::String) {
+            fontComboBox->setCurrentFont(QFont(value.toString()));
+            return true;
+        }
+    }
+
+    if (className == "cutex::QxDateEdit") {
+        QxDateEdit *dateEdit = qobject_cast<QxDateEdit*>(uiField);
+        if (type == QVariant::Int || type == QVariant::LongLong) {
+            dateEdit->setDate(QDate::fromJulianDay(value.toLongLong()));
+        } else if (type == QVariant::String) {
+            dateEdit->setDate(QDate::fromString(value.toString(), Qt::ISODate));
+        } else {
+            dateEdit->setDate(value.toDate());
+        }
+        return true;
+    }
+
+    return false;
+}
+#endif
 
 void QxUiField::reset(QWidget *uiField)
 {

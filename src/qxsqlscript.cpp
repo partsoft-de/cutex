@@ -184,7 +184,7 @@ QxSqlScript::Error QxSqlScript::lastError() const
 /*!
   Gibt das interne Query-Objekt zurück. Das Objekt ist erst nach einem Aufruf der Methode exec() gültig.
 */
-QSqlQuery QxSqlScript::query() const
+const QSqlQuery& QxSqlScript::query() const
 {
     return m_query;
 }
