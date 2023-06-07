@@ -15,7 +15,7 @@ var classcutex_1_1_qx_sql_script =
     [ "lastError", "classcutex_1_1_qx_sql_script.html#a04e73f1085e77b46d4e2583f7bc8716b", null ],
     [ "lastStatement", "classcutex_1_1_qx_sql_script.html#a31bd91b47b16ddddba2cd82befc8a9ca", null ],
     [ "processed", "classcutex_1_1_qx_sql_script.html#a5c131bebfdca5061dfeb5de1aee61345", null ],
-    [ "query", "classcutex_1_1_qx_sql_script.html#ad0dbae40e9917412dfe3d6aba31f795c", null ],
+    [ "query", "classcutex_1_1_qx_sql_script.html#a99de1e9a759260836e6027fab724797c", null ],
     [ "setEncoding", "classcutex_1_1_qx_sql_script.html#aa07ee0d27cc9dab0976ff40648e896df", null ],
     [ "m_encoding", "classcutex_1_1_qx_sql_script.html#afec24b49d7bc0850ec8decd63c1d10a6", null ],
     [ "m_error", "classcutex_1_1_qx_sql_script.html#acfbd6ed767227ace8dc2a10408e1a82a", null ],

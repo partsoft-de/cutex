@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['query_739',['query',['../classcutex_1_1_qx_sql_script.html#ad0dbae40e9917412dfe3d6aba31f795c',1,'cutex::QxSqlScript']]],
+  ['query_739',['query',['../classcutex_1_1_qx_sql_script.html#a99de1e9a759260836e6027fab724797c',1,'cutex::QxSqlScript']]],
   ['qxapplication_740',['QxApplication',['../classcutex_1_1_qx_application.html#a6efcbd6c83ec1483f9ee4025c88ea252',1,'cutex::QxApplication']]],
   ['qxcalculatordialog_741',['QxCalculatorDialog',['../classcutex_1_1_qx_calculator_dialog.html#a23c497a23084b211df45c7d6dcb88225',1,'cutex::QxCalculatorDialog']]],
   ['qxdashboard_742',['QxDashboard',['../classcutex_1_1_qx_dashboard.html#a746419bc813cb1cca1ca6c206a09806b',1,'cutex::QxDashboard']]],
