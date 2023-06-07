@@ -1,6 +1,6 @@
 /***********************************************************************************************************************
 **
-** Copyright (C) 2016-2022 Partsoft UG (haftungsbeschränkt)
+** Copyright (C) 2016-2023 Partsoft UG (haftungsbeschränkt)
 ** Contact: https://www.partsoft.de/index.php/kontakt
 **
 ** This file is part of cutex
@@ -184,7 +184,7 @@ QxSqlScript::Error QxSqlScript::lastError() const
 /*!
   Gibt das interne Query-Objekt zurück. Das Objekt ist erst nach einem Aufruf der Methode exec() gültig.
 */
-QSqlQuery QxSqlScript::query() const
+const QSqlQuery& QxSqlScript::query() const
 {
     return m_query;
 }

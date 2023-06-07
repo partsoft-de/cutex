@@ -1,6 +1,6 @@
 /***********************************************************************************************************************
 **
-** Copyright (C) 2016-2022 Partsoft UG (haftungsbeschränkt)
+** Copyright (C) 2016-2023 Partsoft UG (haftungsbeschränkt)
 ** Contact: https://www.partsoft.de/index.php/kontakt
 **
 ** This file is part of cutex
@@ -651,7 +651,11 @@ void QxTextEdit::setShowLineAndParagraphSeparators(bool show)
 
 void QxTextEdit::mousePressEvent(QMouseEvent *event)
 {
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+    QTextCursor cursor = cursorForPosition(event->scenePosition().toPoint());
+#else
     QTextCursor cursor = cursorForPosition(event->windowPos().toPoint());
+#endif
 
     if (!cursor.charFormat().isImageFormat() && !cursor.atBlockEnd()) {
         cursor.movePosition(QTextCursor::Right);
