@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>299</width>
-    <height>194</height>
+    <height>201</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -371,5 +371,38 @@
   <tabstop>CalculateButton</tabstop>
  </tabstops>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>ButtonBox</sender>
+   <signal>accepted()</signal>
+   <receiver>QxCalculatorDialog</receiver>
+   <slot>accept()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>149</x>
+     <y>179</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>149</x>
+     <y>100</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>ButtonBox</sender>
+   <signal>rejected()</signal>
+   <receiver>QxCalculatorDialog</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>149</x>
+     <y>179</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>149</x>
+     <y>100</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>

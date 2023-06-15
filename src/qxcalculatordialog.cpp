@@ -1,6 +1,6 @@
 /***********************************************************************************************************************
 **
-** Copyright (C) 2016-2022 Partsoft UG (haftungsbeschränkt)
+** Copyright (C) 2016-2023 Partsoft UG (haftungsbeschränkt)
 ** Contact: https://www.partsoft.de/index.php/kontakt
 **
 ** This file is part of cutex
@@ -111,7 +111,7 @@ void QxCalculatorDialog::buttonClicked(QAbstractButton *button)
         }
     } else if (button == m_ui->DeleteButton) {
         if (value != "0") {
-            value = value.left(value.count() - 1);
+            value = value.left(value.length() - 1);
             if (value.isEmpty())
                 value = "0";
             setUiFieldValue(m_ui->ValueField, value);
@@ -214,7 +214,7 @@ QString QxCalculatorDialog::calculate()
 
     setUiFieldValue(m_ui->ValueField, result);
 
-    m_operator = 0;
+    m_operator = QChar();
     m_value = 0.0;
     m_clear = true;
 

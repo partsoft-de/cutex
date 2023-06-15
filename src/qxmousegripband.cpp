@@ -1,6 +1,6 @@
 /***********************************************************************************************************************
 **
-** Copyright (C) 2016-2022 Partsoft UG (haftungsbeschränkt)
+** Copyright (C) 2016-2023 Partsoft UG (haftungsbeschränkt)
 ** Contact: https://www.partsoft.de/index.php/kontakt
 **
 ** This file is part of cutex
@@ -116,14 +116,22 @@ void QxMouseGripBand::mousePressEvent(QMouseEvent *event)
             const QRectF &rc = positions.value(key);
 
             if (rc.contains(pos)) {
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+                m_dragPos = event->scenePosition();
+#else
                 m_dragPos = event->windowPos();
+#endif
                 m_dragGrip = key;
                 break;
             }
         }
 
         if (m_dragGrip == QxMouseGripBand::NoGrip && m_moveEnabled)
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+            m_dragPos = event->scenePosition();
+#else
             m_dragPos = event->windowPos();
+#endif
     }
 }
 
@@ -163,7 +171,11 @@ void QxMouseGripBand::mouseMoveEvent(QMouseEvent *event)
             }
         }
     } else {
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+        QPointF pos = event->scenePosition();
+#else
         QPointF pos = event->windowPos();
+#endif
         QRectF rc = geometry();
 
         switch (m_dragGrip) {

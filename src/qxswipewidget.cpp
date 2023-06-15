@@ -1,6 +1,6 @@
 /***********************************************************************************************************************
 **
-** Copyright (C) 2016-2022 Partsoft UG (haftungsbeschränkt)
+** Copyright (C) 2016-2023 Partsoft UG (haftungsbeschränkt)
 ** Contact: https://www.partsoft.de/index.php/kontakt
 **
 ** This file is part of cutex
@@ -342,11 +342,19 @@ bool QxSwipeWidget::touchEvent(QTouchEvent *event)
     switch (event->type()) {
     case QEvent::TouchBegin:
         {
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+            QList<QTouchEvent::TouchPoint> touchPoints = event->points();
+#else
             QList<QTouchEvent::TouchPoint> touchPoints = event->touchPoints();
+#endif
             QVariant swipeEnabled;
 
             if (touchPoints.size() == 1) {
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+                QPointF pos = touchPoints.at(0).position();
+#else
                 QPointF pos = touchPoints.at(0).pos();
+#endif
                 QWidget *widget = childAt(pos.x(), pos.y());
 
                 if (widget == m_swipeBar) {
@@ -379,10 +387,20 @@ bool QxSwipeWidget::touchEvent(QTouchEvent *event)
         break;
     case QEvent::TouchEnd:
         {
-            QList<QTouchEvent::TouchPoint> touchPoints = event->touchPoints();            
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+            QList<QTouchEvent::TouchPoint> touchPoints = event->points();
+#else
+            QList<QTouchEvent::TouchPoint> touchPoints = event->touchPoints();
+#endif
+
             if (touchPoints.size() == 1) {
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+                QPointF pos = touchPoints.at(0).position();
+                QPointF startPos = touchPoints.at(0).pressPosition();
+#else
                 QPointF pos = touchPoints.at(0).pos();
                 QPointF startPos = touchPoints.at(0).startPos();
+#endif
                 qreal minDistance = 150.0;
 
                 if (pos.x() + minDistance < startPos.x()) {

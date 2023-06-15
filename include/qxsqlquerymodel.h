@@ -1,6 +1,6 @@
 /***********************************************************************************************************************
 **
-** Copyright (C) 2016-2022 Partsoft UG (haftungsbeschränkt)
+** Copyright (C) 2016-2023 Partsoft UG (haftungsbeschränkt)
 ** Contact: https://www.partsoft.de/index.php/kontakt
 **
 ** This file is part of cutex
@@ -78,7 +78,7 @@ public:
 
         return list;
     }
-    template<typename T> static QList<T> columnValues(QSqlQuery query, int column = 0)
+    template<typename T> static QList<T> columnValues(QSqlQuery &query, int column = 0)
     {
         QxSqlQueryModel model;
         QList<T> list;
@@ -104,11 +104,16 @@ public:
     void setColumnCaption(const QString &column, const QString &caption, Qt::AlignmentFlag alignment = Qt::AlignLeft);
     void setColumnAlignment(int column, Qt::AlignmentFlag alignment);
     void setColumnAlignment(const QString &column, Qt::AlignmentFlag alignment);
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+    void setColumnType(int column, QMetaType::Type type, const QString &format = QString());
+    void setColumnType(const QString &column, QMetaType::Type type, const QString &format = QString());
+#else
     void setColumnType(int column, QVariant::Type type, const QString &format = QString());
     void setColumnType(const QString &column, QVariant::Type type, const QString &format = QString());
+#endif
     void setSqlRelation(int column, const QSqlRelation &sqlRelation);
     QCompleter* createCompleter(int column = 0, QObject *parent = nullptr);
-    static QCompleter* createCompleter(QSqlQuery query, int column = 0, QObject *parent = nullptr);
+    static QCompleter* createCompleter(QSqlQuery &query, int column = 0, QObject *parent = nullptr);
     static QCompleter* createCompleter(const QString &query, int column = 0, QObject *parent = nullptr);
 
 protected:
@@ -119,7 +124,11 @@ private:
     struct ColumnInfo {
         QString caption;
         Qt::Alignment alignment;
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+        QMetaType::Type type;
+#else
         QVariant::Type type;
+#endif
         QString format;
     };
     //! @endcond

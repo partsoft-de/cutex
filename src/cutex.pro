@@ -19,10 +19,6 @@ CONFIG += \
     c++11 \
     staticlib \
 
-equals(QT_MAJOR_VERSION, 6) {
-    error(Qt $$QT_VERSION is not supported yet!)
-}
-
 android: ANDROID_ABIS = armeabi-v7a arm64-v8a
 
 INCLUDEPATH += \

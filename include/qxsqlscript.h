@@ -1,6 +1,6 @@
 /***********************************************************************************************************************
 **
-** Copyright (C) 2016-2022 Partsoft UG (haftungsbeschränkt)
+** Copyright (C) 2016-2023 Partsoft UG (haftungsbeschränkt)
 ** Contact: https://www.partsoft.de/index.php/kontakt
 **
 ** This file is part of cutex
@@ -53,7 +53,7 @@ public:
     QString fileName() const;
     QString lastStatement() const;
     QxSqlScript::Error lastError() const;
-    QSqlQuery query() const;
+    const QSqlQuery& query() const;
 
 private:
     QString m_fileName;

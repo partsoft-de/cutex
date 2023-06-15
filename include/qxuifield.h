@@ -1,6 +1,6 @@
 /***********************************************************************************************************************
 **
-** Copyright (C) 2016-2022 Partsoft UG (haftungsbeschränkt)
+** Copyright (C) 2016-2023 Partsoft UG (haftungsbeschränkt)
 ** Contact: https://www.partsoft.de/index.php/kontakt
 **
 ** This file is part of cutex
@@ -59,7 +59,11 @@ private:
     static bool isModified(QWidget *uiField);
     static void setModified(QWidget *uiField, bool modified);
     static bool isReadOnly(QWidget *uiField);
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+    static QVariant value(QWidget *uiField, QMetaType::Type = QMetaType::UnknownType);
+#else
     static QVariant value(QWidget *uiField, QVariant::Type type = QVariant::Invalid);
+#endif
     static bool setValue(QWidget *uiField, const QVariant &value);
     static void reset(QWidget *uiField);
     static void selectAll(QWidget *uiField);

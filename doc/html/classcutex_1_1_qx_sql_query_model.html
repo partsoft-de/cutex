@@ -179,10 +179,10 @@ Klassendiagramm für cutex::QxSqlQueryModel:</div>
 <tr class="separator:ae1473c1dac27dfa7a47a23775e4641e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8e36e41fab0a737334e8cf887a3872db"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcutex_1_1_qx_sql_query_model.html#a8e36e41fab0a737334e8cf887a3872db">setColumnAlignment</a> (const QString &amp;column, Qt::AlignmentFlag alignment)</td></tr>
 <tr class="separator:a8e36e41fab0a737334e8cf887a3872db"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a229795f1302a21d3d0d3cd645a176d59"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcutex_1_1_qx_sql_query_model.html#a229795f1302a21d3d0d3cd645a176d59">setColumnType</a> (int column, QVariant::Type type, const QString &amp;format=QString())</td></tr>
-<tr class="separator:a229795f1302a21d3d0d3cd645a176d59"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a34f4b434c5944357697a1daeb16cee21"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcutex_1_1_qx_sql_query_model.html#a34f4b434c5944357697a1daeb16cee21">setColumnType</a> (const QString &amp;column, QVariant::Type type, const QString &amp;format=QString())</td></tr>
-<tr class="separator:a34f4b434c5944357697a1daeb16cee21"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aae775421e359187ea7f26d3abbea1b59"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcutex_1_1_qx_sql_query_model.html#aae775421e359187ea7f26d3abbea1b59">setColumnType</a> (int column, QMetaType::Type type, const QString &amp;format=QString())</td></tr>
+<tr class="separator:aae775421e359187ea7f26d3abbea1b59"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a655ac0c0e632b538c4a93f7718b2daff"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcutex_1_1_qx_sql_query_model.html#a655ac0c0e632b538c4a93f7718b2daff">setColumnType</a> (const QString &amp;column, QMetaType::Type type, const QString &amp;format=QString())</td></tr>
+<tr class="separator:a655ac0c0e632b538c4a93f7718b2daff"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adb04e229b435597422b46a9f61fe7a53"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcutex_1_1_qx_sql_query_model.html#adb04e229b435597422b46a9f61fe7a53">setSqlRelation</a> (int column, const QSqlRelation &amp;sqlRelation)</td></tr>
 <tr class="separator:adb04e229b435597422b46a9f61fe7a53"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aae6f2175ec3c67743ab67c474e75f723"><td class="memItemLeft" align="right" valign="top">QCompleter *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcutex_1_1_qx_sql_query_model.html#aae6f2175ec3c67743ab67c474e75f723">createCompleter</a> (int column=0, QObject *parent=nullptr)</td></tr>
@@ -190,14 +190,15 @@ Klassendiagramm für cutex::QxSqlQueryModel:</div>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Öffentliche, statische Methoden</h2></td></tr>
-<tr class="memitem:abb154934a2ece77a40a84661301b51c9"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:abb154934a2ece77a40a84661301b51c9"><td class="memTemplItemLeft" align="right" valign="top">static QList&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classcutex_1_1_qx_sql_query_model.html#abb154934a2ece77a40a84661301b51c9">columnValues</a> (QSqlQuery query, int column=0)</td></tr>
-<tr class="separator:abb154934a2ece77a40a84661301b51c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a816b20382f897bdcc7bdbed78db894cc"><td class="memTemplParams" colspan="2"><a id="a816b20382f897bdcc7bdbed78db894cc"></a>
+template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a816b20382f897bdcc7bdbed78db894cc"><td class="memTemplItemLeft" align="right" valign="top">static QList&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>columnValues</b> (QSqlQuery &amp;query, int column=0)</td></tr>
+<tr class="separator:a816b20382f897bdcc7bdbed78db894cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3f78b9e7a55915df73a4846a9227d233"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:a3f78b9e7a55915df73a4846a9227d233"><td class="memTemplItemLeft" align="right" valign="top">static QList&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classcutex_1_1_qx_sql_query_model.html#a3f78b9e7a55915df73a4846a9227d233">columnValues</a> (const QString &amp;query, int column=0)</td></tr>
 <tr class="separator:a3f78b9e7a55915df73a4846a9227d233"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7ddc2563a3920e75366ffa923f09d4df"><td class="memItemLeft" align="right" valign="top">static QCompleter *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcutex_1_1_qx_sql_query_model.html#a7ddc2563a3920e75366ffa923f09d4df">createCompleter</a> (QSqlQuery query, int column=0, QObject *parent=nullptr)</td></tr>
-<tr class="separator:a7ddc2563a3920e75366ffa923f09d4df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab0f3bfb36c56069b95f814bfed16a5e8"><td class="memItemLeft" align="right" valign="top">static QCompleter *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcutex_1_1_qx_sql_query_model.html#ab0f3bfb36c56069b95f814bfed16a5e8">createCompleter</a> (QSqlQuery &amp;query, int column=0, QObject *parent=nullptr)</td></tr>
+<tr class="separator:ab0f3bfb36c56069b95f814bfed16a5e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab968d8ef6f403b9a6d86829ef26b8b01"><td class="memItemLeft" align="right" valign="top">static QCompleter *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcutex_1_1_qx_sql_query_model.html#ab968d8ef6f403b9a6d86829ef26b8b01">createCompleter</a> (const QString &amp;query, int column=0, QObject *parent=nullptr)</td></tr>
 <tr class="separator:ab968d8ef6f403b9a6d86829ef26b8b01"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -378,7 +379,7 @@ QSqlError&#160;</td><td class="memItemRight" valign="bottom"><b>m_error</b></td>
 </div>
 </div>
 <a id="a3f78b9e7a55915df73a4846a9227d233"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3f78b9e7a55915df73a4846a9227d233">&#9670;&nbsp;</a></span>columnValues() <span class="overload">[1/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a3f78b9e7a55915df73a4846a9227d233">&#9670;&nbsp;</a></span>columnValues() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -417,7 +418,7 @@ template&lt;typename T &gt; </div>
 </div>
 </div>
 <a id="ada435ca8c996bb220bfe8f28ed28ae13"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ada435ca8c996bb220bfe8f28ed28ae13">&#9670;&nbsp;</a></span>columnValues() <span class="overload">[2/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ada435ca8c996bb220bfe8f28ed28ae13">&#9670;&nbsp;</a></span>columnValues() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -442,45 +443,6 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 <p>Gibt alle Werte der Spalte <em>column</em> in einer Liste zurück. </p>
-
-</div>
-</div>
-<a id="abb154934a2ece77a40a84661301b51c9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abb154934a2ece77a40a84661301b51c9">&#9670;&nbsp;</a></span>columnValues() <span class="overload">[3/3]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">QxSqlQueryModel::columnValues </td>
-          <td>(</td>
-          <td class="paramtype">QSqlQuery&#160;</td>
-          <td class="paramname"><em>query</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>column</em> = <code>0</code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>Führt die in <em>query</em> angegebene Abfrage aus und gibt alle Werte der Spalte <em>column</em> in einer Liste zurück. </p>
 
 </div>
 </div>
@@ -556,8 +518,8 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
-<a id="a7ddc2563a3920e75366ffa923f09d4df"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7ddc2563a3920e75366ffa923f09d4df">&#9670;&nbsp;</a></span>createCompleter() <span class="overload">[3/3]</span></h2>
+<a id="ab0f3bfb36c56069b95f814bfed16a5e8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab0f3bfb36c56069b95f814bfed16a5e8">&#9670;&nbsp;</a></span>createCompleter() <span class="overload">[3/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -568,7 +530,7 @@ template&lt;typename T &gt; </div>
         <tr>
           <td class="memname">QCompleter * QxSqlQueryModel::createCompleter </td>
           <td>(</td>
-          <td class="paramtype">QSqlQuery&#160;</td>
+          <td class="paramtype">QSqlQuery &amp;&#160;</td>
           <td class="paramname"><em>query</em>, </td>
         </tr>
         <tr>
@@ -1114,8 +1076,8 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
-<a id="a34f4b434c5944357697a1daeb16cee21"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a34f4b434c5944357697a1daeb16cee21">&#9670;&nbsp;</a></span>setColumnType() <span class="overload">[1/2]</span></h2>
+<a id="a655ac0c0e632b538c4a93f7718b2daff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a655ac0c0e632b538c4a93f7718b2daff">&#9670;&nbsp;</a></span>setColumnType() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1129,7 +1091,7 @@ template&lt;typename T &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">QVariant::Type&#160;</td>
+          <td class="paramtype">QMetaType::Type&#160;</td>
           <td class="paramname"><em>type</em>, </td>
         </tr>
         <tr>
@@ -1149,8 +1111,8 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
-<a id="a229795f1302a21d3d0d3cd645a176d59"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a229795f1302a21d3d0d3cd645a176d59">&#9670;&nbsp;</a></span>setColumnType() <span class="overload">[2/2]</span></h2>
+<a id="aae775421e359187ea7f26d3abbea1b59"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aae775421e359187ea7f26d3abbea1b59">&#9670;&nbsp;</a></span>setColumnType() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1164,7 +1126,7 @@ template&lt;typename T &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">QVariant::Type&#160;</td>
+          <td class="paramtype">QMetaType::Type&#160;</td>
           <td class="paramname"><em>type</em>, </td>
         </tr>
         <tr>

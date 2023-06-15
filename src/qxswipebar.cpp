@@ -1,6 +1,6 @@
 /***********************************************************************************************************************
 **
-** Copyright (C) 2016-2022 Partsoft UG (haftungsbeschränkt)
+** Copyright (C) 2016-2023 Partsoft UG (haftungsbeschränkt)
 ** Contact: https://www.partsoft.de/index.php/kontakt
 **
 ** This file is part of cutex
@@ -81,7 +81,7 @@ int QxSwipeBar::insertButton(int index, const QString &text)
 */
 void QxSwipeBar::removeButton(int index)
 {
-    QxSwipeButton *button = m_buttons.at(index);
+    QxSwipeButton *button = m_buttons.value(index);
     if (button) {
         m_buttons.removeAt(index);
         delete button;
@@ -95,7 +95,7 @@ void QxSwipeBar::removeButton(int index)
 */
 QString QxSwipeBar::buttonText(int index) const
 {
-    QxSwipeButton *button = m_buttons.at(index);
+    QxSwipeButton *button = m_buttons.value(index);
     if (button)
         return button->text();
 
@@ -109,7 +109,7 @@ QString QxSwipeBar::buttonText(int index) const
 */
 void QxSwipeBar::setButtonText(int index, const QString &text)
 {
-    QxSwipeButton *button = m_buttons.at(index);
+    QxSwipeButton *button = m_buttons.value(index);
     if (button)
         button->setText(text);
 }

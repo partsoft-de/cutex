@@ -32,10 +32,12 @@ class QxSwipeWidgetContainerExtension: public QObject, public QDesignerContainer
 
 public:
     QxSwipeWidgetContainerExtension(QxSwipeWidget *widget, QObject *parent);
+    bool canAddWidget() const;
     void addWidget(QWidget *widget);
     int count() const;
     int currentIndex() const;
     void insertWidget(int index, QWidget *widget);
+    bool canRemove(int index) const;
     void remove(int index);
     void setCurrentIndex(int index);
     QWidget *widget(int index) const;
