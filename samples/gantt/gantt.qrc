@@ -1,0 +1,10 @@
+<RCC>
+    <qresource prefix="/">
+        <file>icons/16x16/date_add.png</file>
+        <file>icons/16x16/date_delete.png</file>
+        <file>icons/16x16/date_edit.png</file>
+        <file>icons/16x16/disk.png</file>
+        <file>icons/16x16/folder.png</file>
+        <file>icons/16x16/page_white.png</file>
+    </qresource>
+</RCC>
