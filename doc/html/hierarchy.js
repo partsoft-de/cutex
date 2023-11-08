@@ -22,6 +22,9 @@ var hierarchy =
     [ "QException", null, [
       [ "cutex::QxException", "classcutex_1_1_qx_exception.html", null ]
     ] ],
+    [ "QHeaderView", null, [
+      [ "cutex::QxFilterHeaderView", "classcutex_1_1_qx_filter_header_view.html", null ]
+    ] ],
     [ "QLabel", null, [
       [ "cutex::QxSwipeButton", "classcutex_1_1_qx_swipe_button.html", null ]
     ] ],

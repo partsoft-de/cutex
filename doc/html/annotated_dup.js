@@ -10,6 +10,7 @@ var annotated_dup =
       [ "QxDialog", "classcutex_1_1_qx_dialog.html", "classcutex_1_1_qx_dialog" ],
       [ "QxDoubleEdit", "classcutex_1_1_qx_double_edit.html", "classcutex_1_1_qx_double_edit" ],
       [ "QxException", "classcutex_1_1_qx_exception.html", "classcutex_1_1_qx_exception" ],
+      [ "QxFilterHeaderView", "classcutex_1_1_qx_filter_header_view.html", "classcutex_1_1_qx_filter_header_view" ],
       [ "QxFindDialog", "classcutex_1_1_qx_find_dialog.html", "classcutex_1_1_qx_find_dialog" ],
       [ "QxFindOptions", "classcutex_1_1_qx_find_options.html", "classcutex_1_1_qx_find_options" ],
       [ "QxFixPoint", "classcutex_1_1_qx_fix_point.html", "classcutex_1_1_qx_fix_point" ],

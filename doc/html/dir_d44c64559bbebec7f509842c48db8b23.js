@@ -10,6 +10,7 @@ var dir_d44c64559bbebec7f509842c48db8b23 =
     [ "qxdialog.h", "qxdialog_8h_source.html", null ],
     [ "qxdoubleedit.h", "qxdoubleedit_8h_source.html", null ],
     [ "qxexception.h", "qxexception_8h_source.html", null ],
+    [ "qxfilterheaderview.h", "qxfilterheaderview_8h_source.html", null ],
     [ "qxfinddialog.h", "qxfinddialog_8h_source.html", null ],
     [ "qxfindoptions.h", "qxfindoptions_8h_source.html", null ],
     [ "qxfixpoint.h", "qxfixpoint_8h_source.html", null ],

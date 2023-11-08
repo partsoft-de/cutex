@@ -133,12 +133,12 @@
 <context>
     <name>cutex::QxCalculatorDialog</name>
     <message>
-        <location filename="qxcalculatordialog.cpp" line="176"/>
+        <location filename="qxcalculatordialog.cpp" line="205"/>
         <source>Fehler</source>
         <translation>Error</translation>
     </message>
     <message>
-        <location filename="qxcalculatordialog.cpp" line="176"/>
+        <location filename="qxcalculatordialog.cpp" line="205"/>
         <source>Teilen durch 0 ist nicht möglich!</source>
         <translation>Division with zero is not possible!</translation>
     </message>
@@ -198,6 +198,14 @@
     </message>
 </context>
 <context>
+    <name>cutex::QxFilterHeaderView</name>
+    <message>
+        <location filename="qxfilterheaderview.cpp" line="125"/>
+        <source>Filtern</source>
+        <translation>Filter</translation>
+    </message>
+</context>
+<context>
     <name>cutex::QxFindDialog</name>
     <message>
         <location filename="qxfinddialog.cpp" line="55"/>
@@ -213,22 +221,22 @@
 <context>
     <name>cutex::QxMainWindow</name>
     <message>
-        <location filename="qxmainwindow.cpp" line="220"/>
+        <location filename="qxmainwindow.cpp" line="222"/>
         <source>Überlappend</source>
         <translation>Overlapping</translation>
     </message>
     <message>
-        <location filename="qxmainwindow.cpp" line="225"/>
+        <location filename="qxmainwindow.cpp" line="227"/>
         <source>Nebeneinander</source>
         <translation>Side by side</translation>
     </message>
     <message>
-        <location filename="qxmainwindow.cpp" line="231"/>
+        <location filename="qxmainwindow.cpp" line="233"/>
         <source>Alle schließen</source>
         <translation>Close all</translation>
     </message>
     <message>
-        <location filename="qxmainwindow.cpp" line="344"/>
+        <location filename="qxmainwindow.cpp" line="359"/>
         <source>Unbenannt</source>
         <translation>Unnamed</translation>
     </message>
