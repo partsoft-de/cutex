@@ -672,6 +672,14 @@ void QxSqlQueryModel::setSqlRelation(int column, const QSqlRelation &sqlRelation
 }
 
 /*!
+  Setzt für die Spalte <i>column</i> die SQL-Relation <i>sqlRelation</i>.
+*/
+void QxSqlQueryModel::setSqlRelation(const QString &column, const QSqlRelation &sqlRelation)
+{
+    setSqlRelation(columnIndex(column), sqlRelation);
+}
+
+/*!
   Erzeugt einen Completer aus den Werten der Spalte <i>column</i>.
 */
 QCompleter* QxSqlQueryModel::createCompleter(int column, QObject *parent)
