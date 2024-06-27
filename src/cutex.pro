@@ -1,8 +1,8 @@
 TEMPLATE = lib
 TARGET = cutex_$${QT_ARCH}
-DESTDIR = ../lib
+DESTDIR = $$PWD/../lib
 
-mkpath(../lib)
+mkpath($$PWD/../lib)
 
 QT += \
     core \

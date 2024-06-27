@@ -1,6 +1,6 @@
 TEMPLATE = lib
 TARGET = qxwidgets
-DESTDIR = ../lib
+DESTDIR = $$PWD/../lib
 
 QT += \
     core \
@@ -21,7 +21,7 @@ INCLUDEPATH += \
     ../include
 
 LIBS += \
-    ../lib/libcutex_$${QT_ARCH}.a
+    $$PWD/../lib/libcutex_$${QT_ARCH}.a
 
 HEADERS += \
     plugins.h \

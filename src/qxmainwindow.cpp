@@ -80,7 +80,11 @@ void QxMainWindow::setupMdiArea(QMdiArea *mdiArea, QMenu *windowMenu)
     m_mdiArea = mdiArea;
     m_windowMenu = windowMenu;
 
-    connect(m_mapper, SIGNAL(mapped(QWidget*)), this, SLOT(setActiveSubWindow(QWidget*)));
+#if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
+    connect(m_mapper, SIGNAL(mappedObject(QObject*)), this, SLOT(setActiveSubWindow(QObject*)));
+#else
+    connect(m_mapper, SIGNAL(mappedWidget(QWidget*)), this, SLOT(setActiveSubWindow(QWidget*)));
+#endif
     connect(m_mdiArea, SIGNAL(subWindowActivated(QMdiSubWindow*)), this, SLOT(relockActions()));
     connect(m_mdiArea, SIGNAL(subWindowActivated(QMdiSubWindow*)), this, SLOT(updateWindowMenu()));
 
@@ -415,6 +419,11 @@ void QxMainWindow::updateMenu()
 void QxMainWindow::processAction()
 {
     processAction(qobject_cast<QAction*>(sender()));
+}
+
+void QxMainWindow::setActiveSubWindow(QObject *object)
+{
+    m_mdiArea->setActiveSubWindow(qobject_cast<QMdiSubWindow*>(object));
 }
 
 /*!

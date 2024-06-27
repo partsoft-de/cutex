@@ -112,6 +112,7 @@ public:
     void setColumnType(const QString &column, QVariant::Type type, const QString &format = QString());
 #endif
     void setSqlRelation(int column, const QSqlRelation &sqlRelation);
+    void setSqlRelation(const QString &column, const QSqlRelation &sqlRelation);
     QCompleter* createCompleter(int column = 0, QObject *parent = nullptr);
     static QCompleter* createCompleter(QSqlQuery &query, int column = 0, QObject *parent = nullptr);
     static QCompleter* createCompleter(const QString &query, int column = 0, QObject *parent = nullptr);
