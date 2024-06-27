@@ -87,6 +87,7 @@ private:
 private slots:
     void updateMenu();
     void processAction();
+    void setActiveSubWindow(QObject *object);
 
 signals:
     void recentFilesChanged(QxRecentFiles *recentFiles);
