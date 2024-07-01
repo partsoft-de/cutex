@@ -12,7 +12,7 @@ INCLUDEPATH += \
     ../../include
 
 LIBS += \
-    ../../lib/libcutex_$${QT_ARCH}.a
+    $$PWD/../../lib/libcutex_$${QT_ARCH}.a
 
 SOURCES += \
     main.cpp \
